@@ -1,5 +1,6 @@
-from PyQt6.QtCore import QSize, Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtCore import QSize, Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget, QLineEdit, QMenu, QAction
+from PyQt5 import *
 import sys
 
 from constants import *
@@ -10,25 +11,29 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle(APPLICATION_NAME)
 
-        self.button_states = {"button1": False}
-        
-        self.button = QPushButton("HELLO MF")
-        self.button.setCheckable(True)
-        self.button.clicked.connect(self.the_button_was_toggled)
-        self.button.setChecked(self.button_states["button1"])
+        self.label = QLabel()
 
-        #self.setMinimumSize(x, y)
-        self.setFixedSize(800, 600)
-        #self.setMaximumSize(x, y)
+        self.input = QLineEdit()
+        self.input.textChanged.connect(self.label.setText)
 
-        self.setCentralWidget(self.button)
+        layout = QVBoxLayout()
+        layout.addWidget(self.input)
+        layout.addWidget(self.label)
 
-    def the_button_was_toggled(self, state):
-        self.button_states["button1"] = state
-        print(f"Current state: {self.button_states['button1']}")
+        container = QWidget()
+        container.setLayout(layout)
 
-        self.button.setText("Already clicked me.")
-        self.button.setEnabled(False)
+        self.setCentralWidget(container)
+
+        self.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.customContextMenuRequested.connect(self.on_context_menu)
+
+    def on_context_menu(self, pos):
+        context = QMenu(self)
+        context.addAction(QAction("test 1", self))
+        context.addAction(QAction("test 2", self))
+        context.addAction(QAction("test 3", self))
+        context.exec(self.mapToGlobal(pos))
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
