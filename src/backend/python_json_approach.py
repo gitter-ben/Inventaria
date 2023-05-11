@@ -1,6 +1,7 @@
 import json
 import jsonpickle
 from json import JSONEncoder
+from utils import timing
 
 class Things:
     def __init__(self, name, count):
@@ -48,7 +49,6 @@ class Hierarchy(Sublevel):
             current = current.sublevels[p]
 
         current.add_sublevel(name)
-        print(current.sublevels)
 
     def add_things_to_path(self, location_path, things):
         current = self
@@ -75,6 +75,7 @@ class Hierarchy(Sublevel):
         print("Top level: ")
         super().print_tree()
 
+    @timing
     def save(self, save_file):
         hierarchyJSON = jsonpickle.encode(h, unpicklable=True)
         out = json.dumps(hierarchyJSON, indent=4)
@@ -82,6 +83,7 @@ class Hierarchy(Sublevel):
         with open(save_file, 'w') as f:
             f.write(out)
 
+@timing
 def load_hierarchy_from_file(file):
     with open(file, 'r') as f:
         h = jsonpickle.decode(json.loads(f.read()))
