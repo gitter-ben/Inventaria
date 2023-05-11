@@ -76,7 +76,6 @@ class Worker(QRunnable):
             self.signals.finished.emit()  # Done
 
 
-
 class MainWindow(QMainWindow):
 
     
