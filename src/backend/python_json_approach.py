@@ -57,6 +57,20 @@ class Hierarchy(Sublevel):
 
         current.add_things(things)
 
+    def delete_things_from_path(self, location_path, name):
+        current = self
+        for p in location_path:
+            current = current.sublevels[p]
+
+        current.delete_things(name)
+
+    def delete_sublevel_from_path(self, location_path, name):
+        current = self
+        for p in location_path:
+            current = current.sublevels[p]
+
+        current.delete_sublevel(name)
+
     def print_tree(self, indent=0):
         print("Top level: ")
         super().print_tree()
@@ -89,7 +103,7 @@ if __name__ == "__main__":
     h.add_things_to_path(["Video", "VGA Kabel Box"], Things("VGA Kabel 5m", 5))
     h.add_things_to_path(["Video", "VGA Kabel Box"], Things("VGA Kabel 1m", 13))
 
-    h.print_tree()
+    #h.print_tree()
     h.save("backup.json")
 
     del h
