@@ -1,7 +1,7 @@
 import json
 import jsonpickle
 from json import JSONEncoder
-from utils import timing
+from .utils import timing
 
 class Things:
     def __init__(self, name, count):
@@ -29,6 +29,12 @@ class Sublevel:
     
     def delete_sublevel(self, name):
         del self.sublevels[name]
+
+    def get_sublevel_names(self):
+        return list(self.sublevels.keys())
+
+    def get_things_names(self):
+        return list(self.things.keys())
 
     def print_tree(self, indent=0):
         for name, t in self.things.items():
@@ -71,6 +77,20 @@ class Hierarchy(Sublevel):
 
         current.delete_sublevel(name)
 
+    def get_sublevel_names_from_path(self, location_path):
+        current = self
+        for p in location_path:
+            current = current.sublevels[p]
+
+        return current.get_sublevel_names()
+
+    def get_things_names_from_path(self, location_path):
+        current = self
+        for p in location_path:
+            current = current.sublevels[p]
+
+        return current.get_things_names()
+
     def print_tree(self, indent=0):
         print("Top level: ")
         super().print_tree()
@@ -82,6 +102,7 @@ class Hierarchy(Sublevel):
 
         with open(save_file, 'w') as f:
             f.write(out)
+
 
 @timing
 def load_hierarchy_from_file(file):

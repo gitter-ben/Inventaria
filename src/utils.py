@@ -11,3 +11,7 @@ def timing(f):
           (f.__name__, args, kw, te-ts))
         return result
     return wrap
+
+class DBConnectError(Exception):
+    "Raised when not able to connect to database"
+    pass
