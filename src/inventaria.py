@@ -33,7 +33,6 @@ class MainWindow(QMainWindow):
         # Make inspector and sidebar layout
         self.inspector = Inspector()
         self.inspector.setMinimumWidth(WINDOW_WIDTH//2)
-        #self
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
         self.GUIHSplitter.addWidget(self.navBars)
@@ -55,35 +54,66 @@ class MainWindow(QMainWindow):
         self.GUIVSplitter.setCollapsible(2, False)
         self.setCentralWidget(self.GUIVSplitter)
 
-        # Make group level navbar
+
+        # Make group level navbar:
+        #    __________________
+        #   |  Label |  Button |
+        #   |------------------|
+        #   |    Item 1        |
+        #   |__________________|
+        #   |    Item 2        |
+        #   |__________________|
+        #   |    Item 3        |
+        #   |__________________|
+        #
+
         self.group_level_nav_container = QWidget()
-        layout = QVBoxLayout()
+        layout = QGridLayout()
         self.group_level_nav = NavBarGroups()
         self.group_level_nav.populate(self.db.get_groups())
         self.group_level_nav.currentRowChanged.connect(self.groupSelectionChanged)
-        layout.addWidget(label := QLabel("Groups"))
+        layout.addWidget(label := QLabel("Groups"), 0, 0, 1, 1)
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
-        layout.addWidget(self.group_level_nav)
+        ic = QIcon("../icons/green_plus.png")
+        self.new_group_button = QPushButton("")
+        self.new_group_button.clicked.connect(self.newGroupSlot)
+        self.new_group_button.setIcon(ic)
+        layout.addWidget(self.new_group_button, 0, 1, 1, 1)
+        self.new_group_button = QPushButton("New Group")
+        self.new_group_button.clicked.connect(self.newGroupSlot)
+        layout.addWidget(self.group_level_nav, 1, 0, 1, 2)
         self.group_level_nav_container.setLayout(layout)
         self.navBars.addWidget(self.group_level_nav_container)
 
-        # Make box level navbar
+        # Make box level navbar (same layout see above)
+
         self.box_level_nav_container = QWidget()
-        layout = QVBoxLayout()
+        layout = QGridLayout()
         self.box_level_nav = NavBarBoxes()
-        layout.addWidget(label := QLabel("Boxes"))
+        layout.addWidget(label := QLabel("Boxes"), 0, 0, 1, 1)
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
-        layout.addWidget(self.box_level_nav)
+        ic = QIcon("../icons/green_plus.png")
+        self.new_box_button = QPushButton("")
+        self.new_box_button.clicked.connect(self.newBoxSlot)
+        self.new_box_button.setIcon(ic)
+        layout.addWidget(self.new_box_button, 0, 1, 1, 1)
+        layout.addWidget(self.box_level_nav, 1, 0, 1, 2)
         self.box_level_nav.currentRowChanged.connect(self.boxSelectionChanged)
         self.box_level_nav_container.setLayout(layout)
         self.navBars.addWidget(self.box_level_nav_container)
 
         self.navBars.setChildrenCollapsible(False)
         self.inspector.empty()
+
+    def newGroupSlot(self):
+        pass
+
+    def newBoxSlot(self):
+        pass
 
     def boxSelectionChanged(self):
         selected_box = self.box_level_nav.currentItem()
