@@ -16,7 +16,7 @@ class Box:
         self.description = description
 
 class Database(QObject):
-    saveStateChanged = pyqtSignal()
+    saveStateChanged = pyqtSignal(bool)
 
     def __init__(self, db_file):
         super().__init__()
@@ -35,24 +35,23 @@ class Database(QObject):
 
     def unsaved(self):
         if self.saved:
-            self.saveStateChanged.emit()
+            self.saveStateChanged.emit(False)
             self.saved = False
-            print("The database is now not saved.")
 
     def make_savepoint(self):
-        with self.conn:
-            self.cur.execute("BEGIN TRANSACTION;")
+        #with self.conn:
+        self.cur.execute("BEGIN TRANSACTION;")
 
     def rollback_to_savepoint(self):
-        with self.conn:
-            self.cur.execute("ROLLBACK TRANSACTION;")
+        #with self.conn:
+        self.cur.execute("ROLLBACK TRANSACTION;")
 
     def save(self):
         if not self.saved:
-            with self.conn:
-                self.cur.execute("COMMIT TRANSACTION;")
+            #with self.conn:
+            self.cur.execute("COMMIT TRANSACTION;")
             self.saved = True
-            self.saveStateChanged.emit()
+            self.saveStateChanged.emit(True)
             self.make_savepoint()
 
     def changesDB(func):
@@ -91,46 +90,46 @@ class Database(QObject):
             self.cur.execute(sql_create_parts_table)
     
     def get_group_names(self):
-        with self.conn:
-            rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM groups").fetchall()))
+        #with self.conn:
+        rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM groups").fetchall()))
         return rows
     
     def get_groups(self):
-        with self.conn:
-            groups = [Group(*row) for row in self.cur.execute("SELECT id, name, description FROM groups").fetchall()]
+        #with self.conn:
+        groups = [Group(*row) for row in self.cur.execute("SELECT id, name, description FROM groups").fetchall()]
         return groups
 
     def get_group_info(self, group_id):
-        with self.conn:
-            group = Group(*self.cur.execute("SELECT id, name, description FROM groups WHERE id=?", (group_id, )).fetchone())
+        #with self.conn:
+        group = Group(*self.cur.execute("SELECT id, name, description FROM groups WHERE id=?", (group_id, )).fetchone())
         return group
 
     def get_box_names(self, group_id):
-        with self.conn:
-            rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM boxes WHERE group_id=?", (group_id, )).fetchall()))
+        #with self.conn:
+        rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM boxes WHERE group_id=?", (group_id, )).fetchall()))
         return rows
 
     def get_boxes(self, group_id):
-        with self.conn:
-            boxes = [Box(*row) for row in self.cur.execute("SELECT id, name, description FROM boxes WHERE group_id=?", (group_id, )).fetchall()]
+        #with self.conn:
+        boxes = [Box(*row) for row in self.cur.execute("SELECT id, name, description FROM boxes WHERE group_id=?", (group_id, )).fetchall()]
         return boxes
 
     def get_box_info(self, group_id, box_id):
-        with self.conn:
-            box = Box(*self.cur.execute("SELECT id, name, description FROM boxes WHERE id=? AND group_id=?", (box_id, group_id)).fetchone())
+        #with self.conn:
+        box = Box(*self.cur.execute("SELECT id, name, description FROM boxes WHERE id=? AND group_id=?", (box_id, group_id)).fetchone())
         return box
 
 
 
     @changesDB
     def add_group(self, name):
-        with self.conn:
-            self.cur.execute("INSERT INTO groups (name) VALUES (?);", (name, ))
+        #with self.conn:
+        self.cur.execute("INSERT INTO groups (name) VALUES (?);", (name, ))
 
     @changesDB
     def add_box(self, group_id, name):
-        with self.conn:
-            self.cur.execute("INSERT INTO boxes (name, group_id) VALUES (?, ?);", (name, group_id))
+        #with self.conn:
+        self.cur.execute("INSERT INTO boxes (name, group_id) VALUES (?, ?);", (name, group_id))
 
         self.unsaved()
 

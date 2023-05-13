@@ -55,6 +55,17 @@ class MainWindow(QMainWindow):
         self.GUIVSplitter.setCollapsible(2, False)
         self.setCentralWidget(self.GUIVSplitter)
 
+        # Setup top bar
+        layout = QGridLayout()
+        ic = QIcon(":/icons/save_icon.png")
+        self.saveButton = QPushButton()
+        self.saveButton.setFixedWidth(65)
+        self.saveButton.setIcon(ic)
+        layout.addWidget(self.saveButton, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+        self.topBar.setLayout(layout)
+        
+        self.db.saveStateChanged.connect(self.saveStateChangedSlot)
+        self.saveButton.pressed.connect(self.saveSlot)
 
         # Make group level navbar:
         #    __________________
@@ -112,6 +123,20 @@ class MainWindow(QMainWindow):
         self.navBars.setChildrenCollapsible(False)
         self.inspector.empty()
 
+        self.saveStateChangedSlot(True)
+
+    def saveSlot(self):
+        if not self.db.saved:
+            self.db.save()
+
+    def saveStateChangedSlot(self, saved):
+        if saved:
+            self.saveButton.setDisabled(True)
+            self.bottomBar.savedIndicator.setText("Saved")
+        else:
+            self.saveButton.setEnabled(True)
+            self.bottomBar.savedIndicator.setText("Not Saved")
+
     def newGroupSlot(self):
         name, ok = QInputDialog.getText(self, "New Group", "Name:  ")
         if ok:
@@ -167,25 +192,6 @@ class MainWindow(QMainWindow):
         self.box_level_nav.sortItems()
 
 
-# class NameOkCancelDialog(QDialog):
-#     def __init__(self):
-#         super().__init__()
-
-#         self.setWindowTitle("New Group")
-#         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-
-#         self.buttonBox = QDialogButtonBox(QBtn)
-#         self.buttonBox.accepted.connect(self.accept)
-#         self.buttonBox.rejected.connect(self.reject)
-
-#         self.layout = QGridLayout()
-#         message = QLabel("Name:    ")
-#         self.layout.addWidget(message, 0, 0, 1, 1)
-#         self.name_field = QLineEdit()
-#         self.layout.addWidget(self.name_field, 0, 1, 1, 1)
-#         self.layout.addWidget(self.buttonBox, 1, 0, 1, 2)
-#         self.setLayout(self.layout)
-
 class Inspector(QWidget):
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
@@ -222,7 +228,6 @@ class Inspector(QWidget):
         self.description.setVisible(True)
         #self.image.setVisible(True)
 
-
 class TopBar(QWidget):
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
@@ -234,6 +239,8 @@ class BottomBar(QWidget):
         self.setContentsMargins(0, 0, 0, 0)
         layout = QHBoxLayout()
         layout.setSpacing(25)
+        self.savedIndicator = QLabel("Saved")
+        layout.addWidget(self.savedIndicator)
         self.job_label = QLabel("Current Job: ...")
         layout.addWidget(self.job_label)
         self.progressBar = QProgressBar()

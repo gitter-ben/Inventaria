@@ -2,5 +2,6 @@
 <RCC version="1.0">
     <qresource prefix="icons">
         <file alias="green_plus.png">green_plus.png</file>
+        <file alias="save_icon.png">save_icon.png</file>
     </qresource>
 </RCC>
