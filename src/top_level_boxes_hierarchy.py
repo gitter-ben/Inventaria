@@ -111,16 +111,22 @@ class Database(QObject):
         return box
 
 
-
     @changesDB
     def add_group(self, name):
         self.cur.execute("INSERT INTO groups (name) VALUES (?);", (name, ))
+
+    @changesDB
+    def delete_group(self, group_id):
+        self.cur.execute("DELETE FROM groups WHERE group_id=?", (group_id, ))
 
     @changesDB
     def add_box(self, group_id, name):
         self.cur.execute("INSERT INTO boxes (name, group_id) VALUES (?, ?);", (name, group_id))
         self.unsaved()
 
+    @changesDB
+    def delete_box(self, group_id, box_id):
+        self.cur.execute("DELETE FROM boxes WHERE group_id=? AND box_id=?", (group_id, box_id))
 
     def _create_connection(self, db_file):
         try:
