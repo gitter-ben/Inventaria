@@ -55,13 +55,13 @@ class MainWindow(QMainWindow):
         self.GUIVSplitter.setCollapsible(2, False)
         self.setCentralWidget(self.GUIVSplitter)
 
-        # Make top level navbar
+        # Make group level navbar
         self.group_level_nav_container = QWidget()
         layout = QVBoxLayout()
         self.group_level_nav = NavBarGroups()
         self.group_level_nav.populate(self.db.get_groups())
-        self.group_level_nav.currentRowChanged.connect(self.refreshNavbar)
-        layout.addWidget(label := QLabel("Gruppen"))
+        self.group_level_nav.currentRowChanged.connect(self.groupSelectionChanged)
+        layout.addWidget(label := QLabel("Groups"))
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
@@ -69,48 +69,78 @@ class MainWindow(QMainWindow):
         self.group_level_nav_container.setLayout(layout)
         self.navBars.addWidget(self.group_level_nav_container)
 
+        # Make box level navbar
         self.box_level_nav_container = QWidget()
         layout = QVBoxLayout()
         self.box_level_nav = NavBarBoxes()
-        layout.addWidget(label := QLabel("Kisten"))
+        layout.addWidget(label := QLabel("Boxes"))
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
         layout.addWidget(self.box_level_nav)
+        self.box_level_nav.currentRowChanged.connect(self.boxSelectionChanged)
         self.box_level_nav_container.setLayout(layout)
         self.navBars.addWidget(self.box_level_nav_container)
 
         self.navBars.setChildrenCollapsible(False)
+        self.inspector.empty()
 
-        self.refreshNavbar()
-        
+    def boxSelectionChanged(self):
+        selected_box = self.box_level_nav.currentItem()
+        selected_group = self.group_level_nav.currentItem()
+        if selected_box and selected_group:
+            self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id))
 
-    def refreshNavbar(self):
+    def groupSelectionChanged(self):
         selected_group = self.group_level_nav.currentItem()
         if selected_group:
             self.box_level_nav.clear_items()
             self.box_level_nav.populate(self.db.get_boxes(selected_group.id))
+            self.inspector.setGroupInfo(self.db.get_group_info(selected_group.id))
         else:
+            self.inspector.empty()
+            self.box_level_nav.clear_items()
             self.group_level_nav.clear_items()
             self.group_level_nav.populate(self.db.get_groups())
+
 
 class Inspector(QWidget):
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
 
         layout = QGridLayout()
+        container = QWidget(self)
         self.headline = QLabel("Inspector")
         font = self.headline.font()
         font.setPointSize(13)
         self.headline.setFont(font)
-        
-        self.image = QLabel(self)
-        self.imagemap = QPixmap("image.jpeg")
-        self.image.setPixmap(self.imagemap)
+        self.description = QPlainTextEdit()
 
-        layout.addWidget(self.headline, 0, 0, alignment=Qt.AlignTop | Qt.AlignLeft)
-        layout.addWidget(self.image, 1, 0, alignment=Qt.AlignTop | Qt.AlignLeft)
-        self.setLayout(layout)
+        #self.image = QLabel(self)
+        #self.imagemap = QPixmap("image.jpeg")
+        #self.image.setPixmap(self.imagemap)
+
+        layout.addWidget(self.headline, 0, 0, 1, 1)
+        #layout.addWidget(self.image, 1, 0, alignment=Qt.AlignTop | Qt.AlignLeft)
+        layout.addWidget(self.description, 1, 0, 1, 1)
+        container.setLayout(layout)
+        #self.setCentralWidget(container)
+
+    def empty(self):
+        self.headline.setText("Inspector: No box/group selected")
+
+    def setGroupInfo(self, group: Group):
+        self.headline.setText(f"Group Inspector: {group.name} ({group.id})")
+        self.description.setPlainText(group.description)
+        self.description.setVisible(True)
+        #self.image.setVisible(True)
+
+    def setBoxInfo(self, box: Box):
+        self.headline.setText(f"Box Inspector: {box.name} ({box.id})")
+        self.description.setPlainText(box.description)
+        self.description.setVisible(True)
+        #self.image.setVisible(True)
+
 
 class TopBar(QWidget):
     def __init__(self, *args, **kw):

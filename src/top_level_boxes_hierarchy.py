@@ -2,15 +2,16 @@ import sqlite3
 from utils import *
 
 class Group:
-    def __init__(self, id, name):
+    def __init__(self, id, name, description):
         self.name = name
         self.id = id
+        self.description = description
 
 class Box:
-    def __init__(self, id, name):
+    def __init__(self, id, name, description):
         self.name = name
         self.id = id
-
+        self.description = description
 
 class Database:
     def __init__(self, db_file):
@@ -33,14 +34,15 @@ class Database:
         sql_create_boxes_table = """CREATE TABLE IF NOT EXISTS boxes (
             id INTEGER PRIMARY KEY,
             name TEXT,
+            description VARCHAR(200),
             group_id INTEGER,
-            FOREIGN KEY (group_id) REFERENCES groups (id) ON DELETE CASCADE,
-            UNIQUE(name, group_id)
-        )"""
+            FOREIGN KEY (group_id) REFERENCES groups (id) ON DELETE CASCADE
+        );"""
 
         sql_create_groups_table = """CREATE TABLE IF NOT EXISTS groups (
             id INTEGER PRIMARY KEY,
-            name TEXT UNIQUE 
+            name TEXT,
+            description VARCHAR(200)
         );"""
 
         with self.conn:
@@ -55,42 +57,39 @@ class Database:
     
     def get_groups(self):
         with self.conn:
-            groups = [Group(row[0], row[1]) for row in self.cur.execute("SELECT * FROM groups").fetchall()]
+            groups = [Group(*row) for row in self.cur.execute("SELECT id, name, description FROM groups").fetchall()]
         return groups
 
-    def add_group(self, name):
-        if name in self.get_group_names():
-            print("Error: that group exists!")
-            return -1
-
+    def add_group(self, group):
         with self.conn:
-            self.cur.execute("INSERT INTO ")
+            self.cur.execute("INSERT INTO groups (name, description) VALUES")
 
-    def get_group_info(self, group_name):
+    def get_group_info(self, group_id):
         with self.conn:
-            rows = self.cur.execute("SELECT * FROM groups WHERE name=?", (group_name, )).fetchall()
-        return rows
+            group = Group(*self.cur.execute("SELECT id, name, description FROM groups WHERE id=?", (group_id, )).fetchone())
+        return group
 
     # def set_group_info(self, group_name, data):
     #     pass
 
     def get_box_names(self, group_id):
         with self.conn:
-            rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM boxes WHERE group_id=?", (group_name, )).fetchall()))
+            rows = list(map(lambda x: x[0], self.cur.execute("SELECT name FROM boxes WHERE group_id=?", (group_id, )).fetchall()))
         return rows
 
     def get_boxes(self, group_id):
         with self.conn:
-            boxes = [Box(row[0], row[1]) for row in self.cur.execute("SELECT * FROM boxes WHERE group_id=?", (group_id, )).fetchall()]
+            boxes = [Box(*row) for row in self.cur.execute("SELECT id, name, description FROM boxes WHERE group_id=?", (group_id, )).fetchall()]
         return boxes
 
     def get_box_info(self, group_id, box_id):
         with self.conn:
-            rows = self.cur.execute("SELECT * FROM boxes WHERE id=? AND group_id=?", (box_id, group_id)).fetchall()
+            box = Box(*self.cur.execute("SELECT id, name, description FROM boxes WHERE id=? AND group_id=?", (box_id, group_id)).fetchone())
+        return box
 
-    def get_box_contents(self, group_name, box_name):
-        with self.conn:
-            rows = self.cur.execute("SELECT * FROM parts WHERE box_id=(SELECT id FROM boxes WHERE name=? AND group_id=(SELECT id FROM groups WHERE name=?))", (box_name, group_name)).fetchall()
+    # def get_box_contents(self, group_name, box_name):
+    #     with self.conn:
+    #         rows = self.cur.execute("SELECT * FROM parts WHERE box_id=(SELECT id FROM boxes WHERE name=? AND group_id=(SELECT id FROM groups WHERE name=?))", (box_name, group_name)).fetchall()
 
     def _create_connection(self, db_file):
         try:
