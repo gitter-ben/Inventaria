@@ -34,12 +34,28 @@ class MainWindow(QMainWindow):
         self.GUIHSplitter.setEnabled(True)
 
     def unload_db(self):
+        if not self.db_loaded:
+            self.showMessage("Error", "No database to unload")
+            return
+        
+        if not self.db.saved:
+            reply = QMessageBox.question(self, "Close without saving", "Are you sure you want to unload this database without saving?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if reply == QMessageBox.No:
+                return
+
+        self.group_level_nav.clearSelection()
+        self.group_level_nav.clear_items()
+        self.box_level_nav.clearSelection()
+        self.box_level_nav.clear_items()
         self.GUIHSplitter.setEnabled(False)
         self.db.close()
         self.db_loaded = False
         del self.db
+    
 
     def setupGUI(self):
+        self.statusBar()
+
         self.setWindowTitle(APPLICATION_NAME)
         self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setStyleSheet("QSplitter::handle { background-color: #AAAAAA; }")
@@ -49,12 +65,46 @@ class MainWindow(QMainWindow):
         self.setPalette(palette)
 
         # Make top menubar
+        self.openAction = QAction("&Open", self)
+        self.openAction.setShortcut("Ctrl+O")
+        self.openAction.setStatusTip("Open a file")
+        self.openAction.triggered.connect(self.load_db)
+        
+        self.saveAction = QAction("&Save", self)
+        self.saveAction.setShortcut("Ctrl+S")
+        self.saveAction.setStatusTip("Save the current database")
+        self.saveAction.triggered.connect(self.saveSlot)
+
+        self.unloadAction = QAction("&Unload", self)
+        self.unloadAction.setStatusTip("Unload the current database")
+        self.unloadAction.triggered.connect(self.unload_db)
+
+        self.quitAction = QAction("&Quit", self)
+        self.quitAction.setShortcut("Ctrl+Q")
+        self.quitAction.setStatusTip("Quit the application")
+        self.quitAction.triggered.connect(self.close)
+
+        self.preferencesAction = QAction("&Preferences")
+        self.preferencesAction.setShortcut("Ctrl+P")
+        self.preferencesAction.setStatusTip("Show the preferences")
+        self.preferencesAction.triggered.connect(self.showPreferences)
+
+        self.aboutAction = QAction("&About", self)
+        self.aboutAction.setStatusTip("Show the about section")
+        self.aboutAction.triggered.connect(self.showAbout)
+
         self.toolBar = self.menuBar()
         fileMenu = self.toolBar.addMenu("&File")
-        #fileMenu.add
-        fileMenu = self.toolBar.addMenu("&Edit")
-        fileMenu = self.toolBar.addMenu("&Tools")
-        fileMenu = self.toolBar.addMenu("&About")
+        fileMenu.addAction(self.saveAction)
+        fileMenu.addAction(self.openAction)
+        fileMenu.addAction(self.unloadAction)
+        fileMenu.insertSeparator(self.quitAction)
+        fileMenu.addAction(self.quitAction)
+        editMenu = self.toolBar.addMenu("&Edit")
+        editMenu.addAction(self.preferencesAction)
+        toolsMenu = self.toolBar.addMenu("&Tools")
+        helpMenu = self.toolBar.addMenu("&Help")
+        helpMenu.addAction(self.aboutAction)
 
         # Make inspector and sidebar layout
         self.inspector = Inspector()
@@ -156,6 +206,12 @@ class MainWindow(QMainWindow):
 
         self.saveStateChangedSlot(True)
 
+    def showPreferences(self):
+        print("Show the preferences")
+
+    def showAbout(self):
+        print("Show the about")
+
     def closeEvent(self, event):
         if self.db_loaded:
             if not self.db.saved:
@@ -171,8 +227,11 @@ class MainWindow(QMainWindow):
                 event.accept()
 
     def saveSlot(self):
-        if not self.db.saved:
-            self.db.save()
+        if self.db_loaded:
+            if not self.db.saved:
+                self.db.save()
+        else:
+            self.showMessage("Error", "No database to save")
 
     def saveStateChangedSlot(self, saved):
         if saved:
@@ -190,8 +249,10 @@ class MainWindow(QMainWindow):
             else:
                 self.db.add_group(name)
                 self.group_level_nav.clearSelection()
-                self.groupSelectionChanged()
-                self.boxSelectionChanged()
+                self.group_level_nav.clear_items()
+                self.group_level_nav.populate(self.db.get_groups())
+                #self.groupSelectionChanged()
+                #self.boxSelectionChanged()
 
     def newBoxSlot(self):
         if self.group_level_nav.currentItem() is None:
@@ -248,10 +309,6 @@ class Inspector(QWidget):
         font.setPointSize(13)
         self.headline.setFont(font)
         self.description = QPlainTextEdit()
-
-        #self.image = QLabel(self)
-        #self.imagemap = QPixmap("image.jpeg")
-        #self.image.setPixmap(self.imagemap)
 
         layout.addWidget(self.headline, 0, 0, 1, 1)
         #layout.addWidget(self.image, 1, 0, 1, 1)
