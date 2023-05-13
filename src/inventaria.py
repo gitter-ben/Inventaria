@@ -11,10 +11,34 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.db = Database("database.sqlite")
-
+        self.db = None
+        self.db_loaded = False
         self.setupGUI()
-    
+
+        self.GUIHSplitter.setEnabled(False)
+
+    def load_db(self):
+        fname = QFileDialog.getOpenFileName(self, 'Open file', '/', "Sqlite Databases (*.sqlite)")[0]
+        if fname is None or len(fname) == 0:
+            return
+
+        if self.db_loaded:
+            self.unload_db()
+        
+        self.db = Database(fname)
+        self.db.saveStateChanged.connect(self.saveStateChangedSlot)
+
+        self.group_level_nav.populate(self.db.get_groups())
+        self.groupSelectionChanged()
+        self.db_loaded = True
+        self.GUIHSplitter.setEnabled(True)
+
+    def unload_db(self):
+        self.GUIHSplitter.setEnabled(False)
+        self.db.close()
+        self.db_loaded = False
+        del self.db
+
     def setupGUI(self):
         self.setWindowTitle(APPLICATION_NAME)
         self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
@@ -27,6 +51,7 @@ class MainWindow(QMainWindow):
         # Make top menubar
         self.toolBar = self.menuBar()
         fileMenu = self.toolBar.addMenu("&File")
+        #fileMenu.add
         fileMenu = self.toolBar.addMenu("&Edit")
         fileMenu = self.toolBar.addMenu("&Tools")
         fileMenu = self.toolBar.addMenu("&About")
@@ -57,14 +82,20 @@ class MainWindow(QMainWindow):
 
         # Setup top bar
         layout = QGridLayout()
+        ic = QIcon(":/icons/open_file_icon.png")
+        self.loadButton = QPushButton("Load")
+        self.loadButton.setFixedWidth(65)
+        self.loadButton.setIcon(ic)
+        self.loadButton.pressed.connect(self.load_db)
+        layout.addWidget(self.loadButton, 0, 0, 1, 1)
         ic = QIcon(":/icons/save_icon.png")
-        self.saveButton = QPushButton()
+        self.saveButton = QPushButton("Save")
         self.saveButton.setFixedWidth(65)
         self.saveButton.setIcon(ic)
-        layout.addWidget(self.saveButton, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+        layout.addWidget(self.saveButton, 0, 1, 1, 1)
+        layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.topBar.setLayout(layout)
         
-        self.db.saveStateChanged.connect(self.saveStateChangedSlot)
         self.saveButton.pressed.connect(self.saveSlot)
 
         # Make group level navbar:
@@ -82,7 +113,7 @@ class MainWindow(QMainWindow):
         self.group_level_nav_container = QWidget()
         layout = QGridLayout()
         self.group_level_nav = NavBarGroups()
-        self.group_level_nav.populate(self.db.get_groups())
+        # self.group_level_nav.populate(self.db.get_groups())
         self.group_level_nav.setSortingEnabled(True)
         self.group_level_nav.sortItems()
         self.group_level_nav.currentRowChanged.connect(self.groupSelectionChanged)
@@ -124,6 +155,20 @@ class MainWindow(QMainWindow):
         self.inspector.empty()
 
         self.saveStateChangedSlot(True)
+
+    def closeEvent(self, event):
+        if self.db_loaded:
+            if not self.db.saved:
+                reply = QMessageBox.question(self, "Close without saving", "Are you sure you want to close without saving?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+                if reply == QMessageBox.Yes:
+                    self.db.close()
+                    event.accept()
+                else:
+                    event.ignore()
+            else:
+                self.db.close()
+                event.accept()
 
     def saveSlot(self):
         if not self.db.saved:
@@ -294,4 +339,4 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
 
-    app.exec()
+    sys.exit(app.exec())
