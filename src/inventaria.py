@@ -5,6 +5,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from constants import *
 import sys
+import resources
 
 class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -41,14 +42,14 @@ class MainWindow(QMainWindow):
         self.GUIHSplitter.setCollapsible(0, False) # Can't collapse Navigator
         self.GUIHSplitter.setCollapsible(1, False) # Can't collapse Inspector
         self.topBar = TopBar()
-        self.topBar.setMinimumHeight(WINDOW_HEIGHT//8)
+        self.topBar.setFixedHeight(TOP_BAR_HEIGHT)
         self.bottomBar = BottomBar()
         self.bottomBar.setFixedHeight(BOTTOM_BAR_HEIGHT)
         self.GUIVSplitter = QSplitter(Qt.Vertical)
         self.GUIVSplitter.addWidget(self.topBar)
         self.GUIVSplitter.addWidget(self.GUIHSplitter)
         self.GUIVSplitter.addWidget(self.bottomBar)
-        self.GUIVSplitter.setSizes([WINDOW_HEIGHT//7, WINDOW_HEIGHT//7 * 6, BOTTOM_BAR_HEIGHT])
+        #self.GUIVSplitter.setSizes([40, WINDOW_HEIGHT//7 * 6, BOTTOM_BAR_HEIGHT])
         self.GUIVSplitter.setCollapsible(0, False)
         self.GUIVSplitter.setCollapsible(1, False)
         self.GUIVSplitter.setCollapsible(2, False)
@@ -71,14 +72,16 @@ class MainWindow(QMainWindow):
         layout = QGridLayout()
         self.group_level_nav = NavBarGroups()
         self.group_level_nav.populate(self.db.get_groups())
+        self.group_level_nav.setSortingEnabled(True)
+        self.group_level_nav.sortItems()
         self.group_level_nav.currentRowChanged.connect(self.groupSelectionChanged)
         layout.addWidget(label := QLabel("Groups"), 0, 0, 1, 1)
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
-        ic = QIcon("../icons/green_plus.png")
         self.new_group_button = QPushButton("")
         self.new_group_button.clicked.connect(self.newGroupSlot)
+        ic = QIcon(":/icons/green_plus.png")
         self.new_group_button.setIcon(ic)
         layout.addWidget(self.new_group_button, 0, 1, 1, 1)
         self.new_group_button = QPushButton("New Group")
@@ -96,7 +99,7 @@ class MainWindow(QMainWindow):
         font = label.font()
         font.setPointSize(13)
         label.setFont(font)
-        ic = QIcon("../icons/green_plus.png")
+        ic = QIcon(":/icons/green_plus.png")
         self.new_box_button = QPushButton("")
         self.new_box_button.clicked.connect(self.newBoxSlot)
         self.new_box_button.setIcon(ic)
@@ -110,16 +113,43 @@ class MainWindow(QMainWindow):
         self.inspector.empty()
 
     def newGroupSlot(self):
-        pass
+        name, ok = QInputDialog.getText(self, "New Group", "Name:  ")
+        if ok:
+            if len(name) == 0:
+                self.showMessage("Error", "Name must be at least one letter!")
+            else:
+                self.db.add_group(name)
+                self.group_level_nav.clearSelection()
+                self.groupSelectionChanged()
+                self.boxSelectionChanged()
 
     def newBoxSlot(self):
-        pass
+        if self.group_level_nav.currentItem() is None:
+            self.showMessage("Error", "No group is selected!")
+            return
+        name, ok = QInputDialog.getText(self, "New Box", "Name:  ")
+        if ok:
+            if len(name) == 0:
+                self.showMessage("Error", "Name must be at least one letter!")
+            else:
+                self.db.add_box(self.group_level_nav.currentItem().id, name)
+                self.box_level_nav.clear_items()
+                self.box_level_nav.populate(self.db.get_boxes(self.group_level_nav.currentItem().id))
+                self.groupSelectionChanged()
+                self.boxSelectionChanged()
+
+    def showMessage(self, title: str, msg: str):
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle(title)
+        dlg.setText(msg)
+        dlg.show()
 
     def boxSelectionChanged(self):
         selected_box = self.box_level_nav.currentItem()
         selected_group = self.group_level_nav.currentItem()
         if selected_box and selected_group:
             self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id))
+        self.group_level_nav.sortItems()
 
     def groupSelectionChanged(self):
         selected_group = self.group_level_nav.currentItem()
@@ -133,6 +163,28 @@ class MainWindow(QMainWindow):
             self.group_level_nav.clear_items()
             self.group_level_nav.populate(self.db.get_groups())
 
+        self.group_level_nav.sortItems()
+        self.box_level_nav.sortItems()
+
+
+# class NameOkCancelDialog(QDialog):
+#     def __init__(self):
+#         super().__init__()
+
+#         self.setWindowTitle("New Group")
+#         QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+
+#         self.buttonBox = QDialogButtonBox(QBtn)
+#         self.buttonBox.accepted.connect(self.accept)
+#         self.buttonBox.rejected.connect(self.reject)
+
+#         self.layout = QGridLayout()
+#         message = QLabel("Name:    ")
+#         self.layout.addWidget(message, 0, 0, 1, 1)
+#         self.name_field = QLineEdit()
+#         self.layout.addWidget(self.name_field, 0, 1, 1, 1)
+#         self.layout.addWidget(self.buttonBox, 1, 0, 1, 2)
+#         self.setLayout(self.layout)
 
 class Inspector(QWidget):
     def __init__(self, *args, **kw):
@@ -151,10 +203,9 @@ class Inspector(QWidget):
         #self.image.setPixmap(self.imagemap)
 
         layout.addWidget(self.headline, 0, 0, 1, 1)
-        #layout.addWidget(self.image, 1, 0, alignment=Qt.AlignTop | Qt.AlignLeft)
+        #layout.addWidget(self.image, 1, 0, 1, 1)
         layout.addWidget(self.description, 1, 0, 1, 1)
         container.setLayout(layout)
-        #self.setCentralWidget(container)
 
     def empty(self):
         self.headline.setText("Inspector: No box/group selected")
