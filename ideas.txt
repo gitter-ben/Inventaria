@@ -1,0 +1,2 @@
+- call sortItems function inside of populate function
+

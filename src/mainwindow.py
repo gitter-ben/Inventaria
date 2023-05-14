@@ -58,6 +58,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle(APPLICATION_NAME)
         #self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
+        self.resize(WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setStyleSheet("QSplitter::handle { background-color: #AAAAAA; }")
         self.setAutoFillBackground(True)
         palette = self.palette()
@@ -117,6 +118,8 @@ class MainWindow(QMainWindow):
         self.inspector.descriptionChanged.connect(self.inspectorDescriptionChanged)
         self.inspector.deleteBox.connect(self.inspectorDeleteBox)
         self.inspector.deleteGroup.connect(self.inspectorDeleteGroup)
+        self.inspector.changeBoxName.connect(self.inspectorChangeBoxName)
+        self.inspector.changeGroupName.connect(self.inspectorChangeGroupName)
 
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
@@ -143,19 +146,25 @@ class MainWindow(QMainWindow):
         layout = QGridLayout()
         ic = QIcon(":/icons/open_file_icon.png")
         self.loadButton = QPushButton("Load")
-        self.loadButton.setFixedWidth(65)
+        self.loadButton.setFixedWidth(82)
         self.loadButton.setIcon(ic)
         self.loadButton.pressed.connect(self.load_db)
         layout.addWidget(self.loadButton, 0, 0, 1, 1)
         ic = QIcon(":/icons/save_icon.png")
         self.saveButton = QPushButton("Save")
-        self.saveButton.setFixedWidth(65)
+        self.saveButton.setFixedWidth(82)
         self.saveButton.setIcon(ic)
+        self.saveButton.pressed.connect(self.saveSlot)
         layout.addWidget(self.saveButton, 0, 1, 1, 1)
+        ic = QIcon(":/icons/rollback_icon.png")
+        self.rollBackButton = QPushButton("Rollback")
+        self.rollBackButton.setFixedWidth(82)
+        self.rollBackButton.setIcon(ic)
+        self.rollBackButton.pressed.connect(self.rollBackSlot)
+        layout.addWidget(self.rollBackButton, 0, 2, 1, 1)
+
         layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.topBar.setLayout(layout)
-        
-        self.saveButton.pressed.connect(self.saveSlot)
 
         # Make group level navbar:
         #    __________________
@@ -174,7 +183,6 @@ class MainWindow(QMainWindow):
         self.group_level_nav = NavBarGroups()
         # self.group_level_nav.populate(self.db.get_groups())
         self.group_level_nav.setSortingEnabled(True)
-        self.group_level_nav.sortItems()
         self.group_level_nav.currentRowChanged.connect(self.groupSelectionChanged)
         layout.addWidget(label := QLabel("Groups"), 0, 0, 1, 1)
         font = label.font()
@@ -215,8 +223,22 @@ class MainWindow(QMainWindow):
 
         self.saveStateChangedSlot(True)
 
+    def inspectorChangeGroupName(self, group_id, new_name):
+        self.db.edit_group_name(group_id, new_name)
+        self.group_level_nav.clearSelection()
+        self.group_level_nav.clear_items()
+        self.group_level_nav.populate(self.db.get_groups())
+        self.group_level_nav.set_selected_item_id(group_id)
+
+    def inspectorChangeBoxName(self, box_id, new_name):
+        self.db.edit_box_name(self.group_level_nav.currentItem().id, box_id, new_name)
+        self.box_level_nav.clearSelection()
+        self.box_level_nav.clear_items()
+        self.box_level_nav.populate(self.db.get_boxes(self.group_level_nav.currentItem().id))
+        self.box_level_nav.set_selected_item_id(box_id)
+
     def inspectorDeleteGroup(self, group_id):
-        print(f"Delete group with id: {str(group_id)}")
+        #print(f"Delete group with id: {str(group_id)}")
         if self.db_loaded:
             reply = QMessageBox.question(self, "Delete Group and Sub-boxes", f"Are you sure you want to delete '{self.group_level_nav.currentItem().name}' (ID: {group_id}) and all sub-boxes?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply == QMessageBox.Yes:
@@ -269,7 +291,7 @@ class MainWindow(QMainWindow):
                 if reply == QMessageBox.Yes:
                     self.db.save()
             else:
-                self.showMessage("Error", "No savepoint to roll back to (database is saved)")
+                self.showMessage("Error", "Database is saved (no new changes)")
         else:
             self.showMessage("Error", "No database to save")
 
@@ -282,8 +304,10 @@ class MainWindow(QMainWindow):
                     self.group_level_nav.clearSelection()
                     self.group_level_nav.clear_items()
                     self.group_level_nav.populate(self.db.get_groups())
+            else:
+                self.showMessage("Error", "No savepoint to roll back to (database is saved)")
         else:
-            self.showMessage("Erro", "No database to roll back")
+            self.showMessage("Error", "No database to roll back")
 
     def saveStateChangedSlot(self, saved):
         if saved:
@@ -330,7 +354,6 @@ class MainWindow(QMainWindow):
         selected_group = self.group_level_nav.currentItem()
         if selected_box and selected_group:
             self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id))
-        self.group_level_nav.sortItems()
 
     def groupSelectionChanged(self):
         selected_group = self.group_level_nav.currentItem()
@@ -343,6 +366,3 @@ class MainWindow(QMainWindow):
             self.box_level_nav.clear_items()
             self.group_level_nav.clear_items()
             self.group_level_nav.populate(self.db.get_groups())
-
-        self.group_level_nav.sortItems()
-        self.box_level_nav.sortItems()

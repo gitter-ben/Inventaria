@@ -11,6 +11,8 @@ class Inspector(QWidget):
     descriptionChanged = pyqtSignal(int, str)
     deleteBox = pyqtSignal(int)
     deleteGroup = pyqtSignal(int)
+    changeBoxName = pyqtSignal(int, str)
+    changeGroupName = pyqtSignal(int, str)
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
@@ -21,6 +23,11 @@ class Inspector(QWidget):
         font = self.headline.font()
         font.setPointSize(13)
         self.headline.setFont(font)
+
+        self.change_name_label = QLabel("Change name: ")
+        self.change_name_line_edit = QLineEdit()
+        self.change_name_button = QPushButton("Change name")
+        self.change_name_button.pressed.connect(self._changeNameIntern)
 
         self.description_label = QLabel("Description: ")
         font = self.description_label.font()
@@ -35,14 +42,12 @@ class Inspector(QWidget):
         font.setPointSize(11)
         self.boxes_label.setFont(font)
         self.boxes_list = BoxesList()
-        #self.boxes_list.populate(["Hello mf", "hello mf 2", "hello there"])
 
         self.components_label = QLabel("Components: ")
         font = self.components_label.font()
         font.setPointSize(11)
         self.components_label.setFont(font)
         self.components_list = ComponentsList()
-        #self.components_list.populate(["Hello mf", "hello mf 2", "hello there"])
 
         self.buttoncontainer = QWidget()
         button_layout = QGridLayout()
@@ -56,19 +61,38 @@ class Inspector(QWidget):
 
         super_layout.setAlignment(Qt.AlignTop)
         super_layout.addWidget(self.headline, 0, 0, 1, 1)
-        super_layout.addWidget(self.description_label, 1, 0, 1, 1)
-        super_layout.addWidget(self.description, 2, 0, 1, 2)
-        
-        super_layout.addWidget(self.components_label, 3, 0, 1, 1)
-        super_layout.addWidget(self.components_list, 4, 0, 1, 2)
+        self.change_name_container = QWidget()
+        layout = QHBoxLayout()
+        layout.addWidget(self.change_name_label)#, 1, 0, 1, 1)
+        layout.addWidget(self.change_name_line_edit)#, 1, 1, 1, 1)
+        layout.addWidget(self.change_name_button)#, 1, 2, 1, 1)
+        self.change_name_container.setLayout(layout)
+        super_layout.addWidget(self.change_name_container, 1, 0, 1, 1)
 
-        super_layout.addWidget(self.boxes_label, 5, 0, 1, 1)
-        super_layout.addWidget(self.boxes_list, 6, 0, 1, 2)
+        super_layout.addWidget(self.description_label, 2, 0, 1, 1)
+        super_layout.addWidget(self.description, 3, 0, 1, 2)
         
-        super_layout.addWidget(self.buttoncontainer, 7, 0, 1, 2)
+        super_layout.addWidget(self.components_label, 4, 0, 1, 1)
+        super_layout.addWidget(self.components_list, 5, 0, 1, 2)
+
+        super_layout.addWidget(self.boxes_label, 6, 0, 1, 1)
+        super_layout.addWidget(self.boxes_list, 7, 0, 1, 2)
+        
+        super_layout.addWidget(self.buttoncontainer, 8, 0, 1, 2)
 
         self.setLayout(super_layout)
         self.empty()
+
+    def _changeNameIntern(self):
+        if len(self.change_name_line_edit.text()) == 0:
+            return
+
+        if self.group_box_or_empty == GROUP:
+            if self.change_name_line_edit.text() != self.group.name:
+                self.changeGroupName.emit(self.group.id, self.change_name_line_edit.text())
+        elif self.group_box_or_empty == BOX:
+            if self.change_name_line_edit.text() != self.box.name:
+                self.changeBoxName.emit(self.box.id, self.change_name_line_edit.text())
 
     def _descriptionChangedIntern(self):
         if len(self.description.toPlainText()) > MAX_DESCRIPTION_LENGTH:
@@ -101,13 +125,15 @@ class Inspector(QWidget):
         self.description_label.setVisible(False)
         self.description.setVisible(False)
         self.buttoncontainer.setVisible(False)
+        self.change_name_container.setVisible(False)
+        self.change_name_line_edit.clear()
         self.group_box_or_empty = EMPTY
 
     def setGroupInfo(self, group: Group):
         self.group = group
         self.box = None
 
-        self.headline.setText(f"Group Inspector: {group.name} ({group.id})")
+        self.headline.setText(f"Group Inspector: {group.name} (ID: {group.id})")
 
         self.description.blockSignals(True)
         self.description.setPlainText(group.description)
@@ -122,13 +148,15 @@ class Inspector(QWidget):
         self.description_label.setVisible(True)
         self.description.setVisible(True)
         self.buttoncontainer.setVisible(True)
+        self.change_name_container.setVisible(True)
+        self.change_name_line_edit.clear()
         self.group_box_or_empty = GROUP
 
     def setBoxInfo(self, box: Box):
         self.box = box
         self.group = None
 
-        self.headline.setText(f"Box Inspector: {box.name} ({box.id})")
+        self.headline.setText(f"Box Inspector: {box.name} (ID: {box.id})")
 
         self.description.blockSignals(True)
         self.description.setPlainText(box.description)
@@ -143,6 +171,8 @@ class Inspector(QWidget):
         self.description_label.setVisible(True)
         self.description.setVisible(True)
         self.buttoncontainer.setVisible(True)
+        self.change_name_container.setVisible(True)
+        self.change_name_line_edit.clear()
         self.group_box_or_empty = BOX
 
 class ComponentsList(QListWidget):
@@ -244,6 +274,13 @@ class NavBarGroups(QListWidget):
         self.items = items
         for item in items:
             self.addItem(NavBarGroupItem(item.id, item.name))
+        self.sortItems()
+
+    def set_selected_item_id(self, id):
+        for i in range(self.count()):
+            if self.item(i).id == id:
+                self.setCurrentItem(self.item(i))
+                break
 
 class NavBarBoxes(QListWidget):
     def __init__(self, *args, **kwargs):
@@ -258,7 +295,14 @@ class NavBarBoxes(QListWidget):
         self.items = items
         for item in items:
             self.addItem(NavBarBoxItem(item.id, item.name))
+        self.sortItems()
 
+    def set_selected_item_id(self, id):
+        for i in range(self.count()):
+            if self.item(i).id == id:
+                self.setCurrentItem(self.item(i))
+                break
+        
 class NavBarGroupItem(QListWidgetItem):
     def __init__(self, id, name, *args, **kwargs):
         super().__init__(name)
