@@ -9,8 +9,8 @@ import resources
 
 class Inspector(QWidget):
     descriptionChanged = pyqtSignal(int, str)
-    deleteBox = pyqtSignal()
-    deleteGroup = pyqtSignal()
+    deleteBox = pyqtSignal(int)
+    deleteGroup = pyqtSignal(int)
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
@@ -50,6 +50,7 @@ class Inspector(QWidget):
         ic = QIcon(":/icons/delete_icon.png")
         self.delete_button = QPushButton("Delete")
         self.delete_button.setIcon(ic)
+        self.delete_button.pressed.connect(self._deleteButtonPressedIntern)
         button_layout.addWidget(self.delete_button, 0, 0, 1, 1)
         self.buttoncontainer.setLayout(button_layout)
 
@@ -77,11 +78,14 @@ class Inspector(QWidget):
 
     def _deleteButtonPressedIntern(self):
         if self.group_box_or_empty == GROUP:
-            self.deleteGroup.emit()
+            self.deleteGroup.emit(self.group.id)
         elif self.group_box_or_empty == BOX:
-            self.deleteBox.emit()
+            self.deleteBox.emit(self.box.id)
 
     def empty(self):
+        self.group = None
+        self.box = None
+
         self.headline.setText("Inspector: No box/group selected")
         
         self.description.blockSignals(True)
@@ -100,6 +104,9 @@ class Inspector(QWidget):
         self.group_box_or_empty = EMPTY
 
     def setGroupInfo(self, group: Group):
+        self.group = group
+        self.box = None
+
         self.headline.setText(f"Group Inspector: {group.name} ({group.id})")
 
         self.description.blockSignals(True)
@@ -118,6 +125,9 @@ class Inspector(QWidget):
         self.group_box_or_empty = GROUP
 
     def setBoxInfo(self, box: Box):
+        self.box = box
+        self.group = None
+
         self.headline.setText(f"Box Inspector: {box.name} ({box.id})")
 
         self.description.blockSignals(True)

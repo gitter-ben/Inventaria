@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
         self.statusBar()
 
         self.setWindowTitle(APPLICATION_NAME)
-        self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
+        #self.setFixedSize(WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setStyleSheet("QSplitter::handle { background-color: #AAAAAA; }")
         self.setAutoFillBackground(True)
         palette = self.palette()
@@ -110,6 +110,9 @@ class MainWindow(QMainWindow):
         self.inspector = Inspector()
         self.inspector.setMinimumWidth(WINDOW_WIDTH//2)
         self.inspector.descriptionChanged.connect(self.inspectorDescriptionChanged)
+        self.inspector.deleteBox.connect(self.inspectorDeleteBox)
+        self.inspector.deleteGroup.connect(self.inspectorDeleteGroup)
+
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
         self.GUIHSplitter.addWidget(self.navBars)
@@ -206,6 +209,23 @@ class MainWindow(QMainWindow):
         self.inspector.empty()
 
         self.saveStateChangedSlot(True)
+
+    def inspectorDeleteGroup(self, group_id):
+        print(f"Delete group with id: {str(group_id)}")
+        if self.db_loaded:
+            self.db.delete_group(group_id)
+            self.group_level_nav.clearSelection()
+            self.group_level_nav.clear_items()
+            self.group_level_nav.populate(self.db.get_groups())
+    
+    def inspectorDeleteBox(self, box_id):
+        if self.db_loaded:
+            self.db.delete_box(self.group_level_nav.currentItem().id, box_id)
+            self.box_level_nav.clearSelection()
+            self.box_level_nav.clear_items()
+            self.box_level_nav.populate(self.db.get_boxes(self.group_level_nav.currentItem().id))
+            #self.groupSelectionChanged()
+            #self.boxSelectionChanged()
 
     def inspectorDescriptionChanged(self, group_box_or_empty, text):
         if self.db_loaded:
