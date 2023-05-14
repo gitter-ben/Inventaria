@@ -79,6 +79,10 @@ class MainWindow(QMainWindow):
         self.unloadAction.setStatusTip("Unload the current database")
         self.unloadAction.triggered.connect(self.unload_db)
 
+        self.rollBackAction = QAction("&Rollback", self)
+        self.rollBackAction.setStatusTip("Undo all changes since last save")
+        self.rollBackAction.triggered.connect(self.rollBackSlot)
+
         self.quitAction = QAction("&Quit", self)
         self.quitAction.setShortcut("Ctrl+Q")
         self.quitAction.setStatusTip("Quit the application")
@@ -98,6 +102,7 @@ class MainWindow(QMainWindow):
         fileMenu.addAction(self.saveAction)
         fileMenu.addAction(self.openAction)
         fileMenu.addAction(self.unloadAction)
+        fileMenu.addAction(self.rollBackAction)
         fileMenu.insertSeparator(self.quitAction)
         fileMenu.addAction(self.quitAction)
         editMenu = self.toolBar.addMenu("&Edit")
@@ -213,23 +218,25 @@ class MainWindow(QMainWindow):
     def inspectorDeleteGroup(self, group_id):
         print(f"Delete group with id: {str(group_id)}")
         if self.db_loaded:
-            self.db.delete_group(group_id)
-            self.group_level_nav.clearSelection()
-            self.group_level_nav.clear_items()
-            self.group_level_nav.populate(self.db.get_groups())
+            reply = QMessageBox.question(self, "Delete Group and Sub-boxes", f"Are you sure you want to delete '{self.group_level_nav.currentItem().name}' (ID: {group_id}) and all sub-boxes?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if reply == QMessageBox.Yes:
+                self.db.delete_group(group_id)
+                self.group_level_nav.clearSelection()
+                self.group_level_nav.clear_items()
+                self.group_level_nav.populate(self.db.get_groups())
     
     def inspectorDeleteBox(self, box_id):
         if self.db_loaded:
-            self.db.delete_box(self.group_level_nav.currentItem().id, box_id)
-            self.box_level_nav.clearSelection()
-            self.box_level_nav.clear_items()
-            self.box_level_nav.populate(self.db.get_boxes(self.group_level_nav.currentItem().id))
-            #self.groupSelectionChanged()
-            #self.boxSelectionChanged()
+            reply = QMessageBox.question(self, "Delete box and components", f"Are you sure you want to delete '{self.box_level_nav.currentItem().name}' (ID: {box_id}) and all components?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if reply == QMessageBox.Yes:
+                self.db.delete_box(self.group_level_nav.currentItem().id, box_id)
+                self.box_level_nav.clearSelection()
+                self.box_level_nav.clear_items()
+                self.box_level_nav.populate(self.db.get_boxes(self.group_level_nav.currentItem().id))
 
     def inspectorDescriptionChanged(self, group_box_or_empty, text):
         if self.db_loaded:
-            print(f"You changed the {'group' if group_box_or_empty == GROUP else ('box' if group_box_or_empty == BOX else 'empty')} description to: \n{text}")
+            #print(f"You changed the {'group' if group_box_or_empty == GROUP else ('box' if group_box_or_empty == BOX else 'empty')} description to: \n{text}")
             if group_box_or_empty == GROUP:
                 self.db.edit_group_description(self.group_level_nav.currentItem().id, text)
             elif group_box_or_empty == BOX:
@@ -258,9 +265,25 @@ class MainWindow(QMainWindow):
     def saveSlot(self):
         if self.db_loaded:
             if not self.db.saved:
-                self.db.save()
+                reply = QMessageBox.question(self, "Accept all changes", "Are you sure you want to accept all changes made since the last save?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+                if reply == QMessageBox.Yes:
+                    self.db.save()
+            else:
+                self.showMessage("Error", "No savepoint to roll back to (database is saved)")
         else:
             self.showMessage("Error", "No database to save")
+
+    def rollBackSlot(self):
+        if self.db_loaded:
+            if not self.db.saved:
+                reply = QMessageBox.question(self, "Roll back to savepoint", "Are you sure you want to undo all changes since the last save?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+                if reply == QMessageBox.Yes:
+                    self.db.rollback_to_savepoint()
+                    self.group_level_nav.clearSelection()
+                    self.group_level_nav.clear_items()
+                    self.group_level_nav.populate(self.db.get_groups())
+        else:
+            self.showMessage("Erro", "No database to roll back")
 
     def saveStateChangedSlot(self, saved):
         if saved:
@@ -323,4 +346,3 @@ class MainWindow(QMainWindow):
 
         self.group_level_nav.sortItems()
         self.box_level_nav.sortItems()
-

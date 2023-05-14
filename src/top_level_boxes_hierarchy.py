@@ -43,13 +43,16 @@ class Database(QObject):
 
     def rollback_to_savepoint(self):
         self.cur.execute("ROLLBACK TRANSACTION;")
+        self.saved = True
+        self.make_savepoint()
+        self.saveStateChanged.emit(True)
 
     def save(self):
         if not self.saved:
             self.cur.execute("COMMIT TRANSACTION;")
             self.saved = True
-            self.saveStateChanged.emit(True)
             self.make_savepoint()
+            self.saveStateChanged.emit(True)
 
     def changesDB(func):
         @wraps(func)
