@@ -1,9 +1,9 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
     <qresource prefix="icons">
-        <file alias="green_plus.png">green_plus.png</file>
-        <file alias="save_icon.png">save_icon.png</file>
-        <file alias="open_file_icon.png">open_file_icon.png</file>
-        <file alias="delete_icon.png">delete_icon.png</file>
+        <file alias="green_plus.png">../resources/icons/green_plus.png</file>
+        <file alias="save_icon.png">../resources/icons/save_icon.png</file>
+        <file alias="open_file_icon.png">../resources/icons/open_file_icon.png</file>
+        <file alias="delete_icon.png">../resources/icons/delete_icon.png</file>
     </qresource>
 </RCC>

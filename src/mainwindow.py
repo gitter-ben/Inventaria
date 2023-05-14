@@ -53,7 +53,6 @@ class MainWindow(QMainWindow):
         self.db_loaded = False
         del self.db
     
-
     def setupGUI(self):
         self.statusBar()
 
@@ -110,6 +109,7 @@ class MainWindow(QMainWindow):
         # Make inspector and sidebar layout
         self.inspector = Inspector()
         self.inspector.setMinimumWidth(WINDOW_WIDTH//2)
+        self.inspector.descriptionChanged.connect(self.inspectorDescriptionChanged)
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
         self.GUIHSplitter.addWidget(self.navBars)
@@ -207,6 +207,14 @@ class MainWindow(QMainWindow):
 
         self.saveStateChangedSlot(True)
 
+    def inspectorDescriptionChanged(self, group_box_or_empty, text):
+        if self.db_loaded:
+            print(f"You changed the {'group' if group_box_or_empty == GROUP else ('box' if group_box_or_empty == BOX else 'empty')} description to: \n{text}")
+            if group_box_or_empty == GROUP:
+                self.db.edit_group_description(self.group_level_nav.currentItem().id, text)
+            elif group_box_or_empty == BOX:
+                self.db.edit_box_description(self.group_level_nav.currentItem().id, self.box_level_nav.currentItem().id, text)
+
     def showPreferences(self):
         print("Show the preferences")
 
@@ -236,7 +244,7 @@ class MainWindow(QMainWindow):
 
     def saveStateChangedSlot(self, saved):
         if saved:
-            self.saveButton.setDisabled(True)
+            self.saveButton.setEnabled(False)
             self.bottomBar.savedIndicator.setText("Saved")
         else:
             self.saveButton.setEnabled(True)
@@ -252,8 +260,6 @@ class MainWindow(QMainWindow):
                 self.group_level_nav.clearSelection()
                 self.group_level_nav.clear_items()
                 self.group_level_nav.populate(self.db.get_groups())
-                #self.groupSelectionChanged()
-                #self.boxSelectionChanged()
 
     def newBoxSlot(self):
         if self.group_level_nav.currentItem() is None:

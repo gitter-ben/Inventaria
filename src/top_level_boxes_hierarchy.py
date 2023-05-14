@@ -120,6 +120,10 @@ class Database(QObject):
         self.cur.execute("DELETE FROM groups WHERE group_id=?", (group_id, ))
 
     @changesDB
+    def edit_group_description(self, group_id, new_description):
+        self.cur.execute("UPDATE groups SET description=? WHERE id=?", (new_description, group_id))
+
+    @changesDB
     def add_box(self, group_id, name):
         self.cur.execute("INSERT INTO boxes (name, group_id) VALUES (?, ?);", (name, group_id))
         self.unsaved()
@@ -127,6 +131,10 @@ class Database(QObject):
     @changesDB
     def delete_box(self, group_id, box_id):
         self.cur.execute("DELETE FROM boxes WHERE group_id=? AND box_id=?", (group_id, box_id))
+
+    @changesDB
+    def edit_box_description(self, group_id, box_id, new_description):
+        self.cur.execute("UPDATE boxes SET description=? WHERE id=? AND group_id=?", (new_description, box_id, group_id))
 
     def _create_connection(self, db_file):
         try:
