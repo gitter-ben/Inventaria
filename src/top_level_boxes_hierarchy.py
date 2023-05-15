@@ -137,10 +137,13 @@ class Database(QObject):
         for row in rows:
             name = self.cur.execute("SELECT name FROM part_templates WHERE id=?", (row[2], )).fetchone()[0]
             components.append((Component(row[0], name), row[1]))
-        
-        #print(components)
+
         return components
 
+    
+    @changesDB
+    def edit_component_count(self, part_id, count_diff):
+        self.cur.execute("UPDATE parts SET count=count+? WHERE id=?", (count_diff, part_id))
 
     @changesDB
     def add_group(self, name):

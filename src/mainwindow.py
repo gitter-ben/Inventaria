@@ -121,6 +121,8 @@ class MainWindow(QMainWindow):
         self.inspector.changeBoxName.connect(self.inspectorChangeBoxName)
         self.inspector.changeGroupName.connect(self.inspectorChangeGroupName)
         self.inspector.addBox.connect(self.newBoxSlot)
+        self.inspector.increaseComponentCount.connect(self.increaseComponentCount)
+        self.inspector.decreaseComponentCount.connect(self.decreaseComponentCount)
 
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
@@ -223,6 +225,20 @@ class MainWindow(QMainWindow):
         self.inspector.empty()
 
         self.saveStateChangedSlot(True)
+
+    def reloadInspector(self):
+        current_group = self.group_level_nav.currentItem()
+        current_box = self.box_level_nav.currentItem()
+        if current_group and current_box:
+            self.inspector.setBoxInfo(self.db.get_box_info(current_group.id, current_box.id), self.db.get_box_contents(current_group.id, current_box.id))
+
+    def increaseComponentCount(self, component_id):
+        self.db.edit_component_count(component_id, 1)
+        self.reloadInspector()
+
+    def decreaseComponentCount(self, component_id):
+        self.db.edit_component_count(component_id, -1)
+        self.reloadInspector()
 
     def inspectorChangeGroupName(self, group_id, new_name):
         self.db.edit_group_name(group_id, new_name)
@@ -351,10 +367,7 @@ class MainWindow(QMainWindow):
         dlg.show()
 
     def boxSelectionChanged(self):
-        selected_box = self.box_level_nav.currentItem()
-        selected_group = self.group_level_nav.currentItem()
-        if selected_box and selected_group:
-            self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id), self.db.get_box_contents(selected_group.id, selected_box.id))
+        self.reloadInspector()
 
     def groupSelectionChanged(self):
         selected_group = self.group_level_nav.currentItem()

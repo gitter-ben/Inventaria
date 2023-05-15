@@ -14,6 +14,8 @@ class Inspector(QWidget):
     deleteGroup = pyqtSignal(int)
     changeBoxName = pyqtSignal(int, str)
     changeGroupName = pyqtSignal(int, str)
+    increaseComponentCount = pyqtSignal(int)
+    decreaseComponentCount = pyqtSignal(int)
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
@@ -59,6 +61,8 @@ class Inspector(QWidget):
         self.add_component_button.setFixedWidth(110)
         self.add_component_button.pressed.connect(self._addComponentIntern)
         self.components_list = ComponentsList()
+        self.components_list.increaseCountOfItem.connect(self._increaseCountOfItemIntern)
+        self.components_list.decreaseCountOfItem.connect(self._decreaseCountOfItemIntern)
 
         self.buttoncontainer = QWidget()
         button_layout = QGridLayout()
@@ -97,6 +101,12 @@ class Inspector(QWidget):
 
         self.setLayout(super_layout)
         self.empty()
+
+    def _increaseCountOfItemIntern(self, id):
+        self.increaseComponentCount.emit(id)
+    
+    def _decreaseCountOfItemIntern(self, id):
+        self.decreaseComponentCount.emit(id)
 
     def _addBoxIntern(self):
         self.addBox.emit()
@@ -206,6 +216,9 @@ class Inspector(QWidget):
         self.group_box_or_empty = BOX
 
 class ComponentsList(QListWidget):
+    increaseCountOfItem = pyqtSignal(int)
+    decreaseCountOfItem = pyqtSignal(int)
+
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)
 
@@ -222,39 +235,17 @@ class ComponentsList(QListWidget):
             item = QListWidgetItem(self)
             self.addItem(item)
             row = ComponentListItem(part[0], part[1]) # component class and count
+            row.increaseCount.connect(self._increaseCountOfItemIntern)
+            row.decreaseCount.connect(self._decreaseCountOfItemIntern)
             self.items.append(row)
             item.setSizeHint(row.minimumSizeHint())
             self.setItemWidget(item, row)
 
-class ComponentListItem(QWidget):
-    def __init__(self, part, count, *args, **kw):
-        super().__init__(*args, **kw)
+    def _increaseCountOfItemIntern(self, id):
+        self.increaseCountOfItem.emit(id)
 
-        self.row = QGridLayout()
-
-        self.part_id = part.id
-        self.part_name = part.name
-        self.name_label = QLabel(part.name)
-
-        self.count_label = QLabel(str(count))
-        self.plus_button = QPushButton("+")
-        self.plus_button.setFixedWidth(30)
-        self.minus_button = QPushButton("-")
-        self.minus_button.setFixedWidth(30)
-        count_layout = QHBoxLayout()
-        count_layout.addWidget(self.minus_button)
-        count_layout.addWidget(self.count_label)
-        count_layout.addWidget(self.plus_button)
-
-        self.row.addWidget(self.name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
-        self.row.addLayout(count_layout, 0, 1, 1, 1, alignment=Qt.AlignRight)
-        
-        self.setContentsMargins(0, 0, 0, 0)
-        # self.row.addWidget(self.plus_button, 0, 1, 1, 1, alignment=Qt.AlignRight)
-        # self.row.addWidget(self.count_label, 0, 2, 1, 1, alignment=Qt.AlignRight)
-        # self.row.addWidget(self.minus_button, 0, 3, 1, 1, alignment=Qt.AlignRight)
-
-        self.setLayout(self.row)
+    def _decreaseCountOfItemIntern(self, id):
+        self.decreaseCountOfItem.emit(id)
 
 class BoxesList(QListWidget):
     def __init__(self, *args, **kw):
@@ -281,6 +272,50 @@ class BoxesList(QListWidget):
         # self.addItem(item)
         # item.setSizeHint(self.add_box_button.minimumSizeHint())
         # self.setItemWidget(item, self.add_box_button)
+
+class ComponentListItem(QWidget):
+    increaseCount = pyqtSignal(int)
+    decreaseCount = pyqtSignal(int)
+
+    def __init__(self, part, count, *args, **kw):
+        super().__init__(*args, **kw)
+
+        self.row = QGridLayout()
+
+        self.part = part
+        self.count = count
+        #self.part_id = part.id
+        #self.part_name = part.name
+        self.name_label = QLabel(part.name)
+
+        self.count_label = QLabel(str(count))
+        self.plus_button = QPushButton("+")
+        self.plus_button.setFixedWidth(30)
+        self.plus_button.pressed.connect(self._increaseCountIntern)
+        self.minus_button = QPushButton("-")
+        self.minus_button.setFixedWidth(30)
+        self.minus_button.pressed.connect(self._decreaseCountIntern)
+        count_layout = QHBoxLayout()
+        count_layout.addWidget(self.minus_button)
+        count_layout.addWidget(self.count_label)
+        count_layout.addWidget(self.plus_button)
+
+        self.row.addWidget(self.name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+        self.row.addLayout(count_layout, 0, 1, 1, 1, alignment=Qt.AlignRight)
+        
+        self.setContentsMargins(0, 0, 0, 0)
+        # self.row.addWidget(self.plus_button, 0, 1, 1, 1, alignment=Qt.AlignRight)
+        # self.row.addWidget(self.count_label, 0, 2, 1, 1, alignment=Qt.AlignRight)
+        # self.row.addWidget(self.minus_button, 0, 3, 1, 1, alignment=Qt.AlignRight)
+
+        self.setLayout(self.row)
+
+    def _increaseCountIntern(self):
+        self.increaseCount.emit(self.part.id)
+    
+    def _decreaseCountIntern(self):
+        if self.count > 0:
+            self.decreaseCount.emit(self.part.id)
 
 class BoxesListItem(QWidget):
     def __init__(self, box, *args, **kw):
