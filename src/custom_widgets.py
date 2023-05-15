@@ -9,6 +9,7 @@ import resources
 
 class Inspector(QWidget):
     descriptionChanged = pyqtSignal(int, str)
+    addBox = pyqtSignal()
     deleteBox = pyqtSignal(int)
     deleteGroup = pyqtSignal(int)
     changeBoxName = pyqtSignal(int, str)
@@ -41,12 +42,22 @@ class Inspector(QWidget):
         font = self.boxes_label.font()
         font.setPointSize(11)
         self.boxes_label.setFont(font)
+        ic = QIcon(":/icons/green_plus.png")
+        self.add_box_button = QPushButton("Add Box")
+        self.add_box_button.setIcon(ic)
+        self.add_box_button.setFixedWidth(110)
+        self.add_box_button.pressed.connect(self._addBoxIntern)
         self.boxes_list = BoxesList()
 
         self.components_label = QLabel("Components: ")
         font = self.components_label.font()
         font.setPointSize(11)
         self.components_label.setFont(font)
+        ic = QIcon(":/icons/green_plus.png")
+        self.add_component_button = QPushButton("Add Comp.")
+        self.add_component_button.setIcon(ic)
+        self.add_component_button.setFixedWidth(110)
+        self.add_component_button.pressed.connect(self._addComponentIntern)
         self.components_list = ComponentsList()
 
         self.buttoncontainer = QWidget()
@@ -72,16 +83,26 @@ class Inspector(QWidget):
         super_layout.addWidget(self.description_label, 2, 0, 1, 1)
         super_layout.addWidget(self.description, 3, 0, 1, 2)
         
-        super_layout.addWidget(self.components_label, 4, 0, 1, 1)
-        super_layout.addWidget(self.components_list, 5, 0, 1, 2)
+        super_layout.addItem(QSpacerItem(10, 25), 4, 0, 1, 2)
 
-        super_layout.addWidget(self.boxes_label, 6, 0, 1, 1)
-        super_layout.addWidget(self.boxes_list, 7, 0, 1, 2)
+        super_layout.addWidget(self.components_label, 5, 0, 1, 1)
+        super_layout.addWidget(self.add_component_button, 5, 1, 1, 1, alignment=Qt.AlignRight)
+        super_layout.addWidget(self.components_list, 6, 0, 1, 2)
+
+        super_layout.addWidget(self.boxes_label, 7, 0, 1, 1)
+        super_layout.addWidget(self.add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
+        super_layout.addWidget(self.boxes_list, 8, 0, 1, 2)
         
-        super_layout.addWidget(self.buttoncontainer, 8, 0, 1, 2)
+        super_layout.addWidget(self.buttoncontainer, 9, 0, 1, 2)
 
         self.setLayout(super_layout)
         self.empty()
+
+    def _addBoxIntern(self):
+        self.addBox.emit()
+
+    def _addComponentIntern(self):
+        pass
 
     def _changeNameIntern(self):
         if len(self.change_name_line_edit.text()) == 0:
@@ -125,11 +146,13 @@ class Inspector(QWidget):
         self.description_label.setVisible(False)
         self.description.setVisible(False)
         self.buttoncontainer.setVisible(False)
+        self.add_box_button.setVisible(False)
+        self.add_component_button.setVisible(False)
         self.change_name_container.setVisible(False)
         self.change_name_line_edit.clear()
         self.group_box_or_empty = EMPTY
 
-    def setGroupInfo(self, group: Group):
+    def setGroupInfo(self, group: Group, boxes):
         self.group = group
         self.box = None
 
@@ -140,7 +163,9 @@ class Inspector(QWidget):
         self.description.blockSignals(False)
         
         self.boxes_list.clear_items()
-        self.boxes_list.populate(["Test box 1, test box 2", "test box 3"])
+        #self.boxes_list.populate([(Component(5, "test 1"), 5), (Component(6, "test 2"), 1), (Component(3, "test 3"), 10)])
+        self.boxes_list.populate(boxes)
+
         self.components_label.setVisible(False)
         self.components_list.setVisible(False)
         self.boxes_label.setVisible(True)
@@ -148,11 +173,13 @@ class Inspector(QWidget):
         self.description_label.setVisible(True)
         self.description.setVisible(True)
         self.buttoncontainer.setVisible(True)
+        self.add_box_button.setVisible(True)
+        self.add_component_button.setVisible(False)
         self.change_name_container.setVisible(True)
         self.change_name_line_edit.clear()
         self.group_box_or_empty = GROUP
 
-    def setBoxInfo(self, box: Box):
+    def setBoxInfo(self, box: Box, components):
         self.box = box
         self.group = None
 
@@ -163,7 +190,8 @@ class Inspector(QWidget):
         self.description.blockSignals(False)
         
         self.components_list.clear_items()
-        self.components_list.populate(["Test component 1", "test 2", "test 3"])
+        #self.components_list.populate([(Component(5, "test 1"), 5), (Component(6, "test 2"), 1), (Component(3, "test 3"), 10)])
+        self.components_list.populate(components)
         self.boxes_label.setVisible(False)
         self.boxes_list.setVisible(False)
         self.components_label.setVisible(True)
@@ -171,6 +199,8 @@ class Inspector(QWidget):
         self.description_label.setVisible(True)
         self.description.setVisible(True)
         self.buttoncontainer.setVisible(True)
+        self.add_box_button.setVisible(False)
+        self.add_component_button.setVisible(True)
         self.change_name_container.setVisible(True)
         self.change_name_line_edit.clear()
         self.group_box_or_empty = BOX
@@ -180,6 +210,8 @@ class ComponentsList(QListWidget):
         super().__init__(*args, **kw)
 
         self.items = []
+        self.setSpacing(0)
+        self.setContentsMargins(0, 0, 0, 0)
     
     def clear_items(self):
         self.clear()
@@ -189,22 +221,38 @@ class ComponentsList(QListWidget):
         for part in parts:
             item = QListWidgetItem(self)
             self.addItem(item)
-            row = ComponentListItem(part, 300)
+            row = ComponentListItem(part[0], part[1]) # component class and count
             self.items.append(row)
             item.setSizeHint(row.minimumSizeHint())
             self.setItemWidget(item, row)
 
 class ComponentListItem(QWidget):
-    def __init__(self, name, count, *args, **kw):
+    def __init__(self, part, count, *args, **kw):
         super().__init__(*args, **kw)
 
         self.row = QGridLayout()
 
-        self.name_label = QLabel(name)
+        self.part_id = part.id
+        self.part_name = part.name
+        self.name_label = QLabel(part.name)
+
         self.count_label = QLabel(str(count))
+        self.plus_button = QPushButton("+")
+        self.plus_button.setFixedWidth(30)
+        self.minus_button = QPushButton("-")
+        self.minus_button.setFixedWidth(30)
+        count_layout = QHBoxLayout()
+        count_layout.addWidget(self.minus_button)
+        count_layout.addWidget(self.count_label)
+        count_layout.addWidget(self.plus_button)
 
         self.row.addWidget(self.name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
-        self.row.addWidget(self.count_label, 0, 1, 1, 1, alignment=Qt.AlignRight)
+        self.row.addLayout(count_layout, 0, 1, 1, 1, alignment=Qt.AlignRight)
+        
+        self.setContentsMargins(0, 0, 0, 0)
+        # self.row.addWidget(self.plus_button, 0, 1, 1, 1, alignment=Qt.AlignRight)
+        # self.row.addWidget(self.count_label, 0, 2, 1, 1, alignment=Qt.AlignRight)
+        # self.row.addWidget(self.minus_button, 0, 3, 1, 1, alignment=Qt.AlignRight)
 
         self.setLayout(self.row)
 
@@ -213,33 +261,40 @@ class BoxesList(QListWidget):
         super().__init__(*args, **kw)
 
         self.items = []
+        self.setSpacing(0)
+        self.setContentsMargins(0, 0, 0, 0)
     
     def clear_items(self):
         self.clear()
         self.items = []
 
-    def populate(self, parts):
-        for part in parts:
+    def populate(self, boxes):
+        for box in boxes:
             item = QListWidgetItem(self)
             self.addItem(item)
-            row = BoxesListItem(part, 300)
+            row = BoxesListItem(box)
             self.items.append(row)
             item.setSizeHint(row.minimumSizeHint())
             self.setItemWidget(item, row)
 
+        # item = QListWidgetItem(self)
+        # self.addItem(item)
+        # item.setSizeHint(self.add_box_button.minimumSizeHint())
+        # self.setItemWidget(item, self.add_box_button)
+
 class BoxesListItem(QWidget):
-    def __init__(self, name, count, *args, **kw):
+    def __init__(self, box, *args, **kw):
         super().__init__(*args, **kw)
 
         self.row = QGridLayout()
 
-        self.name_label = QLabel(name)
-        self.count_label = QLabel(str(count))
+        self.box_id = box.id
+        self.name_label = QLabel(box.name)
 
         self.row.addWidget(self.name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
-        self.row.addWidget(self.count_label, 0, 1, 1, 1, alignment=Qt.AlignRight)
 
         self.setLayout(self.row)
+        self.setContentsMargins(0, 0, 0, 0)
 
 
 class TopBar(QWidget):

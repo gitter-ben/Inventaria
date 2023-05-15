@@ -132,9 +132,14 @@ class Database(QObject):
         return box
 
     def get_box_contents(self, group_id, box_id):
-        rows = self.cur.execute("SELECT id, count, template_id FROM parts WHERE box_id=? AND (SELECT group_id FROM boxes WHERE box_id=?)=?", (box_id, box_id, group_id))
-        print(rows)
-        #return components
+        rows = self.cur.execute("SELECT id, count, template_id FROM parts WHERE box_id=? AND (SELECT group_id FROM boxes WHERE box_id=?)=?", (box_id, box_id, group_id)).fetchall()
+        components = []
+        for row in rows:
+            name = self.cur.execute("SELECT name FROM part_templates WHERE id=?", (row[2], )).fetchone()[0]
+            components.append((Component(row[0], name), row[1]))
+        
+        #print(components)
+        return components
 
 
     @changesDB
@@ -182,4 +187,4 @@ class Database(QObject):
 
 if __name__ == "__main__":
     db = Database("database.sqlite")
-    #db.get_box_contents(, box_id)
+    db.get_box_contents(2, 3)

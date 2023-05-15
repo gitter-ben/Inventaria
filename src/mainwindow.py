@@ -120,6 +120,7 @@ class MainWindow(QMainWindow):
         self.inspector.deleteGroup.connect(self.inspectorDeleteGroup)
         self.inspector.changeBoxName.connect(self.inspectorChangeBoxName)
         self.inspector.changeGroupName.connect(self.inspectorChangeGroupName)
+        self.inspector.addBox.connect(self.newBoxSlot)
 
         self.navBars = QSplitter(Qt.Horizontal)
         self.GUIHSplitter = QSplitter(Qt.Horizontal)
@@ -353,14 +354,14 @@ class MainWindow(QMainWindow):
         selected_box = self.box_level_nav.currentItem()
         selected_group = self.group_level_nav.currentItem()
         if selected_box and selected_group:
-            self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id))
+            self.inspector.setBoxInfo(self.db.get_box_info(selected_group.id, selected_box.id), self.db.get_box_contents(selected_group.id, selected_box.id))
 
     def groupSelectionChanged(self):
         selected_group = self.group_level_nav.currentItem()
         if selected_group:
             self.box_level_nav.clear_items()
             self.box_level_nav.populate(self.db.get_boxes(selected_group.id))
-            self.inspector.setGroupInfo(self.db.get_group_info(selected_group.id))
+            self.inspector.setGroupInfo(self.db.get_group_info(selected_group.id), self.db.get_boxes(selected_group.id))
         else:
             self.inspector.empty()
             self.box_level_nav.clear_items()
