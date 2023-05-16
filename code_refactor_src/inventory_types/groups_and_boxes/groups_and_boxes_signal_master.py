@@ -3,11 +3,16 @@
 """
 
 from PyQt5.QtCore import pyqtSignal, QObject
-from utils import Singleton
 
+from core.utils import Singleton
+from .common import GroupsAndBoxesEditorMode
 
 class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
-    editor_button_pressed = pyqtSignal(str)
+    group_name_changed = pyqtSignal(int, str)
+    box_name_changed = pyqtSignal(int, str)
+
+    group_description_changed = pyqtSignal(int, str)
+    box_description_changed = pyqtSignal(int, str)
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)

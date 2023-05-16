@@ -1,5 +1,7 @@
 import threading
 
+from PyQt5.Qt import QObject
+
 class Singleton(type(QObject), type):
     #_instance = None
 

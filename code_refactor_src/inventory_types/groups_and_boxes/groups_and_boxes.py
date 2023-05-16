@@ -10,8 +10,8 @@
 from PyQt5.QtWidgets import QWidget, QHBoxLayout
 from PyQt5.Qt import QPalette, QColor, pyqtSlot
 
-from custom_widgets import Editor#, NavBars
-from groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .custom_widgets import GroupsAndBoxesEditor#, NavBars
+from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
 
 class GroupsAndBoxes(QWidget):
     def __init__(self, *args, **kw):
@@ -57,15 +57,39 @@ class GroupsAndBoxes(QWidget):
 
         # ========== Setup editor =============================
         # Instantiate a new editor and connect signals
-        self.editor = Editor()
-        self.signal_master.editor_button_pressed.connect(self.button_pressed_slot)
-        self.editor.show()
+        self.editor = GroupsAndBoxesEditor()
+        
+        class TestGroup:
+            id = 9
+            name = "hello mf"
+            description = "A cool description"
+
+        self.editor.set_group_info(TestGroup())
+        
+        self.signal_master.group_name_changed.connect(self.name_changed_slot)
+        self.signal_master.box_name_changed.connect(self.name_changed_slot)
+        
+        self.signal_master.group_description_changed.connect(self.group_description_changed_slot)
+        self.signal_master.box_description_changed.connect(self.box_description_changed_slot)
+
+        self.layout = QHBoxLayout(self)
+        self.layout.addWidget(self.editor)
+        self.setLayout(self.layout)
 
 
-    @pyqtSlot(str)
-    def button_pressed_slot(self, thing):
-        print(f"Smth else and {thing}")
+    @pyqtSlot(int, str)
+    def name_changed_slot(self, id, name):
+        print(f"(ID: {id}) changed name to '{name}'")
 
+
+    @pyqtSlot(int, str)
+    def group_description_changed_slot(self, id, new_description):
+        print(f"Group (ID: {id}) changed its description to {new_description}")
+
+
+    @pyqtSlot(int, str)
+    def box_description_changed_slot(self, id, new_description):
+        print(f"Box (ID: {id}) changed its description to {new_description}")
 
 def test():
     from PyQt5.Qt import QApplication
