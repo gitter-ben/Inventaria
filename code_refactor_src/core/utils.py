@@ -2,6 +2,11 @@ from threading import Thread, Lock
 
 from PyQt5.Qt import QObject
 
+
+class DBConnectError(Exception):
+    """Raised when not able to connect to database"""
+
+
 class Singleton(type(QObject), type):
     """!
     @brief A Singleton Metaclass
@@ -23,5 +28,5 @@ class Singleton(type(QObject), type):
             if cls not in cls._instances:
                 instance = super().__call__(*args, **kwargs)
                 cls._instances[cls] = instance
-        
+
         return cls._instances[cls]

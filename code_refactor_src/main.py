@@ -11,6 +11,7 @@ from PyQt5.QtWidgets import QMainWindow
 
 from inventory_types.groups_and_boxes.groups_and_boxes import GroupsAndBoxes
 
+
 def main():
     """! The main entry point of Inventaria"""
     app = QApplication(sys.argv)
@@ -19,6 +20,7 @@ def main():
     window.setCentralWidget(thing)
     window.show()
     app.exec()
+
 
 if __name__ == "__main__":
     main()

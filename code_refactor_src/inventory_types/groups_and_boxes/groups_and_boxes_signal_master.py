@@ -8,6 +8,8 @@ from core.utils import Singleton
 from .common import GroupsAndBoxesEditorMode
 
 class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
+    
+    # Editor signals
     group_name_changed = pyqtSignal(int, str)
     box_name_changed = pyqtSignal(int, str)
 
@@ -16,6 +18,10 @@ class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
 
     add_box = pyqtSignal()
     add_component = pyqtSignal()
+
+    # Database signals
+    save_state_changed = pyqtSignal(bool)
+
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)

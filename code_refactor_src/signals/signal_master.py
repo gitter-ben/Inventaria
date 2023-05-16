@@ -1,3 +1,0 @@
-class SignalMaster:
-    pass
-

@@ -1,12 +1,10 @@
 """!
 @file custom_widgets.py
-@brief Contains all of the custom widgets neaded for the groups_and_boxes inventory type
+@brief Contains all the custom widgets needed for the groups_and_boxes inventory type
 
 @section custom_widgets_classes CLASSES
 - Editor
 """
-
-from .common import GroupsAndBoxesEditorMode
 
 from PyQt5.QtWidgets import (
     QWidget,
@@ -26,39 +24,43 @@ from PyQt5.QtCore import (
     Qt
 )
 
-from core.constants import *
-from inventory_types.groups_and_boxes.groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
-from resources import resources
+from .common import *
+from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .database import GroupsAndBoxesDatabase
+from code_refactor_src.core.constants import *
 
 
 class GroupsAndBoxesEditor(QWidget):
     """!
     @brief A class to describe the editor GUI for the groups and boxes inventory type
     """
-    
+
     def __init__(self, *args, **kw):
         """!
         Initializes a new Editor instance.
         Steps:
         1. Initialize superclass QWidget
-        2. Create a refernce to the GroupsAndBoxesSignalMaster Singleton
+        2. Create a reference to the GroupsAndBoxesSignalMaster Singleton
         3. Call self.setup_GUI()
 
         @return A new GroupsAndBoxesEditor instance
         """
         super(GroupsAndBoxesEditor, self).__init__(*args, **kw)
 
+        self._box = None
+        self._group = None
+        self._editorState = GroupsAndBoxesEditorMode.EMPTY
+
         self._signal_master = GroupsAndBoxesSignalMaster()
 
         self.__setup_vars()
-        self.__setup_GUI()
+        self.__setup_gui()
 
-    
     def set_group_info(self, group):
         """!
         Sets the editor to display a group
 
-        @param group Group: A group instance with info from the DB
+        @param group: A group instance with info from the DB
         """
         self._group = group
         self._box = None
@@ -68,12 +70,11 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Group Editor: {self._group.name} (ID: {self._group.id})")
 
-
     def set_box_info(self, box):
         """!
         Sets the editor to display a box
 
-        @param box Box: A box instance with info from the DB
+        @param box: A box instance with info from the DB
         """
         self._box = box
         self._group = None
@@ -83,7 +84,6 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Box Editor: {self._box.name} (ID: {self._box.id})")
 
-    
     def set_empty(self):
         """!
         Empties the editor
@@ -94,14 +94,12 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Editor: No box/group selected")
 
-
     def __setup_vars(self):
         self._editorState = GroupsAndBoxesEditorMode.EMPTY
         self._group = None
         self._box = None
 
-    
-    def __setup_GUI(self):
+    def __setup_gui(self):
         """!
         Sets up the GUI for the Editor.
         Steps:
@@ -135,7 +133,7 @@ class GroupsAndBoxesEditor(QWidget):
         |______________________________________|
 
         """
-        
+
         # ========== Make the layout ===========
         self._layout = QGridLayout()
         # ======================================
@@ -157,8 +155,8 @@ class GroupsAndBoxesEditor(QWidget):
         change_name_layout.addWidget(self._change_name_line_edit)
         change_name_layout.addWidget(change_name_button)
         self._layout.addLayout(change_name_layout, 1, 0, 1, 1)
-        
-        def _changeNameIntern():
+
+        def _change_name_intern():
             new_name = self._change_name_line_edit.text()
             if len(new_name) == 0:
                 return
@@ -170,7 +168,7 @@ class GroupsAndBoxesEditor(QWidget):
                 if new_name != self._box.name:
                     self._signal_master.box_name_changed.emit(self._box.id, new_name)
 
-        change_name_button.clicked.connect(_changeNameIntern)
+        change_name_button.clicked.connect(_change_name_intern)
         # ======================================
 
         # ======== Make description ============
@@ -178,13 +176,13 @@ class GroupsAndBoxesEditor(QWidget):
         font = description_label.font()
         font.setPointSize(11)
         description_label.setFont(font)
-        
+
         self._description = QPlainTextEdit()
 
         self._layout.addWidget(description_label, 2, 0, 1, 1)
         self._layout.addWidget(self._description, 3, 0, 1, 2)
 
-        def _descriptionChangedIntern():
+        def _description_changed_intern():
             new_description = self._description.toPlainText()
             if len(new_description) > MAX_DESCRIPTION_LENGTH:
                 self.description.textCursor().deletePreviousChar()
@@ -194,7 +192,7 @@ class GroupsAndBoxesEditor(QWidget):
                 elif self._editorState == GroupsAndBoxesEditorMode.BOX:
                     self._signal_master.box_description_changed.emit(self._box.id, new_description)
 
-        self._description.textChanged.connect(_descriptionChangedIntern)
+        self._description.textChanged.connect(_description_changed_intern)
         # ======================================
 
         # ========= Make boxes list ============
@@ -202,14 +200,14 @@ class GroupsAndBoxesEditor(QWidget):
         font = boxes_label.font()
         font.setPointSize(11)
         boxes_label.setFont(font)
-        
+
         ic = QIcon(":/icons/green_plus.png")
         add_box_button = QPushButton("Add box")
         add_box_button.setIcon(ic)
         add_box_button.setFixedWidth(110)
         add_box_button.clicked.connect(self._signal_master.add_box.emit)
 
-        #self._boxes_list = BoxesList()
+        self._boxes_list = self.BoxesList()
 
         self._layout.addWidget(boxes_label, 7, 0, 1, 1)
         self._layout.addWidget(add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
@@ -224,8 +222,6 @@ class GroupsAndBoxesEditor(QWidget):
         self.setLayout(self._layout)
         # ======================================
 
-
-
     class BoxesList(QListWidget):
         """!
         @brief QListWidget with option for delete-, add-, etc buttons.
@@ -237,38 +233,38 @@ class GroupsAndBoxesEditor(QWidget):
             super().__init__(*args, **kwargs)
 
             self._items = []
-        
+
         def clear_items(self):
             self.clear()
             self._items = []
 
-        def populate(self, boxes: [Box]):       # This creates item widgets (BoxesListItem) for all the boxes
+        def populate(self, boxes: [Box]):  # This creates item widgets (BoxesListItem) for all the boxes
             for box in boxes:
                 item = QListWidget(self)
                 self.addItem(item)
-                row = BoxesListitem(box)
+                row = self.BoxesListItem(box)
                 self._items.append(row)
                 item.setSizeHint(row.minimumSizeHint())
                 self.setItemWidget(item, row)
 
-    class BoxesListItem(QWidget):
-        """!
-        @brief Custom List Widget Item.
-        
-        An item widget for a qlistwidget that allows for saving box id and custom widgets
-        """
-
-        def __init__(self, box: Box, *args, **kwargs):
+        class BoxesListItem(QWidget):
             """!
-            Initialize a new BoxesListItem.
+            @brief Custom List Widget Item.
 
-            @param box Box: An instance of the Box class from the database
+            An item widget for a QListWidget that allows for saving box id and custom widgets
             """
-            super().__init__(*args, **kwargs)
 
-            self.box = box
+            def __init__(self, box: Box, *args, **kwargs):
+                """!
+                Initialize a new BoxesListItem.
 
-            row = QGridLayout()
-            name_label = Qlabel(self.box.name)
-            row.addWidget(name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
-            self.setLayout(row)
+                @param box Box: An instance of the Box class from the database
+                """
+                super().__init__(*args, **kwargs)
+
+                self.box = box
+
+                row = QGridLayout()
+                name_label = QLabel(self.box.name)
+                row.addWidget(name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+                self.setLayout(row)
