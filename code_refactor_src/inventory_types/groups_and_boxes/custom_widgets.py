@@ -15,7 +15,15 @@ from PyQt5.QtWidgets import (
     QLabel,
     QGridLayout,
     QLineEdit,
-    QPlainTextEdit
+    QPlainTextEdit,
+    QListWidget,
+    QListWidgetItem
+)
+from PyQt5.Qt import (
+    QIcon,
+)
+from PyQt5.QtCore import (
+    Qt
 )
 
 from core.constants import *
@@ -193,9 +201,19 @@ class GroupsAndBoxesEditor(QWidget):
         boxes_label = QLabel("Boxes: ")
         font = boxes_label.font()
         font.setPointSize(11)
-        boxes_label.setfont(font)
+        boxes_label.setFont(font)
         
         ic = QIcon(":/icons/green_plus.png")
+        add_box_button = QPushButton("Add box")
+        add_box_button.setIcon(ic)
+        add_box_button.setFixedWidth(110)
+        add_box_button.clicked.connect(self._signal_master.add_box.emit)
+
+        #self._boxes_list = BoxesList()
+
+        self._layout.addWidget(boxes_label, 7, 0, 1, 1)
+        self._layout.addWidget(add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
+        self._layout.addWidget(self._boxes_list)
         # ======================================
 
         # ======== Make components list ========
@@ -206,3 +224,51 @@ class GroupsAndBoxesEditor(QWidget):
         self.setLayout(self._layout)
         # ======================================
 
+
+
+    class BoxesList(QListWidget):
+        """!
+        @brief QListWidget with option for delete-, add-, etc buttons.
+
+        A subclass of QListWidget that allows for showing of boxes with delete buttons, add buttons, etc.
+        """
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+
+            self._items = []
+        
+        def clear_items(self):
+            self.clear()
+            self._items = []
+
+        def populate(self, boxes: [Box]):       # This creates item widgets (BoxesListItem) for all the boxes
+            for box in boxes:
+                item = QListWidget(self)
+                self.addItem(item)
+                row = BoxesListitem(box)
+                self._items.append(row)
+                item.setSizeHint(row.minimumSizeHint())
+                self.setItemWidget(item, row)
+
+    class BoxesListItem(QWidget):
+        """!
+        @brief Custom List Widget Item.
+        
+        An item widget for a qlistwidget that allows for saving box id and custom widgets
+        """
+
+        def __init__(self, box: Box, *args, **kwargs):
+            """!
+            Initialize a new BoxesListItem.
+
+            @param box Box: An instance of the Box class from the database
+            """
+            super().__init__(*args, **kwargs)
+
+            self.box = box
+
+            row = QGridLayout()
+            name_label = Qlabel(self.box.name)
+            row.addWidget(name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+            self.setLayout(row)

@@ -14,5 +14,8 @@ class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
     group_description_changed = pyqtSignal(int, str)
     box_description_changed = pyqtSignal(int, str)
 
+    add_box = pyqtSignal()
+    add_component = pyqtSignal()
+
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)

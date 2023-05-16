@@ -71,6 +71,7 @@ class GroupsAndBoxes(QWidget):
         
         self.signal_master.group_description_changed.connect(self.group_description_changed_slot)
         self.signal_master.box_description_changed.connect(self.box_description_changed_slot)
+        # =====================================================
 
         self.layout = QHBoxLayout(self)
         self.layout.addWidget(self.editor)
