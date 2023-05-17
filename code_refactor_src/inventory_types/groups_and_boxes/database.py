@@ -2,12 +2,11 @@
 @file database.py
 @brief The file containing all the database stuff for the groups and boxes inventory type
 """
-from functools import wraps
 from typing import List
 
 import sqlite3
 
-from code_refactor_src.core.utils import DBConnectError
+from code_refactor_src.core.utils import DBConnectError, changes_db
 from code_refactor_src.inventory_types.groups_and_boxes.common import Group, Box, BoxContentItem
 
 
@@ -42,7 +41,8 @@ class GroupsAndBoxesDatabase:
         @return A list of instances of the Group dataclass
         """
         groups = [Group(*row) for row in self.cur.execute(
-            "SELECT id, name, description FROM groups").fetchall()]
+            "SELECT id, name, description FROM groups"
+        ).fetchall()]
         return groups
 
     def get_group(self, group_id: int) -> Group:
@@ -108,6 +108,131 @@ class GroupsAndBoxesDatabase:
 
         return contents
 
+    @changes_db
+    def add_group(self, name: str):
+        """!
+        Add a new group with a name.
+
+        @param name: The name of the new group.
+        """
+        self.cur.execute(
+            "INSERT INTO groups (name) VALUES (?)",
+            (name,)
+        )
+
+    @changes_db
+    def delete_group(self, group_id: str):
+        """!
+        Delete a group via the group id.
+
+        @param group_id: The id of the group to delete
+        """
+        self.cur.execute(
+            "DELETE FROM groups WHERE id=?",
+            (group_id, )
+        )
+
+    @changes_db
+    def edit_group_name(self, group_id: int, name: str):
+        """!
+        Edit a group name via a group id and a new name.
+
+        @param group_id: The id of the group to edit.
+        @param name: The new name of the group.
+        """
+        self.cur.execute(
+            "UPDATE groups SET name=? WHERE id=?",
+            (name, group_id)
+        )
+
+    @changes_db
+    def edit_group_description(self, group_id: int, description: str):
+        """!
+        Edit a group description via a group id and a new description
+        """
+        self.cur.execute(
+            "UPDATE groups SET description=? WHERE id=?",
+            (description, group_id)
+        )
+
+    @changes_db
+    def add_box(self, name: str, group_id: int):
+        """!
+        Add a new box with a set name and a group id.
+
+        @param name: The name of the new box.
+        @param group_id: The group id of the new box.
+        """
+        self.cur.execute(
+            "INSERT INTO boxes (name, group_id) VALUES (?, ?)",
+            (name, group_id)
+        )
+
+    @changes_db
+    def delete_box(self, box_id: int):
+        """!
+        Delete a box with a set box id. The cascading mode will also remove all parts associated with the box.
+
+        @param box_id: The id of the box to delete.
+        """
+        self.cur.execute(
+            "DELETE FROM boxes WHERE id=?",
+            (box_id, )
+        )
+
+    @changes_db
+    def edit_box_name(self, box_id: int, new_name: str):
+        """!
+        Edit the name of a box with a set box id and a new name.
+
+        @param box_id: The id of the box to edit.
+        @param new_name: The new name of the box.
+        """
+        self.cur.execute(
+            "UPDATE boxes SET name=? WHERE id=?",
+            (new_name, box_id)
+        )
+
+    @changes_db
+    def edit_box_description(self, box_id: int, description: str):
+        """!
+        Edit the description of a box with a box id and new description.
+
+        @param box_id: The id of the box to edit.
+        @param description: The new description of the box.
+        """
+        self.cur.execute(
+            "UPDATE boxes SET description=? WHERE id=?",
+            (description, box_id)
+        )
+
+    @changes_db
+    def add_box_contents(self, box_id: int, part_id: int, count: int):
+        """!
+        Add a new box_contents to a box via a box_id and a part_id.
+
+        @param box_id: The id of the box to add to.
+        @param part_id: The id of the part to add to it.
+        @param count: The number of parts to add.
+        """
+        self.cur.execute(
+            "INSERT INTO box_contents (box_id, count, part_id) VALUES (?, ?, ?);",
+            (box_id, count, part_id)
+        )
+
+    @changes_db
+    def edit_box_contents_count(self, box_contents_id: int, count: int):
+        """!
+        Edit the count of an item in a box contents via the box contents id and the count.
+
+        @param box_contents_id: The id of the box contents.
+        @param count: The new count.
+        """
+        self.cur.execute(
+            "UPDATE box_contents SET count=? WHERE id=?",
+            (count, box_contents_id)
+        )
+
     def _initialize_database(self):
         """!
         Initialize the database by creating all necessary tables if they don't exist. Also enable foreign keys.
@@ -122,7 +247,7 @@ class GroupsAndBoxesDatabase:
         sql_create_groups_table = """CREATE TABLE IF NOT EXISTS groups (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
-            description TEXT NOT NULL
+            description TEXT
         );"""
 
         sql_create_boxes_table = """CREATE TABLE IF NOT EXISTS boxes (
@@ -150,18 +275,6 @@ class GroupsAndBoxesDatabase:
             self.cur.execute(sql_create_box_contents_table)
 
     @staticmethod
-    def _changes_db(func):
-        """!
-        A decorator to describe a function that changes the database.
-        Calls the self.unsaved() method to send the saveStateChanged to the editor that it is now not saved anymore.
-        """
-        @wraps(func)
-        def wrapper(self, *args, **kw):
-            self.unsaved()
-            return func(self, *args, **kw)
-        return wrapper
-
-    @staticmethod
     def _create_connection(db_file) -> sqlite3.Connection:
         """!
         Create a connection to a database file. Raises the custom DBConnectError in case of an error during connection.
@@ -177,3 +290,6 @@ class GroupsAndBoxesDatabase:
             raise DBConnectError
 
         return conn
+
+    def _unsaved(self):
+        pass

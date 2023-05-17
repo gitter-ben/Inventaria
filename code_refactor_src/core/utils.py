@@ -1,6 +1,21 @@
-from threading import Thread, Lock
+from functools import wraps
+from threading import Lock
 
 from PyQt5.Qt import QObject
+
+
+def changes_db(func):
+    """!
+    A decorator to describe a function that changes the database.
+    Calls the self.unsaved() method to send the saveStateChanged to the editor that it is now not saved anymore.
+    """
+
+    @wraps(func)
+    def wrapper(self, *args, **kw):
+        self._unsaved()
+        return func(self, *args, **kw)
+
+    return wrapper
 
 
 class DBConnectError(Exception):
