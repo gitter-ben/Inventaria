@@ -13,7 +13,7 @@ class GroupsAndBoxesEditorMode(Enum):
 
 
 @dataclass
-class Components:
+class BoxContentItem:
     id: int
     name: str
     count: int
@@ -23,11 +23,11 @@ class Components:
 class Box:
     id: int
     name: str
-    components: List[Components]
+    description: str
 
 
 @dataclass
 class Group:
     id: int
     name: str
-    boxes: List[Box]
+    description: str
