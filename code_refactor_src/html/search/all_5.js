@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['set_5fbox_5finfo_12',['set_box_info',['../classinventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsAndBoxesEditor.html#a0d6e28fbf0af3176352c99b692ccd392',1,'inventory_types::groups_and_boxes::custom_widgets::GroupsAndBoxesEditor']]],
-  ['set_5fempty_13',['set_empty',['../classinventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsAndBoxesEditor.html#abf52492540f3d59c2940bb84403a501b',1,'inventory_types::groups_and_boxes::custom_widgets::GroupsAndBoxesEditor']]],
-  ['set_5fgroup_5finfo_14',['set_group_info',['../classinventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsAndBoxesEditor.html#af740645a301cb52f5b8c024de4feee57',1,'inventory_types::groups_and_boxes::custom_widgets::GroupsAndBoxesEditor']]],
-  ['setup_5fgui_15',['setup_GUI',['../classinventory__types_1_1groups__and__boxes_1_1groups__and__boxes_1_1GroupsAndBoxes.html#a44ab69215664c1edee54f92e127fe6a8',1,'inventory_types::groups_and_boxes::groups_and_boxes::GroupsAndBoxes']]],
-  ['signalmaster_16',['SignalMaster',['../classsignal__master_1_1SignalMaster.html',1,'signal_master']]],
-  ['singleton_17',['Singleton',['../classcore_1_1utils_1_1Singleton.html',1,'core::utils']]]
+  ['edit_5fbox_5fcontents_5fcount_16',['edit_box_contents_count',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#ad37730b5888fb5e99d885525474dc1f4',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['edit_5fbox_5fdescription_17',['edit_box_description',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a0313f0c8e1387b50282a22dc1c358591',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['edit_5fbox_5fname_18',['edit_box_name',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#abb7be1e1154dd7c0398db8f89cda96e1',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['edit_5fgroup_5fdescription_19',['edit_group_description',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a2a708bba53182dcec4358d3add006aa8',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['edit_5fgroup_5fname_20',['edit_group_name',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#ae9980e7766ddc62cc63cdff8b77f49a7',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]]
 ];

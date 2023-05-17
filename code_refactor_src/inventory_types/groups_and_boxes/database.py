@@ -2,10 +2,8 @@
 @file database.py
 @brief The file containing all the database stuff for the groups and boxes inventory type
 """
-from typing import List
-from io import FileIO
-
 import sqlite3
+from typing import List
 
 from code_refactor_src.core.utils import DBConnectError, changes_db
 from code_refactor_src.inventory_types.groups_and_boxes.common import Group, Box, BoxContentItem
@@ -23,10 +21,10 @@ class GroupsAndBoxesDatabase:
         self.cur = None
         self.saved = None
 
-        self.signal_master = GroupsAndBoxesSignalMaster()
+        self._signal_master = GroupsAndBoxesSignalMaster()
         self.load_from_file(db_file)
 
-    def load_from_file(self, db_file):
+    def load_from_file(self, db_file) -> None:
         """!
         Load a new database from a .sqlite file.
         """
@@ -37,28 +35,28 @@ class GroupsAndBoxesDatabase:
         self.saved = True
         self.make_savepoint()
 
-    def close(self):
+    def close(self) -> None:
         """!
         Gracefully close the connection ta a database.
         """
         self.conn.close()
 
-    def make_savepoint(self):
+    def make_savepoint(self) -> None:
         """!
         Create a savepoint by starting a sqlite transaction.
         """
         self.cur.execute("BEGIN TRANSACTION;")
 
-    def rollback_to_savepoint(self):
+    def rollback_to_savepoint(self) -> None:
         """!
         Rollback to last savepoint by executing "ROLLBACK TRANSACTION;" in sqlite
         """
         self.cur.execute("ROLLBACK TRANSACTION;")
         self.saved = True
         self.make_savepoint()
-        self.signal_master.save_state_changed.emit(True)
+        self._signal_master.save_state_changed.emit(True)
 
-    def save(self):
+    def save(self) -> None:
         """!
         Save the current database by committing the current transaction
         and starting a new one by calling self.make_savepoint()
@@ -67,7 +65,12 @@ class GroupsAndBoxesDatabase:
             self.cur.execute("COMMIT TRANSACTION;")
             self.saved = True
             self.make_savepoint()
-            self.signal_master.save_state_changed.emit(True)
+            self._signal_master.save_state_changed.emit(True)
+
+    def _unsaved(self) -> None:
+        if self.saved:
+            self.saved = False
+            self._signal_master.save_state_changed.emit(False)
 
     def get_groups(self) -> List[Group]:
         """!
@@ -143,7 +146,7 @@ class GroupsAndBoxesDatabase:
         return contents
 
     @changes_db
-    def add_group(self, name: str):
+    def add_group(self, name: str) -> None:
         """!
         Add a new group with a name.
 
@@ -155,7 +158,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def delete_group(self, group_id: str):
+    def delete_group(self, group_id: str) -> None:
         """!
         Delete a group via the group id.
 
@@ -167,7 +170,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def edit_group_name(self, group_id: int, name: str):
+    def edit_group_name(self, group_id: int, name: str) -> None:
         """!
         Edit a group name via a group id and a new name.
 
@@ -180,7 +183,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def edit_group_description(self, group_id: int, description: str):
+    def edit_group_description(self, group_id: int, description: str) -> None:
         """!
         Edit a group description via a group id and a new description
         """
@@ -190,7 +193,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def add_box(self, name: str, group_id: int):
+    def add_box(self, name: str, group_id: int) -> None:
         """!
         Add a new box with a set name and a group id.
 
@@ -203,7 +206,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def delete_box(self, box_id: int):
+    def delete_box(self, box_id: int) -> None:
         """!
         Delete a box with a set box id. The cascading mode will also remove all parts associated with the box.
 
@@ -215,7 +218,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def edit_box_name(self, box_id: int, new_name: str):
+    def edit_box_name(self, box_id: int, new_name: str) -> None:
         """!
         Edit the name of a box with a set box id and a new name.
 
@@ -228,7 +231,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def edit_box_description(self, box_id: int, description: str):
+    def edit_box_description(self, box_id: int, description: str) -> None:
         """!
         Edit the description of a box with a box id and new description.
 
@@ -241,7 +244,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def add_box_contents(self, box_id: int, part_id: int, count: int):
+    def add_box_contents(self, box_id: int, part_id: int, count: int) -> None:
         """!
         Add a new box_contents to a box via a box_id and a part_id.
 
@@ -255,7 +258,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def edit_box_contents_count(self, box_contents_id: int, count: int):
+    def edit_box_contents_count(self, box_contents_id: int, count: int) -> None:
         """!
         Edit the count of an item in a box contents via the box contents id and the count.
 
@@ -267,7 +270,7 @@ class GroupsAndBoxesDatabase:
             (count, box_contents_id)
         )
 
-    def _initialize_database(self):
+    def _initialize_database(self) -> None:
         """!
         Initialize the database by creating all necessary tables if they don't exist. Also enable foreign keys.
         """
@@ -324,6 +327,3 @@ class GroupsAndBoxesDatabase:
             raise DBConnectError
 
         return conn
-
-    def _unsaved(self):
-        pass

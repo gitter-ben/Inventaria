@@ -1,5 +1,5 @@
 """!
-@file custom_widgets.py
+@file editor.py
 @brief Contains all the custom widgets needed for the groups_and_boxes inventory type
 
 @section custom_widgets_classes CLASSES
@@ -9,6 +9,12 @@
 """
 from typing import List
 
+from PyQt5.Qt import (
+    QIcon,
+)
+from PyQt5.QtCore import (
+    Qt
+)
 from PyQt5.QtWidgets import (
     QWidget,
     QPushButton,
@@ -21,16 +27,10 @@ from PyQt5.QtWidgets import (
     QListWidgetItem,
     QSpacerItem
 )
-from PyQt5.Qt import (
-    QIcon,
-)
-from PyQt5.QtCore import (
-    Qt
-)
 
+from code_refactor_src.core.constants import *
 from .common import *
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
-from code_refactor_src.core.constants import *
 
 
 class GroupsAndBoxesEditor(QWidget):
@@ -176,6 +176,11 @@ class GroupsAndBoxesEditor(QWidget):
         2. Make a headline
         3. Make a change name field and button
         4. Make a description box
+        5. Make a spacer
+        6. Make a BoxesList
+        7. Make a BoxContentsList
+        8. Make a button row at the bottom
+        9. Set the layout to self
 
         Result:
         
@@ -200,12 +205,11 @@ class GroupsAndBoxesEditor(QWidget):
         |                                      |
         |                            Delete    |
         |______________________________________|
-
         """
 
         # ========== Make the layout ===========
         self._layout = QGridLayout()
-
+        self._layout.setAlignment(Qt.AlignTop)
         # ======================================
 
         # ========== Make the headline =========
@@ -224,7 +228,7 @@ class GroupsAndBoxesEditor(QWidget):
         self._change_name_layout.addWidget(self._change_name_label)
         self._change_name_layout.addWidget(self._change_name_line_edit)
         self._change_name_layout.addWidget(self._change_name_button)
-        self._layout.addLayout(self._change_name_layout, 1, 0, 1, 1)
+        self._layout.addLayout(self._change_name_layout, 1, 0, 1, 2)
 
         def _change_name_intern():
             new_name = self._change_name_line_edit.text()
@@ -285,10 +289,10 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._layout.addWidget(self._boxes_label, 7, 0, 1, 1)
         self._layout.addWidget(self._add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
-        self._layout.addWidget(self._boxes_list)
+        self._layout.addWidget(self._boxes_list, 8, 0, 1, 2)
         # ======================================
 
-        # ======== Make components list ========
+        # ======== Make box contents list ========
         self._box_contents_label = QLabel("Contents of box:")
         font = self._box_contents_label.font()
         font.setPointSize(11)
@@ -325,6 +329,10 @@ class GroupsAndBoxesEditor(QWidget):
 
         # ========= Set the layout =============
         self.setLayout(self._layout)
+        # ======================================
+
+        # ========= Empty the editor ===========
+        self.set_empty()
         # ======================================
 
     class BoxesList(QListWidget):
@@ -379,7 +387,7 @@ class GroupsAndBoxesEditor(QWidget):
         @brief Custom list widget with support for BoxContentsListItem
 
         A subclass of QListWidget that allows for showing of box contents
-        with +, - and count labels
+        with +, - and count labels.
         """
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)

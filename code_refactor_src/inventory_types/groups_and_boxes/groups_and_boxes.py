@@ -7,15 +7,16 @@
 - Implement PyQt QTests with automatic GUI testing
 """
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout
 from PyQt5.Qt import QPalette, QColor, pyqtSlot
+from PyQt5.QtWidgets import QWidget, QHBoxLayout
 
-from .custom_widgets import GroupsAndBoxesEditor  # , NavBars
+from .editor import GroupsAndBoxesEditor
+from .navbar import NavBar
 from .database import GroupsAndBoxesDatabase
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
 
 
-class GroupsAndBoxes(QWidget):
+class GroupsAndBoxesGUI(QWidget):
     def __init__(self, database: GroupsAndBoxesDatabase, *args, **kw):
         """!
         Initializes a new inspector for the groups and boxes inventory type.
@@ -29,7 +30,7 @@ class GroupsAndBoxes(QWidget):
         @return  A new GroupsAndBoxes object
         """
 
-        super(GroupsAndBoxes, self).__init__(*args, **kw)  # Initialize QWidget superclass
+        super(GroupsAndBoxesGUI, self).__init__(*args, **kw)  # Initialize QWidget superclass
 
         self._signal_master = GroupsAndBoxesSignalMaster()  # Acquire singleton instance of signal master
         self._db = database
@@ -42,7 +43,6 @@ class GroupsAndBoxes(QWidget):
         Steps:
         1. Setup colors and stylesheets
         2. Setup editor and signals
-
 
         @return  None
         """
@@ -77,9 +77,8 @@ class GroupsAndBoxes(QWidget):
         self._signal_master.set_box_content_count.connect(self._set_box_content_count_slot)
 
         self._signal_master.save_state_changed.connect(self._save_state_changed_slot)
-
-        self._editor.set_empty()
         # =====================================================
+
 
         self.layout = QHBoxLayout(self)
         self.layout.addWidget(self._editor)

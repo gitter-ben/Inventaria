@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['user_5ftest_5fmain_16',['user_test_main',['../groups__and__boxes_8py.html#a851ac06052b5c7c0f6ce680d83d63f97',1,'groups_and_boxes']]]
+  ['delete_5fbox_72',['delete_box',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a71caf79567a2aa778d83fa3b81fe8b30',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['delete_5fgroup_73',['delete_group',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#ae65ef56b62e68eeb4a226feb6322bbb9',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]]
 ];
