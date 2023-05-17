@@ -3,8 +3,11 @@
 @brief Contains all the custom widgets needed for the groups_and_boxes inventory type
 
 @section custom_widgets_classes CLASSES
-- Editor
+- GroupsAndBoxesEditor (QWidget)
+  - BoxesList (QListWidget)
+    - BoxesListItem (QWidget)
 """
+from typing import List
 
 from PyQt5.QtWidgets import (
     QWidget,
@@ -15,7 +18,8 @@ from PyQt5.QtWidgets import (
     QLineEdit,
     QPlainTextEdit,
     QListWidget,
-    QListWidgetItem
+    QListWidgetItem,
+    QSpacerItem
 )
 from PyQt5.Qt import (
     QIcon,
@@ -26,7 +30,6 @@ from PyQt5.QtCore import (
 
 from .common import *
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
-from .database import GroupsAndBoxesDatabase
 from code_refactor_src.core.constants import *
 
 
@@ -34,7 +37,6 @@ class GroupsAndBoxesEditor(QWidget):
     """!
     @brief A class to describe the editor GUI for the groups and boxes inventory type
     """
-
     def __init__(self, *args, **kw):
         """!
         Initializes a new Editor instance.
@@ -56,37 +58,81 @@ class GroupsAndBoxesEditor(QWidget):
         self.__setup_vars()
         self.__setup_gui()
 
-    def set_group_info(self, group):
+    def set_group_info(self, group: Group, boxes: List[Box]) -> None:
         """!
         Sets the editor to display a group
 
         @param group: A group instance with info from the DB
+        @param boxes: A list of instances of the Box dataclass
         """
         self._group = group
         self._box = None
         self._editorState = GroupsAndBoxesEditorMode.GROUP
 
-        self._description.setPlainText(self._group.description)
-
         self._headline.setText(f"Group Editor: {self._group.name} (ID: {self._group.id})")
 
-    def set_box_info(self, box):
+        self._change_name_line_edit.clear()
+
+        self._description.blockSignals(True)
+        self._description.setPlainText(self._group.description)
+        self._description.blockSignals(False)
+
+        self._boxes_list.populate(boxes)
+        self._box_contents_list.clear_items()
+
+        # Set everything to invisible
+        self._change_name_label.setVisible(True)
+        self._change_name_line_edit.setVisible(True)
+        self._change_name_button.setVisible(True)
+        self._description_label.setVisible(True)
+        self._description.setVisible(True)
+        self._boxes_label.setVisible(True)
+        self._boxes_list.setVisible(True)
+        self._box_contents_label.setVisible(False)
+        self._box_contents_list.setVisible(False)
+        self._add_box_button.setVisible(True)
+        self._add_box_content_button.setVisible(False)
+        self._delete_button.setVisible(True)
+
+    def set_box_info(self, box: Box, box_contents: List[BoxContentItem]) -> None:
         """!
         Sets the editor to display a box
 
         @param box: A box instance with info from the DB
+        @param box_contents: A list of instances of the BoxContentItem dataclass
         """
         self._box = box
         self._group = None
         self._editorState = GroupsAndBoxesEditorMode.BOX
 
-        self._description.setPlainText(self._box.description)
-
         self._headline.setText(f"Box Editor: {self._box.name} (ID: {self._box.id})")
 
-    def set_empty(self):
+        self._change_name_line_edit.clear()
+
+        self._description.blockSignals(True)
+        self._description.setPlainText(self._box.description)
+        self._description.blockSignals(False)
+
+        self._boxes_list.clear_items()
+        self._box_contents_list.populate(box_contents)
+
+        # Set everything to invisible
+        self._change_name_label.setVisible(True)
+        self._change_name_line_edit.setVisible(True)
+        self._change_name_button.setVisible(True)
+        self._description_label.setVisible(True)
+        self._description.setVisible(True)
+        self._boxes_label.setVisible(False)
+        self._boxes_list.setVisible(False)
+        self._box_contents_label.setVisible(True)
+        self._box_contents_list.setVisible(True)
+        self._add_box_button.setVisible(False)
+        self._add_box_content_button.setVisible(True)
+        self._delete_button.setVisible(True)
+
+    def set_empty(self) -> None:
         """!
-        Empties the editor
+        @brief Empties the editor.
         """
         self._group = None
         self._box = None
@@ -94,12 +140,35 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Editor: No box/group selected")
 
-    def __setup_vars(self):
+        self._change_name_line_edit.clear()
+
+        self._description.blockSignals(True)
+        self._description.clear()
+        self._description.blockSignals(False)
+
+        self._boxes_list.clear_items()
+        self._box_contents_list.clear_items()
+
+        # Set everything to invisible
+        self._change_name_label.setVisible(False)
+        self._change_name_line_edit.setVisible(False)
+        self._change_name_button.setVisible(False)
+        self._description_label.setVisible(False)
+        self._description.setVisible(False)
+        self._boxes_label.setVisible(False)
+        self._boxes_list.setVisible(False)
+        self._box_contents_label.setVisible(False)
+        self._box_contents_list.setVisible(False)
+        self._add_box_button.setVisible(False)
+        self._add_box_content_button.setVisible(False)
+        self._delete_button.setVisible(False)
+
+    def __setup_vars(self) -> None:
         self._editorState = GroupsAndBoxesEditorMode.EMPTY
         self._group = None
         self._box = None
 
-    def __setup_gui(self):
+    def __setup_gui(self) -> None:
         """!
         Sets up the GUI for the Editor.
         Steps:
@@ -136,6 +205,7 @@ class GroupsAndBoxesEditor(QWidget):
 
         # ========== Make the layout ===========
         self._layout = QGridLayout()
+
         # ======================================
 
         # ========== Make the headline =========
@@ -147,14 +217,14 @@ class GroupsAndBoxesEditor(QWidget):
         # ======================================
 
         # ====== Make the change name field ====
-        change_name_label = QLabel("Change name: ")
+        self._change_name_label = QLabel("Change name: ")
         self._change_name_line_edit = QLineEdit()
-        change_name_button = QPushButton("Change name")
-        change_name_layout = QHBoxLayout()
-        change_name_layout.addWidget(change_name_label)
-        change_name_layout.addWidget(self._change_name_line_edit)
-        change_name_layout.addWidget(change_name_button)
-        self._layout.addLayout(change_name_layout, 1, 0, 1, 1)
+        self._change_name_button = QPushButton("Change name")
+        self._change_name_layout = QHBoxLayout()
+        self._change_name_layout.addWidget(self._change_name_label)
+        self._change_name_layout.addWidget(self._change_name_line_edit)
+        self._change_name_layout.addWidget(self._change_name_button)
+        self._layout.addLayout(self._change_name_layout, 1, 0, 1, 1)
 
         def _change_name_intern():
             new_name = self._change_name_line_edit.text()
@@ -164,22 +234,22 @@ class GroupsAndBoxesEditor(QWidget):
             if self._editorState == GroupsAndBoxesEditorMode.GROUP:
                 if new_name != self._group.name:
                     self._signal_master.group_name_changed.emit(self._group.id, new_name)
-            elif self._editorState == GroupsAndBoxesEditor.BOX:
+            elif self._editorState == GroupsAndBoxesEditorMode.BOX:
                 if new_name != self._box.name:
                     self._signal_master.box_name_changed.emit(self._box.id, new_name)
 
-        change_name_button.clicked.connect(_change_name_intern)
+        self._change_name_button.clicked.connect(_change_name_intern)
         # ======================================
 
         # ======== Make description ============
-        description_label = QLabel("Description:")
-        font = description_label.font()
+        self._description_label = QLabel("Description:")
+        font = self._description_label.font()
         font.setPointSize(11)
-        description_label.setFont(font)
+        self._description_label.setFont(font)
 
         self._description = QPlainTextEdit()
 
-        self._layout.addWidget(description_label, 2, 0, 1, 1)
+        self._layout.addWidget(self._description_label, 2, 0, 1, 1)
         self._layout.addWidget(self._description, 3, 0, 1, 2)
 
         def _description_changed_intern():
@@ -195,27 +265,62 @@ class GroupsAndBoxesEditor(QWidget):
         self._description.textChanged.connect(_description_changed_intern)
         # ======================================
 
+        # =========== Add Spacer ===============
+        self._layout.addItem(QSpacerItem(10, 25), 4, 0, 1, 2)
+        # ======================================
+
         # ========= Make boxes list ============
-        boxes_label = QLabel("Boxes: ")
-        font = boxes_label.font()
+        self._boxes_label = QLabel("Boxes: ")
+        font = self._boxes_label.font()
         font.setPointSize(11)
-        boxes_label.setFont(font)
+        self._boxes_label.setFont(font)
 
         ic = QIcon(":/icons/green_plus.png")
-        add_box_button = QPushButton("Add box")
-        add_box_button.setIcon(ic)
-        add_box_button.setFixedWidth(110)
-        add_box_button.clicked.connect(self._signal_master.add_box.emit)
+        self._add_box_button = QPushButton("Add box")
+        self._add_box_button.setIcon(ic)
+        self._add_box_button.setFixedWidth(110)
+        self._add_box_button.clicked.connect(lambda: self._signal_master.add_box.emit(self._group.id))
 
         self._boxes_list = self.BoxesList()
 
-        self._layout.addWidget(boxes_label, 7, 0, 1, 1)
-        self._layout.addWidget(add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
+        self._layout.addWidget(self._boxes_label, 7, 0, 1, 1)
+        self._layout.addWidget(self._add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
         self._layout.addWidget(self._boxes_list)
         # ======================================
 
         # ======== Make components list ========
-        pass
+        self._box_contents_label = QLabel("Contents of box:")
+        font = self._box_contents_label.font()
+        font.setPointSize(11)
+        self._box_contents_label.setFont(font)
+
+        ic = QIcon(":/icons/green_plus.png")
+        self._add_box_content_button = QPushButton("Add content item")
+        self._add_box_content_button.setIcon(ic)
+        self._add_box_content_button.setFixedWidth(180)
+        self._add_box_content_button.clicked.connect(lambda: self._signal_master.add_box_content.emit(self._box.id))
+
+        self._box_contents_list = self.BoxContentsList()
+
+        self._layout.addWidget(self._box_contents_label, 5, 0, 1, 1)
+        self._layout.addWidget(self._add_box_content_button, 5, 1, 1, 1, alignment=Qt.AlignRight)
+        self._layout.addWidget(self._box_contents_list, 8, 0, 1, 2)
+        # ======================================
+
+        # ===== Button row at the bottom =======
+        self._button_layout = QHBoxLayout()
+        self._button_layout.setAlignment(Qt.AlignRight)
+        ic = QIcon(":/icons/delete_icon.png")
+        self._delete_button = QPushButton("Delete")
+        self._delete_button.setIcon(ic)
+        self._delete_button.clicked.connect(
+            lambda: self._signal_master.delete_box.emit(self._box.id)
+            if self._editorState == GroupsAndBoxesEditorMode.BOX
+            else self._signal_master.delete_group.emit(self._group.id)
+        )
+
+        self._button_layout.addWidget(self._delete_button)
+        self._layout.addLayout(self._button_layout, 9, 0, 1, 2)
         # ======================================
 
         # ========= Set the layout =============
@@ -234,13 +339,13 @@ class GroupsAndBoxesEditor(QWidget):
 
             self._items = []
 
-        def clear_items(self):
+        def clear_items(self) -> None:
             self.clear()
             self._items = []
 
-        def populate(self, boxes: [Box]):  # This creates item widgets (BoxesListItem) for all the boxes
+        def populate(self, boxes: List[Box]) -> None:  # This creates item widgets (BoxesListItem) for all the boxes
             for box in boxes:
-                item = QListWidget(self)
+                item = QListWidgetItem(self)
                 self.addItem(item)
                 row = self.BoxesListItem(box)
                 self._items.append(row)
@@ -267,4 +372,73 @@ class GroupsAndBoxesEditor(QWidget):
                 row = QGridLayout()
                 name_label = QLabel(self.box.name)
                 row.addWidget(name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
+                self.setLayout(row)
+
+    class BoxContentsList(QListWidget):
+        """!
+        @brief Custom list widget with support for BoxContentsListItem
+
+        A subclass of QListWidget that allows for showing of box contents
+        with +, - and count labels
+        """
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+
+            self._items = []
+
+        def clear_items(self) -> None:
+            self.clear()
+            self._items = []
+
+        def populate(self, box_contents: List[BoxContentItem]) -> None:
+            for box_content in box_contents:
+                item = QListWidgetItem(self)
+                self.addItem(item)
+                row = self.BoxContentsListItem(box_content)
+                self._items.append(row)
+                item.setSizeHint(row.minimumSizeHint())
+                self.setItemWidget(item, row)
+
+        class BoxContentsListItem(QWidget):
+            """!
+            @brief Custom item class for BoxContentsList (QListWidget)
+
+            A custom item for the BoxContentsList class that has a custom GUI:
+             _________________________
+            | <Name>      + <count> - |
+            |_________________________|
+            """
+            def __init__(self, box_content: BoxContentItem, *args, **kwargs):
+                """!
+                Initializes the GUI and signals for the BoxContentsListItem used in BoxContentsList
+                """
+                super().__init__(*args, **kwargs)
+
+                self.signal_master = GroupsAndBoxesSignalMaster()
+
+                self.content = box_content
+                self.id = self.content.id
+
+                plus_button = QPushButton("+")
+                plus_button.setFixedWidth(30)
+                plus_button.clicked.connect(
+                    lambda: self.signal_master.set_box_content_count.emit(self.id, self.content.count + 1)
+                )  # Lambda to emit signal with argument
+                count_label = QLabel(str(self.content.count))
+                minus_button = QPushButton("-")
+                minus_button.clicked.connect(
+                    lambda: self.signal_master.set_box_content_count.emit(self.id, self.content.count - 1)
+                    if self.content.count > 0 else None
+                )  # Emit only if count above 0
+
+                count_layout = QHBoxLayout()
+                count_layout.addWidget(plus_button)
+                count_layout.addWidget(count_label)
+                count_layout.addWidget(minus_button)
+
+                row = QHBoxLayout()
+                row.addWidget(QLabel(self.content.name))
+                row.addStretch()
+                row.addLayout(count_layout)
+
                 self.setLayout(row)

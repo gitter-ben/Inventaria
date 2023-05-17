@@ -4,8 +4,8 @@
 
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from core.utils import Singleton
-from .common import GroupsAndBoxesEditorMode
+from code_refactor_src.core.utils import Singleton
+
 
 class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
     
@@ -16,12 +16,16 @@ class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
     group_description_changed = pyqtSignal(int, str)
     box_description_changed = pyqtSignal(int, str)
 
-    add_box = pyqtSignal()
-    add_component = pyqtSignal()
+    delete_group = pyqtSignal(int)
+    delete_box = pyqtSignal(int)
+
+    add_box = pyqtSignal(int)
+    add_box_content = pyqtSignal(int)
+
+    set_box_content_count = pyqtSignal(int, int)
 
     # Database signals
     save_state_changed = pyqtSignal(bool)
-
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)

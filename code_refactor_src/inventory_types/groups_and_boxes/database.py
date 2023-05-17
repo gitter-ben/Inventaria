@@ -3,15 +3,17 @@
 @brief The file containing all the database stuff for the groups and boxes inventory type
 """
 from typing import List
+from io import FileIO
 
 import sqlite3
 
 from code_refactor_src.core.utils import DBConnectError, changes_db
 from code_refactor_src.inventory_types.groups_and_boxes.common import Group, Box, BoxContentItem
+from code_refactor_src.inventory_types.groups_and_boxes.groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
 
 
 class GroupsAndBoxesDatabase:
-    def __init__(self):
+    def __init__(self, db_file):
         """!
         Initialize a new GroupsAndBoxesDatabase.
 
@@ -19,6 +21,10 @@ class GroupsAndBoxesDatabase:
         """
         self.conn = None
         self.cur = None
+        self.saved = None
+
+        self.signal_master = GroupsAndBoxesSignalMaster()
+        self.load_from_file(db_file)
 
     def load_from_file(self, db_file):
         """!
@@ -28,11 +34,40 @@ class GroupsAndBoxesDatabase:
         self.cur = self.conn.cursor()
         self._initialize_database()
 
+        self.saved = True
+        self.make_savepoint()
+
     def close(self):
         """!
         Gracefully close the connection ta a database.
         """
         self.conn.close()
+
+    def make_savepoint(self):
+        """!
+        Create a savepoint by starting a sqlite transaction.
+        """
+        self.cur.execute("BEGIN TRANSACTION;")
+
+    def rollback_to_savepoint(self):
+        """!
+        Rollback to last savepoint by executing "ROLLBACK TRANSACTION;" in sqlite
+        """
+        self.cur.execute("ROLLBACK TRANSACTION;")
+        self.saved = True
+        self.make_savepoint()
+        self.signal_master.save_state_changed.emit(True)
+
+    def save(self):
+        """!
+        Save the current database by committing the current transaction
+        and starting a new one by calling self.make_savepoint()
+        """
+        if not self.saved:
+            self.cur.execute("COMMIT TRANSACTION;")
+            self.saved = True
+            self.make_savepoint()
+            self.signal_master.save_state_changed.emit(True)
 
     def get_groups(self) -> List[Group]:
         """!
@@ -69,7 +104,7 @@ class GroupsAndBoxesDatabase:
         @return A list of instances of the Box dataclass
         """
         boxes = [Box(*row) for row in self.cur.execute(
-            "SELECT id, name, description FROM boxes WHERE group_id=?",
+            "SELECT id, group_id, name, description FROM boxes WHERE group_id=?",
             (group_id, )
         ).fetchall()]
 
@@ -84,7 +119,7 @@ class GroupsAndBoxesDatabase:
         @return An instance of the Box dataclass.
         """
         box = Box(*self.cur.execute(
-            "SELECT id, name, description FROM boxes WHERE id=?",
+            "SELECT id, group_id, name, description FROM boxes WHERE id=?",
             (box_id, )
         ).fetchone())
 
@@ -99,10 +134,9 @@ class GroupsAndBoxesDatabase:
         @return A list of instances of the BoxContentItem dataclass.
         """
         contents = [BoxContentItem(*row) for row in self.cur.execute(
-            """SELECT a.id, b.name, a.count FROM box_contents AS a \
-            JOIN parts AS b ON b.id = a.part_id \
-            WHERE a.box_id = ? \
-            """,
+            """SELECT a.id, a.box_id, b.name, a.count FROM box_contents AS a 
+            JOIN parts AS b ON b.id = a.part_id 
+            WHERE a.box_id = ?""",
             (box_id, )
         ).fetchall()]
 

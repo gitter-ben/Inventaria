@@ -1,6 +1,5 @@
 from enum import Enum
 from dataclasses import dataclass
-from typing import List
 
 
 class GroupsAndBoxesEditorMode(Enum):
@@ -15,6 +14,7 @@ class GroupsAndBoxesEditorMode(Enum):
 @dataclass
 class BoxContentItem:
     id: int
+    box_id: int
     name: str
     count: int
 
@@ -22,6 +22,7 @@ class BoxContentItem:
 @dataclass
 class Box:
     id: int
+    group_id: int
     name: str
     description: str
 
