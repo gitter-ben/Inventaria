@@ -29,6 +29,7 @@ from PyQt5.QtWidgets import (
 )
 
 from code_refactor_src.core.constants import *
+from code_refactor_src.resources import resources
 from .common import *
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
 
@@ -37,7 +38,7 @@ class GroupsAndBoxesEditor(QWidget):
     """!
     @brief A class to describe the editor GUI for the groups and boxes inventory type
     """
-    def __init__(self, *args, **kw):
+    def __init__(self, sig_master: GroupsAndBoxesSignalMaster, *args, **kw):
         """!
         Initializes a new Editor instance.
         Steps:
@@ -49,14 +50,25 @@ class GroupsAndBoxesEditor(QWidget):
         """
         super(GroupsAndBoxesEditor, self).__init__(*args, **kw)
 
+        self._nothing(resources.qt_version)  # Make the damn import warning disappear
+
         self._box = None
         self._group = None
         self._editorState = GroupsAndBoxesEditorMode.EMPTY
 
-        self._signal_master = GroupsAndBoxesSignalMaster()
+        self._signal_master = sig_master
 
         self.__setup_vars()
         self.__setup_gui()
+
+    @staticmethod
+    def _nothing(x):
+        """!
+        This method's sole purpose is the elimination of an unused import warning
+        because it can't see that resources/resources.py is being used. Without that
+        import the images and icons wouldn't work.
+        """
+        return x
 
     def set_group_info(self, group: Group, boxes: List[Box]) -> None:
         """!
@@ -71,7 +83,7 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Group Editor: {self._group.name} (ID: {self._group.id})")
 
-        self._change_name_line_edit.clear()
+        self._change_name_line_edit.setText(self._group.name)
 
         self._description.blockSignals(True)
         self._description.setPlainText(self._group.description)
@@ -107,7 +119,7 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._headline.setText(f"Box Editor: {self._box.name} (ID: {self._box.id})")
 
-        self._change_name_line_edit.clear()
+        self._change_name_line_edit.setText(self._box.name)
 
         self._description.blockSignals(True)
         self._description.setPlainText(self._box.description)

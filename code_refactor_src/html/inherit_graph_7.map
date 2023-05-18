@@ -1,5 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,60,107,87"/>
-<area shape="rect" id="node2" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsA8bd3223ad8ee5285d0ef2f9389576224.html" title="Custom list widget with support for BoxContentsListItem." alt="" coords="155,5,496,61"/>
-<area shape="rect" id="node3" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsAndBoxesEditor_1_1BoxesList.html" title="QListWidget with option for delete&#45;, add&#45;, etc buttons." alt="" coords="177,85,474,141"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,203,84,229"/>
+<area shape="rect" id="node2" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEditor.html" title="A class to describe the editor GUI for the groups and boxes inventory type." alt="" coords="156,5,391,61"/>
+<area shape="rect" id="node3" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEdcaf0cd9a440290381b14254cf01ee70b.html" title="Custom item class for BoxContentsList (QListWidget)" alt="" coords="132,86,415,157"/>
+<area shape="rect" id="node4" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEd108c1c93d4858f0f6201c5e34b48e1d1.html" title="Custom List Widget Item." alt="" coords="134,181,413,251"/>
+<area shape="rect" id="node5" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes_1_1GroupsAndBoxesGUI.html" title=" " alt="" coords="155,276,392,332"/>
+<area shape="rect" id="node6" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBar.html" title="NavBar widget for groups and boxes inventory type." alt="" coords="153,356,394,412"/>
 </map>

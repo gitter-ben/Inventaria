@@ -180,7 +180,7 @@ class Database(QObject):
     def _create_connection(self, db_file):
         try:
             conn = sqlite3.connect(db_file, isolation_level=None)
-        except Error as e:
+        except sqlite3.Error as e:
             print(f"Could not connect to database:\n{e}")
 
         return conn

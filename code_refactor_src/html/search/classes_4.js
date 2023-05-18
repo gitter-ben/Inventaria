@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singleton_61',['Singleton',['../classcode__refactor__src_1_1core_1_1utils_1_1Singleton.html',1,'code_refactor_src::core::utils']]]
+  ['navbar_62',['NavBar',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBar.html',1,'code_refactor_src::inventory_types::groups_and_boxes::navbar']]]
 ];

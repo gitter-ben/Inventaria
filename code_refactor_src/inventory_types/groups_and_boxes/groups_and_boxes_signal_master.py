@@ -4,11 +4,11 @@
 
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from code_refactor_src.core.utils import Singleton
 
-
-class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
-    
+class GroupsAndBoxesSignalMaster(QObject):
+    """!
+    @brief The signal master for the groups and boxes inventory type.
+    """
     # Editor signals
     group_name_changed = pyqtSignal(int, str)
     box_name_changed = pyqtSignal(int, str)
@@ -23,6 +23,13 @@ class GroupsAndBoxesSignalMaster(QObject, metaclass=Singleton):
     add_box_content = pyqtSignal(int)
 
     set_box_content_count = pyqtSignal(int, int)
+
+    # NavBar signals
+    new_group = pyqtSignal()
+    new_box = pyqtSignal(int)
+
+    group_selection_changed = pyqtSignal(int)
+    box_selection_changed = pyqtSignal(int)
 
     # Database signals
     save_state_changed = pyqtSignal(bool)

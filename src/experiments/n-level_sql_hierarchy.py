@@ -84,7 +84,7 @@ class NLevelSQLHierarchy:
                 self._print_tree_helper(2, row[0])
 
     def _print_tree_helper(self, level, id, indent=1):
-        
+        pass
 
 if __name__ == "__main__":
     h = NLevelSQLHierarchy("database.sqlite", hierarchy_level=2)

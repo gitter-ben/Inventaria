@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['database_2epy_63',['database.py',['../inventory__types_2groups__and__boxes_2database_8py.html',1,'']]]
+  ['editor_2epy_65',['editor.py',['../editor_8py.html',1,'']]]
 ];

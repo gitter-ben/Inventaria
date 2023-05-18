@@ -11,7 +11,7 @@ from code_refactor_src.inventory_types.groups_and_boxes.groups_and_boxes_signal_
 
 
 class GroupsAndBoxesDatabase:
-    def __init__(self, db_file):
+    def __init__(self, db_file: str, sig_master: GroupsAndBoxesSignalMaster):
         """!
         Initialize a new GroupsAndBoxesDatabase.
 
@@ -21,7 +21,7 @@ class GroupsAndBoxesDatabase:
         self.cur = None
         self.saved = None
 
-        self._signal_master = GroupsAndBoxesSignalMaster()
+        self._signal_master = sig_master
         self.load_from_file(db_file)
 
     def load_from_file(self, db_file) -> None:

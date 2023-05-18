@@ -8,9 +8,9 @@ var searchData=
   ['group_26',['Group',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Group.html',1,'code_refactor_src::inventory_types::groups_and_boxes::common']]],
   ['groups_5fand_5fboxes_2epy_27',['groups_and_boxes.py',['../groups__and__boxes_8py.html',1,'']]],
   ['groups_5fand_5fboxes_5fsignal_5fmaster_2epy_28',['groups_and_boxes_signal_master.py',['../groups__and__boxes__signal__master_8py.html',1,'']]],
-  ['groupsandboxes_29',['GroupsAndBoxes',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes_1_1GroupsAndBoxes.html',1,'code_refactor_src::inventory_types::groups_and_boxes::groups_and_boxes']]],
-  ['groupsandboxesdatabase_30',['GroupsAndBoxesDatabase',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html',1,'code_refactor_src::inventory_types::groups_and_boxes::database']]],
-  ['groupsandboxeseditor_31',['GroupsAndBoxesEditor',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1custom__widgets_1_1GroupsAndBoxesEditor.html',1,'code_refactor_src::inventory_types::groups_and_boxes::custom_widgets']]],
-  ['groupsandboxeseditormode_32',['GroupsAndBoxesEditorMode',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1GroupsAndBoxesEditorMode.html',1,'code_refactor_src::inventory_types::groups_and_boxes::common']]],
+  ['groupsandboxesdatabase_29',['GroupsAndBoxesDatabase',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html',1,'code_refactor_src::inventory_types::groups_and_boxes::database']]],
+  ['groupsandboxeseditor_30',['GroupsAndBoxesEditor',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEditor.html',1,'code_refactor_src::inventory_types::groups_and_boxes::editor']]],
+  ['groupsandboxeseditormode_31',['GroupsAndBoxesEditorMode',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1GroupsAndBoxesEditorMode.html',1,'code_refactor_src::inventory_types::groups_and_boxes::common']]],
+  ['groupsandboxesgui_32',['GroupsAndBoxesGUI',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes_1_1GroupsAndBoxesGUI.html',1,'code_refactor_src::inventory_types::groups_and_boxes::groups_and_boxes']]],
   ['groupsandboxessignalmaster_33',['GroupsAndBoxesSignalMaster',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes__signalf8cb10fb21211da80f466390435437e5.html',1,'code_refactor_src::inventory_types::groups_and_boxes::groups_and_boxes_signal_master']]]
 ];

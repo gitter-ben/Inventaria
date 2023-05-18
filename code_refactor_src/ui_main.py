@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 from PyQt5.Qt import (
     QIcon,
 )
@@ -29,13 +31,21 @@ class MainWindow(QMainWindow):
         self.db = None
         self.db_loaded = False
 
-        self._dbs = []
-        self._inventories = []
+        self._inventories: List[Tuple[GroupsAndBoxesSignalMaster, GroupsAndBoxesDatabase, GroupsAndBoxesGUI], ...] = []
 
-        self.setup_gui()
+        self.__setup_gui()
 
-    def setup_gui(self) -> None:
-        self._dbs.append(GroupsAndBoxesDatabase("groups_and_boxes.sqlite"))
-        self._inventories.append(GroupsAndBoxesGUI(self._dbs[-1]))
+    def __setup_gui(self) -> None:
+        self._add_inventory()
+        self.setCentralWidget(self._inventories[0][2])
+        self._inventories[0][2]._editor.set_group_info(
+            self._inventories[0][1].get_group(1),
+            self._inventories[0][1].get_boxes(1)
+        )
 
-        self.setCentralWidget(self._inventories[0])
+    def _add_inventory(self) -> None:
+        sig_master = GroupsAndBoxesSignalMaster()
+        db = GroupsAndBoxesDatabase("groups_and_boxes.sqlite", sig_master)
+        gui = GroupsAndBoxesGUI(db, sig_master)
+
+        self._inventories.append((sig_master, db, gui))
