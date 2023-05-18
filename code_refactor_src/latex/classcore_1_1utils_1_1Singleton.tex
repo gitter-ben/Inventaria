@@ -7,11 +7,12 @@ A \mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} Metaclass.
 
 
 
-Inheritance diagram for core.\+utils.\+Singleton\+:\nopagebreak
+Inheritance diagram for core.\+utils.\+Singleton\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classcore_1_1utils_1_1Singleton__inherit__graph}
+\includegraphics[width=228pt]{classcore_1_1utils_1_1Singleton__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -40,7 +41,7 @@ def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (cls, $\ast$args, $\ast$$\ast$kwarg
 \doxysubsection{Detailed Description}
 A \mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} Metaclass. 
 
-Add metaclass=\mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} to class definition to turn into a singleton class. Working principle\+: When a new instance of a \mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} class is created the \char`\"{}\+\_\+\+\_\+call\+\_\+\+\_\+()\char`\"{} function will be called. This function will check for an existing instance of that class in the \+\_\+instances dictionary. If no instance is found, it creates a new one, stores it and returns it. 
+Add metaclass=\mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} to class definition to turn into a singleton class. Working principle\+: When a new instance of a \mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{Singleton}} class is created the \char`\"{}\+\_\+\+\_\+call\+\_\+\+\_\+()\char`\"{} function will be called. This function will check for an existing instance of that class in the \+\_\+instances dictionary. If no instance is found, it creates a new one, stores it and returns it. It also uses a thread lock to make it multi-\/threading safe. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

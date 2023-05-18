@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
+
 class NLevelSQLHierarchy:
     def __init__(self, db_file, hierarchy_level=1):
         '''Initialize a new SQLite Hierarchy
@@ -15,7 +16,7 @@ class NLevelSQLHierarchy:
         self._initialize_hierarchy(hierarchy_level)
 
     def _initialize_hierarchy(self, hl):
-        '''Initialize the hierarchy and create tables for all of the levels
+        '''Initialize the hierarchy and create tables for all the levels
 
         :param: hl: the number of groups and subgroups
         '''

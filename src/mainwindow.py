@@ -8,6 +8,7 @@ import sys
 import resources
 from custom_widgets import *
 
+
 class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -129,8 +130,8 @@ class MainWindow(QMainWindow):
         self.GUIHSplitter.addWidget(self.navBars)
         self.GUIHSplitter.addWidget(self.inspector)
         self.GUIHSplitter.setSizes([WINDOW_HEIGHT//3, 2 * WINDOW_HEIGHT//3])
-        self.GUIHSplitter.setCollapsible(0, False) # Can't collapse Navigator
-        self.GUIHSplitter.setCollapsible(1, False) # Can't collapse Inspector
+        self.GUIHSplitter.setCollapsible(0, False)  # Can't collapse Navigator
+        self.GUIHSplitter.setCollapsible(1, False)  # Can't collapse Inspector
         self.topBar = TopBar()
         self.topBar.setFixedHeight(TOP_BAR_HEIGHT)
         self.bottomBar = BottomBar()

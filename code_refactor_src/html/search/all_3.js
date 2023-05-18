@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['close_10',['close',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#ac1e0cee8646c312853238b614e91babf',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]]
+  ['close_10',['close',['../classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a7cb5aeb027871364940992af0485445b',1,'inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['current_5fids_11',['current_ids',['../classinventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBars.html#a07c6799384a66608bf0165b9999f09de',1,'inventory_types::groups_and_boxes::navbar::NavBars']]]
 ];

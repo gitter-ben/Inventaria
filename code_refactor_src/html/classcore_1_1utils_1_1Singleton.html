@@ -82,10 +82,9 @@ Inheritance diagram for core.utils.Singleton:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcore_1_1utils_1_1Singleton__inherit__graph.png" border="0" usemap="#acore_8utils_8Singleton_inherit__map" alt="Inheritance graph"/></div>
 <map name="acore_8utils_8Singleton_inherit__map" id="acore_8utils_8Singleton_inherit__map">
-<area shape="rect" title="A Singleton Metaclass." alt="" coords="128,27,275,54"/>
-<area shape="rect" href="classinventory__types_1_1groups__and__boxes_1_1groups__and__boxes__signal__master_1_1GroupsAndBoxesSignalMaster.html" title=" " alt="" coords="323,5,563,76"/>
-<area shape="rect" title=" " alt="" coords="17,27,68,54"/>
-<area shape="rect" title=" " alt="" coords="5,78,80,105"/>
+<area shape="rect" title="A Singleton Metaclass." alt="" coords="5,80,152,107"/>
+<area shape="rect" title=" " alt="" coords="53,5,104,32"/>
+<area shape="rect" title=" " alt="" coords="128,5,203,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -113,7 +112,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="classcore_1_1utils_1_1Singleton.html" title="A Singleton Metaclass.">Singleton</a> Metaclass. </p>
-<p>Add metaclass=<a class="el" href="classcore_1_1utils_1_1Singleton.html" title="A Singleton Metaclass.">Singleton</a> to class definition to turn into a singleton class. Working principle: When a new instance of a <a class="el" href="classcore_1_1utils_1_1Singleton.html" title="A Singleton Metaclass.">Singleton</a> class is created the "__call__()" function will be called. This function will check for an existing instance of that class in the _instances dictionary. If no instance is found, it creates a new one, stores it and returns it. </p>
+<p>Add metaclass=<a class="el" href="classcore_1_1utils_1_1Singleton.html" title="A Singleton Metaclass.">Singleton</a> to class definition to turn into a singleton class. Working principle: When a new instance of a <a class="el" href="classcore_1_1utils_1_1Singleton.html" title="A Singleton Metaclass.">Singleton</a> class is created the "__call__()" function will be called. This function will check for an existing instance of that class in the _instances dictionary. If no instance is found, it creates a new one, stores it and returns it. It also uses a thread lock to make it multi-threading safe. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>core/utils.py</li>
 </ul>

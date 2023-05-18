@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['add_5fbox_1',['add_box',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#aef8136882ecc7a98aba783644d8a8cbf',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
-  ['add_5fbox_5fcontents_2',['add_box_contents',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a4f2546bbcceacc45e82f9c210893621c',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
-  ['add_5fgroup_3',['add_group',['../classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#ad810fe6fdde41cfa8ed60939fbec44ce',1,'code_refactor_src::inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]]
+  ['add_5fbox_1',['add_box',['../classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a4353ca5b2f0357cd9e7cd984534a68ea',1,'inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['add_5fbox_5fcontents_2',['add_box_contents',['../classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#a5ee287ce0350a8ae510a35dc3967b874',1,'inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]],
+  ['add_5fgroup_3',['add_group',['../classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html#af3096bf80198aa200b65e1019a9309d3',1,'inventory_types::groups_and_boxes::database::GroupsAndBoxesDatabase']]]
 ];
