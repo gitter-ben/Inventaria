@@ -12,7 +12,7 @@ from PyQt5.QtWidgets import (
     QMessageBox,
     QInputDialog
 )
-from core.signal_master import GlobalSignalMaster
+from core.signal_master import MainSignalMaster
 from .constants import (
     INITIAL_WIDTH
 )
@@ -27,7 +27,7 @@ class GroupsAndBoxesGUI(QSplitter):
             self,
             database: GroupsAndBoxesDatabase,
             sig_master: GroupsAndBoxesSignalMaster,
-            global_sig_master: GlobalSignalMaster,
+            global_sig_master: MainSignalMaster,
             *args,
             **kwargs):
         """!

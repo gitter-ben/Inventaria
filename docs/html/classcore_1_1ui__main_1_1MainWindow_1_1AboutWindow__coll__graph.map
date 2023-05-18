@@ -1,0 +1,4 @@
+<map id="core.ui_main.MainWindow.AboutWindow" name="core.ui_main.MainWindow.AboutWindow">
+<area shape="rect" id="node1" title="A window to show the about information." alt="" coords="5,80,203,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="65,5,143,32"/>
+</map>

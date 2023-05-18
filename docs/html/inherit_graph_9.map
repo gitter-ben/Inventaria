@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html" title=" " alt="" coords="5,5,243,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,20,64,47"/>
+<area shape="rect" id="node2" href="$classinventory__types_1_1groups__and__boxes_1_1common_1_1GroupsAndBoxesEditorMode.html" title="An enum to describe the state the GroupsAndBoxEditor is in right now." alt="" coords="112,5,385,61"/>
 </map>

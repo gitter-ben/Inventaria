@@ -1,17 +1,32 @@
-from typing import Tuple
+from textwrap import dedent
 
 from PyQt5.Qt import (
     QAction,
+    QPalette,
+    QColor,
+    QIcon,
+    pyqtSlot
 )
+from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import (
+    QWidget,
+    QGridLayout,
+    QHBoxLayout,
+    QMessageBox,
+    QLabel,
     QMainWindow,
     QTabWidget,
-    QProgressBar
+    QProgressBar,
+    QVBoxLayout,
+    QFrame,
+    QFileDialog,
+    QPushButton,
 )
 
-from inventory_types import *
 from core.constants import *
-from database import MainDatabase
+from core.signal_master import MainSignalMaster
+from core.database import MainDatabase
+from core.utils import MainDBLoadError
 from resources import resources
 
 
@@ -20,12 +35,10 @@ class MainWindow(QMainWindow):
         super().__init__(*args, **kwargs)
         self.nothing(resources.qt_version)
 
-        self._global_signal_master = GlobalSignalMaster()
+        self._global_signal_master = MainSignalMaster()
 
         self._db_loaded = False
-        self._db = MainDatabase(self._global_signal_master)
-
-        self._inventories: List[Tuple[GroupsAndBoxesSignalMaster, GroupsAndBoxesDatabase, GroupsAndBoxesGUI], ...] = []
+        self._db = None
 
         self.__setup_gui()
 
@@ -46,8 +59,10 @@ class MainWindow(QMainWindow):
         1. Set application settings and top layout
         2. Make menubar and statusbar
         3. Make top bar with save, load, rollback, ...
-        4. Make inventory tabs
-        5. Make bottom bar
+        4. Make line
+        5. Make inventory tabs
+        6. Make second line
+        7. Make bottom bar
         """
         # ======= Set application settings =======
         self.setWindowTitle(APPLICATION_TITLE)
@@ -61,8 +76,12 @@ class MainWindow(QMainWindow):
         palette.setColor(QPalette.Window, QColor(200, 200, 200))
         self.setPalette(palette)
 
-        main_splitter = QSplitter(Qt.Vertical)
-        self.setCentralWidget(main_splitter)
+        main_layout = QVBoxLayout()
+        (main_widget := QWidget()).setLayout(main_layout)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+        self.setContentsMargins(0, 0, 0, 0)
+        self.setCentralWidget(main_widget)
         # ========================================
 
         # ======= Make menu- and statusbar =======
@@ -127,26 +146,44 @@ class MainWindow(QMainWindow):
         save_button.setFixedWidth(82)
         save_button.setIcon(ic)
         save_button.pressed.connect(self._save_slot)
+        save_button.setEnabled(False)
         top_bar_layout.addWidget(save_button, 0, 1, 1, 1)
         ic = QIcon(":/icons/rollback_icon.png")
         roll_back_button = QPushButton("Rollback")
         roll_back_button.setFixedWidth(82)
         roll_back_button.setIcon(ic)
         roll_back_button.pressed.connect(self._roll_back_slot)
+        roll_back_button.setEnabled(False)
         top_bar_layout.addWidget(roll_back_button, 0, 2, 1, 1)
 
         top_bar_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        top_bar_layout.setContentsMargins(8, 0, 8, 0)
         top_bar.setLayout(top_bar_layout)
         top_bar.setFixedHeight(TOP_BAR_HEIGHT)
-        main_splitter.addWidget(top_bar)
+        main_layout.addWidget(top_bar)
         # ========================================
 
-        # ======= Make inventory type tabs ========
-        inventory_gui_tabs = QTabWidget()
-        self._test_add_inventory()
-        inventory_gui_tabs.addTab(self._inventories[0][2], "Groups and Boxes 1")
-        main_splitter.addWidget(inventory_gui_tabs)
-        # =========================================
+        # ============ Make line =================
+        line = QFrame()
+        line.setFrameShape(QFrame.HLine)
+        line.setLineWidth(5)
+        line.setStyleSheet("color: #AAAAAA")
+        main_layout.addWidget(line)
+        # ========================================
+
+        # ======= Make inventory type tabs =======
+        self._inventory_gui_tabs = QTabWidget()
+        self._inventory_gui_tabs.setStyleSheet("QTabWidget::pane { border: 0 };")
+        main_layout.addWidget(self._inventory_gui_tabs)
+        # ========================================
+
+        # ============ Make line 2 ===============
+        line = QFrame()
+        line.setFrameShape(QFrame.HLine)
+        line.setLineWidth(5)
+        line.setStyleSheet("color: #AAAAAA")
+        main_layout.addWidget(line)
+        # ========================================
 
         # =========== Make bottom bar =============
         bottom_bar = QWidget()
@@ -159,18 +196,11 @@ class MainWindow(QMainWindow):
         self._job_progress_bar = QProgressBar()
         bottom_bar_layout.addWidget(self._job_progress_bar)
         bottom_bar.setLayout(bottom_bar_layout)
-        bottom_bar.setFixedWidth(40)
-        main_splitter.addWidget(bottom_bar)
+        bottom_bar.setFixedHeight(40)
+        main_layout.addWidget(bottom_bar)
         # =========================================
 
-    def _test_add_inventory(self) -> None:
-        sig_master = GroupsAndBoxesSignalMaster()
-        db = GroupsAndBoxesDatabase("../groups_and_boxes.sqlite", sig_master)
-        gui = GroupsAndBoxesGUI(db, sig_master, self._global_signal_master)
-
-        self._inventories.append((sig_master, db, gui))
-
-    def closeEvent(self, event):
+    def closeEvent(self, event) -> None:
         if self._db_loaded:
             if not self._db.saved:
                 reply = QMessageBox.question(
@@ -191,25 +221,77 @@ class MainWindow(QMainWindow):
                 event.accept()
 
     @pyqtSlot()
-    def _load_db_slot(self):
+    def _load_db_slot(self) -> None:
+        directory_name = str(QFileDialog.getExistingDirectory(self, "Select directory"))
+        try:
+            self._db = MainDatabase(directory_name, self._global_signal_master)
+        except MainDBLoadError as e:
+            self._show_message("Error", f"There was an error loading the database:\n{e}")
+            return
         print("DB loaded.")
 
     @pyqtSlot()
-    def _save_slot(self):
+    def _save_slot(self) -> None:
+        if not self._db_loaded:
+            self._show_message("Error", "No database to save.")
+            return
+
         print("Saved.")
 
     @pyqtSlot()
-    def _unload_db_slot(self):
+    def _unload_db_slot(self) -> None:
+        if not self._db_loaded:
+            self._show_message("Error", "No database to unload.")
+            return
+
         print("DB unloaded.")
 
     @pyqtSlot()
-    def _roll_back_slot(self):
+    def _roll_back_slot(self) -> None:
+        if not self._db_loaded:
+            self._show_message("Error", "No database to roll back.")
+            return
+
         print("DB rolled back.")
 
     @pyqtSlot()
-    def _show_preferences_slot(self):
+    def _show_preferences_slot(self) -> None:
         print("Preferences showed.")
 
     @pyqtSlot()
-    def _show_about_slot(self):
+    def _show_about_slot(self) -> None:
+        self.about_window = self.AboutWindow(self)
+        self.about_window.show()
         print("About showed.")
+
+    def _show_message(self, title, msg) -> None:
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle(title)
+        dlg.setText(msg)
+        dlg.show()
+
+    class AboutWindow(QWidget):
+        """!
+        @brief A window to show the about information.
+        """
+        def __init__(self, parent):
+            super().__init__()
+
+            self._parent = parent
+            self.setWindowTitle("About")
+            self.resize(100, 100)
+            layout = QVBoxLayout()
+            layout.setAlignment(Qt.AlignCenter)
+            main_text = QLabel(dedent("""\
+            License: Gnu General Public License
+            
+            Author: Benjamin Lucas Krüger\
+            """))
+            layout.addWidget(main_text)
+            self.setLayout(layout)
+
+        def showEvent(self, e) -> None:
+            if not e.spontaneous():
+                geo = self.geometry()
+                geo.moveCenter(self._parent.geometry().center())
+                QTimer.singleShot(0, lambda: self.setGeometry(geo))

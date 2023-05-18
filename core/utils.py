@@ -9,7 +9,6 @@ def changes_db(func):
     A decorator to describe a function that changes the database.
     Calls the self.unsaved() method to send the saveStateChanged to the editor that it is now not saved anymore.
     """
-
     @wraps(func)
     def wrapper(self, *args, **kw):
         self._unsaved()
@@ -20,6 +19,15 @@ def changes_db(func):
 
 class DBConnectError(Exception):
     """Raised when not able to connect to database"""
+    def __init__(self, error_msg: str):
+        self._msg = error_msg
+
+    def __repr__(self):
+        return f"{self._msg}"
+
+
+class MainDBLoadError(Exception):
+    """Raised when the MainDatabase encounters an error while loading."""
 
 
 class Singleton(type(QObject), type):

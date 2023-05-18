@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['navbar_71',['NavBar',['../classinventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBars_1_1NavBar.html',1,'inventory_types::groups_and_boxes::navbar::NavBars']]],
-  ['navbaritem_72',['NavBarItem',['../classinventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBars_1_1NavBar_1_1NavBarItem.html',1,'inventory_types::groups_and_boxes::navbar::NavBars::NavBar']]],
-  ['navbars_73',['NavBars',['../classinventory__types_1_1groups__and__boxes_1_1navbar_1_1NavBars.html',1,'inventory_types::groups_and_boxes::navbar']]]
+  ['maindatabase_71',['MainDatabase',['../classcore_1_1database_1_1MainDatabase.html',1,'core::database']]],
+  ['maindbloaderror_72',['MainDBLoadError',['../classcore_1_1utils_1_1MainDBLoadError.html',1,'core::utils']]],
+  ['mainsignalmaster_73',['MainSignalMaster',['../classcore_1_1signal__master_1_1MainSignalMaster.html',1,'core::signal_master']]],
+  ['mainwindow_74',['MainWindow',['../classcore_1_1ui__main_1_1MainWindow.html',1,'core::ui_main']]]
 ];

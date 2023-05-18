@@ -6,7 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/experiments" />
       <excludeFolder url="file://$MODULE_DIR$/inventaria_env" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (Inventaria)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
