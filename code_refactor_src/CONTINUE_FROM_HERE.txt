@@ -1,1 +1,1 @@
-- Fix group and box selection communication between GroupsAndBoxes and NavBar
+- Fix add box signal

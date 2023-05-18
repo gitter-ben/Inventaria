@@ -158,7 +158,7 @@ class GroupsAndBoxesDatabase:
         )
 
     @changes_db
-    def delete_group(self, group_id: str) -> None:
+    def delete_group(self, group_id: int) -> None:
         """!
         Delete a group via the group id.
 

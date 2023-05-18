@@ -26,10 +26,10 @@ class GroupsAndBoxesSignalMaster(QObject):
 
     # NavBar signals
     new_group = pyqtSignal()
-    new_box = pyqtSignal(int)
+    new_box = pyqtSignal()
 
-    group_selection_changed = pyqtSignal(int)
-    box_selection_changed = pyqtSignal(int)
+    navbar_group_selection_changed = pyqtSignal()
+    navbar_box_selection_changed = pyqtSignal()
 
     # Database signals
     save_state_changed = pyqtSignal(bool)

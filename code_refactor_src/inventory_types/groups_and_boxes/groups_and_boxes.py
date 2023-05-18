@@ -3,18 +3,23 @@
 @brief Defines the inspector for the groups and boxes inventory type
 
 @section todo_groups_and_boxes TODO
-- Reimplement everything but with doxygen comments and cleaned up
 - Implement PyQt QTests with automatic GUI testing
 """
 
 from PyQt5.Qt import QPalette, QColor, pyqtSlot
-from PyQt5.QtWidgets import QSplitter
-
-from .editor import GroupsAndBoxesEditor
-from .common import GroupAndBoxIDs
-from .navbar import NavBars
+from PyQt5.QtWidgets import (
+    QSplitter,
+    QMessageBox,
+    QInputDialog
+)
+from code_refactor_src.signal_master import GlobalSignalMaster
+from .constants import (
+    INITIAL_WIDTH
+)
 from .database import GroupsAndBoxesDatabase
+from .editor import GroupsAndBoxesEditor
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .navbar import NavBars
 
 
 class GroupsAndBoxesGUI(QSplitter):
@@ -22,6 +27,7 @@ class GroupsAndBoxesGUI(QSplitter):
             self,
             database: GroupsAndBoxesDatabase,
             sig_master: GroupsAndBoxesSignalMaster,
+            global_sig_master: GlobalSignalMaster,
             *args,
             **kwargs):
         """!
@@ -42,7 +48,8 @@ class GroupsAndBoxesGUI(QSplitter):
 
         super(GroupsAndBoxesGUI, self).__init__(*args, **kwargs)  # Initialize QWidget superclass
 
-        self._signal_master = sig_master  # Acquire singleton instance of signal master
+        self._signal_master = sig_master
+        self._global_signal_master = global_sig_master
         self._db = database
 
         self.__setup_gui()  # Set up the GUI
@@ -76,11 +83,14 @@ class GroupsAndBoxesGUI(QSplitter):
 
         # ================== Setup nav bars ====================
         self._navBars = NavBars(self._signal_master)
+        self._navBars.group_level_nav.populate(self._db.get_groups())
         self.addWidget(self._navBars)
 
         self._signal_master.new_group.connect(self._new_group_slot)
         self._signal_master.new_box.connect(self._new_box_slot)
 
+        self._signal_master.navbar_group_selection_changed.connect(self._navbar_group_selection_changed)
+        self._signal_master.navbar_box_selection_changed.connect(self._navbar_box_selection_changed)
         # ======================================================
 
         # =================== Setup editor =====================
@@ -110,42 +120,102 @@ class GroupsAndBoxesGUI(QSplitter):
         # =====================================================
 
         # ================= Finish layout =====================
-        # h_splitter.setSizes([???])
-        # self.setLayout(h_splitter)
+        self.setSizes([INITIAL_WIDTH//3, 2 * INITIAL_WIDTH//3])
         # =====================================================
 
     @pyqtSlot(int, str)
-    def _group_name_changed_slot(self, group_id: int, name: str) -> None:
-        print(f"Group (ID: {group_id}) changed name to '{name}'.")
+    def _group_name_changed_slot(self, group_id: int, new_name: str) -> None:
+        self._db.edit_group_name(group_id, new_name)
+        self._editor.set_group_info(
+            self._db.get_group(group_id),
+            self._db.get_boxes(group_id)
+        )
+        print(f"Group (ID: {group_id}) changed name to '{new_name}'.")
 
     @pyqtSlot(int, str)
-    def _box_name_changed_slot(self, box_id: int, name: str) -> None:
-        print(f"Box (ID: {box_id}) changed name to '{name}'.")
+    def _box_name_changed_slot(self, box_id: int, new_name: str) -> None:
+        self._db.edit_box_name(box_id, new_name)
+        self._editor.set_box_info(
+            self._db.get_box(box_id),
+            self._db.get_box_contents(box_id)
+        )
+        print(f"Box (ID: {box_id}) changed name to '{new_name}'.")
 
     @pyqtSlot(int, str)
     def _group_description_changed_slot(self, group_id: int, new_description: str) -> None:
+        self._db.edit_group_description(group_id, new_description)
         print(f"Group (ID: {group_id}) changed its description to '{new_description}'.")
 
     @pyqtSlot(int, str)
     def _box_description_changed_slot(self, box_id: int, new_description: str) -> None:
+        self._db.edit_box_description(box_id, new_description)
         print(f"Box (ID: {box_id}) changed its description to '{new_description}'.")
 
     @pyqtSlot()
     def _new_group_slot(self) -> None:
-        print(f"Add a new group.")
+        name, ok = QInputDialog.getText(self, "New Group", "Name:  ")
+        if ok:
+            if len(name) == 0:
+                self.showMessage("Error", "Name must be at least one letter!")
+            else:
+                self._db.add_group(name)
+                itemid: int = self._navBars.current_ids().group_id
+                self._navBars.group_level_nav.clear_items()
+                self._navBars.group_level_nav.populate(self._db.get_groups())
+                if itemid is not None:
+                    self._navBars.group_level_nav.set_selected_item_by_id(itemid)
+                print(f"Add a new group.")
 
     @pyqtSlot(int)
     def _delete_group_slot(self, group_id: int) -> None:
+        self._db.delete_group(group_id)
+        ids = self._navBars.current_ids()
+        print(ids, group_id)
+        if ids.group_id == group_id:  # If deleting the current group
+            self._editor.set_empty()
+            self._navBars.box_level_nav.clear_items()
+        self._navBars.group_level_nav.clear_items()
+        self._navBars.group_level_nav.populate(self._db.get_groups())
         print(f"Group (ID: {group_id}) was deleted.")
 
-    @pyqtSlot(int)
-    def _new_box_slot(self, group_id: int) -> None:
-        print(group_id)
-        print(f"Add new box in group (ID: {group_id}).")
+    def _new_box_slot(self) -> None:
+        ids = self._navBars.current_ids()
+        if ids.group_id is None:
+            self._show_message("Error", "No group selected.")
+            return
+
+        name, ok = QInputDialog.getText(self, "New Box", "Name:  ")
+        if ok:
+            if len(name) == 0:
+                self.showMessage("Error", "Name must be at least one letter!")
+            else:
+                self._db.add_box(name, ids.group_id)
+                self._navBars.box_level_nav.clear_items()
+                self._navBars.box_level_nav.populate(self._db.get_boxes(ids.group_id))
+                if ids.box_id is not None:
+                    self._navBars.box_level_nav.set_selected_item_by_id(ids.box_id)
+                else:
+                    if ids.group_id is not None:
+                        self._editor.set_group_info(
+                            self._db.get_group(ids.group_id),
+                            self._db.get_boxes(ids.group_id)
+                        )
+
+        print(f"Add new box in group (ID: {ids.group_id}).")
 
     @pyqtSlot(int)
     def _delete_box_slot(self, box_id: int) -> None:
-        print(f"Box (ID: {box_id}) was deleted.")
+        self._db.delete_box(box_id)
+        ids = self._navBars.current_ids()
+        if ids.box_id == box_id:  # current box was deleted
+            self._editor.set_empty()
+            self._editor.set_group_info(
+                self._db.get_group(ids.group_id),
+                self._db.get_boxes(ids.group_id)
+            )
+        self._navBars.box_level_nav.clear_items()
+        self._navBars.box_level_nav.populate(self._db.get_boxes(ids.group_id))
+        print(f"Delete box (ID: {box_id}).")
 
     @pyqtSlot(int)
     def _add_box_contents_slot(self, box_id: int) -> None:
@@ -153,12 +223,60 @@ class GroupsAndBoxesGUI(QSplitter):
 
     @pyqtSlot(int, int)
     def _set_box_content_count_slot(self, box_content_id: int, count: int) -> None:
+        self._db.edit_box_contents_count(
+            box_content_id,
+            count
+        )
+        ids = self._navBars.current_ids()
+        self._editor.set_box_info(
+            self._db.get_box(ids.box_id),
+            self._db.get_box_contents(ids.box_id)
+        )
         print(f"Box content (ID: {box_content_id}) set to {count}.")
 
     @pyqtSlot(bool)
     def _save_state_changed_slot(self, save_state: bool) -> None:
+        self._global_signal_master.global_save_state_changed.emit(False)
         print(f"Database changed save state to {save_state}.")
 
-    @pyqtSlot(GroupAndBoxIDs)
-    def _navbar_selection_changed(self, new_selection: GroupAndBoxIDs) -> None:
-        print(f"The navbar selection changed to: {new_selection}")
+    @pyqtSlot()
+    def _navbar_group_selection_changed(self) -> None:
+        ids = self._navBars.current_ids()
+        if ids.group_id is not None:
+            self._navBars.box_level_nav.clear_items()
+            self._navBars.box_level_nav.populate(self._db.get_boxes(ids.group_id))
+            self._editor.set_group_info(
+                self._db.get_group(ids.group_id),
+                self._db.get_boxes(ids.group_id)
+            )
+        else:
+            self._editor.set_empty()
+
+        print(f"The navbar selection changed to: {self._navBars.current_ids()}")
+
+    @pyqtSlot()
+    def _navbar_box_selection_changed(self) -> None:
+        ids = self._navBars.current_ids()
+        if ids.group_id is not None:
+            if ids.box_id is not None:
+                self._editor.set_box_info(
+                    self._db.get_box(ids.box_id),
+                    self._db.get_box_contents(ids.box_id)
+                )
+            else:
+                self._navBars.box_level_nav.clear_items()
+                self._navBars.box_level_nav.populate(self._db.get_boxes(ids.group_id))
+                self._editor.set_group_info(
+                    self._db.get_group(ids.group_id),
+                    self._db.get_boxes(ids.group_id)
+                )
+        else:
+            self._editor.set_empty()
+
+        print(f"The navbar selection changed to: {self._navBars.current_ids()}")
+
+    def _show_message(self, title, msg):
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle(title)
+        dlg.setText(msg)
+        dlg.show()

@@ -35,6 +35,11 @@ class NavBars(QSplitter):
 
     @staticmethod
     def nothing(x):
+        """!
+        This method's sole purpose is the elimination of an unused import warning
+        because it can't see that resources/resources.py is being used even though
+        without the import the images and icons wouldn't be loaded.
+        """
         return x
 
     def __setup_gui(self) -> None:
@@ -70,15 +75,20 @@ class NavBars(QSplitter):
         ic = QIcon(":/icons/green_plus.png")
         new_group_button = QPushButton("New Group")
         new_group_button.setIcon(ic)
-        new_group_button.clicked.connect(self._signal_master.new_group.emit)
+        new_group_button.clicked.connect(
+            self._signal_master.new_group.emit
+        )
         group_level_nav_layout.addWidget(new_group_button, 0, 1, 1, 1)
 
-        self._group_level_nav = self.NavBar(self._signal_master)
-        self._group_level_nav.setSortingEnabled(True)
-        self._group_level_nav.currentRowChanged.connect(
-            lambda: self._signal_master.group_selection_changed.emit(self._current_ids())
+        # def group_selection_changed_intern():
+        #     pass
+
+        self.group_level_nav = self.NavBar(self._signal_master)
+        self.group_level_nav.setSortingEnabled(True)
+        self.group_level_nav.currentRowChanged.connect(
+            self._signal_master.navbar_group_selection_changed.emit
         )
-        group_level_nav_layout.addWidget(self._group_level_nav, 1, 0, 1, 2)
+        group_level_nav_layout.addWidget(self.group_level_nav, 1, 0, 1, 2)
 
         group_level_nav_container.setLayout(group_level_nav_layout)
 
@@ -97,45 +107,40 @@ class NavBars(QSplitter):
         ic = QIcon(":/icons/green_plus.png")
         new_box_button = QPushButton("New Box")
         new_box_button.setIcon(ic)
+
         new_box_button.clicked.connect(
-            lambda: self._signal_master.new_box.emit(self._current_ids().group_id)
+            self._signal_master.new_box.emit
         )
         box_level_nav_layout.addWidget(new_box_button, 0, 1, 1, 1)
 
-        self._box_level_nav = self.NavBar(self._signal_master)
-        self._box_level_nav.setSortingEnabled(True)
-        self._box_level_nav.currentRowChanged.connect(
-            self._selection_changed_intern
+        # def box_selection_changed_intern():
+        #     pass
+
+        self.box_level_nav = self.NavBar(self._signal_master)
+        self.box_level_nav.setSortingEnabled(True)
+        self.box_level_nav.currentRowChanged.connect(
+            self._signal_master.navbar_box_selection_changed.emit
         )
-        box_level_nav_layout.addWidget(self._box_level_nav, 1, 0, 1, 2)
+        box_level_nav_layout.addWidget(self.box_level_nav, 1, 0, 1, 2)
 
         box_level_nav_container.setLayout(box_level_nav_layout)
 
         self.addWidget(box_level_nav_container)
         # ======================================
 
-    def _current_ids(self) -> GroupAndBoxIDs:
+    def current_ids(self) -> GroupAndBoxIDs:
         """!
         @brief Gets the current ids of the selected group and box.
 
         @return A NamedTuple (GroupAndBoxIDs) with group_id and box_id fields.
         """
-        group = self._group_level_nav.currentItem()
-        print(group)
-        box = self._box_level_nav.currentItem()
-        print(box)
-
+        group = self.group_level_nav.currentItem()
+        box = self.box_level_nav.currentItem()
         if group is not None:
             group = group.id
-
         if box is not None:
             box = box.id
-
-        print(group, box)
-        thing = GroupAndBoxIDs(group, box)
-        print(thing)
-
-        return thing
+        return GroupAndBoxIDs(group, box)
 
     class NavBar(QListWidget):
         """!

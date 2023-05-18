@@ -10,10 +10,10 @@
 from typing import List
 
 from PyQt5.Qt import (
-    QIcon,
+    QIcon
 )
 from PyQt5.QtCore import (
-    Qt
+    Qt,
 )
 from PyQt5.QtWidgets import (
     QWidget,
@@ -50,7 +50,7 @@ class GroupsAndBoxesEditor(QWidget):
         """
         super(GroupsAndBoxesEditor, self).__init__(*args, **kw)
 
-        self._nothing(resources.qt_version)  # Make the damn import warning disappear
+        self.nothing(resources.qt_version)  # Make the damn import warning disappear
 
         self._box = None
         self._group = None
@@ -62,7 +62,7 @@ class GroupsAndBoxesEditor(QWidget):
         self.__setup_gui()
 
     @staticmethod
-    def _nothing(x):
+    def nothing(x):
         """!
         This method's sole purpose is the elimination of an unused import warning
         because it can't see that resources/resources.py is being used. Without that
@@ -89,6 +89,7 @@ class GroupsAndBoxesEditor(QWidget):
         self._description.setPlainText(self._group.description)
         self._description.blockSignals(False)
 
+        self._boxes_list.clear_items()
         self._boxes_list.populate(boxes)
         self._box_contents_list.clear_items()
 
@@ -126,6 +127,7 @@ class GroupsAndBoxesEditor(QWidget):
         self._description.blockSignals(False)
 
         self._boxes_list.clear_items()
+        self._box_contents_list.clear_items()
         self._box_contents_list.populate(box_contents)
 
         # Set everything to invisible
@@ -271,7 +273,7 @@ class GroupsAndBoxesEditor(QWidget):
         def _description_changed_intern():
             new_description = self._description.toPlainText()
             if len(new_description) > MAX_DESCRIPTION_LENGTH:
-                self.description.textCursor().deletePreviousChar()
+                self._description.textCursor().deletePreviousChar()
             else:
                 if self._editorState == GroupsAndBoxesEditorMode.GROUP:
                     self._signal_master.group_description_changed.emit(self._group.id, new_description)
@@ -297,7 +299,7 @@ class GroupsAndBoxesEditor(QWidget):
         self._add_box_button.setFixedWidth(110)
         self._add_box_button.clicked.connect(lambda: self._signal_master.add_box.emit(self._group.id))
 
-        self._boxes_list = self.BoxesList()
+        self._boxes_list = self.BoxesList(self._signal_master)
 
         self._layout.addWidget(self._boxes_label, 7, 0, 1, 1)
         self._layout.addWidget(self._add_box_button, 7, 1, 1, 1, alignment=Qt.AlignRight)
@@ -316,7 +318,7 @@ class GroupsAndBoxesEditor(QWidget):
         self._add_box_content_button.setFixedWidth(180)
         self._add_box_content_button.clicked.connect(lambda: self._signal_master.add_box_content.emit(self._box.id))
 
-        self._box_contents_list = self.BoxContentsList()
+        self._box_contents_list = self.BoxContentsList(self._signal_master)
 
         self._layout.addWidget(self._box_contents_label, 5, 0, 1, 1)
         self._layout.addWidget(self._add_box_content_button, 5, 1, 1, 1, alignment=Qt.AlignRight)
@@ -354,9 +356,10 @@ class GroupsAndBoxesEditor(QWidget):
         A subclass of QListWidget that allows for showing of boxes with delete buttons, add buttons, etc.
         """
 
-        def __init__(self, *args, **kwargs):
+        def __init__(self, sig_master: GroupsAndBoxesSignalMaster, *args, **kwargs):
             super().__init__(*args, **kwargs)
 
+            self._signal_master = sig_master
             self._items = []
 
         def clear_items(self) -> None:
@@ -367,7 +370,7 @@ class GroupsAndBoxesEditor(QWidget):
             for box in boxes:
                 item = QListWidgetItem(self)
                 self.addItem(item)
-                row = self.BoxesListItem(box)
+                row = self.BoxesListItem(box, self._signal_master)
                 self._items.append(row)
                 item.setSizeHint(row.minimumSizeHint())
                 self.setItemWidget(item, row)
@@ -379,7 +382,7 @@ class GroupsAndBoxesEditor(QWidget):
             An item widget for a QListWidget that allows for saving box id and custom widgets
             """
 
-            def __init__(self, box: Box, *args, **kwargs):
+            def __init__(self, box: Box, sig_master: GroupsAndBoxesSignalMaster, *args, **kwargs):
                 """!
                 Initialize a new BoxesListItem.
 
@@ -387,10 +390,11 @@ class GroupsAndBoxesEditor(QWidget):
                 """
                 super().__init__(*args, **kwargs)
 
-                self.box = box
+                self._signal_master = sig_master
+                self._box = box
 
                 row = QGridLayout()
-                name_label = QLabel(self.box.name)
+                name_label = QLabel(self._box.name)
                 row.addWidget(name_label, 0, 0, 1, 1, alignment=Qt.AlignLeft)
                 self.setLayout(row)
 
@@ -401,9 +405,10 @@ class GroupsAndBoxesEditor(QWidget):
         A subclass of QListWidget that allows for showing of box contents
         with +, - and count labels.
         """
-        def __init__(self, *args, **kwargs):
+        def __init__(self, sig_master: GroupsAndBoxesSignalMaster, *args, **kwargs):
             super().__init__(*args, **kwargs)
 
+            self._signal_master = sig_master
             self._items = []
 
         def clear_items(self) -> None:
@@ -414,7 +419,7 @@ class GroupsAndBoxesEditor(QWidget):
             for box_content in box_contents:
                 item = QListWidgetItem(self)
                 self.addItem(item)
-                row = self.BoxContentsListItem(box_content)
+                row = self.BoxContentsListItem(box_content, self._signal_master)
                 self._items.append(row)
                 item.setSizeHint(row.minimumSizeHint())
                 self.setItemWidget(item, row)
@@ -428,36 +433,45 @@ class GroupsAndBoxesEditor(QWidget):
             | <Name>      + <count> - |
             |_________________________|
             """
-            def __init__(self, box_content: BoxContentItem, *args, **kwargs):
+            def __init__(self, box_content: BoxContentItem, sig_master: GroupsAndBoxesSignalMaster, *args, **kwargs):
                 """!
                 Initializes the GUI and signals for the BoxContentsListItem used in BoxContentsList
                 """
                 super().__init__(*args, **kwargs)
 
-                self.signal_master = GroupsAndBoxesSignalMaster()
+                self._signal_master = sig_master
 
-                self.content = box_content
-                self.id = self.content.id
+                self._content = box_content
+                self._id = self._content.id
 
+                minus_button = QPushButton("-")
+                minus_button.setFixedWidth(30)
+                minus_button.clicked.connect(
+                    lambda: self._signal_master.set_box_content_count.emit(self._id, self._content.count - 1)
+                    if self._content.count > 0 else None
+                )  # Emit only if count above 0
+                count_label = QLabel(str(self._content.count))
+                # count_label = QLineEdit()
+                # positive_int_only = QIntValidator()
+                # positive_int_only.setBottom(0)
+                # count_label.setValidator(positive_int_only)
+                # count_label.setText(str(self._content.count))
+                # count_label.editingFinished.connect(
+                #     lambda: self._signal_master.set_box_content_count.emit(self._id, int(count_label.text()))
+                # )
                 plus_button = QPushButton("+")
                 plus_button.setFixedWidth(30)
                 plus_button.clicked.connect(
-                    lambda: self.signal_master.set_box_content_count.emit(self.id, self.content.count + 1)
+                    lambda: self._signal_master.set_box_content_count.emit(self._id, self._content.count + 1)
                 )  # Lambda to emit signal with argument
-                count_label = QLabel(str(self.content.count))
-                minus_button = QPushButton("-")
-                minus_button.clicked.connect(
-                    lambda: self.signal_master.set_box_content_count.emit(self.id, self.content.count - 1)
-                    if self.content.count > 0 else None
-                )  # Emit only if count above 0
 
                 count_layout = QHBoxLayout()
-                count_layout.addWidget(plus_button)
-                count_layout.addWidget(count_label)
                 count_layout.addWidget(minus_button)
+                count_layout.addWidget(count_label)
+                count_layout.addWidget(plus_button)
 
                 row = QHBoxLayout()
-                row.addWidget(QLabel(self.content.name))
+                row.addWidget(QLabel(self._content.name))
                 row.addStretch()
                 row.addLayout(count_layout)
 

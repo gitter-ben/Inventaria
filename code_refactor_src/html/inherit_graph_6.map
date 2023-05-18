@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase.html" title=" " alt="" coords="5,5,263,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,20,108,47"/>
+<area shape="rect" id="node2" href="$classcode__refactor__src_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1GroupAndBoxIDs.html" title="Presents a pair of ids for current group and box." alt="" coords="156,5,411,61"/>
 </map>

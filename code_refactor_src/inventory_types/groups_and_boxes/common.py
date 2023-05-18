@@ -11,7 +11,7 @@ class GroupAndBoxIDs(NamedTuple):
     box_id: Optional[int]
 
     def __repr__(self):
-        return f"<GroupAndBoxIDS: group_id={self.group_id}, box_id={self.box_id}"
+        return f"<GroupAndBoxIDS: group_id={self.group_id}, box_id={self.box_id}>"
 
 
 class GroupsAndBoxesEditorMode(Enum):

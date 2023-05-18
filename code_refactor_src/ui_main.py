@@ -30,6 +30,7 @@ class MainWindow(QMainWindow):
 
         self.db = None
         self.db_loaded = False
+        self._global_signal_master = GlobalSignalMaster()
 
         self._inventories: List[Tuple[GroupsAndBoxesSignalMaster, GroupsAndBoxesDatabase, GroupsAndBoxesGUI], ...] = []
 
@@ -38,14 +39,10 @@ class MainWindow(QMainWindow):
     def __setup_gui(self) -> None:
         self._add_inventory()
         self.setCentralWidget(self._inventories[0][2])
-        self._inventories[0][2]._editor.set_group_info(
-            self._inventories[0][1].get_group(1),
-            self._inventories[0][1].get_boxes(1)
-        )
 
     def _add_inventory(self) -> None:
         sig_master = GroupsAndBoxesSignalMaster()
         db = GroupsAndBoxesDatabase("groups_and_boxes.sqlite", sig_master)
-        gui = GroupsAndBoxesGUI(db, sig_master)
+        gui = GroupsAndBoxesGUI(db, sig_master, self._global_signal_master)
 
         self._inventories.append((sig_master, db, gui))
