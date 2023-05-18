@@ -1,0 +1,62 @@
+\hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory}{}\doxysection{pip.\+\_\+internal.\+resolution.\+resolvelib.\+factory.\+Factory Class Reference}
+\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory}\index{pip.\_internal.resolution.resolvelib.factory.Factory@{pip.\_internal.resolution.resolvelib.factory.Factory}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_afe7779aa36fd9adf6264bcb1fd7d9be5}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_afe7779aa36fd9adf6264bcb1fd7d9be5}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1package__finder_1_1PackageFinder}{Package\+Finder}} finder, \mbox{\hyperlink{classpip_1_1__internal_1_1operations_1_1prepare_1_1RequirementPreparer}{Requirement\+Preparer}} preparer, Install\+Requirement\+Provider make\+\_\+install\+\_\+req, Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1cache_1_1WheelCache}{Wheel\+Cache}}\mbox{]} wheel\+\_\+cache, bool use\+\_\+user\+\_\+site, bool force\+\_\+reinstall, bool ignore\+\_\+installed, bool ignore\+\_\+requires\+\_\+python, bool suppress\+\_\+build\+\_\+failures, Optional\mbox{[}Tuple\mbox{[}int,...\mbox{]}\mbox{]} py\+\_\+version\+\_\+info=None)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a869bb3c207841e2d4a48c62eb83dce1f}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a869bb3c207841e2d4a48c62eb83dce1f}} 
+bool {\bfseries force\+\_\+reinstall} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a5f59f899de5a57f10a7e47edc0306701}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a5f59f899de5a57f10a7e47edc0306701}} 
+Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Candidate}{Candidate}}\mbox{]} {\bfseries find\+\_\+candidates} (self, str identifier, Mapping\mbox{[}str, Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Requirement}{Requirement}}\mbox{]}\mbox{]} requirements, Mapping\mbox{[}str, Iterator\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Candidate}{Candidate}}\mbox{]}\mbox{]} incompatibilities, \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Constraint}{Constraint}} constraint, bool prefers\+\_\+installed)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ac6ec763d13c93e83a8fffbe5316c1db4}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ac6ec763d13c93e83a8fffbe5316c1db4}} 
+\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1CollectedRootRequirements}{Collected\+Root\+Requirements}} {\bfseries collect\+\_\+root\+\_\+requirements} (self, List\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1req_1_1req__install_1_1InstallRequirement}{Install\+Requirement}}\mbox{]} root\+\_\+ireqs)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a0b72e5f32187fb1566d12ac0bbbff927}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a0b72e5f32187fb1566d12ac0bbbff927}} 
+\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1requirements_1_1ExplicitRequirement}{Explicit\+Requirement}} {\bfseries make\+\_\+requirement\+\_\+from\+\_\+candidate} (self, \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Candidate}{Candidate}} candidate)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a039f15de5f60b9f1a37c6eac5fb79908}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a039f15de5f60b9f1a37c6eac5fb79908}} 
+Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Requirement}{Requirement}}\mbox{]} {\bfseries make\+\_\+requirement\+\_\+from\+\_\+spec} (self, str specifier, Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1req_1_1req__install_1_1InstallRequirement}{Install\+Requirement}}\mbox{]} comes\+\_\+from, Iterable\mbox{[}str\mbox{]} requested\+\_\+extras=())
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ad45073015a84ea0eaec1be95f537ec9d}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ad45073015a84ea0eaec1be95f537ec9d}} 
+Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Requirement}{Requirement}}\mbox{]} {\bfseries make\+\_\+requires\+\_\+python\+\_\+requirement} (self, \mbox{\hyperlink{classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1SpecifierSet}{Specifier\+Set}} specifier)
+\item 
+Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1cache_1_1CacheEntry}{Cache\+Entry}}\mbox{]} \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_afdbd3236ab4dbafc13bbf9f12b36f2bf}{get\+\_\+wheel\+\_\+cache\+\_\+entry}} (self, \mbox{\hyperlink{classpip_1_1__internal_1_1models_1_1link_1_1Link}{Link}} link, Optional\mbox{[}str\mbox{]} name)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_aab3802bc0997f1dab3cac5c60f8f6d40}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_aab3802bc0997f1dab3cac5c60f8f6d40}} 
+Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1metadata_1_1base_1_1BaseDistribution}{Base\+Distribution}}\mbox{]} {\bfseries get\+\_\+dist\+\_\+to\+\_\+uninstall} (self, \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Candidate}{Candidate}} candidate)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ab296949ba64d9ee0bd973e37b1ecfd26}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_ab296949ba64d9ee0bd973e37b1ecfd26}} 
+\mbox{\hyperlink{classpip_1_1__internal_1_1exceptions_1_1InstallationError}{Installation\+Error}} {\bfseries get\+\_\+installation\+\_\+error} (self, \char`\"{}Resolution\+Impossible\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Requirement}{Requirement}}, \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Candidate}{Candidate}}\mbox{]}\char`\"{} e, Dict\mbox{[}str, \mbox{\hyperlink{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1base_1_1Constraint}{Constraint}}\mbox{]} constraints)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a19004f4087d32ba4dd2ad969281ae7d5}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_a19004f4087d32ba4dd2ad969281ae7d5}} 
+{\bfseries preparer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_afdbd3236ab4dbafc13bbf9f12b36f2bf}\label{classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1factory_1_1Factory_afdbd3236ab4dbafc13bbf9f12b36f2bf}} 
+\index{pip.\_internal.resolution.resolvelib.factory.Factory@{pip.\_internal.resolution.resolvelib.factory.Factory}!get\_wheel\_cache\_entry@{get\_wheel\_cache\_entry}}
+\index{get\_wheel\_cache\_entry@{get\_wheel\_cache\_entry}!pip.\_internal.resolution.resolvelib.factory.Factory@{pip.\_internal.resolution.resolvelib.factory.Factory}}
+\doxysubsubsection{\texorpdfstring{get\_wheel\_cache\_entry()}{get\_wheel\_cache\_entry()}}
+{\footnotesize\ttfamily  Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1cache_1_1CacheEntry}{Cache\+Entry}}\mbox{]} pip.\+\_\+internal.\+resolution.\+resolvelib.\+factory.\+Factory.\+get\+\_\+wheel\+\_\+cache\+\_\+entry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classpip_1_1__internal_1_1models_1_1link_1_1Link}{Link}}}]{link,  }\item[{Optional\mbox{[}str\mbox{]}     }]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Look up the link in the wheel cache.
+
+If ``preparer.require_hashes`` is True, don't use the wheel cache,
+because cached wheels, always built locally, have different hashes
+than the files downloaded from the index server and thus throw false
+hash mismatches. Furthermore, cached wheels at present have
+nondeterministic contents due to file modification times.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+internal/resolution/resolvelib/factory.\+py\end{DoxyCompactItemize}

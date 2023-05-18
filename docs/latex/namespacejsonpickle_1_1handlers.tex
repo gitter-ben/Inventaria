@@ -1,0 +1,50 @@
+\hypertarget{namespacejsonpickle_1_1handlers}{}\doxysection{jsonpickle.\+handlers Namespace Reference}
+\label{namespacejsonpickle_1_1handlers}\index{jsonpickle.handlers@{jsonpickle.handlers}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1Registry}{Registry}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler}{Base\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1ArrayHandler}{Array\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1DatetimeHandler}{Datetime\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1RegexHandler}{Regex\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1QueueHandler}{Queue\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1CloneFactory}{Clone\+Factory}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1UUIDHandler}{UUIDHandler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1LockHandler}{Lock\+Handler}}
+\item 
+class \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1TextIOHandler}{Text\+IOHandler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacejsonpickle_1_1handlers_ae5a4c6fa992769c746c3f87784add1b8}\label{namespacejsonpickle_1_1handlers_ae5a4c6fa992769c746c3f87784add1b8}} 
+{\bfseries registry} = \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1Registry}{Registry}}()
+\item 
+\mbox{\Hypertarget{namespacejsonpickle_1_1handlers_ad25f94cdc70e70486784035120652fdf}\label{namespacejsonpickle_1_1handlers_ad25f94cdc70e70486784035120652fdf}} 
+{\bfseries register} = registry.\+register
+\item 
+\mbox{\Hypertarget{namespacejsonpickle_1_1handlers_a53738201133f431691523fcd9d79b419}\label{namespacejsonpickle_1_1handlers_a53738201133f431691523fcd9d79b419}} 
+{\bfseries unregister} = registry.\+unregister
+\item 
+\mbox{\Hypertarget{namespacejsonpickle_1_1handlers_a99a81994e3ad6510e37abb2e38410e05}\label{namespacejsonpickle_1_1handlers_a99a81994e3ad6510e37abb2e38410e05}} 
+{\bfseries get} = registry.\+get
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Custom handlers may be created to handle other objects. Each custom handler
+must derive from :class:`jsonpickle.handlers.BaseHandler` and
+implement ``flatten`` and ``restore``.
+
+A handler can be bound to other types by calling
+:func:`jsonpickle.handlers.register`.\end{DoxyVerb}
+ 

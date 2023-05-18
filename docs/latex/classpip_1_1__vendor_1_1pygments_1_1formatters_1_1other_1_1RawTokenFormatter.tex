@@ -1,0 +1,95 @@
+\hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+formatters.\+other.\+Raw\+Token\+Formatter Class Reference}
+\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter}\index{pip.\_vendor.pygments.formatters.other.RawTokenFormatter@{pip.\_vendor.pygments.formatters.other.RawTokenFormatter}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pygments.\+formatters.\+other.\+Raw\+Token\+Formatter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pygments.\+formatters.\+other.\+Raw\+Token\+Formatter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a8d75f9c913b8b5558863e4a23490c807}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a8d75f9c913b8b5558863e4a23490c807}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$$\ast$options)
+\item 
+def \mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_aea81b7c4a8d9969198e614d80bddd795}{format}} (self, tokensource, outfile)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a2f9cc846ba8a3eb1a0e52dbf4e423077}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a2f9cc846ba8a3eb1a0e52dbf4e423077}} 
+{\bfseries encoding}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_af2369369b104db9d0ac75696e82dd40a}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_af2369369b104db9d0ac75696e82dd40a}} 
+{\bfseries compress}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a5854c759608f8ea891375a7fae8613e4}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a5854c759608f8ea891375a7fae8613e4}} 
+{\bfseries error\+\_\+color}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_ae217fbe1125dcaf09f87d4345db8aefe}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_ae217fbe1125dcaf09f87d4345db8aefe}} 
+string {\bfseries name} = \textquotesingle{}Raw tokens\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a9c67a7423b5bb26bbfb147a8818cf744}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a9c67a7423b5bb26bbfb147a8818cf744}} 
+list {\bfseries aliases} = \mbox{[}\textquotesingle{}raw\textquotesingle{}, \textquotesingle{}tokens\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_af48475b3fceda93074f9453c83b76427}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_af48475b3fceda93074f9453c83b76427}} 
+list {\bfseries filenames} = \mbox{[}\textquotesingle{}$\ast$.raw\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a049c93415cbfde2f143b05f9891fdf76}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_a049c93415cbfde2f143b05f9891fdf76}} 
+bool {\bfseries unicodeoutput} = False
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Format tokens as a raw representation for storing token streams.
+
+The format is ``tokentype<TAB>repr(tokenstring)\n``. The output can later
+be converted to a token stream with the `RawTokenLexer`, described in the
+:doc:`lexer list <lexers>`.
+
+Only two options are accepted:
+
+`compress`
+    If set to ``'gz'`` or ``'bz2'``, compress the output with the given
+    compression algorithm after encoding (default: ``''``).
+`error_color`
+    If set to a color name, highlight error tokens using that color.  If
+    set but with no value, defaults to ``'red'``.
+
+    .. versionadded:: 0.11\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_aea81b7c4a8d9969198e614d80bddd795}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1other_1_1RawTokenFormatter_aea81b7c4a8d9969198e614d80bddd795}} 
+\index{pip.\_vendor.pygments.formatters.other.RawTokenFormatter@{pip.\_vendor.pygments.formatters.other.RawTokenFormatter}!format@{format}}
+\index{format@{format}!pip.\_vendor.pygments.formatters.other.RawTokenFormatter@{pip.\_vendor.pygments.formatters.other.RawTokenFormatter}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pygments.\+formatters.\+other.\+Raw\+Token\+Formatter.\+format (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tokensource,  }\item[{}]{outfile }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format ``tokensource``, an iterable of ``(tokentype, tokenstring)``
+tuples and write it into ``outfile``.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1formatter_1_1Formatter_a002b47716ea44b414c7f70582120edea}{pip.\+\_\+vendor.\+pygments.\+formatter.\+Formatter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pygments/formatters/other.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="numpy.linalg.tests.test_linalg._TestNorm" name="numpy.linalg.tests.test_linalg._TestNorm">
+<area shape="rect" id="node1" title=" " alt="" coords="461,71,632,112"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormDouble.html" title=" " alt="" coords="680,5,857,47"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormInt64.html" title=" " alt="" coords="683,71,854,112"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormSingle.html" title=" " alt="" coords="683,136,854,177"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1__TestNorm2D.html" title=" " alt="" coords="233,37,404,79"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1__TestNormBase.html" title=" " alt="" coords="5,71,176,112"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1__TestNormGeneral.html" title=" " alt="" coords="224,103,413,144"/>
+</map>

@@ -1,0 +1,123 @@
+\hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator}{}\doxysection{numpy.\+lib.\+\_\+iotools.\+Name\+Validator Class Reference}
+\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator}\index{numpy.lib.\_iotools.NameValidator@{numpy.lib.\_iotools.NameValidator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_af2fea61d528aa285cd2c3a975c43dbc1}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_af2fea61d528aa285cd2c3a975c43dbc1}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, excludelist=None, deletechars=None, case\+\_\+sensitive=None, replace\+\_\+space=\textquotesingle{}\+\_\+\textquotesingle{})
+\item 
+def \mbox{\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}{validate}} (self, names, defaultfmt=\char`\"{}f\%i\char`\"{}, nbfields=None)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4305cc5d683dfeb520c1e933c78878ae}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4305cc5d683dfeb520c1e933c78878ae}} 
+def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (self, names, defaultfmt=\char`\"{}f\%i\char`\"{}, nbfields=None)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ad240b448f3804b44b247d506d56c7a30}} 
+{\bfseries excludelist}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a60c4685bb3479da696d680c322de1c26}} 
+{\bfseries deletechars}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a2681b70582c336b3a67095923bac684d}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a2681b70582c336b3a67095923bac684d}} 
+{\bfseries case\+\_\+converter}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a6b2416d12020f22e325e8e001ba314ca}} 
+{\bfseries replace\+\_\+space}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ab38921bc25d38840dc5fd233357554af}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_ab38921bc25d38840dc5fd233357554af}} 
+list {\bfseries defaultexcludelist} = \mbox{[}\textquotesingle{}return\textquotesingle{}, \textquotesingle{}file\textquotesingle{}, \textquotesingle{}print\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a25e444d6c4ace7882608a9217f475c34}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a25e444d6c4ace7882608a9217f475c34}} 
+{\bfseries defaultdeletechars} = set()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Object to validate a list of strings to use as field names.
+
+The strings are stripped of any non alphanumeric character, and spaces
+are replaced by '_'. During instantiation, the user can define a list
+of names to exclude, as well as a list of invalid characters. Names in
+the exclusion list are appended a '_' character.
+
+Once an instance has been created, it can be called with a list of
+names, and a list of valid names will be created.  The `__call__`
+method accepts an optional keyword "default" that sets the default name
+in case of ambiguity. By default this is 'f', so that names will
+default to `f0`, `f1`, etc.
+
+Parameters
+----------
+excludelist : sequence, optional
+    A list of names to exclude. This list is appended to the default
+    list ['return', 'file', 'print']. Excluded names are appended an
+    underscore: for example, `file` becomes `file_` if supplied.
+deletechars : str, optional
+    A string combining invalid characters that must be deleted from the
+    names.
+case_sensitive : {True, False, 'upper', 'lower'}, optional
+    * If True, field names are case-sensitive.
+    * If False or 'upper', field names are converted to upper case.
+    * If 'lower', field names are converted to lower case.
+
+    The default value is True.
+replace_space : '_', optional
+    Character(s) used in replacement of white spaces.
+
+Notes
+-----
+Calling an instance of `NameValidator` is the same as calling its
+method `validate`.
+
+Examples
+--------
+>>> validator = np.lib._iotools.NameValidator()
+>>> validator(['file', 'field2', 'with space', 'CaSe'])
+('file_', 'field2', 'with_space', 'CaSe')
+
+>>> validator = np.lib._iotools.NameValidator(excludelist=['excl'],
+...                                           deletechars='q',
+...                                           case_sensitive=False)
+>>> validator(['excl', 'field2', 'no_q', 'with space', 'CaSe'])
+('EXCL', 'FIELD2', 'NO_Q', 'WITH_SPACE', 'CASE')\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}\label{classnumpy_1_1lib_1_1__iotools_1_1NameValidator_a4c6df4cd621243673cfc0d48569ff4c5}} 
+\index{numpy.lib.\_iotools.NameValidator@{numpy.lib.\_iotools.NameValidator}!validate@{validate}}
+\index{validate@{validate}!numpy.lib.\_iotools.NameValidator@{numpy.lib.\_iotools.NameValidator}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+Name\+Validator.\+validate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{defaultfmt = {\ttfamily \char`\"{}f\%i\char`\"{}},  }\item[{}]{nbfields = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate a list of strings as field names for a structured array.
+
+Parameters
+----------
+names : sequence of str
+    Strings to be validated.
+defaultfmt : str, optional
+    Default format string, used if validating a given string
+    reduces its length to zero.
+nbfields : integer, optional
+    Final number of validated names, used to expand or shrink the
+    initial list of names.
+
+Returns
+-------
+validatednames : list of str
+    The list of validated field names.
+
+Notes
+-----
+A `NameValidator` instance can be called directly, which is the
+same as calling `validate`. For examples, see `NameValidator`.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/lib/\+\_\+iotools.\+py\end{DoxyCompactItemize}

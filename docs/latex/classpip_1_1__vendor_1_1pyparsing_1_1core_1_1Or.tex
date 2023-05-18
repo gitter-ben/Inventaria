@@ -1,0 +1,72 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Or Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or}\index{pip.\_vendor.pyparsing.core.Or@{pip.\_vendor.pyparsing.core.Or}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Or\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Or\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_afd081f41c0540966acc219152ee63f20}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_afd081f41c0540966acc219152ee63f20}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Iterable\+Type\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}\mbox{]} exprs, bool savelist=False)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_aaaf554dbc1aec5d9cddf31cd519f8a95}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_aaaf554dbc1aec5d9cddf31cd519f8a95}} 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} {\bfseries streamline} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a2291cb795b98d6bd1c32ed12b40a49ac}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a2291cb795b98d6bd1c32ed12b40a49ac}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_adb0ee1c229bce1b0a6971eb755c8d07b}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_adb0ee1c229bce1b0a6971eb755c8d07b}} 
+def {\bfseries \+\_\+\+\_\+ixor\+\_\+\+\_\+} (self, other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a9b49b390e782dc8fe19d8763d9cdb012}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a9b49b390e782dc8fe19d8763d9cdb012}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_ada6c92aab783154bdc276616d7ca1839}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_ada6c92aab783154bdc276616d7ca1839}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a0d8fd76ab17e52137380c0a18c7fc7e4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Or_a0d8fd76ab17e52137380c0a18c7fc7e4}} 
+{\bfseries save\+As\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Requires that at least one :class:`ParseExpression` is found. If
+two expressions match, the expression that matches the longest
+string will be used. May be constructed using the ``'^'``
+operator.
+
+Example::
+
+    # construct Or using '^' operator
+
+    number = Word(nums) ^ Combine(Word(nums) + '.' + Word(nums))
+    print(number.search_string("123 3.1416 789"))
+
+prints::
+
+    [['123'], ['3.1416'], ['789']]
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

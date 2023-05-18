@@ -1,0 +1,84 @@
+\hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler}{}\doxysection{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler Class Reference}
+\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler}\index{jsonpickle.ext.numpy.NumpyNDArrayHandler@{jsonpickle.ext.numpy.NumpyNDArrayHandler}}
+
+
+Inheritance diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ab131b08805df328727026bf70e9207d2}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ab131b08805df328727026bf70e9207d2}} 
+def {\bfseries flatten\+\_\+flags} (self, obj, data)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a94ac6047d9fcc6fdfce0abe8d265e46a}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a94ac6047d9fcc6fdfce0abe8d265e46a}} 
+def {\bfseries restore\+\_\+flags} (self, data, arr)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ac065565c0ea67a0d168e70ebdffc8292}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a0342d97e57cb90463b775afb81a530de}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Stores arrays as text representation, without regard for views\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ac065565c0ea67a0d168e70ebdffc8292}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ac065565c0ea67a0d168e70ebdffc8292}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandler@{jsonpickle.ext.numpy.NumpyNDArrayHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.ext.numpy.NumpyNDArrayHandler@{jsonpickle.ext.numpy.NumpyNDArrayHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}, and \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a0342d97e57cb90463b775afb81a530de}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a0342d97e57cb90463b775afb81a530de}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandler@{jsonpickle.ext.numpy.NumpyNDArrayHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.ext.numpy.NumpyNDArrayHandler@{jsonpickle.ext.numpy.NumpyNDArrayHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}, and \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/ext/numpy.\+py\end{DoxyCompactItemize}

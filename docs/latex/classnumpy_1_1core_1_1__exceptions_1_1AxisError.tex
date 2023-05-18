@@ -1,0 +1,107 @@
+\hypertarget{classnumpy_1_1core_1_1__exceptions_1_1AxisError}{}\doxysection{numpy.\+core.\+\_\+exceptions.\+Axis\+Error Class Reference}
+\label{classnumpy_1_1core_1_1__exceptions_1_1AxisError}\index{numpy.core.\_exceptions.AxisError@{numpy.core.\_exceptions.AxisError}}
+
+
+Inheritance diagram for numpy.\+core.\+\_\+exceptions.\+Axis\+Error\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classnumpy_1_1core_1_1__exceptions_1_1AxisError__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+\_\+exceptions.\+Axis\+Error\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classnumpy_1_1core_1_1__exceptions_1_1AxisError__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__exceptions_1_1AxisError_a463663b3f25704e21f3418c6db30952e}\label{classnumpy_1_1core_1_1__exceptions_1_1AxisError_a463663b3f25704e21f3418c6db30952e}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, axis, ndim=None, msg\+\_\+prefix=None)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__exceptions_1_1AxisError_aef8b9060b4927783be4810b5a498f08d}\label{classnumpy_1_1core_1_1__exceptions_1_1AxisError_aef8b9060b4927783be4810b5a498f08d}} 
+def {\bfseries \+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__exceptions_1_1AxisError_ad80038593990d4383fad09cdc79b1b13}\label{classnumpy_1_1core_1_1__exceptions_1_1AxisError_ad80038593990d4383fad09cdc79b1b13}} 
+{\bfseries axis}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__exceptions_1_1AxisError_a8568413489d65bf3a7b9516ee18bcaa1}\label{classnumpy_1_1core_1_1__exceptions_1_1AxisError_a8568413489d65bf3a7b9516ee18bcaa1}} 
+{\bfseries ndim}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Axis supplied was invalid.
+
+This is raised whenever an ``axis`` parameter is specified that is larger
+than the number of array dimensions.
+For compatibility with code written against older numpy versions, which
+raised a mixture of `ValueError` and `IndexError` for this situation, this
+exception subclasses both to ensure that ``except ValueError`` and
+``except IndexError`` statements continue to catch `AxisError`.
+
+.. versionadded:: 1.13
+
+Parameters
+----------
+axis : int or str
+    The out of bounds axis or a custom exception message.
+    If an axis is provided, then `ndim` should be specified as well.
+ndim : int, optional
+    The number of array dimensions.
+msg_prefix : str, optional
+    A prefix for the exception message.
+
+Attributes
+----------
+axis : int, optional
+    The out of bounds axis or ``None`` if a custom exception
+    message was provided. This should be the axis as passed by
+    the user, before any normalization to resolve negative indices.
+
+    .. versionadded:: 1.22
+ndim : int, optional
+    The number of array dimensions or ``None`` if a custom exception
+    message was provided.
+
+    .. versionadded:: 1.22
+
+
+Examples
+--------
+>>> array_1d = np.arange(10)
+>>> np.cumsum(array_1d, axis=1)
+Traceback (most recent call last):
+  ...
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
+
+Negative axes are preserved:
+
+>>> np.cumsum(array_1d, axis=-2)
+Traceback (most recent call last):
+  ...
+numpy.AxisError: axis -2 is out of bounds for array of dimension 1
+
+The class constructor generally takes the axis and arrays'
+dimensionality as arguments:
+
+>>> print(np.AxisError(2, 1, msg_prefix='error'))
+error: axis 2 is out of bounds for array of dimension 1
+
+Alternatively, a custom exception message can be passed:
+
+>>> print(np.AxisError('Custom error message'))
+Custom error message\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/\+\_\+exceptions.\+py\end{DoxyCompactItemize}

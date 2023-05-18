@@ -1,0 +1,163 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt}{}\doxysection{numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt}\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_af80880f79723288604c639e3e3cb003c}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_af80880f79723288604c639e3e3cb003c}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, ccompiler, cpu\+\_\+baseline=\char`\"{}min\char`\"{}, cpu\+\_\+dispatch=\char`\"{}max\char`\"{}, cache\+\_\+path=None)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a54b4221a3165558c369244e6d34c7885}{is\+\_\+cached}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_aa95d87a496f80898a86585b05363539f}{cpu\+\_\+baseline\+\_\+flags}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a939f841310e2dfffa90affbb5bdfd374}{cpu\+\_\+baseline\+\_\+names}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a0837c49c785377fcf06ab40447160ab6}{cpu\+\_\+dispatch\+\_\+names}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a1ac5769d596700d8fb7403c8a30a2c31}{try\+\_\+dispatch}} (self, sources, src\+\_\+dir=None, ccompiler=None, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a70d5e06f0d641e5e33890bb95901920f}{generate\+\_\+dispatch\+\_\+header}} (self, header\+\_\+path)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a4c2f78b5e6b5ddcc1d5abb5f7fc851e9}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a4c2f78b5e6b5ddcc1d5abb5f7fc851e9}} 
+def {\bfseries report} (self, full=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a5f51fa3677a680989f1565e1622fb9b1}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a5f51fa3677a680989f1565e1622fb9b1}} 
+{\bfseries sources\+\_\+status}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_ad692c5743b8c9d9eb06cb0d5d6f6aae6}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_ad692c5743b8c9d9eb06cb0d5d6f6aae6}} 
+{\bfseries hit\+\_\+cache}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A helper class for `CCompiler` aims to provide extra build options
+to effectively control of compiler optimizations that are directly
+related to CPU features.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_aa95d87a496f80898a86585b05363539f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_aa95d87a496f80898a86585b05363539f}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!cpu\_baseline\_flags@{cpu\_baseline\_flags}}
+\index{cpu\_baseline\_flags@{cpu\_baseline\_flags}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{cpu\_baseline\_flags()}{cpu\_baseline\_flags()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+cpu\+\_\+baseline\+\_\+flags (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a list of final CPU baseline compiler flags
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a939f841310e2dfffa90affbb5bdfd374}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a939f841310e2dfffa90affbb5bdfd374}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!cpu\_baseline\_names@{cpu\_baseline\_names}}
+\index{cpu\_baseline\_names@{cpu\_baseline\_names}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{cpu\_baseline\_names()}{cpu\_baseline\_names()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+cpu\+\_\+baseline\+\_\+names (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}return a list of final CPU baseline feature names
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a0837c49c785377fcf06ab40447160ab6}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a0837c49c785377fcf06ab40447160ab6}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!cpu\_dispatch\_names@{cpu\_dispatch\_names}}
+\index{cpu\_dispatch\_names@{cpu\_dispatch\_names}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{cpu\_dispatch\_names()}{cpu\_dispatch\_names()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+cpu\+\_\+dispatch\+\_\+names (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}return a list of final CPU dispatch feature names
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a70d5e06f0d641e5e33890bb95901920f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a70d5e06f0d641e5e33890bb95901920f}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!generate\_dispatch\_header@{generate\_dispatch\_header}}
+\index{generate\_dispatch\_header@{generate\_dispatch\_header}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{generate\_dispatch\_header()}{generate\_dispatch\_header()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+generate\+\_\+dispatch\+\_\+header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{header\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate the dispatch header which contains the #definitions and headers
+for platform-specific instruction-sets for the enabled CPU baseline and
+dispatch-able features.
+
+Its highly recommended to take a look at the generated header
+also the generated source files via `try_dispatch()`
+in order to get the full picture.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a54b4221a3165558c369244e6d34c7885}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a54b4221a3165558c369244e6d34c7885}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!is\_cached@{is\_cached}}
+\index{is\_cached@{is\_cached}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{is\_cached()}{is\_cached()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+is\+\_\+cached (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the class loaded from the cache file
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a1ac5769d596700d8fb7403c8a30a2c31}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt_a1ac5769d596700d8fb7403c8a30a2c31}} 
+\index{numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}!try\_dispatch@{try\_dispatch}}
+\index{try\_dispatch@{try\_dispatch}!numpy.distutils.ccompiler\_opt.CCompilerOpt@{numpy.distutils.ccompiler\_opt.CCompilerOpt}}
+\doxysubsubsection{\texorpdfstring{try\_dispatch()}{try\_dispatch()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+CCompiler\+Opt.\+try\+\_\+dispatch (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sources,  }\item[{}]{src\+\_\+dir = {\ttfamily None},  }\item[{}]{ccompiler = {\ttfamily None},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile one or more dispatch-able sources and generates object files,
+also generates abstract C config headers and macros that
+used later for the final runtime dispatching process.
+
+The mechanism behind it is to takes each source file that specified
+in 'sources' and branching it into several files depend on
+special configuration statements that must be declared in the
+top of each source which contains targeted CPU features,
+then it compiles every branched source with the proper compiler flags.
+
+Parameters
+----------
+sources : list
+    Must be a list of dispatch-able sources file paths,
+    and configuration statements must be declared inside
+    each file.
+
+src_dir : str
+    Path of parent directory for the generated headers and wrapped sources.
+    If None(default) the files will generated in-place.
+
+ccompiler : CCompiler
+    Distutils `CCompiler` instance to be used for compilation.
+    If None (default), the provided instance during the initialization
+    will be used instead.
+
+**kwargs : any
+    Arguments to pass on to the `CCompiler.compile()`
+
+Returns
+-------
+list : generated object files
+
+Raises
+------
+CompileError
+    Raises by `CCompiler.compile()` on compiling failure.
+DistutilsError
+    Some errors during checking the sanity of configuration statements.
+
+See Also
+--------
+parse_targets :
+    Parsing the configuration statements of dispatch-able sources.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/ccompiler\+\_\+opt.\+py\end{DoxyCompactItemize}

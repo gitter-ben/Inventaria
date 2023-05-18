@@ -1,0 +1,85 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL}{}\doxysection{numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL}\index{numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}}
+
+
+Inheritance diagram for numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a703e7970cb4bc0fbda061f874438d481}{test\+\_\+operators\+\_\+logical}} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a1d691dfc0b1787fb23075f5aa1584c44}\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a1d691dfc0b1787fb23075f5aa1584c44}} 
+def {\bfseries test\+\_\+tobits} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_af93a28b18e709754dfc5a03f8206bb66}{test\+\_\+pack}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_afd1498c91ab2575054bab8b642bb25b6}{test\+\_\+operators\+\_\+crosstest}} (self, intrin, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a7133690b9cfe396190f515f00ce73b10}\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a7133690b9cfe396190f515f00ce73b10}} 
+{\bfseries sfx}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}To test all boolean vector types at once
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_afd1498c91ab2575054bab8b642bb25b6}\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_afd1498c91ab2575054bab8b642bb25b6}} 
+\index{numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}!test\_operators\_crosstest@{test\_operators\_crosstest}}
+\index{test\_operators\_crosstest@{test\_operators\_crosstest}!numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}}
+\doxysubsubsection{\texorpdfstring{test\_operators\_crosstest()}{test\_operators\_crosstest()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL.\+test\+\_\+operators\+\_\+crosstest (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{intrin,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test intrinsics:
+    npyv_any_##SFX
+    npyv_all_##SFX
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a703e7970cb4bc0fbda061f874438d481}\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_a703e7970cb4bc0fbda061f874438d481}} 
+\index{numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}!test\_operators\_logical@{test\_operators\_logical}}
+\index{test\_operators\_logical@{test\_operators\_logical}!numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}}
+\doxysubsubsection{\texorpdfstring{test\_operators\_logical()}{test\_operators\_logical()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL.\+test\+\_\+operators\+\_\+logical (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logical operations for boolean types.
+Test intrinsics:
+    npyv_xor_##SFX, npyv_and_##SFX, npyv_or_##SFX, npyv_not_##SFX,
+    npyv_andc_b8, npvy_orc_b8, nvpy_xnor_b8
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_af93a28b18e709754dfc5a03f8206bb66}\label{classnumpy_1_1core_1_1tests_1_1test__simd_1_1__SIMD__BOOL_af93a28b18e709754dfc5a03f8206bb66}} 
+\index{numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}!test\_pack@{test\_pack}}
+\index{test\_pack@{test\_pack}!numpy.core.tests.test\_simd.\_SIMD\_BOOL@{numpy.core.tests.test\_simd.\_SIMD\_BOOL}}
+\doxysubsubsection{\texorpdfstring{test\_pack()}{test\_pack()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+simd.\+\_\+\+SIMD\+\_\+\+BOOL.\+test\+\_\+pack (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pack multiple vectors into one
+Test intrinsics:
+    npyv_pack_b8_b16
+    npyv_pack_b8_b32
+    npyv_pack_b8_b64
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/tests/test\+\_\+simd.\+py\end{DoxyCompactItemize}

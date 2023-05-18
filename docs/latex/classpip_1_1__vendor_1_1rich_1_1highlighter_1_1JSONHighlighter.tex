@@ -1,0 +1,60 @@
+\hypertarget{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter}{}\doxysection{pip.\+\_\+vendor.\+rich.\+highlighter.\+JSONHighlighter Class Reference}
+\label{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter}\index{pip.\_vendor.rich.highlighter.JSONHighlighter@{pip.\_vendor.rich.highlighter.JSONHighlighter}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+rich.\+highlighter.\+JSONHighlighter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+rich.\+highlighter.\+JSONHighlighter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter_ad32edca7747b50353d511b9380b0a910}\label{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter_ad32edca7747b50353d511b9380b0a910}} 
+string {\bfseries base\+\_\+style} = \char`\"{}json.\char`\"{}
+\item 
+list {\bfseries highlights}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Highlights JSON\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter_ac348a360b21b20f6de8b3b99b1f87ff5}\label{classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter_ac348a360b21b20f6de8b3b99b1f87ff5}} 
+\index{pip.\_vendor.rich.highlighter.JSONHighlighter@{pip.\_vendor.rich.highlighter.JSONHighlighter}!highlights@{highlights}}
+\index{highlights@{highlights}!pip.\_vendor.rich.highlighter.JSONHighlighter@{pip.\_vendor.rich.highlighter.JSONHighlighter}}
+\doxysubsubsection{\texorpdfstring{highlights}{highlights}}
+{\footnotesize\ttfamily list pip.\+\_\+vendor.\+rich.\+highlighter.\+JSONHighlighter.\+highlights\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        \_combine\_regex(}
+\DoxyCodeLine{            \textcolor{stringliteral}{r"{}(?P<brace>[\(\backslash\)\{\(\backslash\)[\(\backslash\)(\(\backslash\))\(\backslash\)]\(\backslash\)\}])"{}},}
+\DoxyCodeLine{            \textcolor{stringliteral}{r"{}\(\backslash\)b(?P<bool\_true>true)\(\backslash\)b|\(\backslash\)b(?P<bool\_false>false)\(\backslash\)b|\(\backslash\)b(?P<null>null)\(\backslash\)b"{}},}
+\DoxyCodeLine{            \textcolor{stringliteral}{r"{}(?P<number>(?<!\(\backslash\)w)\(\backslash\)-\/?[0-\/9]+\(\backslash\).?[0-\/9]*(e[\(\backslash\)-\/\(\backslash\)+]?\(\backslash\)d+?)?\(\backslash\)b|0x[0-\/9a-\/fA-\/F]*)"{}},}
+\DoxyCodeLine{            \textcolor{stringliteral}{r"{}(?<![\(\backslash\)\(\backslash\)\(\backslash\)w])(?P<str>b?\(\backslash\)"{}.*?(?<!\(\backslash\)\(\backslash\))\(\backslash\)"{})"{}},}
+\DoxyCodeLine{        ),}
+\DoxyCodeLine{        \textcolor{stringliteral}{r"{}(?<![\(\backslash\)\(\backslash\)\(\backslash\)w])(?P<key>b?\(\backslash\)"{}.*?(?<!\(\backslash\)\(\backslash\))\(\backslash\)"{})\(\backslash\):"{}},}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/rich/highlighter.\+py\end{DoxyCompactItemize}

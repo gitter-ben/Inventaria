@@ -1,0 +1,87 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+Pending\+Skip Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip}\index{pip.\_vendor.pyparsing.core.\_PendingSkip@{pip.\_vendor.pyparsing.core.\_PendingSkip}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+Pending\+Skip\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+Pending\+Skip\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a5d057f9656f27e51316feb09cbf45420}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a5d057f9656f27e51316feb09cbf45420}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} expr, bool must\+\_\+skip=False)
+\item 
+def \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_ab5a0cdf1ea157857a33299c38079f7cd}{\+\_\+\+\_\+add\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a81367529a96ea1d5da76406471d68309}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a81367529a96ea1d5da76406471d68309}} 
+def {\bfseries \+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a54e06c2b168c527a181c9be922d336f4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a54e06c2b168c527a181c9be922d336f4}} 
+def {\bfseries parse\+Impl} (self, $\ast$args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a25eaaf837e99bd639f1d2ce893a894a5}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_a25eaaf837e99bd639f1d2ce893a894a5}} 
+{\bfseries anchor}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_acf7579afd49bff91bbdd08c3e029bb0d}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_acf7579afd49bff91bbdd08c3e029bb0d}} 
+{\bfseries must\+\_\+skip}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_ab5a0cdf1ea157857a33299c38079f7cd}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1__PendingSkip_ab5a0cdf1ea157857a33299c38079f7cd}} 
+\index{pip.\_vendor.pyparsing.core.\_PendingSkip@{pip.\_vendor.pyparsing.core.\_PendingSkip}!\_\_add\_\_@{\_\_add\_\_}}
+\index{\_\_add\_\_@{\_\_add\_\_}!pip.\_vendor.pyparsing.core.\_PendingSkip@{pip.\_vendor.pyparsing.core.\_PendingSkip}}
+\doxysubsubsection{\texorpdfstring{\_\_add\_\_()}{\_\_add\_\_()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+Pending\+Skip.\+\_\+\+\_\+add\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Implementation of ``+`` operator - returns :class:`And`. Adding strings to a :class:`ParserElement`
+converts them to :class:`Literal`s by default.
+
+Example::
+
+    greet = Word(alphas) + "," + Word(alphas) + "!"
+    hello = "Hello, World!"
+    print(hello, "->", greet.parse_string(hello))
+
+prints::
+
+    Hello, World! -> ['Hello', ',', 'World', '!']
+
+``...`` may be used as a parse expression as a short form of :class:`SkipTo`.
+
+    Literal('start') + ... + Literal('end')
+
+is equivalent to:
+
+    Literal('start') + SkipTo('end')("_skipped*") + Literal('end')
+
+Note that the skipped text is returned with '_skipped' as a results name,
+and to support having multiple skips in the same parser, the value returned is
+a list of all skipped text.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement_ae0b2666afa394d1e43b9e47d0c738cd6}{pip.\+\_\+vendor.\+pyparsing.\+core.\+Parser\+Element}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

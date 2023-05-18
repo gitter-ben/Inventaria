@@ -1,0 +1,204 @@
+\hypertarget{classjsonpickle_1_1backend_1_1JSONBackend}{}\doxysection{jsonpickle.\+backend.\+JSONBackend Class Reference}
+\label{classjsonpickle_1_1backend_1_1JSONBackend}\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+
+
+Inheritance diagram for jsonpickle.\+backend.\+JSONBackend\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classjsonpickle_1_1backend_1_1JSONBackend__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+backend.\+JSONBackend\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classjsonpickle_1_1backend_1_1JSONBackend__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_ab00b0ac8cdd6fc4d4612ff73e272364e}{encode}} (self, obj, indent=None, separators=None)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_acc595e643b5dd8e03cd72bd28e5a2dfb}{decode}} (self, string)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a78ba006d312b17ae8ebb80ff8969c9eb}\label{classjsonpickle_1_1backend_1_1JSONBackend_a78ba006d312b17ae8ebb80ff8969c9eb}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, fallthrough=True)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_aa41f159729547d68be6d0f4faa45c1c2}{enable\+\_\+fallthrough}} (self, enable)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_a78b794d398ab15735d76134a75a3cc10}{load\+\_\+backend}} (self, name, dumps=\textquotesingle{}dumps\textquotesingle{}, loads=\textquotesingle{}loads\textquotesingle{}, loads\+\_\+exc=Value\+Error)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_affab8aec32e36f2456f760b9cd4ad384}{remove\+\_\+backend}} (self, name)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a2bb23971df8fa277fa872d015cbc6a31}\label{classjsonpickle_1_1backend_1_1JSONBackend_a2bb23971df8fa277fa872d015cbc6a31}} 
+def {\bfseries backend\+\_\+encode} (self, name, obj, indent=None, separators=None)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a8646d5e4b0ccd25c65a05a9f79d5ba84}\label{classjsonpickle_1_1backend_1_1JSONBackend_a8646d5e4b0ccd25c65a05a9f79d5ba84}} 
+def {\bfseries backend\+\_\+decode} (self, name, string)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_a3a37b0b6d19023cc76fb2c1d6bdc2b43}{set\+\_\+preferred\+\_\+backend}} (self, name)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_aa32f7d1de7bb7c160f5d201a6f4e9f17}{set\+\_\+encoder\+\_\+options}} (self, name, $\ast$args, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_a3bffcc565abcd4959dbdb100393a5f79}{set\+\_\+decoder\+\_\+options}} (self, name, $\ast$args, $\ast$$\ast$kwargs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a6e11cefa1848523494e1783f352225f6}\label{classjsonpickle_1_1backend_1_1JSONBackend_a6e11cefa1848523494e1783f352225f6}} 
+def {\bfseries dumps} = \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_ab00b0ac8cdd6fc4d4612ff73e272364e}{encode}}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_acb2374996925a812165d2dfeb17bc1e1}\label{classjsonpickle_1_1backend_1_1JSONBackend_acb2374996925a812165d2dfeb17bc1e1}} 
+def {\bfseries loads} = \mbox{\hyperlink{classjsonpickle_1_1backend_1_1JSONBackend_acc595e643b5dd8e03cd72bd28e5a2dfb}{decode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Manages encoding and decoding using various backends.
+
+It tries these modules in this order:
+    simplejson, json, ujson
+
+simplejson is a fast and popular backend and is tried first.
+json comes with Python and is tried second.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_acc595e643b5dd8e03cd72bd28e5a2dfb}\label{classjsonpickle_1_1backend_1_1JSONBackend_acc595e643b5dd8e03cd72bd28e5a2dfb}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!decode@{decode}}
+\index{decode@{decode}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+decode (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Attempt to decode an object from a JSON string.
+
+This tries the loaded backends in order and passes along the last
+exception if no backends are able to decode the string.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_aa41f159729547d68be6d0f4faa45c1c2}\label{classjsonpickle_1_1backend_1_1JSONBackend_aa41f159729547d68be6d0f4faa45c1c2}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!enable\_fallthrough@{enable\_fallthrough}}
+\index{enable\_fallthrough@{enable\_fallthrough}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{enable\_fallthrough()}{enable\_fallthrough()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+enable\+\_\+fallthrough (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{enable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Disable jsonpickle's fallthrough-on-error behavior
+
+By default, jsonpickle tries the next backend when decoding or
+encoding using a backend fails.
+
+This can make it difficult to force jsonpickle to use a specific
+backend, and catch errors, because the error will be suppressed and
+may not be raised by the subsequent backend.
+
+Calling `enable_backend(False)` will make jsonpickle immediately
+re-raise any exceptions raised by the backends.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_ab00b0ac8cdd6fc4d4612ff73e272364e}\label{classjsonpickle_1_1backend_1_1JSONBackend_ab00b0ac8cdd6fc4d4612ff73e272364e}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!encode@{encode}}
+\index{encode@{encode}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+encode (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{indent = {\ttfamily None},  }\item[{}]{separators = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Attempt to encode an object into JSON.
+
+This tries the loaded backends in order and passes along the last
+exception if no backend is able to encode the object.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a78b794d398ab15735d76134a75a3cc10}\label{classjsonpickle_1_1backend_1_1JSONBackend_a78b794d398ab15735d76134a75a3cc10}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!load\_backend@{load\_backend}}
+\index{load\_backend@{load\_backend}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{load\_backend()}{load\_backend()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+load\+\_\+backend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{dumps = {\ttfamily \textquotesingle{}dumps\textquotesingle{}},  }\item[{}]{loads = {\ttfamily \textquotesingle{}loads\textquotesingle{}},  }\item[{}]{loads\+\_\+exc = {\ttfamily ValueError} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a JSON backend by name.
+
+This method loads a backend and sets up references to that
+backend's loads/dumps functions and exception classes.
+
+:param dumps: is the name of the backend's encode method.
+  The method should take an object and return a string.
+  Defaults to 'dumps'.
+:param loads: names the backend's method for the reverse
+  operation -- returning a Python object from a string.
+:param loads_exc: can be either the name of the exception class
+  used to denote decoding errors, or it can be a direct reference
+  to the appropriate exception class itself.  If it is a name,
+  then the assumption is that an exception class of that name
+  can be found in the backend module's namespace.
+:param load: names the backend's 'load' method.
+:param dump: names the backend's 'dump' method.
+:rtype bool: True on success, False if the backend could not be loaded.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_affab8aec32e36f2456f760b9cd4ad384}\label{classjsonpickle_1_1backend_1_1JSONBackend_affab8aec32e36f2456f760b9cd4ad384}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!remove\_backend@{remove\_backend}}
+\index{remove\_backend@{remove\_backend}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{remove\_backend()}{remove\_backend()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+remove\+\_\+backend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove all entries for a particular backend.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a3bffcc565abcd4959dbdb100393a5f79}\label{classjsonpickle_1_1backend_1_1JSONBackend_a3bffcc565abcd4959dbdb100393a5f79}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!set\_decoder\_options@{set\_decoder\_options}}
+\index{set\_decoder\_options@{set\_decoder\_options}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{set\_decoder\_options()}{set\_decoder\_options()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+set\+\_\+decoder\+\_\+options (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Associate decoder-specific options with a decoder.
+
+After calling set_decoder_options, any calls to jsonpickle's
+decode method will pass the supplied args and kwargs along to
+the appropriate backend's decode method.
+
+For example::
+
+    set_decoder_options('simplejson', encoding='utf8', cls=JSONDecoder)
+
+See the appropriate decoder's documentation for details about
+the supported arguments and keyword arguments.\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_aa32f7d1de7bb7c160f5d201a6f4e9f17}\label{classjsonpickle_1_1backend_1_1JSONBackend_aa32f7d1de7bb7c160f5d201a6f4e9f17}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!set\_encoder\_options@{set\_encoder\_options}}
+\index{set\_encoder\_options@{set\_encoder\_options}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{set\_encoder\_options()}{set\_encoder\_options()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+set\+\_\+encoder\+\_\+options (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Associate encoder-specific options with an encoder.
+
+After calling set_encoder_options, any calls to jsonpickle's
+encode method will pass the supplied args and kwargs along to
+the appropriate backend's encode method.
+
+For example::
+
+    set_encoder_options('simplejson', sort_keys=True, indent=4)
+
+See the appropriate encoder's documentation for details about
+the supported arguments and keyword arguments.
+
+WARNING: If you pass sort_keys=True, and the object to encode
+contains ``__slots__``, and you set ``warn`` to True,
+a TypeError will be raised!
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1backend_1_1JSONBackend_a3a37b0b6d19023cc76fb2c1d6bdc2b43}\label{classjsonpickle_1_1backend_1_1JSONBackend_a3a37b0b6d19023cc76fb2c1d6bdc2b43}} 
+\index{jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}!set\_preferred\_backend@{set\_preferred\_backend}}
+\index{set\_preferred\_backend@{set\_preferred\_backend}!jsonpickle.backend.JSONBackend@{jsonpickle.backend.JSONBackend}}
+\doxysubsubsection{\texorpdfstring{set\_preferred\_backend()}{set\_preferred\_backend()}}
+{\footnotesize\ttfamily def jsonpickle.\+backend.\+JSONBackend.\+set\+\_\+preferred\+\_\+backend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the preferred json backend.
+
+If a preferred backend is set then jsonpickle tries to use it
+before any other backend.
+
+For example::
+
+    set_preferred_backend('simplejson')
+
+If the backend is not one of the built-in jsonpickle backends
+(json/simplejson) then you must load the backend
+prior to calling set_preferred_backend.
+
+AssertionError is raised if the backend has not been loaded.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/backend.\+py\end{DoxyCompactItemize}

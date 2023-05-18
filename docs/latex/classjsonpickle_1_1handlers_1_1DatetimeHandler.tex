@@ -1,0 +1,74 @@
+\hypertarget{classjsonpickle_1_1handlers_1_1DatetimeHandler}{}\doxysection{jsonpickle.\+handlers.\+Datetime\+Handler Class Reference}
+\label{classjsonpickle_1_1handlers_1_1DatetimeHandler}\index{jsonpickle.handlers.DatetimeHandler@{jsonpickle.handlers.DatetimeHandler}}
+
+
+Inheritance diagram for jsonpickle.\+handlers.\+Datetime\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classjsonpickle_1_1handlers_1_1DatetimeHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+handlers.\+Datetime\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classjsonpickle_1_1handlers_1_1DatetimeHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1DatetimeHandler_af77bb26d3ab17d557487f963df812264}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1DatetimeHandler_aecb6178188ac2ca21da469c2eeac626f}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Custom handler for datetime objects
+
+Datetime objects use __reduce__, and they generate binary strings encoding
+the payload. This handler encodes that payload to reconstruct the
+object.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1DatetimeHandler_af77bb26d3ab17d557487f963df812264}\label{classjsonpickle_1_1handlers_1_1DatetimeHandler_af77bb26d3ab17d557487f963df812264}} 
+\index{jsonpickle.handlers.DatetimeHandler@{jsonpickle.handlers.DatetimeHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.handlers.DatetimeHandler@{jsonpickle.handlers.DatetimeHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Datetime\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1DatetimeHandler_aecb6178188ac2ca21da469c2eeac626f}\label{classjsonpickle_1_1handlers_1_1DatetimeHandler_aecb6178188ac2ca21da469c2eeac626f}} 
+\index{jsonpickle.handlers.DatetimeHandler@{jsonpickle.handlers.DatetimeHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.handlers.DatetimeHandler@{jsonpickle.handlers.DatetimeHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Datetime\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/handlers.\+py\end{DoxyCompactItemize}

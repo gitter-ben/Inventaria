@@ -1,0 +1,97 @@
+\hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+lexers.\+python.\+Python2\+Traceback\+Lexer Class Reference}
+\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer}\index{pip.\_vendor.pygments.lexers.python.Python2TracebackLexer@{pip.\_vendor.pygments.lexers.python.Python2TracebackLexer}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pygments.\+lexers.\+python.\+Python2\+Traceback\+Lexer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pygments.\+lexers.\+python.\+Python2\+Traceback\+Lexer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_adaa298e0c1c18483f3e8c65b90b58002}\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_adaa298e0c1c18483f3e8c65b90b58002}} 
+string {\bfseries name} = \textquotesingle{}Python 2.x Traceback\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a956b6e60792178deaa217beaec37090a}\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a956b6e60792178deaa217beaec37090a}} 
+list {\bfseries aliases} = \mbox{[}\textquotesingle{}py2tb\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a8cee3cc11cb0b4709320572b0b4e3fb7}\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a8cee3cc11cb0b4709320572b0b4e3fb7}} 
+list {\bfseries filenames} = \mbox{[}\textquotesingle{}$\ast$.py2tb\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a68b09b94638a98c2e36688f3fa197f27}\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a68b09b94638a98c2e36688f3fa197f27}} 
+list {\bfseries mimetypes} = \mbox{[}\textquotesingle{}text/x-\/python2-\/traceback\textquotesingle{}\mbox{]}
+\item 
+dictionary {\bfseries tokens}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}For Python tracebacks.
+
+.. versionadded:: 0.7
+
+.. versionchanged:: 2.5
+   This class has been renamed from ``PythonTracebackLexer``.
+   ``PythonTracebackLexer`` now refers to the Python 3 variant.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a72eb876d55709cdf72b3e51cfb1a2700}\label{classpip_1_1__vendor_1_1pygments_1_1lexers_1_1python_1_1Python2TracebackLexer_a72eb876d55709cdf72b3e51cfb1a2700}} 
+\index{pip.\_vendor.pygments.lexers.python.Python2TracebackLexer@{pip.\_vendor.pygments.lexers.python.Python2TracebackLexer}!tokens@{tokens}}
+\index{tokens@{tokens}!pip.\_vendor.pygments.lexers.python.Python2TracebackLexer@{pip.\_vendor.pygments.lexers.python.Python2TracebackLexer}}
+\doxysubsubsection{\texorpdfstring{tokens}{tokens}}
+{\footnotesize\ttfamily dictionary pip.\+\_\+vendor.\+pygments.\+lexers.\+python.\+Python2\+Traceback\+Lexer.\+tokens\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{'root'}: [}
+\DoxyCodeLine{            \textcolor{comment}{\# Cover both (most recent call last) and (innermost last)}}
+\DoxyCodeLine{            \textcolor{comment}{\# The optional \string^C allows us to catch keyboard interrupt signals.}}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^(\(\backslash\)\string^C)?(Traceback.*\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Text, Generic.Traceback), \textcolor{stringliteral}{'intb'}),}
+\DoxyCodeLine{            \textcolor{comment}{\# SyntaxError starts with this.}}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^(?=  File "{}[\string^"{}]+"{}, line \(\backslash\)d+)'}, Generic.Traceback, \textcolor{stringliteral}{'intb'}),}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^.*\(\backslash\)n'}, Other),}
+\DoxyCodeLine{        ],}
+\DoxyCodeLine{        \textcolor{stringliteral}{'intb'}: [}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^(  File )("{}[\string^"{}]+"{})(, line )(\(\backslash\)d+)(, in )(.+)(\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Text, Name.Builtin, Text, Number, Text, Name, Text)),}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^(  File )("{}[\string^"{}]+"{})(, line )(\(\backslash\)d+)(\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Text, Name.Builtin, Text, Number, Text)),}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^(    )(.+)(\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Text, using(Python2Lexer), Text), \textcolor{stringliteral}{'marker'}),}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^([ \(\backslash\)t]*)(\(\backslash\).\(\backslash\).\(\backslash\).)(\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Text, Comment, Text)),  \textcolor{comment}{\# for doctests...}}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^([\string^:]+)(: )(.+)(\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Generic.Error, Text, Name, Text), \textcolor{stringliteral}{'\#pop'}),}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'\string^([a-\/zA-\/Z\_]\(\backslash\)w*)(:?\(\backslash\)n)'},}
+\DoxyCodeLine{             bygroups(Generic.Error, Text), \textcolor{stringliteral}{'\#pop'})}
+\DoxyCodeLine{        ],}
+\DoxyCodeLine{        \textcolor{stringliteral}{'marker'}: [}
+\DoxyCodeLine{            \textcolor{comment}{\# For syntax errors.}}
+\DoxyCodeLine{            (\textcolor{stringliteral}{r'( \{4,\})(\(\backslash\)\string^)'}, bygroups(Text, Punctuation.Marker), \textcolor{stringliteral}{'\#pop'}),}
+\DoxyCodeLine{            default(\textcolor{stringliteral}{'\#pop'}),}
+\DoxyCodeLine{        ],}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pygments/lexers/python.\+py\end{DoxyCompactItemize}

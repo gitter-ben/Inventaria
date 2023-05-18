@@ -1,0 +1,31 @@
+<map id="numpy.linalg.tests.test_linalg.LinalgSquareTestCase" name="numpy.linalg.tests.test_linalg.LinalgSquareTestCase">
+<area shape="rect" id="node1" title=" " alt="" coords="224,561,435,603"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1CondCases.html" title=" " alt="" coords="483,71,653,112"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1DetCases.html" title=" " alt="" coords="483,201,653,243"/>
+<area shape="rect" id="node9" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1EigCases.html" title=" " alt="" coords="483,332,653,373"/>
+<area shape="rect" id="node12" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1EigvalsCases.html" title=" " alt="" coords="483,463,653,504"/>
+<area shape="rect" id="node15" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1InvCases.html" title=" " alt="" coords="483,561,653,603"/>
+<area shape="rect" id="node18" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LstsqCases.html" title=" " alt="" coords="483,659,653,700"/>
+<area shape="rect" id="node21" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1PinvCases.html" title=" " alt="" coords="483,789,653,831"/>
+<area shape="rect" id="node24" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1SVDCases.html" title=" " alt="" coords="483,920,653,961"/>
+<area shape="rect" id="node27" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1SolveCases.html" title=" " alt="" coords="483,1051,653,1092"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgTestCase.html" title=" " alt="" coords="5,561,176,603"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestCond.html" title=" " alt="" coords="733,5,904,47"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestCondMatrix.html" title=" " alt="" coords="709,71,929,112"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestDet.html" title=" " alt="" coords="733,136,904,177"/>
+<area shape="rect" id="node8" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestDetMatrix.html" title=" " alt="" coords="713,201,924,243"/>
+<area shape="rect" id="node10" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestEig.html" title=" " alt="" coords="733,267,904,308"/>
+<area shape="rect" id="node11" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestEigMatrix.html" title=" " alt="" coords="715,332,922,373"/>
+<area shape="rect" id="node13" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestEigvals.html" title=" " alt="" coords="733,397,904,439"/>
+<area shape="rect" id="node14" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestEigvalsMatrix.html" title=" " alt="" coords="701,463,936,504"/>
+<area shape="rect" id="node16" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestInv.html" title=" " alt="" coords="733,528,904,569"/>
+<area shape="rect" id="node17" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestInvMatrix.html" title=" " alt="" coords="715,593,922,635"/>
+<area shape="rect" id="node19" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestLstsq.html" title=" " alt="" coords="733,659,904,700"/>
+<area shape="rect" id="node20" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestLstsqMatrix.html" title=" " alt="" coords="708,724,929,765"/>
+<area shape="rect" id="node22" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestPinv.html" title=" " alt="" coords="733,789,904,831"/>
+<area shape="rect" id="node23" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestPinvMatrix.html" title=" " alt="" coords="711,855,926,896"/>
+<area shape="rect" id="node25" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestSVD.html" title=" " alt="" coords="733,920,904,961"/>
+<area shape="rect" id="node26" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestSVDMatrix.html" title=" " alt="" coords="711,985,926,1027"/>
+<area shape="rect" id="node28" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestSolve.html" title=" " alt="" coords="733,1051,904,1092"/>
+<area shape="rect" id="node29" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestSolveMatrix.html" title=" " alt="" coords="707,1116,930,1157"/>
+</map>

@@ -1,0 +1,108 @@
+\hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate}{}\doxysection{numpy.\+core.\+\_\+ufunc\+\_\+config.\+errstate Class Reference}
+\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate}\index{numpy.core.\_ufunc\_config.errstate@{numpy.core.\_ufunc\_config.errstate}}
+
+
+Inheritance diagram for numpy.\+core.\+\_\+ufunc\+\_\+config.\+errstate\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classnumpy_1_1core_1_1__ufunc__config_1_1errstate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+\_\+ufunc\+\_\+config.\+errstate\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classnumpy_1_1core_1_1__ufunc__config_1_1errstate__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a5939e55e1f08385a65fc89cd0bbd848f}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a5939e55e1f08385a65fc89cd0bbd848f}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$call=\+\_\+\+Unspecified, $\ast$$\ast$kwargs)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_aa8efcbcc1c314dd3a673f15cbf97ab83}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_aa8efcbcc1c314dd3a673f15cbf97ab83}} 
+def {\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_ad2b6e56230f7536b7d7865515f5d6b77}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_ad2b6e56230f7536b7d7865515f5d6b77}} 
+def {\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, $\ast$exc\+\_\+info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a564df480ec82105a3125ffdf14b6d097}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a564df480ec82105a3125ffdf14b6d097}} 
+{\bfseries call}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_aff9c5210e68de0197118513e15ba4c39}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_aff9c5210e68de0197118513e15ba4c39}} 
+{\bfseries kwargs}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a08d963ccd4828cb523bb6b81b0c1a03d}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a08d963ccd4828cb523bb6b81b0c1a03d}} 
+{\bfseries oldstate}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a53a63797f94904edca2dcc34ea4c9aa7}\label{classnumpy_1_1core_1_1__ufunc__config_1_1errstate_a53a63797f94904edca2dcc34ea4c9aa7}} 
+{\bfseries oldcall}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}errstate(**kwargs)
+
+Context manager for floating-point error handling.
+
+Using an instance of `errstate` as a context manager allows statements in
+that context to execute with a known error handling behavior. Upon entering
+the context the error handling is set with `seterr` and `seterrcall`, and
+upon exiting it is reset to what it was before.
+
+..  versionchanged:: 1.17.0
+    `errstate` is also usable as a function decorator, saving
+    a level of indentation if an entire function is wrapped.
+    See :py:class:`contextlib.ContextDecorator` for more information.
+
+Parameters
+----------
+kwargs : {divide, over, under, invalid}
+    Keyword arguments. The valid keywords are the possible floating-point
+    exceptions. Each keyword should have a string value that defines the
+    treatment for the particular error. Possible values are
+    {'ignore', 'warn', 'raise', 'call', 'print', 'log'}.
+
+See Also
+--------
+seterr, geterr, seterrcall, geterrcall
+
+Notes
+-----
+For complete documentation of the types of floating-point exceptions and
+treatment options, see `seterr`.
+
+Examples
+--------
+>>> olderr = np.seterr(all='ignore')  # Set error handling to known state.
+
+>>> np.arange(3) / 0.
+array([nan, inf, inf])
+>>> with np.errstate(divide='warn'):
+...     np.arange(3) / 0.
+array([nan, inf, inf])
+
+>>> np.sqrt(-1)
+nan
+>>> with np.errstate(invalid='raise'):
+...     np.sqrt(-1)
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+FloatingPointError: invalid value encountered in sqrt
+
+Outside the context the error handling behavior has not changed:
+
+>>> np.geterr()
+{'divide': 'ignore', 'over': 'ignore', 'under': 'ignore', 'invalid': 'ignore'}\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/\+\_\+ufunc\+\_\+config.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{classjsonpickle_1_1handlers_1_1RegexHandler}{}\doxysection{jsonpickle.\+handlers.\+Regex\+Handler Class Reference}
+\label{classjsonpickle_1_1handlers_1_1RegexHandler}\index{jsonpickle.handlers.RegexHandler@{jsonpickle.handlers.RegexHandler}}
+
+
+Inheritance diagram for jsonpickle.\+handlers.\+Regex\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classjsonpickle_1_1handlers_1_1RegexHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+handlers.\+Regex\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classjsonpickle_1_1handlers_1_1RegexHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1RegexHandler_a6043ea33c901d3caacdcbba231b27005}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1RegexHandler_a4da56b826bbcf626115b22520dc5e8d8}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Flatten _sre.SRE_Pattern (compiled regex) objects\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1RegexHandler_a6043ea33c901d3caacdcbba231b27005}\label{classjsonpickle_1_1handlers_1_1RegexHandler_a6043ea33c901d3caacdcbba231b27005}} 
+\index{jsonpickle.handlers.RegexHandler@{jsonpickle.handlers.RegexHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.handlers.RegexHandler@{jsonpickle.handlers.RegexHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Regex\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1RegexHandler_a4da56b826bbcf626115b22520dc5e8d8}\label{classjsonpickle_1_1handlers_1_1RegexHandler_a4da56b826bbcf626115b22520dc5e8d8}} 
+\index{jsonpickle.handlers.RegexHandler@{jsonpickle.handlers.RegexHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.handlers.RegexHandler@{jsonpickle.handlers.RegexHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Regex\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/handlers.\+py\end{DoxyCompactItemize}

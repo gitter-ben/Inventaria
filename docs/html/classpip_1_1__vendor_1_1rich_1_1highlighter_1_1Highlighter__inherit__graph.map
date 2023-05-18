@@ -1,0 +1,9 @@
+<map id="pip._vendor.rich.highlighter.Highlighter" name="pip._vendor.rich.highlighter.Highlighter">
+<area shape="rect" id="node1" title=" " alt="" coords="103,39,305,80"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1rich_1_1highlighter_1_1NullHighlighter.html" title=" " alt="" coords="353,5,556,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1rich_1_1highlighter_1_1RegexHighlighter.html" title=" " alt="" coords="353,71,556,112"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,46,55,73"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1rich_1_1highlighter_1_1JSONHighlighter.html" title=" " alt="" coords="604,5,807,47"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1rich_1_1highlighter_1_1ReprHighlighter.html" title=" " alt="" coords="604,71,807,112"/>
+<area shape="rect" id="node7" href="$classpip_1_1__vendor_1_1rich_1_1traceback_1_1PathHighlighter.html" title=" " alt="" coords="607,136,804,177"/>
+</map>

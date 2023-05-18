@@ -1,0 +1,52 @@
+\hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation}{}\doxysection{numpy.\+polynomial.\+tests.\+test\+\_\+laguerre.\+Test\+Evaluation Class Reference}
+\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation}\index{numpy.polynomial.tests.test\_laguerre.TestEvaluation@{numpy.polynomial.tests.test\_laguerre.TestEvaluation}}
+
+
+Collaboration diagram for numpy.\+polynomial.\+tests.\+test\+\_\+laguerre.\+Test\+Evaluation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_abfae40cd5ccf34094cf82f43e53fa89f}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_abfae40cd5ccf34094cf82f43e53fa89f}} 
+def {\bfseries test\+\_\+lagval} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_ae033872e93c901671f969b1e8bba9f2a}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_ae033872e93c901671f969b1e8bba9f2a}} 
+def {\bfseries test\+\_\+lagval2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a37cf6745314942dde589ce29638efcfd}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a37cf6745314942dde589ce29638efcfd}} 
+def {\bfseries test\+\_\+lagval3d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_aa19bbe020dae7abec15b1a01e3ac0a6d}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_aa19bbe020dae7abec15b1a01e3ac0a6d}} 
+def {\bfseries test\+\_\+laggrid2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a2fec5d9ab4bf0c16a44c84aece6754fb}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a2fec5d9ab4bf0c16a44c84aece6754fb}} 
+def {\bfseries test\+\_\+laggrid3d} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a708926f34ce6ab8d68ed6796ffd41664}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a708926f34ce6ab8d68ed6796ffd41664}} 
+{\bfseries c1d} = np.\+array(\mbox{[}9., -\/14., 6.\mbox{]})
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_aa7fa95cd27661ce70f249fc1404688ec}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_aa7fa95cd27661ce70f249fc1404688ec}} 
+{\bfseries c2d} = np.\+einsum(\textquotesingle{}i,j-\/$>$ij\textquotesingle{}, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a59255aa424b295c492cf9ec27d3d51b4}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a59255aa424b295c492cf9ec27d3d51b4}} 
+{\bfseries c3d} = np.\+einsum(\textquotesingle{}i,j,k-\/$>$ijk\textquotesingle{}, c1d, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_af1461fc122d9d4a58fb2ce850d74d4a4}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_af1461fc122d9d4a58fb2ce850d74d4a4}} 
+int {\bfseries x} = np.\+random.\+random((3, 5))$\ast$2 -\/ 1
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a43f001e111390fb9e9bf43ac7f0d2927}\label{classnumpy_1_1polynomial_1_1tests_1_1test__laguerre_1_1TestEvaluation_a43f001e111390fb9e9bf43ac7f0d2927}} 
+{\bfseries y} = polyval(x, \mbox{[}1., 2., 3.\mbox{]})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/tests/test\+\_\+laguerre.\+py\end{DoxyCompactItemize}

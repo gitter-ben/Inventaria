@@ -1,0 +1,57 @@
+\hypertarget{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory}{}\doxysection{pip.\+\_\+internal.\+utils.\+temp\+\_\+dir.\+Adjacent\+Temp\+Directory Class Reference}
+\label{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory}\index{pip.\_internal.utils.temp\_dir.AdjacentTempDirectory@{pip.\_internal.utils.temp\_dir.AdjacentTempDirectory}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+utils.\+temp\+\_\+dir.\+Adjacent\+Temp\+Directory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+utils.\+temp\+\_\+dir.\+Adjacent\+Temp\+Directory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_a9cdb443d6625af94756fc574a6fb453a}\label{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_a9cdb443d6625af94756fc574a6fb453a}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str original, Optional\mbox{[}bool\mbox{]} delete=None)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_afec831e8f80d0162660d0e8a8509080f}\label{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_afec831e8f80d0162660d0e8a8509080f}} 
+{\bfseries original}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_ae180b26a4bd88fa940c358ae5e27a7fb}\label{classpip_1_1__internal_1_1utils_1_1temp__dir_1_1AdjacentTempDirectory_ae180b26a4bd88fa940c358ae5e27a7fb}} 
+string {\bfseries LEADING\+\_\+\+CHARS} = \char`\"{}-\/$\sim$.=\%0123456789\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Helper class that creates a temporary directory adjacent to a real one.
+
+Attributes:
+    original
+        The original directory to create a temp directory for.
+    path
+        After calling create() or entering, contains the full
+        path to the temporary directory.
+    delete
+        Whether the directory should be deleted when exiting
+        (when used as a contextmanager)\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+internal/utils/temp\+\_\+dir.\+py\end{DoxyCompactItemize}

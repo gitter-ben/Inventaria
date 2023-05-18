@@ -1,0 +1,57 @@
+\hypertarget{namespacenumpy_1_1core_1_1__add__newdocs__scalars}{}\doxysection{numpy.\+core.\+\_\+add\+\_\+newdocs\+\_\+scalars Namespace Reference}
+\label{namespacenumpy_1_1core_1_1__add__newdocs__scalars}\index{numpy.core.\_add\_newdocs\_scalars@{numpy.core.\_add\_newdocs\_scalars}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__add__newdocs__scalars_abbc6ab31cfab8c9a89335e16761ee0ee}\label{namespacenumpy_1_1core_1_1__add__newdocs__scalars_abbc6ab31cfab8c9a89335e16761ee0ee}} 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1__add__newdocs__scalars_abbc6ab31cfab8c9a89335e16761ee0ee}{numeric\+\_\+type\+\_\+aliases}} (aliases)
+\begin{DoxyCompactList}\small\item\em Documentation for concrete scalar classes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__add__newdocs__scalars_a2ebb240da112efe79e8195a30a427400}\label{namespacenumpy_1_1core_1_1__add__newdocs__scalars_a2ebb240da112efe79e8195a30a427400}} 
+def {\bfseries add\+\_\+newdoc\+\_\+for\+\_\+scalar\+\_\+type} (obj, fixed\+\_\+aliases, doc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries possible\+\_\+aliases}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This file is separate from ``_add_newdocs.py`` so that it can be mocked out by
+our sphinx ``conf.py`` during doc builds, where we want to avoid showing
+platform-dependent information.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__add__newdocs__scalars_a1265538024b1e86e4b5d7876bc59af3c}\label{namespacenumpy_1_1core_1_1__add__newdocs__scalars_a1265538024b1e86e4b5d7876bc59af3c}} 
+\index{numpy.core.\_add\_newdocs\_scalars@{numpy.core.\_add\_newdocs\_scalars}!possible\_aliases@{possible\_aliases}}
+\index{possible\_aliases@{possible\_aliases}!numpy.core.\_add\_newdocs\_scalars@{numpy.core.\_add\_newdocs\_scalars}}
+\doxysubsubsection{\texorpdfstring{possible\_aliases}{possible\_aliases}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+add\+\_\+newdocs\+\_\+scalars.\+possible\+\_\+aliases}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  numeric\_type\_aliases([}
+\DoxyCodeLine{2     (\textcolor{stringliteral}{'int8'}, \textcolor{stringliteral}{'8-\/bit signed integer (``-\/128`` to ``127``)'}),}
+\DoxyCodeLine{3     (\textcolor{stringliteral}{'int16'}, \textcolor{stringliteral}{'16-\/bit signed integer (``-\/32\_768`` to ``32\_767``)'}),}
+\DoxyCodeLine{4     (\textcolor{stringliteral}{'int32'}, \textcolor{stringliteral}{'32-\/bit signed integer (``-\/2\_147\_483\_648`` to ``2\_147\_483\_647``)'}),}
+\DoxyCodeLine{5     (\textcolor{stringliteral}{'int64'}, \textcolor{stringliteral}{'64-\/bit signed integer (``-\/9\_223\_372\_036\_854\_775\_808`` to ``9\_223\_372\_036\_854\_775\_807``)'}),}
+\DoxyCodeLine{6     (\textcolor{stringliteral}{'intp'}, \textcolor{stringliteral}{'Signed integer large enough to fit pointer, compatible with C ``intptr\_t``'}),}
+\DoxyCodeLine{7     (\textcolor{stringliteral}{'uint8'}, \textcolor{stringliteral}{'8-\/bit unsigned integer (``0`` to ``255``)'}),}
+\DoxyCodeLine{8     (\textcolor{stringliteral}{'uint16'}, \textcolor{stringliteral}{'16-\/bit unsigned integer (``0`` to ``65\_535``)'}),}
+\DoxyCodeLine{9     (\textcolor{stringliteral}{'uint32'}, \textcolor{stringliteral}{'32-\/bit unsigned integer (``0`` to ``4\_294\_967\_295``)'}),}
+\DoxyCodeLine{10     (\textcolor{stringliteral}{'uint64'}, \textcolor{stringliteral}{'64-\/bit unsigned integer (``0`` to ``18\_446\_744\_073\_709\_551\_615``)'}),}
+\DoxyCodeLine{11     (\textcolor{stringliteral}{'uintp'}, \textcolor{stringliteral}{'Unsigned integer large enough to fit pointer, compatible with C ``uintptr\_t``'}),}
+\DoxyCodeLine{12     (\textcolor{stringliteral}{'float16'}, \textcolor{stringliteral}{'16-\/bit-\/precision floating-\/point number type: sign bit, 5 bits exponent, 10 bits mantissa'}),}
+\DoxyCodeLine{13     (\textcolor{stringliteral}{'float32'}, \textcolor{stringliteral}{'32-\/bit-\/precision floating-\/point number type: sign bit, 8 bits exponent, 23 bits mantissa'}),}
+\DoxyCodeLine{14     (\textcolor{stringliteral}{'float64'}, \textcolor{stringliteral}{'64-\/bit precision floating-\/point number type: sign bit, 11 bits exponent, 52 bits mantissa'}),}
+\DoxyCodeLine{15     (\textcolor{stringliteral}{'float96'}, \textcolor{stringliteral}{'96-\/bit extended-\/precision floating-\/point number type'}),}
+\DoxyCodeLine{16     (\textcolor{stringliteral}{'float128'}, \textcolor{stringliteral}{'128-\/bit extended-\/precision floating-\/point number type'}),}
+\DoxyCodeLine{17     (\textcolor{stringliteral}{'complex64'}, \textcolor{stringliteral}{'Complex number type composed of 2 32-\/bit-\/precision floating-\/point numbers'}),}
+\DoxyCodeLine{18     (\textcolor{stringliteral}{'complex128'}, \textcolor{stringliteral}{'Complex number type composed of 2 64-\/bit-\/precision floating-\/point numbers'}),}
+\DoxyCodeLine{19     (\textcolor{stringliteral}{'complex192'}, \textcolor{stringliteral}{'Complex number type composed of 2 96-\/bit extended-\/precision floating-\/point numbers'}),}
+\DoxyCodeLine{20     (\textcolor{stringliteral}{'complex256'}, \textcolor{stringliteral}{'Complex number type composed of 2 128-\/bit extended-\/precision floating-\/point numbers'}),}
+\DoxyCodeLine{21     ])}
+
+\end{DoxyCode}

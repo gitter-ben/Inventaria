@@ -1,0 +1,78 @@
+\hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler}{}\doxysection{jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler Class Reference}
+\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler}\index{jsonpickle.ext.pandas.PandasIndexHandler@{jsonpickle.ext.pandas.PandasIndexHandler}}
+
+
+Inheritance diagram for jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a22db8a2de0e4b8841d25e957d0fe95ab}\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a22db8a2de0e4b8841d25e957d0fe95ab}} 
+def {\bfseries name\+\_\+bundler} (self, obj)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a56c01b5353773bbcbbe96964b30a94b9}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a6d7644642363d264a28a0d8384674168}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a03de9371bfe54de34959fac7f14c7356}\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a03de9371bfe54de34959fac7f14c7356}} 
+{\bfseries pp} = \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasProcessor}{Pandas\+Processor}}()
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a88a42dfcfe66628bf683d6290eb35af2}\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a88a42dfcfe66628bf683d6290eb35af2}} 
+{\bfseries index\+\_\+constructor} = pd.\+Index
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a56c01b5353773bbcbbe96964b30a94b9}\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a56c01b5353773bbcbbe96964b30a94b9}} 
+\index{jsonpickle.ext.pandas.PandasIndexHandler@{jsonpickle.ext.pandas.PandasIndexHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.ext.pandas.PandasIndexHandler@{jsonpickle.ext.pandas.PandasIndexHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a6d7644642363d264a28a0d8384674168}\label{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a6d7644642363d264a28a0d8384674168}} 
+\index{jsonpickle.ext.pandas.PandasIndexHandler@{jsonpickle.ext.pandas.PandasIndexHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.ext.pandas.PandasIndexHandler@{jsonpickle.ext.pandas.PandasIndexHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/ext/pandas.\+py\end{DoxyCompactItemize}

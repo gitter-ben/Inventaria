@@ -1,0 +1,68 @@
+\hypertarget{namespacenumpy_1_1f2py_1_1cb__rules}{}\doxysection{numpy.\+f2py.\+cb\+\_\+rules Namespace Reference}
+\label{namespacenumpy_1_1f2py_1_1cb__rules}\index{numpy.f2py.cb\_rules@{numpy.f2py.cb\_rules}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_af535c113d09b48399852bf9dee08229e}\label{namespacenumpy_1_1f2py_1_1cb__rules_af535c113d09b48399852bf9dee08229e}} 
+def {\bfseries buildcallbacks} (m)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_ae0847be6b5cbee154d75a4494c08bcc5}\label{namespacenumpy_1_1f2py_1_1cb__rules_ae0847be6b5cbee154d75a4494c08bcc5}} 
+def {\bfseries buildcallback} (rout, um)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_a66c05e8a2f064762fd577a4008ceffbd}\label{namespacenumpy_1_1f2py_1_1cb__rules_a66c05e8a2f064762fd577a4008ceffbd}} 
+{\bfseries f2py\+\_\+version} = \+\_\+\+\_\+version\+\_\+\+\_\+.\+version
+\item 
+dictionary \mbox{\hyperlink{namespacenumpy_1_1f2py_1_1cb__rules_a6796d3577736194274ee61cfc855a662}{cb\+\_\+routine\+\_\+rules}}
+\begin{DoxyCompactList}\small\item\em Rules for callback function \#\#\#\#\#\#\#\#\#\#\#\#\#\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_a501cb110013a2ffcc2741cc535f17628}\label{namespacenumpy_1_1f2py_1_1cb__rules_a501cb110013a2ffcc2741cc535f17628}} 
+list {\bfseries cb\+\_\+rout\+\_\+rules}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_a8776396eda6524464b2cf17912756141}\label{namespacenumpy_1_1f2py_1_1cb__rules_a8776396eda6524464b2cf17912756141}} 
+list {\bfseries cb\+\_\+arg\+\_\+rules}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_a60d813ea14e582901679a46683e13267}\label{namespacenumpy_1_1f2py_1_1cb__rules_a60d813ea14e582901679a46683e13267}} 
+dictionary \mbox{\hyperlink{namespacenumpy_1_1f2py_1_1cb__rules_a60d813ea14e582901679a46683e13267}{cb\+\_\+map}} = \{\}
+\begin{DoxyCompactList}\small\item\em Build call-\/back module \#\#\#\#\#\#\#\#\#\#\#\#\#. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Build call-back mechanism for f2py2e.
+
+Copyright 2000 Pearu Peterson all rights reserved,
+Pearu Peterson <pearu@ioc.ee>
+Permission to use, modify, and distribute this software is given under the
+terms of the NumPy License.
+
+NO WARRANTY IS EXPRESSED OR IMPLIED.  USE AT YOUR OWN RISK.
+$Date: 2005/07/20 11:27:58 $
+Pearu Peterson\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1cb__rules_a6796d3577736194274ee61cfc855a662}\label{namespacenumpy_1_1f2py_1_1cb__rules_a6796d3577736194274ee61cfc855a662}} 
+\index{numpy.f2py.cb\_rules@{numpy.f2py.cb\_rules}!cb\_routine\_rules@{cb\_routine\_rules}}
+\index{cb\_routine\_rules@{cb\_routine\_rules}!numpy.f2py.cb\_rules@{numpy.f2py.cb\_rules}}
+\doxysubsubsection{\texorpdfstring{cb\_routine\_rules}{cb\_routine\_rules}}
+{\footnotesize\ttfamily dictionary numpy.\+f2py.\+cb\+\_\+rules.\+cb\+\_\+routine\+\_\+rules}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     \textcolor{stringliteral}{'cbtypedefs'}: \textcolor{stringliteral}{'typedef \#rctype\#(*\#name\#\_typedef)(\#optargs\_td\#\#args\_td\#\#strarglens\_td\#\#noargs\#);'},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{'body'}: ,}
+\DoxyCodeLine{4     \textcolor{stringliteral}{'need'}: [\textcolor{stringliteral}{'setjmp.h'}, \textcolor{stringliteral}{'CFUNCSMESS'}, \textcolor{stringliteral}{'F2PY\_THREAD\_LOCAL\_DECL'}],}
+\DoxyCodeLine{5     \textcolor{stringliteral}{'maxnofargs'}: \textcolor{stringliteral}{'\#maxnofargs\#'},}
+\DoxyCodeLine{6     \textcolor{stringliteral}{'nofoptargs'}: \textcolor{stringliteral}{'\#nofoptargs\#'},}
+\DoxyCodeLine{7     \textcolor{stringliteral}{'docstr'}: ,}
+\DoxyCodeLine{8     \textcolor{stringliteral}{'latexdocstr'}: ,}
+\DoxyCodeLine{9     \textcolor{stringliteral}{'docstrshort'}: \textcolor{stringliteral}{'def \#argname\#(\#docsignature\#): return \#docreturn\#'}}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+
+
+Rules for callback function \#\#\#\#\#\#\#\#\#\#\#\#\#\#. 
+

@@ -1,0 +1,9 @@
+<map id="pip._vendor.resolvelib.resolvers.ResolverException" name="pip._vendor.resolvelib.resolvers.ResolverException">
+<area shape="rect" id="node1" title=" " alt="" coords="140,71,373,112"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1InconsistentCandidate.html" title=" " alt="" coords="421,5,655,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1RequirementsConflicted.html" title=" " alt="" coords="421,71,655,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1ResolutionError.html" title=" " alt="" coords="421,136,655,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,78,92,105"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1ResolutionImpossible.html" title=" " alt="" coords="703,103,936,144"/>
+<area shape="rect" id="node7" href="$classpip_1_1__vendor_1_1resolvelib_1_1resolvers_1_1ResolutionTooDeep.html" title=" " alt="" coords="703,168,936,209"/>
+</map>

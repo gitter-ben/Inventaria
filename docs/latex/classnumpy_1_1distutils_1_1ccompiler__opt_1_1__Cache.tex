@@ -1,0 +1,94 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache}{}\doxysection{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Cache Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache}\index{numpy.distutils.ccompiler\_opt.\_Cache@{numpy.distutils.ccompiler\_opt.\_Cache}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Cache\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_ad12e320cdb301646b63d58692550220f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_ad12e320cdb301646b63d58692550220f}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, cache\+\_\+path=None, $\ast$factors)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_af58b29187dbcccdb95d0c1db60d33d12}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_af58b29187dbcccdb95d0c1db60d33d12}} 
+def {\bfseries \+\_\+\+\_\+del\+\_\+\+\_\+} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_ab77b9e622af9ff51496950138fccd205}{cache\+\_\+flush}} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a5bbcfaa3ebd4d322dc3542af5821c97c}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a5bbcfaa3ebd4d322dc3542af5821c97c}} 
+def {\bfseries cache\+\_\+hash} (self, $\ast$factors)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a280a32ac569cae8ee06454ed34cee7a8}{me}} (cb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a41e4ca9c0f53576357f0aaa61e08424f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a41e4ca9c0f53576357f0aaa61e08424f}} 
+{\bfseries cache\+\_\+me}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_aac9cb2c527dd20401ca30c7bd03289b6}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_aac9cb2c527dd20401ca30c7bd03289b6}} 
+{\bfseries cache\+\_\+private}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a91fdcfe0496fafbbd939a0f02ecb6289}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a91fdcfe0496fafbbd939a0f02ecb6289}} 
+{\bfseries cache\+\_\+infile}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An abstract class handles caching functionality, provides two
+levels of caching, in-memory by share instances attributes among
+each other and by store attributes into files.
+
+**Note**:
+    any attributes that start with ``_`` or ``conf_`` will be ignored.
+
+Parameters
+----------
+cache_path : str or None
+    The path of cache file, if None then cache in file will disabled.
+
+*factors :
+    The caching factors that need to utilize next to `conf_cache_factors`.
+
+Attributes
+----------
+cache_private : set
+    Hold the attributes that need be skipped from "in-memory cache".
+
+cache_infile : bool
+    Utilized during initializing this class, to determine if the cache was able
+    to loaded from the specified cache path in 'cache_path'.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_ab77b9e622af9ff51496950138fccd205}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_ab77b9e622af9ff51496950138fccd205}} 
+\index{numpy.distutils.ccompiler\_opt.\_Cache@{numpy.distutils.ccompiler\_opt.\_Cache}!cache\_flush@{cache\_flush}}
+\index{cache\_flush@{cache\_flush}!numpy.distutils.ccompiler\_opt.\_Cache@{numpy.distutils.ccompiler\_opt.\_Cache}}
+\doxysubsubsection{\texorpdfstring{cache\_flush()}{cache\_flush()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Cache.\+cache\+\_\+flush (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Force update the cache.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a280a32ac569cae8ee06454ed34cee7a8}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache_a280a32ac569cae8ee06454ed34cee7a8}} 
+\index{numpy.distutils.ccompiler\_opt.\_Cache@{numpy.distutils.ccompiler\_opt.\_Cache}!me@{me}}
+\index{me@{me}!numpy.distutils.ccompiler\_opt.\_Cache@{numpy.distutils.ccompiler\_opt.\_Cache}}
+\doxysubsubsection{\texorpdfstring{me()}{me()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Cache.\+me (\begin{DoxyParamCaption}\item[{}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}A static method that can be treated as a decorator to
+dynamically cache certain methods.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/ccompiler\+\_\+opt.\+py\end{DoxyCompactItemize}

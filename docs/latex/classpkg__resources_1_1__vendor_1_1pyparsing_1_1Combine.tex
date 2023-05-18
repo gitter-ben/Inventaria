@@ -1,0 +1,94 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine}{}\doxysection{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Combine Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine}\index{pkg\_resources.\_vendor.pyparsing.Combine@{pkg\_resources.\_vendor.pyparsing.Combine}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Combine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Combine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_ac486d333729481aca8d159b774785864}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_ac486d333729481aca8d159b774785864}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, expr, join\+String=\char`\"{}\char`\"{}, adjacent=True)
+\item 
+def \mbox{\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a201aab275db8da28248836cd7b06051b}{ignore}} (self, other)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_ac14783e106dea5800c9ac3b3dcb58c02}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_ac14783e106dea5800c9ac3b3dcb58c02}} 
+def {\bfseries post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a0e0abea5e887aee659e6bde5492dc299}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a0e0abea5e887aee659e6bde5492dc299}} 
+{\bfseries adjacent}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a4a884d2357f17a68c1b3c478ca6885e6}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a4a884d2357f17a68c1b3c478ca6885e6}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a1221cf58a85aadbcb96b25fcdc2ff505}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a1221cf58a85aadbcb96b25fcdc2ff505}} 
+{\bfseries join\+String}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a436a1ec3074f84feaa46942d708a43c8}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a436a1ec3074f84feaa46942d708a43c8}} 
+{\bfseries call\+Preparse}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Converter to concatenate all matching tokens to a single string.
+By default, the matching patterns must also be contiguous in the input string;
+this can be disabled by specifying C{'adjacent=False'} in the constructor.
+
+Example::
+    real = Word(nums) + '.' + Word(nums)
+    print(real.parseString('3.1416')) # -> ['3', '.', '1416']
+    # will also erroneously match the following
+    print(real.parseString('3. 1416')) # -> ['3', '.', '1416']
+
+    real = Combine(Word(nums) + '.' + Word(nums))
+    print(real.parseString('3.1416')) # -> ['3.1416']
+    # no match when there are internal spaces
+    print(real.parseString('3. 1416')) # -> Exception: Expected W:(0123...)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a201aab275db8da28248836cd7b06051b}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1Combine_a201aab275db8da28248836cd7b06051b}} 
+\index{pkg\_resources.\_vendor.pyparsing.Combine@{pkg\_resources.\_vendor.pyparsing.Combine}!ignore@{ignore}}
+\index{ignore@{ignore}!pkg\_resources.\_vendor.pyparsing.Combine@{pkg\_resources.\_vendor.pyparsing.Combine}}
+\doxysubsubsection{\texorpdfstring{ignore()}{ignore()}}
+{\footnotesize\ttfamily def pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Combine.\+ignore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Define expression to be ignored (e.g., comments) while doing pattern
+matching; may be called repeatedly, to define multiple comment or other
+ignorable patterns.
+
+Example::
+    patt = OneOrMore(Word(alphas))
+    patt.parseString('ablaj /* comment */ lskjd') # -> ['ablaj']
+    
+    patt.ignore(cStyleComment)
+    patt.parseString('ablaj /* comment */ lskjd') # -> ['ablaj', 'lskjd']
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1ParseElementEnhance_a231b3fb1c8e2eaeef3e2945185d8c005}{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Parse\+Element\+Enhance}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/pyparsing.\+py\end{DoxyCompactItemize}

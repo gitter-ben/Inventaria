@@ -1,0 +1,72 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Not\+Any Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny}\index{pip.\_vendor.pyparsing.core.NotAny@{pip.\_vendor.pyparsing.core.NotAny}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Not\+Any\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Not\+Any\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_ad6325d46717d5031c393d0f650d8a659}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_ad6325d46717d5031c393d0f650d8a659}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Union\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}, str\mbox{]} expr)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_ace2d5d6fca491c9971460625433d8437}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_ace2d5d6fca491c9971460625433d8437}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a34c02b684e6757eaa51adbcd09bed1a8}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a34c02b684e6757eaa51adbcd09bed1a8}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a26713a41a712b5471569997f25e1b965}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a26713a41a712b5471569997f25e1b965}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a979d6e4bc518849abeacd44dadedbf25}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1NotAny_a979d6e4bc518849abeacd44dadedbf25}} 
+{\bfseries errmsg}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Lookahead to disallow matching with the given parse expression.
+``NotAny`` does *not* advance the parsing position within the
+input string, it only verifies that the specified parse expression
+does *not* match at the current position.  Also, ``NotAny`` does
+*not* skip over leading whitespace. ``NotAny`` always returns
+a null token list.  May be constructed using the ``'~'`` operator.
+
+Example::
+
+    AND, OR, NOT = map(CaselessKeyword, "AND OR NOT".split())
+
+    # take care not to mistake keywords for identifiers
+    ident = ~(AND | OR | NOT) + Word(alphas)
+    boolean_term = Opt(NOT) + ident
+
+    # very crude boolean expression - to support parenthesis groups and
+    # operation hierarchy, use infix_notation
+    boolean_expr = boolean_term + ZeroOrMore((AND | OR) + boolean_term)
+
+    # integers that are followed by "." are actually floats
+    integer = Word(nums) + ~Char(".")
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

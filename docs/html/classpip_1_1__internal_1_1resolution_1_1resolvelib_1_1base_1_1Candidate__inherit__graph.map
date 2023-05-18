@@ -1,0 +1,9 @@
+<map id="pip._internal.resolution.resolvelib.base.Candidate" name="pip._internal.resolution.resolvelib.base.Candidate">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,284,145"/>
+<area shape="rect" id="node2" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1AlreadyInstalledCandidate.html" title=" " alt="" coords="332,5,651,47"/>
+<area shape="rect" id="node3" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1ExtrasCandidate.html" title=" " alt="" coords="332,71,651,112"/>
+<area shape="rect" id="node4" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1RequiresPythonCandidate.html" title=" " alt="" coords="332,136,651,177"/>
+<area shape="rect" id="node5" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1__InstallRequirementBackedCandidate.html" title=" " alt="" coords="332,201,651,243"/>
+<area shape="rect" id="node6" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1EditableCandidate.html" title=" " alt="" coords="699,168,1017,209"/>
+<area shape="rect" id="node7" href="$classpip_1_1__internal_1_1resolution_1_1resolvelib_1_1candidates_1_1LinkCandidate.html" title=" " alt="" coords="699,233,1017,275"/>
+</map>

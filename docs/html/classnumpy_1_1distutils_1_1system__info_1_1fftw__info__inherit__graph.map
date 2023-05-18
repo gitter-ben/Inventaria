@@ -1,0 +1,12 @@
+<map id="numpy.distutils.system_info.fftw_info" name="numpy.distutils.system_info.fftw_info">
+<area shape="rect" id="node1" title=" " alt="" coords="227,235,400,276"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1distutils_1_1system__info_1_1dfftw__info.html" title=" " alt="" coords="451,5,624,47"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1distutils_1_1system__info_1_1dfftw__threads__info.html" title=" " alt="" coords="448,71,627,112"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1distutils_1_1system__info_1_1fftw2__info.html" title=" " alt="" coords="451,136,624,177"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1distutils_1_1system__info_1_1fftw3__armpl__info.html" title=" " alt="" coords="451,201,624,243"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1distutils_1_1system__info_1_1fftw3__info.html" title=" " alt="" coords="451,267,624,308"/>
+<area shape="rect" id="node8" href="$classnumpy_1_1distutils_1_1system__info_1_1fftw__threads__info.html" title=" " alt="" coords="451,332,624,373"/>
+<area shape="rect" id="node9" href="$classnumpy_1_1distutils_1_1system__info_1_1sfftw__info.html" title=" " alt="" coords="451,397,624,439"/>
+<area shape="rect" id="node10" href="$classnumpy_1_1distutils_1_1system__info_1_1sfftw__threads__info.html" title=" " alt="" coords="448,463,627,504"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1distutils_1_1system__info_1_1system__info.html" title=" " alt="" coords="5,235,179,276"/>
+</map>

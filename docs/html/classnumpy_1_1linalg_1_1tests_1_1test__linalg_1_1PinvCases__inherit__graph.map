@@ -1,0 +1,10 @@
+<map id="numpy.linalg.tests.test_linalg.PinvCases" name="numpy.linalg.tests.test_linalg.PinvCases">
+<area shape="rect" id="node1" title=" " alt="" coords="528,108,699,149"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestPinv.html" title=" " alt="" coords="769,75,939,116"/>
+<area shape="rect" id="node8" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestPinvMatrix.html" title=" " alt="" coords="747,140,961,181"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgSquareTestCase.html" title=" " alt="" coords="247,5,457,47"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgTestCase.html" title=" " alt="" coords="5,108,176,149"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgNonsquareTestCase.html" title=" " alt="" coords="234,71,470,112"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgGeneralizedSquareTestCase.html" title=" " alt="" coords="237,137,467,193"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgGeneralizedNonsquareTestCase.html" title=" " alt="" coords="224,217,480,273"/>
+</map>

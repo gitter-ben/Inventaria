@@ -1,0 +1,15 @@
+<map id="numpy.distutils.system_info.atlas_info" name="numpy.distutils.system_info.atlas_info">
+<area shape="rect" id="node1" title=" " alt="" coords="227,253,400,294"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__3__10__info.html" title=" " alt="" coords="451,121,624,162"/>
+<area shape="rect" id="node9" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__blas__info.html" title=" " alt="" coords="451,219,624,261"/>
+<area shape="rect" id="node11" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__threads__info.html" title=" " alt="" coords="448,285,627,326"/>
+<area shape="rect" id="node13" href="$classnumpy_1_1distutils_1_1system__info_1_1lapack__atlas__info.html" title=" " alt="" coords="451,350,624,391"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1distutils_1_1system__info_1_1system__info.html" title=" " alt="" coords="5,253,179,294"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__3__10__blas__info.html" title=" " alt="" coords="691,17,886,58"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__3__10__threads__info.html" title=" " alt="" coords="681,89,897,130"/>
+<area shape="rect" id="node8" href="$classnumpy_1_1distutils_1_1system__info_1_1lapack__atlas__3__10__info.html" title=" " alt="" coords="683,154,894,195"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__3__10__blas__threads__info.html" title=" " alt="" coords="953,5,1127,61"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1distutils_1_1system__info_1_1lapack__atlas__3__10__threads__info.html" title=" " alt="" coords="951,85,1129,141"/>
+<area shape="rect" id="node10" href="$classnumpy_1_1distutils_1_1system__info_1_1atlas__blas__threads__info.html" title=" " alt="" coords="683,219,895,261"/>
+<area shape="rect" id="node12" href="$classnumpy_1_1distutils_1_1system__info_1_1lapack__atlas__threads__info.html" title=" " alt="" coords="675,285,903,326"/>
+</map>

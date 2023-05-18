@@ -1,0 +1,50 @@
+\hypertarget{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux}{}\doxysection{pkg\+\_\+resources.\+\_\+vendor.\+packaging.\+\_\+musllinux Namespace Reference}
+\label{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux}\index{pkg\_resources.\_vendor.packaging.\_musllinux@{pkg\_resources.\_vendor.packaging.\_musllinux}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_1_1__MuslVersion}{\+\_\+\+Musl\+Version}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Iterator\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a4051c69fc840c823e0852cec82f1d3e2}{platform\+\_\+tags}} (str arch)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a7a64b732a7e04a6bcb4b6c6845f5154e}\label{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a7a64b732a7e04a6bcb4b6c6845f5154e}} 
+{\bfseries plat} = sysconfig.\+get\+\_\+platform()
+\item 
+\mbox{\Hypertarget{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_afb4a178be15a9276572a3af7b4034a1b}\label{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_afb4a178be15a9276572a3af7b4034a1b}} 
+{\bfseries end}
+\item 
+\mbox{\Hypertarget{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a9a6238f928403383b423286d0301922c}\label{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a9a6238f928403383b423286d0301922c}} 
+{\bfseries t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}PEP 656 support.
+
+This module implements logic to detect if the currently running Python is
+linked against musl, and what musl version is used.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a4051c69fc840c823e0852cec82f1d3e2}\label{namespacepkg__resources_1_1__vendor_1_1packaging_1_1__musllinux_a4051c69fc840c823e0852cec82f1d3e2}} 
+\index{pkg\_resources.\_vendor.packaging.\_musllinux@{pkg\_resources.\_vendor.packaging.\_musllinux}!platform\_tags@{platform\_tags}}
+\index{platform\_tags@{platform\_tags}!pkg\_resources.\_vendor.packaging.\_musllinux@{pkg\_resources.\_vendor.packaging.\_musllinux}}
+\doxysubsubsection{\texorpdfstring{platform\_tags()}{platform\_tags()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}str\mbox{]} pkg\+\_\+resources.\+\_\+vendor.\+packaging.\+\_\+musllinux.\+platform\+\_\+tags (\begin{DoxyParamCaption}\item[{str}]{arch }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate musllinux tags compatible to the current platform.
+
+:param arch: Should be the part of platform tag after the ``linux_``
+    prefix, e.g. ``x86_64``. The ``linux_`` prefix is assumed as a
+    prerequisite for the current platform to be musllinux-compatible.
+
+:returns: An iterator of compatible musllinux tags.
+\end{DoxyVerb}
+ 

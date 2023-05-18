@@ -1,0 +1,92 @@
+\hypertarget{namespacenumpy_1_1conftest}{}\doxysection{numpy.\+conftest Namespace Reference}
+\label{namespacenumpy_1_1conftest}\index{numpy.conftest@{numpy.conftest}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_ac4b696c41637478fc584c75be6e90fe9}\label{namespacenumpy_1_1conftest_ac4b696c41637478fc584c75be6e90fe9}} 
+def {\bfseries pytest\+\_\+configure} (config)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a8c2c8bdc8f5f911b1fc64c968cee84e7}\label{namespacenumpy_1_1conftest_a8c2c8bdc8f5f911b1fc64c968cee84e7}} 
+def {\bfseries pytest\+\_\+addoption} (parser)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a487489337ad4298f7d3e3fdd338d98e4}\label{namespacenumpy_1_1conftest_a487489337ad4298f7d3e3fdd338d98e4}} 
+def {\bfseries pytest\+\_\+sessionstart} (session)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1conftest_a3ba4ebdc896e0f5cf294373ff6c47171}{pytest\+\_\+itemcollected}} (item)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1conftest_abb3c8c424f98ed8e38dc510c5ed7aaef}{check\+\_\+fpu\+\_\+mode}} (request)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a31e24c9751fbd702394941a8151bbe65}\label{namespacenumpy_1_1conftest_a31e24c9751fbd702394941a8151bbe65}} 
+def {\bfseries add\+\_\+np} (doctest\+\_\+namespace)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a99b17d9fba18dff1cb7e67fea1a65ce0}\label{namespacenumpy_1_1conftest_a99b17d9fba18dff1cb7e67fea1a65ce0}} 
+def {\bfseries env\+\_\+setup} (monkeypatch)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1conftest_a460c20f012d9537b726a00faf56ff949}{weak\+\_\+promotion}} (request)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_af5b83565ad7d4531ea7a9b251e0cd92c}\label{namespacenumpy_1_1conftest_af5b83565ad7d4531ea7a9b251e0cd92c}} 
+{\bfseries name}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_ab031d7b1440ed99a37efc8be365cbf07}\label{namespacenumpy_1_1conftest_ab031d7b1440ed99a37efc8be365cbf07}} 
+{\bfseries deadline}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a5125129ef28f1d7c7976838380c20e3b}\label{namespacenumpy_1_1conftest_a5125129ef28f1d7c7976838380c20e3b}} 
+{\bfseries None}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_aa115b535dfffad2aa5794177f5570aef}\label{namespacenumpy_1_1conftest_aa115b535dfffad2aa5794177f5570aef}} 
+{\bfseries print\+\_\+blob}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a0b6dcae7a96ebacdd33900a73acca07c}\label{namespacenumpy_1_1conftest_a0b6dcae7a96ebacdd33900a73acca07c}} 
+{\bfseries True}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a79a25c7ddab5fe79ef8015a7f6fc821a}\label{namespacenumpy_1_1conftest_a79a25c7ddab5fe79ef8015a7f6fc821a}} 
+{\bfseries database}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a0080594961e8392a2fa43761067078e6}\label{namespacenumpy_1_1conftest_a0080594961e8392a2fa43761067078e6}} 
+{\bfseries derandomize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_a1c903e4fa4915a6b9c7419b77efd2f68}\label{namespacenumpy_1_1conftest_a1c903e4fa4915a6b9c7419b77efd2f68}} 
+{\bfseries suppress\+\_\+health\+\_\+check}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Pytest configuration and fixtures for the Numpy test suite.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1conftest_abb3c8c424f98ed8e38dc510c5ed7aaef}\label{namespacenumpy_1_1conftest_abb3c8c424f98ed8e38dc510c5ed7aaef}} 
+\index{numpy.conftest@{numpy.conftest}!check\_fpu\_mode@{check\_fpu\_mode}}
+\index{check\_fpu\_mode@{check\_fpu\_mode}!numpy.conftest@{numpy.conftest}}
+\doxysubsubsection{\texorpdfstring{check\_fpu\_mode()}{check\_fpu\_mode()}}
+{\footnotesize\ttfamily def numpy.\+conftest.\+check\+\_\+fpu\+\_\+mode (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check FPU precision mode was not changed during the test.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1conftest_a3ba4ebdc896e0f5cf294373ff6c47171}\label{namespacenumpy_1_1conftest_a3ba4ebdc896e0f5cf294373ff6c47171}} 
+\index{numpy.conftest@{numpy.conftest}!pytest\_itemcollected@{pytest\_itemcollected}}
+\index{pytest\_itemcollected@{pytest\_itemcollected}!numpy.conftest@{numpy.conftest}}
+\doxysubsubsection{\texorpdfstring{pytest\_itemcollected()}{pytest\_itemcollected()}}
+{\footnotesize\ttfamily def numpy.\+conftest.\+pytest\+\_\+itemcollected (\begin{DoxyParamCaption}\item[{}]{item }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check FPU precision mode was not changed during test collection.
+
+The clumsy way we do it here is mainly necessary because numpy
+still uses yield tests, which can execute code at test collection
+time.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1conftest_a460c20f012d9537b726a00faf56ff949}\label{namespacenumpy_1_1conftest_a460c20f012d9537b726a00faf56ff949}} 
+\index{numpy.conftest@{numpy.conftest}!weak\_promotion@{weak\_promotion}}
+\index{weak\_promotion@{weak\_promotion}!numpy.conftest@{numpy.conftest}}
+\doxysubsubsection{\texorpdfstring{weak\_promotion()}{weak\_promotion()}}
+{\footnotesize\ttfamily def numpy.\+conftest.\+weak\+\_\+promotion (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fixture to ensure "legacy" promotion state or change it to use the new
+weak promotion (plus warning).  `old_promotion` should be used as a
+parameter in the function.
+\end{DoxyVerb}
+ 

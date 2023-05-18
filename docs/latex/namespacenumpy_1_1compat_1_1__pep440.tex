@@ -1,0 +1,97 @@
+\hypertarget{namespacenumpy_1_1compat_1_1__pep440}{}\doxysection{numpy.\+compat.\+\_\+pep440 Namespace Reference}
+\label{namespacenumpy_1_1compat_1_1__pep440}\index{numpy.compat.\_pep440@{numpy.compat.\_pep440}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1Infinity}{Infinity}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1NegativeInfinity}{Negative\+Infinity}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1InvalidVersion}{Invalid\+Version}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1__BaseVersion}{\+\_\+\+Base\+Version}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1LegacyVersion}{Legacy\+Version}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1Version}{Version}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1compat_1_1__pep440_a05c37bb6afdf1167ac81b88d537c96ae}{parse}} (version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1compat_1_1__pep440_a31ca30c505ef5d6ba46e08a40480cd55}\label{namespacenumpy_1_1compat_1_1__pep440_a31ca30c505ef5d6ba46e08a40480cd55}} 
+{\bfseries Infinity} = \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1Infinity}{Infinity}}()
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1compat_1_1__pep440_a0ae902308297645f5e024c18bdfd7558}\label{namespacenumpy_1_1compat_1_1__pep440_a0ae902308297645f5e024c18bdfd7558}} 
+{\bfseries Negative\+Infinity} = \mbox{\hyperlink{classnumpy_1_1compat_1_1__pep440_1_1NegativeInfinity}{Negative\+Infinity}}()
+\item 
+string {\bfseries VERSION\+\_\+\+PATTERN}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utility to compare pep440 compatible version strings.
+
+The LooseVersion and StrictVersion classes that distutils provides don't
+work; they don't recognize anything like alpha/beta/rc/dev versions.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1compat_1_1__pep440_a05c37bb6afdf1167ac81b88d537c96ae}\label{namespacenumpy_1_1compat_1_1__pep440_a05c37bb6afdf1167ac81b88d537c96ae}} 
+\index{numpy.compat.\_pep440@{numpy.compat.\_pep440}!parse@{parse}}
+\index{parse@{parse}!numpy.compat.\_pep440@{numpy.compat.\_pep440}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily def numpy.\+compat.\+\_\+pep440.\+parse (\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse the given version string and return either a :class:`Version` object
+or a :class:`LegacyVersion` object depending on if the given version is
+a valid PEP 440 version or a legacy version.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1compat_1_1__pep440_acc555cc8dfe0d2d318b879fcd45e19ed}\label{namespacenumpy_1_1compat_1_1__pep440_acc555cc8dfe0d2d318b879fcd45e19ed}} 
+\index{numpy.compat.\_pep440@{numpy.compat.\_pep440}!VERSION\_PATTERN@{VERSION\_PATTERN}}
+\index{VERSION\_PATTERN@{VERSION\_PATTERN}!numpy.compat.\_pep440@{numpy.compat.\_pep440}}
+\doxysubsubsection{\texorpdfstring{VERSION\_PATTERN}{VERSION\_PATTERN}}
+{\footnotesize\ttfamily string numpy.\+compat.\+\_\+pep440.\+VERSION\+\_\+\+PATTERN}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{r"{}"{}"{}}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{    v?}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{    (?:}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{        (?:(?P<epoch>[0-\/9]+)!)?                           \# epoch}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{        (?P<release>[0-\/9]+(?:\(\backslash\).[0-\/9]+)*)                  \# release segment}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{        (?P<pre>                                          \# pre-\/release}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{            [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{            (?P<pre\_l>(a|b|c|rc|alpha|beta|pre|preview))}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{            [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{            (?P<pre\_n>[0-\/9]+)?}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{        )?}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{        (?P<post>                                         \# post release}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{            (?:-\/(?P<post\_n1>[0-\/9]+))}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{            |}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{            (?:}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{                [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{                (?P<post\_l>post|rev|r)}}
+\DoxyCodeLine{18 \textcolor{stringliteral}{                [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{19 \textcolor{stringliteral}{                (?P<post\_n2>[0-\/9]+)?}}
+\DoxyCodeLine{20 \textcolor{stringliteral}{            )}}
+\DoxyCodeLine{21 \textcolor{stringliteral}{        )?}}
+\DoxyCodeLine{22 \textcolor{stringliteral}{        (?P<dev>                                          \# dev release}}
+\DoxyCodeLine{23 \textcolor{stringliteral}{            [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{24 \textcolor{stringliteral}{            (?P<dev\_l>dev)}}
+\DoxyCodeLine{25 \textcolor{stringliteral}{            [-\/\_\(\backslash\).]?}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{            (?P<dev\_n>[0-\/9]+)?}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{        )?}}
+\DoxyCodeLine{28 \textcolor{stringliteral}{    )}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{    (?:\(\backslash\)+(?P<local>[a-\/z0-\/9]+(?:[-\/\_\(\backslash\).][a-\/z0-\/9]+)*))?       \# local version}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{"{}"{}"{}}}
+
+\end{DoxyCode}

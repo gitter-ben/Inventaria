@@ -1,0 +1,67 @@
+\hypertarget{namespaceextending__distributions}{}\doxysection{extending\+\_\+distributions Namespace Reference}
+\label{namespaceextending__distributions}\index{extending\_distributions@{extending\_distributions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a8cd6f6a6f39a44acdbfe824e35fb88fb}\label{namespaceextending__distributions_a8cd6f6a6f39a44acdbfe824e35fb88fb}} 
+def {\bfseries normals} (n, bit\+\_\+generator)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a0bd63c106a8c7b1a9447728da1168838}\label{namespaceextending__distributions_a0bd63c106a8c7b1a9447728da1168838}} 
+{\bfseries ffi} = FFI()
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a30f3390d3a1428643dc1120bc9db764c}\label{namespaceextending__distributions_a30f3390d3a1428643dc1120bc9db764c}} 
+{\bfseries lib} = ffi.\+dlopen(\textquotesingle{}./distributions.\+dll\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_ac15eda22ab1fccb8a7d1bbf1ce96f925}\label{namespaceextending__distributions_ac15eda22ab1fccb8a7d1bbf1ce96f925}} 
+{\bfseries x} = PCG64()
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_af1688954c460d7d5c2e0009f7d65e619}\label{namespaceextending__distributions_af1688954c460d7d5c2e0009f7d65e619}} 
+{\bfseries xffi} = x.\+cffi
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}\label{namespaceextending__distributions_a7aeefe715cc042aa2c49c5046ca387e2}} 
+{\bfseries bit\+\_\+generator} = xffi.\+bit\+\_\+generator
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a455cadea4d1fdf5354ecb9d5de0546e1}\label{namespaceextending__distributions_a455cadea4d1fdf5354ecb9d5de0546e1}} 
+{\bfseries random\+\_\+standard\+\_\+normal} = lib.\+random\+\_\+standard\+\_\+normal
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a4279c0495c5644bbd23fb3bb28195b61}\label{namespaceextending__distributions_a4279c0495c5644bbd23fb3bb28195b61}} 
+{\bfseries normalsj} = nb.\+jit(normals, nopython=True)
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a534e7ac133b4b284777a1c1965a5eea0}\label{namespaceextending__distributions_a534e7ac133b4b284777a1c1965a5eea0}} 
+{\bfseries bit\+\_\+generator\+\_\+address} = int(ffi.\+cast(\textquotesingle{}uintptr\+\_\+t\textquotesingle{}, bit\+\_\+generator))
+\item 
+\mbox{\Hypertarget{namespaceextending__distributions_a976ea6c6e452e3b2820868d1aabb3829}\label{namespaceextending__distributions_a976ea6c6e452e3b2820868d1aabb3829}} 
+{\bfseries norm} = normalsj(1000, bit\+\_\+generator\+\_\+address)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Building the required library in this example requires a source distribution
+of NumPy or clone of the NumPy git repository since distributions.c is not
+included in binary distributions.
+
+On *nix, execute in numpy/random/src/distributions
+
+export ${PYTHON_VERSION}=3.8 # Python version
+export PYTHON_INCLUDE=#path to Python's include folder, usually \
+    ${PYTHON_HOME}/include/python${PYTHON_VERSION}m
+export NUMPY_INCLUDE=#path to numpy's include folder, usually \
+    ${PYTHON_HOME}/lib/python${PYTHON_VERSION}/site-packages/numpy/core/include
+gcc -shared -o libdistributions.so -fPIC distributions.c \
+    -I${NUMPY_INCLUDE} -I${PYTHON_INCLUDE}
+mv libdistributions.so ../../_examples/numba/
+
+On Windows
+
+rem PYTHON_HOME and PYTHON_VERSION are setup dependent, this is an example
+set PYTHON_HOME=c:\Anaconda
+set PYTHON_VERSION=38
+cl.exe /LD .\distributions.c -DDLL_EXPORT \
+    -I%PYTHON_HOME%\lib\site-packages\numpy\core\include \
+    -I%PYTHON_HOME%\include %PYTHON_HOME%\libs\python%PYTHON_VERSION%.lib
+move distributions.dll ../../_examples/numba/
+\end{DoxyVerb}
+ 

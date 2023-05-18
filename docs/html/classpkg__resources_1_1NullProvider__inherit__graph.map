@@ -1,0 +1,10 @@
+<map id="pkg_resources.NullProvider" name="pkg_resources.NullProvider">
+<area shape="rect" id="node1" title=" " alt="" coords="362,5,562,32"/>
+<area shape="rect" id="node2" href="$classpkg__resources_1_1EggProvider.html" title=" " alt="" coords="247,80,445,107"/>
+<area shape="rect" id="node7" href="$classpkg__resources_1_1EmptyProvider.html" title=" " alt="" coords="470,80,686,107"/>
+<area shape="rect" id="node3" href="$classpkg__resources_1_1DefaultProvider.html" title=" " alt="" coords="5,155,228,181"/>
+<area shape="rect" id="node5" href="$classpkg__resources_1_1ZipProvider.html" title=" " alt="" coords="253,155,447,181"/>
+<area shape="rect" id="node4" href="$classpkg__resources_1_1PathMetadata.html" title=" " alt="" coords="11,229,222,256"/>
+<area shape="rect" id="node6" href="$classpkg__resources_1_1EggMetadata.html" title=" " alt="" coords="247,229,453,256"/>
+<area shape="rect" id="node8" href="$classpkg__resources_1_1FileMetadata.html" title=" " alt="" coords="475,155,681,181"/>
+</map>

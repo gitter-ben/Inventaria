@@ -1,0 +1,60 @@
+\hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution}{}\doxysection{pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution Class Reference}
+\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution}\index{pip.\_internal.distributions.base.AbstractDistribution@{pip.\_internal.distributions.base.AbstractDistribution}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+distributions.\+base.\+Abstract\+Distribution\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a1cfd19328ee4967ab599632143fa62c2}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a1cfd19328ee4967ab599632143fa62c2}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Install\+Requirement req)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a8a9045d38e8e4cc04e6d69f7b254a29b}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a8a9045d38e8e4cc04e6d69f7b254a29b}} 
+\mbox{\hyperlink{classpip_1_1__internal_1_1metadata_1_1base_1_1BaseDistribution}{Base\+Distribution}} {\bfseries get\+\_\+metadata\+\_\+distribution} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a8558f6e046a437a3885d083fd9d4c0d9}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a8558f6e046a437a3885d083fd9d4c0d9}} 
+None {\bfseries prepare\+\_\+distribution\+\_\+metadata} (self, \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1package__finder_1_1PackageFinder}{Package\+Finder}} finder, bool build\+\_\+isolation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4e0f5834a91b4f3ab6be563959652df9}\label{classpip_1_1__internal_1_1distributions_1_1base_1_1AbstractDistribution_a4e0f5834a91b4f3ab6be563959652df9}} 
+{\bfseries req}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A base class for handling installable artifacts.
+
+The requirements for anything installable are as follows:
+
+ - we must be able to determine the requirement name
+   (or we can't correctly handle the non-upgrade case).
+
+ - for packages with setup requirements, we must also be able
+   to determine their requirements without installing additional
+   packages (for the same reason as run-time dependencies)
+
+ - we must be able to create a Distribution object exposing the
+   above metadata.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+internal/distributions/base.\+py\end{DoxyCompactItemize}

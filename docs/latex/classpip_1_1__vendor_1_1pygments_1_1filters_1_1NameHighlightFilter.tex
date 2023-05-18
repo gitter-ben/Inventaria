@@ -1,0 +1,68 @@
+\hypertarget{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+filters.\+Name\+Highlight\+Filter Class Reference}
+\label{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter}\index{pip.\_vendor.pygments.filters.NameHighlightFilter@{pip.\_vendor.pygments.filters.NameHighlightFilter}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pygments.\+filters.\+Name\+Highlight\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pygments.\+filters.\+Name\+Highlight\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a1b18674470bff8203f31074f8ee0ec37}\label{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a1b18674470bff8203f31074f8ee0ec37}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$$\ast$options)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a2413b5d359f9e611a87a777822c67d2e}\label{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a2413b5d359f9e611a87a777822c67d2e}} 
+def {\bfseries filter} (self, lexer, stream)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a4083a4bfaf8abbd8118dae56a6172dd3}\label{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a4083a4bfaf8abbd8118dae56a6172dd3}} 
+{\bfseries names}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a6386dc2156f6b0bf040714879a071d2f}\label{classpip_1_1__vendor_1_1pygments_1_1filters_1_1NameHighlightFilter_a6386dc2156f6b0bf040714879a071d2f}} 
+{\bfseries tokentype}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Highlight a normal Name (and Name.*) token with a different token type.
+
+Example::
+
+    filter = NameHighlightFilter(
+        names=['foo', 'bar', 'baz'],
+        tokentype=Name.Function,
+    )
+
+This would highlight the names "foo", "bar" and "baz"
+as functions. `Name.Function` is the default token type.
+
+Options accepted:
+
+`names` : list of strings
+  A list of names that should be given the different token type.
+  There is no default.
+`tokentype` : TokenType or string
+  A token type or a string containing a token type name that is
+  used for highlighting the strings in `names`.  The default is
+  `Name.Function`.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pygments/filters/\+\_\+\+\_\+init\+\_\+\+\_\+.\+py\end{DoxyCompactItemize}

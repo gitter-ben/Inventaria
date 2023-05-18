@@ -1,0 +1,72 @@
+\hypertarget{classcomponent__hierarchy_1_1Hierarchy}{}\doxysection{component\+\_\+hierarchy.\+Hierarchy Class Reference}
+\label{classcomponent__hierarchy_1_1Hierarchy}\index{component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a59e6b00a3977778d16f8c2c16e2ca7e6}\label{classcomponent__hierarchy_1_1Hierarchy_a59e6b00a3977778d16f8c2c16e2ca7e6}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, sqlite\+\_\+file)
+\item 
+def \mbox{\hyperlink{classcomponent__hierarchy_1_1Hierarchy_a8900cd8920ef0449a1805e9c7845db3d}{create\+\_\+connection}} (self, db\+\_\+file)
+\item 
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a9c2d020acac7cdc3b49be41bdbc94a64}\label{classcomponent__hierarchy_1_1Hierarchy_a9c2d020acac7cdc3b49be41bdbc94a64}} 
+def {\bfseries setup\+\_\+db} (self)
+\item 
+def \mbox{\hyperlink{classcomponent__hierarchy_1_1Hierarchy_a2157b472cd31ff534a66c25270f97433}{add\+\_\+box}} (self, name, group)
+\item 
+def \mbox{\hyperlink{classcomponent__hierarchy_1_1Hierarchy_accddf961e8a167e2be38335d58ddef67}{add\+\_\+component}} (self, name, group, box\+\_\+name=None)
+\item 
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a67eec3b6704f912a4cc89f273864cbf1}\label{classcomponent__hierarchy_1_1Hierarchy_a67eec3b6704f912a4cc89f273864cbf1}} 
+def {\bfseries close} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_ad5efb4d23485d37a16d157dd485745d5}\label{classcomponent__hierarchy_1_1Hierarchy_ad5efb4d23485d37a16d157dd485745d5}} 
+{\bfseries conn}
+\item 
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a4e6febbd76eaede8c290c2c35f85d8f3}\label{classcomponent__hierarchy_1_1Hierarchy_a4e6febbd76eaede8c290c2c35f85d8f3}} 
+{\bfseries c}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a2157b472cd31ff534a66c25270f97433}\label{classcomponent__hierarchy_1_1Hierarchy_a2157b472cd31ff534a66c25270f97433}} 
+\index{component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}!add\_box@{add\_box}}
+\index{add\_box@{add\_box}!component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}}
+\doxysubsubsection{\texorpdfstring{add\_box()}{add\_box()}}
+{\footnotesize\ttfamily def component\+\_\+hierarchy.\+Hierarchy.\+add\+\_\+box (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{group }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new box with a name and a parent group
+
+:param: name: The name of the box
+:param: group: The name of the topgroup
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_accddf961e8a167e2be38335d58ddef67}\label{classcomponent__hierarchy_1_1Hierarchy_accddf961e8a167e2be38335d58ddef67}} 
+\index{component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}!add\_component@{add\_component}}
+\index{add\_component@{add\_component}!component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}}
+\doxysubsubsection{\texorpdfstring{add\_component()}{add\_component()}}
+{\footnotesize\ttfamily def component\+\_\+hierarchy.\+Hierarchy.\+add\+\_\+component (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{group,  }\item[{}]{box\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new component with a name and an optional box
+
+:param: name: The name of the component
+:param: group: The name of the group the component is in
+:param: box_name: The name of the box it's in,  default=None
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcomponent__hierarchy_1_1Hierarchy_a8900cd8920ef0449a1805e9c7845db3d}\label{classcomponent__hierarchy_1_1Hierarchy_a8900cd8920ef0449a1805e9c7845db3d}} 
+\index{component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}!create\_connection@{create\_connection}}
+\index{create\_connection@{create\_connection}!component\_hierarchy.Hierarchy@{component\_hierarchy.Hierarchy}}
+\doxysubsubsection{\texorpdfstring{create\_connection()}{create\_connection()}}
+{\footnotesize\ttfamily def component\+\_\+hierarchy.\+Hierarchy.\+create\+\_\+connection (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{db\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a connection to an SQLite Database
+   specified by a sqlite database file
+
+:param: db_file: database file
+:return: Connection object or None
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+experiments/component\+\_\+hierarchy.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+plugin Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin}\index{pip.\_vendor.pygments.plugin@{pip.\_vendor.pygments.plugin}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a0a8fb1d16fc4ce09ce71411d187b8e41}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a0a8fb1d16fc4ce09ce71411d187b8e41}} 
+def {\bfseries iter\+\_\+entry\+\_\+points} (group\+\_\+name)
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_af0369485a783e073545f640ad78b2ff3}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_af0369485a783e073545f640ad78b2ff3}} 
+def {\bfseries find\+\_\+plugin\+\_\+lexers} ()
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_aed3dad88ee5b44d361d07f7c2ff5bfa8}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_aed3dad88ee5b44d361d07f7c2ff5bfa8}} 
+def {\bfseries find\+\_\+plugin\+\_\+formatters} ()
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a19eb265e111f5cd3565a2bf4f7b4ac7d}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a19eb265e111f5cd3565a2bf4f7b4ac7d}} 
+def {\bfseries find\+\_\+plugin\+\_\+styles} ()
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a3754c16c4ad0cd5fcc4541e97b7d2e9d}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a3754c16c4ad0cd5fcc4541e97b7d2e9d}} 
+def {\bfseries find\+\_\+plugin\+\_\+filters} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a4e829c2a4cb6ca400088917c565bca44}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a4e829c2a4cb6ca400088917c565bca44}} 
+string {\bfseries LEXER\+\_\+\+ENTRY\+\_\+\+POINT} = \textquotesingle{}pygments.\+lexers\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a1dc80e40aafaba008bcc9107ae3f4280}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a1dc80e40aafaba008bcc9107ae3f4280}} 
+string {\bfseries FORMATTER\+\_\+\+ENTRY\+\_\+\+POINT} = \textquotesingle{}pygments.\+formatters\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_aa3b66f39f24e290f8784c2812996003e}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_aa3b66f39f24e290f8784c2812996003e}} 
+string {\bfseries STYLE\+\_\+\+ENTRY\+\_\+\+POINT} = \textquotesingle{}pygments.\+styles\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a649ec5ea07d01fd52e0baa901034a3e8}\label{namespacepip_1_1__vendor_1_1pygments_1_1plugin_a649ec5ea07d01fd52e0baa901034a3e8}} 
+string {\bfseries FILTER\+\_\+\+ENTRY\+\_\+\+POINT} = \textquotesingle{}pygments.\+filters\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    pygments.plugin
+    ~~~~~~~~~~~~~~~
+
+    Pygments setuptools plugin interface. The methods defined
+    here also work if setuptools isn't installed but they just
+    return nothing.
+
+    lexer plugins::
+
+        [pygments.lexers]
+        yourlexer = yourmodule:YourLexer
+
+    formatter plugins::
+
+        [pygments.formatters]
+        yourformatter = yourformatter:YourFormatter
+        /.ext = yourformatter:YourFormatter
+
+    As you can see, you can define extensions for the formatter
+    with a leading slash.
+
+    syntax plugins::
+
+        [pygments.styles]
+        yourstyle = yourstyle:YourStyle
+
+    filter plugin::
+
+        [pygments.filter]
+        yourfilter = yourfilter:YourFilter
+
+
+    :copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+\end{DoxyVerb}
+ 

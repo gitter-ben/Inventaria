@@ -1,0 +1,108 @@
+\hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView}{}\doxysection{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View Class Reference}
+\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView}\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}}
+
+
+Inheritance diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a9210318e33b90749b8815487ca362745}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, mode=\textquotesingle{}warn\textquotesingle{}, size\+\_\+threshold=16, compression=zlib)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a4d01f83233236a3824590280b380b7de}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a4d01f83233236a3824590280b380b7de}} 
+{\bfseries mode}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Pickles references inside ndarrays, or array-views
+
+Notes
+-----
+The current implementation has some restrictions.
+
+'base' arrays, or arrays which are viewed by other arrays,
+must be f-or-c-contiguous.
+This is not such a large restriction in practice, because all
+numpy array creation is c-contiguous by default.
+Relaxing this restriction would be nice though; especially if
+it can be done without bloating the design too much.
+
+Furthermore, ndarrays which are views of array-like objects
+implementing __array_interface__,
+but which are not themselves nd-arrays, are deepcopied with
+a warning (by default),
+as we cannot guarantee whatever custom logic such classes
+implement is correctly reproduced.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a9210318e33b90749b8815487ca362745}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a9210318e33b90749b8815487ca362745}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{mode = {\ttfamily \textquotesingle{}warn\textquotesingle{}},  }\item[{}]{size\+\_\+threshold = {\ttfamily 16},  }\item[{}]{compression = {\ttfamily zlib} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param mode: {'warn', 'raise', 'ignore'}
+    How to react when encountering array-like objects whose
+    references we cannot safely serialize
+:param size_threshold: nonnegative int or None
+    valid values for 'size_threshold' are all nonnegative
+    integers and None
+    if size_threshold is None, values are always stored as nested lists
+:param compression: a compression module or None
+    valid values for 'compression' are {zlib, bz2, None}
+    if compression is None, no compression is applied
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}encode numpy to json\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.ext.numpy.NumpyNDArrayHandlerView@{jsonpickle.ext.numpy.NumpyNDArrayHandlerView}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}decode numpy from json\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/ext/numpy.\+py\end{DoxyCompactItemize}

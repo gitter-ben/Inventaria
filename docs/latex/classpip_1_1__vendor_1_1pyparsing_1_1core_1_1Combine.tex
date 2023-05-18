@@ -1,0 +1,73 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Combine Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine}\index{pip.\_vendor.pyparsing.core.Combine@{pip.\_vendor.pyparsing.core.Combine}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Combine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Combine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a9a62cd66162052b9eb50db431f41a1f1}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a9a62cd66162052b9eb50db431f41a1f1}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} expr, str join\+\_\+string=\char`\"{}\char`\"{}, bool adjacent=True, $\ast$Optional\+Type\mbox{[}str\mbox{]} join\+String=None)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a224e6866634472a8bba90b6c5ca4688a}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a224e6866634472a8bba90b6c5ca4688a}} 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} {\bfseries ignore} (self, other)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a3fa7d30a626510d3b55ba4a8cd679368}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a3fa7d30a626510d3b55ba4a8cd679368}} 
+def {\bfseries post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_ab8288828a63e471724e2a15dc0a0ec70}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_ab8288828a63e471724e2a15dc0a0ec70}} 
+{\bfseries adjacent}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a52981aa1a4cefac821c877ec23fef31e}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a52981aa1a4cefac821c877ec23fef31e}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a65e49e2d81d3448fed244db2a0042dfc}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a65e49e2d81d3448fed244db2a0042dfc}} 
+{\bfseries join\+String}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a51eac1b0c4ad9af197265be61a843d39}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Combine_a51eac1b0c4ad9af197265be61a843d39}} 
+{\bfseries call\+Preparse}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Converter to concatenate all matching tokens to a single string.
+By default, the matching patterns must also be contiguous in the
+input string; this can be disabled by specifying
+``'adjacent=False'`` in the constructor.
+
+Example::
+
+    real = Word(nums) + '.' + Word(nums)
+    print(real.parse_string('3.1416')) # -> ['3', '.', '1416']
+    # will also erroneously match the following
+    print(real.parse_string('3. 1416')) # -> ['3', '.', '1416']
+
+    real = Combine(Word(nums) + '.' + Word(nums))
+    print(real.parse_string('3.1416')) # -> ['3.1416']
+    # no match when there are internal spaces
+    print(real.parse_string('3. 1416')) # -> Exception: Expected W:(0123...)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

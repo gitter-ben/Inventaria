@@ -1,0 +1,53 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+testing.\+pyparsing\+\_\+test.\+reset\+\_\+pyparsing\+\_\+context Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context}\index{pip.\_vendor.pyparsing.testing.pyparsing\_test.reset\_pyparsing\_context@{pip.\_vendor.pyparsing.testing.pyparsing\_test.reset\_pyparsing\_context}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a6ec6ebeea9d69429fe495cfa886c48de}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a6ec6ebeea9d69429fe495cfa886c48de}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_ad58932ebf5ceba3487fd94697027af14}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_ad58932ebf5ceba3487fd94697027af14}} 
+def {\bfseries save} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a1ca0e230ce3a7bb48bc3f0575f058126}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a1ca0e230ce3a7bb48bc3f0575f058126}} 
+def {\bfseries restore} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a927fd70a43f5bbfe841cc77302601ab1}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a927fd70a43f5bbfe841cc77302601ab1}} 
+def {\bfseries copy} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a9ab40d6651de42a820575bd4733c7fac}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_a9ab40d6651de42a820575bd4733c7fac}} 
+def {\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_acf0ed37632a7097d8ebe594fa2719458}\label{classpip_1_1__vendor_1_1pyparsing_1_1testing_1_1pyparsing__test_1_1reset__pyparsing__context_acf0ed37632a7097d8ebe594fa2719458}} 
+def {\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, $\ast$args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Context manager to be used when writing unit tests that modify pyparsing config values:
+- packrat parsing
+- bounded recursion parsing
+- default whitespace characters.
+- default keyword characters
+- literal string auto-conversion class
+- __diag__ settings
+
+Example::
+
+    with reset_pyparsing_context():
+        # test that literals used to construct a grammar are automatically suppressed
+        ParserElement.inlineLiteralsUsing(Suppress)
+
+        term = Word(alphas) | Word(nums)
+        group = Group('(' + term[...] + ')')
+
+        # assert that the '()' characters are not included in the parsed tokens
+        self.assertParseAndCheckList(group, "(abc 123 def)", ['abc', '123', 'def'])
+
+    # after exiting context manager, literals are converted to Literal expressions again
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/testing.\+py\end{DoxyCompactItemize}

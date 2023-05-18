@@ -1,0 +1,52 @@
+\hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation}{}\doxysection{numpy.\+polynomial.\+tests.\+test\+\_\+legendre.\+Test\+Evaluation Class Reference}
+\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation}\index{numpy.polynomial.tests.test\_legendre.TestEvaluation@{numpy.polynomial.tests.test\_legendre.TestEvaluation}}
+
+
+Collaboration diagram for numpy.\+polynomial.\+tests.\+test\+\_\+legendre.\+Test\+Evaluation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a1247cb0fab616722d729a9dd2717baa1}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a1247cb0fab616722d729a9dd2717baa1}} 
+def {\bfseries test\+\_\+legval} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ae5013f3d69adafea676298b0590a844a}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ae5013f3d69adafea676298b0590a844a}} 
+def {\bfseries test\+\_\+legval2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ad86718d7e4c92f069db487a478977697}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ad86718d7e4c92f069db487a478977697}} 
+def {\bfseries test\+\_\+legval3d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a606798962b22936903cfdeadf42d288c}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a606798962b22936903cfdeadf42d288c}} 
+def {\bfseries test\+\_\+leggrid2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a8faca363006d8be3c640fe01b7f071bf}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a8faca363006d8be3c640fe01b7f071bf}} 
+def {\bfseries test\+\_\+leggrid3d} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ab96ae1a0495cd85db49ccfceb2f14e0e}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_ab96ae1a0495cd85db49ccfceb2f14e0e}} 
+{\bfseries c1d} = np.\+array(\mbox{[}2., 2., 2.\mbox{]})
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_abe9bb5c405c66d43abfaba6543f6155e}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_abe9bb5c405c66d43abfaba6543f6155e}} 
+{\bfseries c2d} = np.\+einsum(\textquotesingle{}i,j-\/$>$ij\textquotesingle{}, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a6fa9728f080713221bbfef5b5bdd43c8}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a6fa9728f080713221bbfef5b5bdd43c8}} 
+{\bfseries c3d} = np.\+einsum(\textquotesingle{}i,j,k-\/$>$ijk\textquotesingle{}, c1d, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_af74b257837c9c3e1ef2a4448e512d778}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_af74b257837c9c3e1ef2a4448e512d778}} 
+int {\bfseries x} = np.\+random.\+random((3, 5))$\ast$2 -\/ 1
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a196b3e0aa7c56f2b6fb326e5c459c2a0}\label{classnumpy_1_1polynomial_1_1tests_1_1test__legendre_1_1TestEvaluation_a196b3e0aa7c56f2b6fb326e5c459c2a0}} 
+{\bfseries y} = polyval(x, \mbox{[}1., 2., 3.\mbox{]})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/tests/test\+\_\+legendre.\+py\end{DoxyCompactItemize}

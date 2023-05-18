@@ -1,0 +1,83 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1ccompiler__opt}{}\doxysection{numpy.\+distutils.\+ccompiler\+\_\+opt Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1ccompiler__opt}\index{numpy.distutils.ccompiler\_opt@{numpy.distutils.ccompiler\_opt}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config}{\+\_\+\+Config}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils}{\+\_\+\+Distutils}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Cache}{\+\_\+\+Cache}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__CCompiler}{\+\_\+\+CCompiler}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Feature}{\+\_\+\+Feature}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Parse}{\+\_\+\+Parse}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1CCompilerOpt}{CCompiler\+Opt}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1distutils_1_1ccompiler__opt_a4089998935e57ee52a4ac7c4a1ec4366}{new\+\_\+ccompiler\+\_\+opt}} (compiler, dispatch\+\_\+hpath, $\ast$$\ast$kwargs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list {\bfseries NPY\+\_\+\+CXX\+\_\+\+FLAGS}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Provides the `CCompilerOpt` class, used for handling the CPU/hardware
+optimization, starting from parsing the command arguments, to managing the
+relation between the CPU baseline and dispatch-able features,
+also generating the required C headers and ending with compiling
+the sources with proper compiler's flags.
+
+`CCompilerOpt` doesn't provide runtime detection for the CPU features,
+instead only focuses on the compiler side, but it creates abstract C headers
+that can be used later for the final runtime dispatching process.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1ccompiler__opt_a4089998935e57ee52a4ac7c4a1ec4366}\label{namespacenumpy_1_1distutils_1_1ccompiler__opt_a4089998935e57ee52a4ac7c4a1ec4366}} 
+\index{numpy.distutils.ccompiler\_opt@{numpy.distutils.ccompiler\_opt}!new\_ccompiler\_opt@{new\_ccompiler\_opt}}
+\index{new\_ccompiler\_opt@{new\_ccompiler\_opt}!numpy.distutils.ccompiler\_opt@{numpy.distutils.ccompiler\_opt}}
+\doxysubsubsection{\texorpdfstring{new\_ccompiler\_opt()}{new\_ccompiler\_opt()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+new\+\_\+ccompiler\+\_\+opt (\begin{DoxyParamCaption}\item[{}]{compiler,  }\item[{}]{dispatch\+\_\+hpath,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new instance of 'CCompilerOpt' and generate the dispatch header
+which contains the #definitions and headers of platform-specific instruction-sets for
+the enabled CPU baseline and dispatch-able features.
+
+Parameters
+----------
+compiler : CCompiler instance
+dispatch_hpath : str
+    path of the dispatch header
+
+**kwargs: passed as-is to `CCompilerOpt(...)`
+Returns
+-------
+new instance of CCompilerOpt
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1ccompiler__opt_a2d32adf7c151c23b22ecf27f92ae2a1c}\label{namespacenumpy_1_1distutils_1_1ccompiler__opt_a2d32adf7c151c23b22ecf27f92ae2a1c}} 
+\index{numpy.distutils.ccompiler\_opt@{numpy.distutils.ccompiler\_opt}!NPY\_CXX\_FLAGS@{NPY\_CXX\_FLAGS}}
+\index{NPY\_CXX\_FLAGS@{NPY\_CXX\_FLAGS}!numpy.distutils.ccompiler\_opt@{numpy.distutils.ccompiler\_opt}}
+\doxysubsubsection{\texorpdfstring{NPY\_CXX\_FLAGS}{NPY\_CXX\_FLAGS}}
+{\footnotesize\ttfamily list numpy.\+distutils.\+ccompiler\+\_\+opt.\+NPY\+\_\+\+CXX\+\_\+\+FLAGS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     \textcolor{stringliteral}{'-\/std=c++11'},  \textcolor{comment}{\# Minimal standard version}}
+\DoxyCodeLine{3     \textcolor{stringliteral}{'-\/D\_\_STDC\_VERSION\_\_=0'},  \textcolor{comment}{\# for compatibility with C headers}}
+\DoxyCodeLine{4     \textcolor{stringliteral}{'-\/fno-\/exceptions'},  \textcolor{comment}{\# no exception support}}
+\DoxyCodeLine{5     \textcolor{stringliteral}{'-\/fno-\/rtti'}]}
+
+\end{DoxyCode}

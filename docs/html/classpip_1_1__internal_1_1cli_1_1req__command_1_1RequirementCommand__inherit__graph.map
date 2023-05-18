@@ -1,0 +1,10 @@
+<map id="pip._internal.cli.req_command.RequirementCommand" name="pip._internal.cli.req_command.RequirementCommand">
+<area shape="rect" id="node1" title=" " alt="" coords="876,71,1125,112"/>
+<area shape="rect" id="node6" href="$classpip_1_1__internal_1_1commands_1_1download_1_1DownloadCommand.html" title=" " alt="" coords="1173,5,1424,47"/>
+<area shape="rect" id="node7" href="$classpip_1_1__internal_1_1commands_1_1install_1_1InstallCommand.html" title=" " alt="" coords="1185,71,1412,112"/>
+<area shape="rect" id="node8" href="$classpip_1_1__internal_1_1commands_1_1wheel_1_1WheelCommand.html" title=" " alt="" coords="1185,136,1412,177"/>
+<area shape="rect" id="node2" href="$classpip_1_1__internal_1_1cli_1_1req__command_1_1IndexGroupCommand.html" title=" " alt="" coords="588,71,828,112"/>
+<area shape="rect" id="node3" href="$classpip_1_1__internal_1_1cli_1_1base__command_1_1Command.html" title=" " alt="" coords="332,37,497,79"/>
+<area shape="rect" id="node4" href="$classpip_1_1__internal_1_1cli_1_1command__context_1_1CommandContextMixIn.html" title=" " alt="" coords="5,71,241,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__internal_1_1cli_1_1req__command_1_1SessionCommandMixin.html" title=" " alt="" coords="289,103,540,144"/>
+</map>

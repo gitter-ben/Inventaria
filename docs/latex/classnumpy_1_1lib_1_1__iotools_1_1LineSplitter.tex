@@ -1,0 +1,67 @@
+\hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter}{}\doxysection{numpy.\+lib.\+\_\+iotools.\+Line\+Splitter Class Reference}
+\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter}\index{numpy.lib.\_iotools.LineSplitter@{numpy.lib.\_iotools.LineSplitter}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a1b01934e53f08697ddf883dba06e4f47}{autostrip}} (self, method)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a2a1b4ab86f147d894ab93fa8dc2d8eae}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a2a1b4ab86f147d894ab93fa8dc2d8eae}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, delimiter=None, comments=\textquotesingle{}\#\textquotesingle{}, \mbox{\hyperlink{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a1b01934e53f08697ddf883dba06e4f47}{autostrip}}=True, encoding=None)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_afb031e5ebdbe5dc2767872c029d2b1b5}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_afb031e5ebdbe5dc2767872c029d2b1b5}} 
+def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (self, line)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_acac01271b5da3339deedb3d537952a73}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_acac01271b5da3339deedb3d537952a73}} 
+{\bfseries comments}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_afbb2e93502c225065a527672baba0aea}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_afbb2e93502c225065a527672baba0aea}} 
+{\bfseries delimiter}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a76cfbcd674a65e718a45e1944255cf20}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a76cfbcd674a65e718a45e1944255cf20}} 
+{\bfseries encoding}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Object to split a string at a given delimiter or at given places.
+
+Parameters
+----------
+delimiter : str, int, or sequence of ints, optional
+    If a string, character used to delimit consecutive fields.
+    If an integer or a sequence of integers, width(s) of each field.
+comments : str, optional
+    Character used to mark the beginning of a comment. Default is '#'.
+autostrip : bool, optional
+    Whether to strip each individual field. Default is True.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a1b01934e53f08697ddf883dba06e4f47}\label{classnumpy_1_1lib_1_1__iotools_1_1LineSplitter_a1b01934e53f08697ddf883dba06e4f47}} 
+\index{numpy.lib.\_iotools.LineSplitter@{numpy.lib.\_iotools.LineSplitter}!autostrip@{autostrip}}
+\index{autostrip@{autostrip}!numpy.lib.\_iotools.LineSplitter@{numpy.lib.\_iotools.LineSplitter}}
+\doxysubsubsection{\texorpdfstring{autostrip()}{autostrip()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+\_\+iotools.\+Line\+Splitter.\+autostrip (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{method }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Wrapper to strip each member of the output of `method`.
+
+Parameters
+----------
+method : function
+    Function that takes a single argument and returns a sequence of
+    strings.
+
+Returns
+-------
+wrapped : function
+    The result of wrapping `method`. `wrapped` takes a single input
+    argument and returns a list of strings that are stripped of
+    white-space.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/lib/\+\_\+iotools.\+py\end{DoxyCompactItemize}

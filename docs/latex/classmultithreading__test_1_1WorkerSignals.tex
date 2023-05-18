@@ -1,0 +1,58 @@
+\hypertarget{classmultithreading__test_1_1WorkerSignals}{}\doxysection{multithreading\+\_\+test.\+Worker\+Signals Class Reference}
+\label{classmultithreading__test_1_1WorkerSignals}\index{multithreading\_test.WorkerSignals@{multithreading\_test.WorkerSignals}}
+
+
+Inheritance diagram for multithreading\+\_\+test.\+Worker\+Signals\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmultithreading__test_1_1WorkerSignals__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for multithreading\+\_\+test.\+Worker\+Signals\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmultithreading__test_1_1WorkerSignals__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmultithreading__test_1_1WorkerSignals_a660ba314624d7e5180600b28782c022d}\label{classmultithreading__test_1_1WorkerSignals_a660ba314624d7e5180600b28782c022d}} 
+{\bfseries finished} = pyqt\+Signal()
+\item 
+\mbox{\Hypertarget{classmultithreading__test_1_1WorkerSignals_a2e41aed981eb3972e9f69e2903ef1b33}\label{classmultithreading__test_1_1WorkerSignals_a2e41aed981eb3972e9f69e2903ef1b33}} 
+{\bfseries error} = pyqt\+Signal(tuple)
+\item 
+\mbox{\Hypertarget{classmultithreading__test_1_1WorkerSignals_a9bdebfd5bcd7eeb71dbe54328d94a078}\label{classmultithreading__test_1_1WorkerSignals_a9bdebfd5bcd7eeb71dbe54328d94a078}} 
+{\bfseries result} = pyqt\+Signal(object)
+\item 
+\mbox{\Hypertarget{classmultithreading__test_1_1WorkerSignals_a0e9e65a7474f8e001c42b354c03619fa}\label{classmultithreading__test_1_1WorkerSignals_a0e9e65a7474f8e001c42b354c03619fa}} 
+{\bfseries progress} = pyqt\+Signal(int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Defines the signals available from a running worker thread.
+
+Supported signals are:
+
+finished
+    No data
+
+error
+    tuple (exctype, value, traceback.format_exc() )
+
+result
+    object data returned from processing, anything
+
+progress
+    int indicating % progress\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+experiments/multithreading\+\_\+test.\+py\end{DoxyCompactItemize}

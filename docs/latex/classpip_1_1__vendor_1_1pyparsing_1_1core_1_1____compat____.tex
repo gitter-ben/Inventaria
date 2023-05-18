@@ -1,0 +1,44 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat____}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+\_\+compat\+\_\+\+\_\+ Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat____}\index{pip.\_vendor.pyparsing.core.\_\_compat\_\_@{pip.\_vendor.pyparsing.core.\_\_compat\_\_}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+\_\+compat\+\_\+\+\_\+\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat______inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+\_\+\+\_\+compat\+\_\+\+\_\+\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat______coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat_____a55ea7593ba1e69f20e7531dfa5edd1da}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1____compat_____a55ea7593ba1e69f20e7531dfa5edd1da}} 
+bool {\bfseries collect\+\_\+all\+\_\+\+And\+\_\+tokens} = True
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A cross-version compatibility configuration for pyparsing features that will be
+released in a future version. By setting values in this configuration to True,
+those features can be enabled in prior versions for compatibility development
+and testing.
+
+- ``collect_all_And_tokens`` - flag to enable fix for Issue #63 that fixes erroneous grouping
+  of results names when an :class:`And` expression is nested within an :class:`Or` or :class:`MatchFirst`;
+  maintained for compatibility, but setting to ``False`` no longer restores pre-2.3.1
+  behavior
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

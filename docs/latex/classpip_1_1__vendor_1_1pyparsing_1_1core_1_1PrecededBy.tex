@@ -1,0 +1,88 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Preceded\+By Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy}\index{pip.\_vendor.pyparsing.core.PrecededBy@{pip.\_vendor.pyparsing.core.PrecededBy}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Preceded\+By\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Preceded\+By\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ad1f38e5f8008bb7a1ce42bc034db8d54}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ad1f38e5f8008bb7a1ce42bc034db8d54}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Union\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}, str\mbox{]} expr, Optional\+Type\mbox{[}int\mbox{]} retreat=None)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a602443b2df6e8de1739913bc28fb3ddd}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a602443b2df6e8de1739913bc28fb3ddd}} 
+def {\bfseries parse\+Impl} (self, instring, loc=0, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ad77efd2da30ffc38a07c32315367198c}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ad77efd2da30ffc38a07c32315367198c}} 
+{\bfseries expr}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_af2a49bbb85ec4bee88d7bc6ecd602937}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_af2a49bbb85ec4bee88d7bc6ecd602937}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a2ca2a229a4a5e73438e25d53373bbfc3}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a2ca2a229a4a5e73438e25d53373bbfc3}} 
+{\bfseries may\+Index\+Error}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a96bb927aa052688673652e7e8b16a0ec}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a96bb927aa052688673652e7e8b16a0ec}} 
+{\bfseries exact}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a23f64a88c637e4d0ca5d6e064af8f7e4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a23f64a88c637e4d0ca5d6e064af8f7e4}} 
+{\bfseries retreat}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ab386fa4cf34d0af9ab4120a759ec9fb3}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_ab386fa4cf34d0af9ab4120a759ec9fb3}} 
+{\bfseries errmsg}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a8282200652f557f6625e45231105394f}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1PrecededBy_a8282200652f557f6625e45231105394f}} 
+{\bfseries skip\+Whitespace}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Lookbehind matching of the given parse expression.
+``PrecededBy`` does not advance the parsing position within the
+input string, it only verifies that the specified parse expression
+matches prior to the current position.  ``PrecededBy`` always
+returns a null token list, but if a results name is defined on the
+given expression, it is returned.
+
+Parameters:
+
+- expr - expression that must match prior to the current parse
+  location
+- retreat - (default= ``None``) - (int) maximum number of characters
+  to lookbehind prior to the current parse location
+
+If the lookbehind expression is a string, :class:`Literal`,
+:class:`Keyword`, or a :class:`Word` or :class:`CharsNotIn`
+with a specified exact or maximum length, then the retreat
+parameter is not required. Otherwise, retreat must be specified to
+give a maximum number of characters to look back from
+the current parse position for a lookbehind match.
+
+Example::
+
+    # VB-style variable names with type prefixes
+    int_var = PrecededBy("#") + pyparsing_common.identifier
+    str_var = PrecededBy("$") + pyparsing_common.identifier\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

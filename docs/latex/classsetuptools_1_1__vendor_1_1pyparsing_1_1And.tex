@@ -1,0 +1,80 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And}{}\doxysection{setuptools.\+\_\+vendor.\+pyparsing.\+And Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And}\index{setuptools.\_vendor.pyparsing.And@{setuptools.\_vendor.pyparsing.And}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+And\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1And__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+And\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1And__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_1_1__ErrorStop}{\+\_\+\+Error\+Stop}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a59d77c899356bf54d089ad7a17a5ecd3}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a59d77c899356bf54d089ad7a17a5ecd3}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, exprs, savelist=True)
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a0ce053c8ce13c73b1efc28c11902037d}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a0ce053c8ce13c73b1efc28c11902037d}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_abd80bd1cba05b111f1c56661ced6f228}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_abd80bd1cba05b111f1c56661ced6f228}} 
+def {\bfseries \+\_\+\+\_\+iadd\+\_\+\+\_\+} (self, other)
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ab30ab396462a7d5f0ee26d0a9f429c3f}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ab30ab396462a7d5f0ee26d0a9f429c3f}} 
+def {\bfseries check\+Recursion} (self, parse\+Element\+List)
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_aa4ba9495e7806de3a2de95cdfa6d5ba4}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_aa4ba9495e7806de3a2de95cdfa6d5ba4}} 
+def {\bfseries \+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ae9cb0d562228054fc0e1a2ceae114ede}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ae9cb0d562228054fc0e1a2ceae114ede}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ab1188a09b994a812be606006583ecb59}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_ab1188a09b994a812be606006583ecb59}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_afd59d88d0a9b614c17c0c57a8e6367c5}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_afd59d88d0a9b614c17c0c57a8e6367c5}} 
+{\bfseries call\+Preparse}
+\item 
+\mbox{\Hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a36eb67d1cebb650105eab01844b4b483}\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1And_a36eb67d1cebb650105eab01844b4b483}} 
+{\bfseries str\+Repr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Requires all given C{ParseExpression}s to be found in the given order.
+Expressions may be separated by whitespace.
+May be constructed using the C{'+'} operator.
+May also be constructed using the C{'-'} operator, which will suppress backtracking.
+
+Example::
+    integer = Word(nums)
+    name_expr = OneOrMore(Word(alphas))
+
+    expr = And([integer("id"),name_expr("name"),integer("age")])
+    # more easily written as:
+    expr = integer("id") + name_expr("name") + integer("age")
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/setuptools/\+\_\+vendor/pyparsing.\+py\end{DoxyCompactItemize}

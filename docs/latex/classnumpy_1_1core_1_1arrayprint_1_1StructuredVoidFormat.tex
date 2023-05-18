@@ -1,0 +1,45 @@
+\hypertarget{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat}{}\doxysection{numpy.\+core.\+arrayprint.\+Structured\+Void\+Format Class Reference}
+\label{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat}\index{numpy.core.arrayprint.StructuredVoidFormat@{numpy.core.arrayprint.StructuredVoidFormat}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a3fba7a3733af8e1f1263789e1f30bcf1}\label{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a3fba7a3733af8e1f1263789e1f30bcf1}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, format\+\_\+functions)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a88ea0bb2cb50c8f30c42106b8fce7eff}{from\+\_\+data}} (cls, data, $\ast$$\ast$options)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a93b4c38546b25797b58ad65d651ead71}\label{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a93b4c38546b25797b58ad65d651ead71}} 
+def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (self, x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_ae081c531a2c64300a85f166857f59385}\label{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_ae081c531a2c64300a85f166857f59385}} 
+{\bfseries format\+\_\+functions}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Formatter for structured np.void objects.
+
+This does not work on structured alias types like np.dtype(('i4', 'i2,i2')),
+as alias scalars lose their field information, and the implementation
+relies upon np.void.__getitem__.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a88ea0bb2cb50c8f30c42106b8fce7eff}\label{classnumpy_1_1core_1_1arrayprint_1_1StructuredVoidFormat_a88ea0bb2cb50c8f30c42106b8fce7eff}} 
+\index{numpy.core.arrayprint.StructuredVoidFormat@{numpy.core.arrayprint.StructuredVoidFormat}!from\_data@{from\_data}}
+\index{from\_data@{from\_data}!numpy.core.arrayprint.StructuredVoidFormat@{numpy.core.arrayprint.StructuredVoidFormat}}
+\doxysubsubsection{\texorpdfstring{from\_data()}{from\_data()}}
+{\footnotesize\ttfamily def numpy.\+core.\+arrayprint.\+Structured\+Void\+Format.\+from\+\_\+data (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{data,  }\item[{$\ast$$\ast$}]{options }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a second way to initialize StructuredVoidFormat, using the raw data
+as input. Added to avoid changing the signature of __init__.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/arrayprint.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Literal Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral}\index{pip.\_vendor.pyparsing.core.CaselessLiteral@{pip.\_vendor.pyparsing.core.CaselessLiteral}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Literal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Literal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_aecd1f0fc65b37bbdde5c5461e1337945}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_aecd1f0fc65b37bbdde5c5461e1337945}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str match\+\_\+string=\char`\"{}\char`\"{}, $\ast$str match\+String=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_acb67ac3ca59af89c67918e63d4fd0a42}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_acb67ac3ca59af89c67918e63d4fd0a42}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_a3ade5f07461f764f97864ff00cbddf60}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_a3ade5f07461f764f97864ff00cbddf60}} 
+{\bfseries return\+String}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_a8bfc1cfb5458eb5ce8b6e5ddfa09fe48}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessLiteral_a8bfc1cfb5458eb5ce8b6e5ddfa09fe48}} 
+{\bfseries errmsg}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Token to match a specified string, ignoring case of letters.
+Note: the matched results will always be in the case of the given
+match string, NOT the case of the input text.
+
+Example::
+
+    OneOrMore(CaselessLiteral("CMD")).parse_string("cmd CMD Cmd10")
+    # -> ['CMD', 'CMD', 'CMD']
+
+(Contrast with example for :class:`CaselessKeyword`.)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils}{}\doxysection{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils}\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a442a62571b2a4907088bdb127195fccb}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a442a62571b2a4907088bdb127195fccb}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, ccompiler)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a743da064d01b73d28c13486c88e115d3}{dist\+\_\+compile}} (self, sources, flags, ccompiler=None, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_abf0bf519bc13e4cd34d9487f6b6b5b86}{dist\+\_\+test}} (self, source, flags, macros=\mbox{[}$\,$\mbox{]})
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ade87d7efe6ab782464011495602a8c48}{dist\+\_\+info}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ad2b553f1709c3dce150a496b72ef06ef}{dist\+\_\+error}} ($\ast$args)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a4e549bf542d2e651e25f5d77fe2af0b3}{dist\+\_\+fatal}} ($\ast$args)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a136c0c6a0ca93544cc80f1e7c0f0621a}{dist\+\_\+log}} ($\ast$args, stderr=False)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a5460fdb52867389a9b385f538755bda9}{dist\+\_\+load\+\_\+module}} (name, path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A helper class that provides a collection of fundamental methods
+implemented in a top of Python and NumPy Distutils.
+
+The idea behind this class is to gather all methods that it may
+need to override in case of reuse 'CCompilerOpt' in environment
+different than of what NumPy has.
+
+Parameters
+----------
+ccompiler : `CCompiler`
+    The generate instance that returned from `distutils.ccompiler.new_compiler()`.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a743da064d01b73d28c13486c88e115d3}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a743da064d01b73d28c13486c88e115d3}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_compile@{dist\_compile}}
+\index{dist\_compile@{dist\_compile}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_compile()}{dist\_compile()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sources,  }\item[{}]{flags,  }\item[{}]{ccompiler = {\ttfamily None},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Wrap CCompiler.compile()\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ad2b553f1709c3dce150a496b72ef06ef}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ad2b553f1709c3dce150a496b72ef06ef}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_error@{dist\_error}}
+\index{dist\_error@{dist\_error}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_error()}{dist\_error()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+error (\begin{DoxyParamCaption}\item[{$\ast$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Raise a compiler error\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a4e549bf542d2e651e25f5d77fe2af0b3}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a4e549bf542d2e651e25f5d77fe2af0b3}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_fatal@{dist\_fatal}}
+\index{dist\_fatal@{dist\_fatal}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_fatal()}{dist\_fatal()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+fatal (\begin{DoxyParamCaption}\item[{$\ast$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Raise a distutils error\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ade87d7efe6ab782464011495602a8c48}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_ade87d7efe6ab782464011495602a8c48}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_info@{dist\_info}}
+\index{dist\_info@{dist\_info}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_info()}{dist\_info()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+info (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a tuple containing info about (platform, compiler, extra_args),
+required by the abstract class '_CCompiler' for discovering the
+platform environment. This is also used as a cache factor in order
+to detect any changes happening from outside.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classnumpy_1_1distutils_1_1tests_1_1test__ccompiler__opt__conf_1_1FakeCCompilerOpt_af6b617c84b0508c9c2b030d75c586b70}{numpy.\+distutils.\+tests.\+test\+\_\+ccompiler\+\_\+opt\+\_\+conf.\+Fake\+CCompiler\+Opt}}, and \mbox{\hyperlink{classnumpy_1_1distutils_1_1tests_1_1test__ccompiler__opt_1_1FakeCCompilerOpt_a4fd6f90006a6b47685f8e0f5b4f12f81}{numpy.\+distutils.\+tests.\+test\+\_\+ccompiler\+\_\+opt.\+Fake\+CCompiler\+Opt}}.
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a5460fdb52867389a9b385f538755bda9}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a5460fdb52867389a9b385f538755bda9}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_load\_module@{dist\_load\_module}}
+\index{dist\_load\_module@{dist\_load\_module}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_load\_module()}{dist\_load\_module()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+load\+\_\+module (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Load a module from file, required by the abstract class '_Cache'.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a136c0c6a0ca93544cc80f1e7c0f0621a}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_a136c0c6a0ca93544cc80f1e7c0f0621a}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_log@{dist\_log}}
+\index{dist\_log@{dist\_log}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_log()}{dist\_log()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+log (\begin{DoxyParamCaption}\item[{$\ast$}]{args,  }\item[{}]{stderr = {\ttfamily False} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Print a console message\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classnumpy_1_1distutils_1_1tests_1_1test__ccompiler__opt__conf_1_1FakeCCompilerOpt_a1687985f3b9a439665f2547c8ae81839}{numpy.\+distutils.\+tests.\+test\+\_\+ccompiler\+\_\+opt\+\_\+conf.\+Fake\+CCompiler\+Opt}}, and \mbox{\hyperlink{classnumpy_1_1distutils_1_1tests_1_1test__ccompiler__opt_1_1FakeCCompilerOpt_a6afdd1cf7c326de1f2fa65497568f52f}{numpy.\+distutils.\+tests.\+test\+\_\+ccompiler\+\_\+opt.\+Fake\+CCompiler\+Opt}}.
+
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_abf0bf519bc13e4cd34d9487f6b6b5b86}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Distutils_abf0bf519bc13e4cd34d9487f6b6b5b86}} 
+\index{numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}!dist\_test@{dist\_test}}
+\index{dist\_test@{dist\_test}!numpy.distutils.ccompiler\_opt.\_Distutils@{numpy.distutils.ccompiler\_opt.\_Distutils}}
+\doxysubsubsection{\texorpdfstring{dist\_test()}{dist\_test()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Distutils.\+dist\+\_\+test (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{source,  }\item[{}]{flags,  }\item[{}]{macros = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True if 'CCompiler.compile()' able to compile
+a source file with certain flags.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/ccompiler\+\_\+opt.\+py\end{DoxyCompactItemize}

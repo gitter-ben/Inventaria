@@ -1,0 +1,70 @@
+\hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util}{}\doxysection{numpy.\+f2py.\+tests.\+util Namespace Reference}
+\label{namespacenumpy_1_1f2py_1_1tests_1_1util}\index{numpy.f2py.tests.util@{numpy.f2py.tests.util}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1f2py_1_1tests_1_1util_1_1F2PyTest}{F2\+Py\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_ae8d1eca29ae0f38513d5cd0d8410a4d4}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_ae8d1eca29ae0f38513d5cd0d8410a4d4}} 
+def {\bfseries get\+\_\+module\+\_\+dir} ()
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_aee614454846f56c1c4a0b7ff65f40aff}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_aee614454846f56c1c4a0b7ff65f40aff}} 
+def {\bfseries get\+\_\+temp\+\_\+module\+\_\+name} ()
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1f2py_1_1tests_1_1util_aad92b0f4c45f650119de2e4d81b204ad}{build\+\_\+module}} (source\+\_\+files, options=\mbox{[}$\,$\mbox{]}, skip=\mbox{[}$\,$\mbox{]}, only=\mbox{[}$\,$\mbox{]}, module\+\_\+name=None)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1f2py_1_1tests_1_1util_a2110796dd45546156d93d5e683dbcf2d}{build\+\_\+code}} (source\+\_\+code, options=\mbox{[}$\,$\mbox{]}, skip=\mbox{[}$\,$\mbox{]}, only=\mbox{[}$\,$\mbox{]}, suffix=None, module\+\_\+name=None)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_a7f39b841beb247597ef96b52566388cd}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_a7f39b841beb247597ef96b52566388cd}} 
+def {\bfseries has\+\_\+c\+\_\+compiler} ()
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_aa9e4e137b016111d32cd541bbf786416}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_aa9e4e137b016111d32cd541bbf786416}} 
+def {\bfseries has\+\_\+f77\+\_\+compiler} ()
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_ac4d4a2456fcc3b712f17c85de57fa8a2}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_ac4d4a2456fcc3b712f17c85de57fa8a2}} 
+def {\bfseries has\+\_\+f90\+\_\+compiler} ()
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1f2py_1_1tests_1_1util_a5dec8ee17d4aeefc3261f443798c038a}{build\+\_\+module\+\_\+distutils}} (source\+\_\+files, config\+\_\+code, module\+\_\+name, $\ast$$\ast$kw)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_a8b51a9eca42ca8da729ab1c460bdb51b}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_a8b51a9eca42ca8da729ab1c460bdb51b}} 
+def {\bfseries getpath} ($\ast$a)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_ae9cf1be4d517d2a6993b0f80999cc597}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_ae9cf1be4d517d2a6993b0f80999cc597}} 
+def {\bfseries switchdir} (path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utility functions for
+
+- building and importing modules on test time, using a temporary location
+- detecting if compilers are present
+- determining paths to tests\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_a2110796dd45546156d93d5e683dbcf2d}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_a2110796dd45546156d93d5e683dbcf2d}} 
+\index{numpy.f2py.tests.util@{numpy.f2py.tests.util}!build\_code@{build\_code}}
+\index{build\_code@{build\_code}!numpy.f2py.tests.util@{numpy.f2py.tests.util}}
+\doxysubsubsection{\texorpdfstring{build\_code()}{build\_code()}}
+{\footnotesize\ttfamily def numpy.\+f2py.\+tests.\+util.\+build\+\_\+code (\begin{DoxyParamCaption}\item[{}]{source\+\_\+code,  }\item[{}]{options = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{skip = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{only = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{suffix = {\ttfamily None},  }\item[{}]{module\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile and import Fortran code using f2py.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_aad92b0f4c45f650119de2e4d81b204ad}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_aad92b0f4c45f650119de2e4d81b204ad}} 
+\index{numpy.f2py.tests.util@{numpy.f2py.tests.util}!build\_module@{build\_module}}
+\index{build\_module@{build\_module}!numpy.f2py.tests.util@{numpy.f2py.tests.util}}
+\doxysubsubsection{\texorpdfstring{build\_module()}{build\_module()}}
+{\footnotesize\ttfamily def numpy.\+f2py.\+tests.\+util.\+build\+\_\+module (\begin{DoxyParamCaption}\item[{}]{source\+\_\+files,  }\item[{}]{options = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{skip = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{only = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{module\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile and import a f2py module, built from the given files.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1tests_1_1util_a5dec8ee17d4aeefc3261f443798c038a}\label{namespacenumpy_1_1f2py_1_1tests_1_1util_a5dec8ee17d4aeefc3261f443798c038a}} 
+\index{numpy.f2py.tests.util@{numpy.f2py.tests.util}!build\_module\_distutils@{build\_module\_distutils}}
+\index{build\_module\_distutils@{build\_module\_distutils}!numpy.f2py.tests.util@{numpy.f2py.tests.util}}
+\doxysubsubsection{\texorpdfstring{build\_module\_distutils()}{build\_module\_distutils()}}
+{\footnotesize\ttfamily def numpy.\+f2py.\+tests.\+util.\+build\+\_\+module\+\_\+distutils (\begin{DoxyParamCaption}\item[{}]{source\+\_\+files,  }\item[{}]{config\+\_\+code,  }\item[{}]{module\+\_\+name,  }\item[{$\ast$$\ast$}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build a module via distutils and import it.\end{DoxyVerb}
+ 

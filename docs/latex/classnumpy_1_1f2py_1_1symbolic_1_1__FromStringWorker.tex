@@ -1,0 +1,51 @@
+\hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker}{}\doxysection{numpy.\+f2py.\+symbolic.\+\_\+\+From\+String\+Worker Class Reference}
+\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker}\index{numpy.f2py.symbolic.\_FromStringWorker@{numpy.f2py.symbolic.\_FromStringWorker}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a98bbe8e4302e0940216012d4d80798f6}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a98bbe8e4302e0940216012d4d80798f6}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, language=Language.\+C)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a12b7a629e378d8d07bb36651fb55fa5c}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a12b7a629e378d8d07bb36651fb55fa5c}} 
+def {\bfseries finalize\+\_\+string} (self, s)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a260c36514723ab4da7e533ac7fd67cc7}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a260c36514723ab4da7e533ac7fd67cc7}} 
+def {\bfseries parse} (self, inp)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a29a950080165a6ec47b1dcf4b95c2d67}{process}} (self, s, context=\textquotesingle{}expr\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a1c13174afac99a5fd683021598b4e51d}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a1c13174afac99a5fd683021598b4e51d}} 
+{\bfseries original}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a9384005676c687906766c663f43e684e}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a9384005676c687906766c663f43e684e}} 
+{\bfseries quotes\+\_\+map}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a2b2677dc769f5ec6405c4722044745b0}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a2b2677dc769f5ec6405c4722044745b0}} 
+{\bfseries language}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a29a950080165a6ec47b1dcf4b95c2d67}\label{classnumpy_1_1f2py_1_1symbolic_1_1__FromStringWorker_a29a950080165a6ec47b1dcf4b95c2d67}} 
+\index{numpy.f2py.symbolic.\_FromStringWorker@{numpy.f2py.symbolic.\_FromStringWorker}!process@{process}}
+\index{process@{process}!numpy.f2py.symbolic.\_FromStringWorker@{numpy.f2py.symbolic.\_FromStringWorker}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily def numpy.\+f2py.\+symbolic.\+\_\+\+From\+String\+Worker.\+process (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s,  }\item[{}]{context = {\ttfamily \textquotesingle{}expr\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse string within the given context.
+
+The context may define the result in case of ambiguous
+expressions. For instance, consider expressions `f(x, y)` and
+`(x, y) + (a, b)` where `f` is a function and pair `(x, y)`
+denotes complex number. Specifying context as "args" or
+"expr", the subexpression `(x, y)` will be parse to an
+argument list or to a complex number, respectively.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/f2py/symbolic.\+py\end{DoxyCompactItemize}

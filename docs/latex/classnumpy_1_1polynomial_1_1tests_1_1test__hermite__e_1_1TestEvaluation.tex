@@ -1,0 +1,52 @@
+\hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation}{}\doxysection{numpy.\+polynomial.\+tests.\+test\+\_\+hermite\+\_\+e.\+Test\+Evaluation Class Reference}
+\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation}\index{numpy.polynomial.tests.test\_hermite\_e.TestEvaluation@{numpy.polynomial.tests.test\_hermite\_e.TestEvaluation}}
+
+
+Collaboration diagram for numpy.\+polynomial.\+tests.\+test\+\_\+hermite\+\_\+e.\+Test\+Evaluation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_acf6edd060cd92c1ecf4ae90fa32f6041}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_acf6edd060cd92c1ecf4ae90fa32f6041}} 
+def {\bfseries test\+\_\+hermeval} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a3cd365085285e115dbb8b6560aa463ce}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a3cd365085285e115dbb8b6560aa463ce}} 
+def {\bfseries test\+\_\+hermeval2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a82ae43b6de837f4109f52e47c089869e}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a82ae43b6de837f4109f52e47c089869e}} 
+def {\bfseries test\+\_\+hermeval3d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a5860f994cf2ffe245e23ff33b3f7c79b}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a5860f994cf2ffe245e23ff33b3f7c79b}} 
+def {\bfseries test\+\_\+hermegrid2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a00c89803e3d5f911b221900b8b21b70f}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a00c89803e3d5f911b221900b8b21b70f}} 
+def {\bfseries test\+\_\+hermegrid3d} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a95492307e5062f1bc46dc347abf76479}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a95492307e5062f1bc46dc347abf76479}} 
+{\bfseries c1d} = np.\+array(\mbox{[}4., 2., 3.\mbox{]})
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_ab7356f559f86dd970dbf9523e7bd1238}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_ab7356f559f86dd970dbf9523e7bd1238}} 
+{\bfseries c2d} = np.\+einsum(\textquotesingle{}i,j-\/$>$ij\textquotesingle{}, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_ae4db8f86a433fb91996c7cc2312851c5}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_ae4db8f86a433fb91996c7cc2312851c5}} 
+{\bfseries c3d} = np.\+einsum(\textquotesingle{}i,j,k-\/$>$ijk\textquotesingle{}, c1d, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a703e80e1b7bc2554debc0013c67441b7}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a703e80e1b7bc2554debc0013c67441b7}} 
+int {\bfseries x} = np.\+random.\+random((3, 5))$\ast$2 -\/ 1
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a620f2a7c61dd1866354f79d8d74fc4c9}\label{classnumpy_1_1polynomial_1_1tests_1_1test__hermite__e_1_1TestEvaluation_a620f2a7c61dd1866354f79d8d74fc4c9}} 
+{\bfseries y} = polyval(x, \mbox{[}1., 2., 3.\mbox{]})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/tests/test\+\_\+hermite\+\_\+e.\+py\end{DoxyCompactItemize}

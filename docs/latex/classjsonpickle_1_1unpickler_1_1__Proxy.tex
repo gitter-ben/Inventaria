@@ -1,0 +1,71 @@
+\hypertarget{classjsonpickle_1_1unpickler_1_1__Proxy}{}\doxysection{jsonpickle.\+unpickler.\+\_\+\+Proxy Class Reference}
+\label{classjsonpickle_1_1unpickler_1_1__Proxy}\index{jsonpickle.unpickler.\_Proxy@{jsonpickle.unpickler.\_Proxy}}
+
+
+Inheritance diagram for jsonpickle.\+unpickler.\+\_\+\+Proxy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classjsonpickle_1_1unpickler_1_1__Proxy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+unpickler.\+\_\+\+Proxy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classjsonpickle_1_1unpickler_1_1__Proxy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1unpickler_1_1__Proxy_a37fad8c315c6e834238c23163308f1df}\label{classjsonpickle_1_1unpickler_1_1__Proxy_a37fad8c315c6e834238c23163308f1df}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1unpickler_1_1__Proxy_afed5f72baebcbe32adf96727a04bc5fe}\label{classjsonpickle_1_1unpickler_1_1__Proxy_afed5f72baebcbe32adf96727a04bc5fe}} 
+def {\bfseries get} (self)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1unpickler_1_1__Proxy_a876190ab3ab75291b53a8363a2d1d872}\label{classjsonpickle_1_1unpickler_1_1__Proxy_a876190ab3ab75291b53a8363a2d1d872}} 
+def {\bfseries reset} (self, instance)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1unpickler_1_1__Proxy_a5f0ff2b78be8b8bb21f318ef3561745e}\label{classjsonpickle_1_1unpickler_1_1__Proxy_a5f0ff2b78be8b8bb21f318ef3561745e}} 
+{\bfseries instance}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Proxies are dummy objects that are later replaced by real instances
+
+The `restore()` function has to solve a tricky problem when pickling
+objects with cyclical references -- the parent instance does not yet
+exist.
+
+The problem is that `__getnewargs__()`, `__getstate__()`, custom handlers,
+and cyclical objects graphs are allowed to reference the yet-to-be-created
+object via the referencing machinery.
+
+In other words, objects are allowed to depend on themselves for
+construction!
+
+We solve this problem by placing dummy Proxy objects into the referencing
+machinery so that we can construct the child objects before constructing
+the parent.  Objects are initially created with Proxy attribute values
+instead of real references.
+
+We collect all objects that contain references to proxies and run
+a final sweep over them to swap in the real instance.  This is done
+at the very end of the top-level `restore()`.
+
+The `instance` attribute below is replaced with the real instance
+after `__new__()` has been used to construct the object and is used
+when swapping proxies with real instances.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/unpickler.\+py\end{DoxyCompactItemize}

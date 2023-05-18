@@ -1,0 +1,327 @@
+\hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase}{}\doxysection{Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database Class Reference}
+\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase}\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5e0ae4757057539ea48ff2caad79545f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str db\+\_\+file, \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes__signal__master_1_1GroupsAndBoxesSignalMaster}{Groups\+And\+Boxes\+Signal\+Master}} sig\+\_\+master)
+\begin{DoxyCompactList}\small\item\em Initialize a new \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase}{Groups\+And\+Boxes\+Database}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6c791d616527ed9178226e20becefc56}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6c791d616527ed9178226e20becefc56}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6c791d616527ed9178226e20becefc56}{load\+\_\+from\+\_\+file}} (self, db\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Load a new database from a .sqlite file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a9967393bad0c51eacea504e1ea044fb1}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a9967393bad0c51eacea504e1ea044fb1}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a9967393bad0c51eacea504e1ea044fb1}{close}} (self)
+\begin{DoxyCompactList}\small\item\em Gracefully close the connection ta a database. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a35582c58e6e07d0be63f83a25ad852b7}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a35582c58e6e07d0be63f83a25ad852b7}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a35582c58e6e07d0be63f83a25ad852b7}{make\+\_\+savepoint}} (self)
+\begin{DoxyCompactList}\small\item\em Create a savepoint by starting a sqlite transaction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6ec1466a5c09235cfed9167c8a1d6c98}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6ec1466a5c09235cfed9167c8a1d6c98}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6ec1466a5c09235cfed9167c8a1d6c98}{rollback\+\_\+to\+\_\+savepoint}} (self)
+\begin{DoxyCompactList}\small\item\em Rollback to last savepoint by executing \char`\"{}\+ROLLBACK TRANSACTION;\char`\"{} in sqlite. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10513fb4c3ab85f3c070a8474dde3057}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10513fb4c3ab85f3c070a8474dde3057}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10513fb4c3ab85f3c070a8474dde3057}{save}} (self)
+\begin{DoxyCompactList}\small\item\em Save the current database by committing the current transaction and starting a new one by calling self.\+make\+\_\+savepoint() \end{DoxyCompactList}\item 
+List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}}\mbox{]} \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af003a1287461a10600b079c35713c765}{get\+\_\+groups}} (self)
+\begin{DoxyCompactList}\small\item\em Get all groups as Group instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}} \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ab81a5d076ae4f871d5895314467c3c1e}{get\+\_\+group}} (self, int group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get a group via its group\+\_\+id. \end{DoxyCompactList}\item 
+List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Box}{Box}}\mbox{]} \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a281f1bf04382832cf34d17f19102c238}{get\+\_\+boxes}} (self, int group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get a list of all boxes in a group via group\+\_\+id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Box}{Box}} \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5c2edea2a83da9f60d14893a0f289970}{get\+\_\+box}} (self, int box\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get a box by its box\+\_\+id. \end{DoxyCompactList}\item 
+List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1BoxContentItem}{Box\+Content\+Item}}\mbox{]} \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a75c2bb2c5a5bd859e379c5f1d7a2a0dc}{get\+\_\+box\+\_\+contents}} (self, int box\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get the contents of a box by the box\+\_\+id. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_aaa299745badfb8342b94e3af31e7cc90}{add\+\_\+group}} (self, str name)
+\begin{DoxyCompactList}\small\item\em Add a new group with a name. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_afce0caac74453b0cf788dcf925702206}{delete\+\_\+group}} (self, int group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Delete a group via the group id. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a8133368249349339225a3114310c3e0e}{edit\+\_\+group\+\_\+name}} (self, int group\+\_\+id, str name)
+\begin{DoxyCompactList}\small\item\em Edit a group name via a group id and a new name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10d85868a61d90a4aa9f94a077d397fe}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10d85868a61d90a4aa9f94a077d397fe}} 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a10d85868a61d90a4aa9f94a077d397fe}{edit\+\_\+group\+\_\+description}} (self, int group\+\_\+id, str description)
+\begin{DoxyCompactList}\small\item\em Edit a group description via a group id and a new description. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6cdae6af59c50f40609a2e210e377eef}{add\+\_\+box}} (self, str name, int group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Add a new box with a set name and a group id. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a4d3ee4a7f4defd89586415bab58fdd7e}{delete\+\_\+box}} (self, int box\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Delete a box with a set box id. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a23b118117009b68467813c35c05485d1}{edit\+\_\+box\+\_\+name}} (self, int box\+\_\+id, str new\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Edit the name of a box with a set box id and a new name. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac3506234f3cab0d9421e3b6d1884c9ed}{edit\+\_\+box\+\_\+description}} (self, int box\+\_\+id, str description)
+\begin{DoxyCompactList}\small\item\em Edit the description of a box with a box id and new description. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a27cf62302970590e66e9b39bc05e29cb}{add\+\_\+box\+\_\+contents}} (self, int box\+\_\+id, int part\+\_\+id, int count)
+\begin{DoxyCompactList}\small\item\em Add a new box\+\_\+contents to a box via a box\+\_\+id and a part\+\_\+id. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac4cdb7205ba97c3c14492a338235ba0b}{edit\+\_\+box\+\_\+contents\+\_\+count}} (self, int box\+\_\+contents\+\_\+id, int count)
+\begin{DoxyCompactList}\small\item\em Edit the count of an item in a box contents via the box contents id and the count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a95e5e1dd42bb20bf6225367af85feff1}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a95e5e1dd42bb20bf6225367af85feff1}} 
+{\bfseries conn}
+\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a70d695b56b52dc2b67a578b6397db082}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a70d695b56b52dc2b67a578b6397db082}} 
+{\bfseries cur}
+\item 
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a83ae82c5b159d967845d59d006d0b4a5}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a83ae82c5b159d967845d59d006d0b4a5}} 
+{\bfseries saved}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5e0ae4757057539ea48ff2caad79545f}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5e0ae4757057539ea48ff2caad79545f}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{db\+\_\+file,  }\item[{\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1groups__and__boxes__signal__master_1_1GroupsAndBoxesSignalMaster}{Groups\+And\+Boxes\+Signal\+Master}}}]{sig\+\_\+master }\end{DoxyParamCaption})}
+
+
+
+Initialize a new \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase}{Groups\+And\+Boxes\+Database}}. 
+
+\begin{DoxyReturn}{Returns}
+A new \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase}{Groups\+And\+Boxes\+Database}} instance 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6cdae6af59c50f40609a2e210e377eef}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a6cdae6af59c50f40609a2e210e377eef}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!add\_box@{add\_box}}
+\index{add\_box@{add\_box}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_box()}{add\_box()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+add\+\_\+box (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{int}]{group\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Add a new box with a set name and a group id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the new box. \\
+\hline
+{\em group\+\_\+id} & The group id of the new box. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a27cf62302970590e66e9b39bc05e29cb}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a27cf62302970590e66e9b39bc05e29cb}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!add\_box\_contents@{add\_box\_contents}}
+\index{add\_box\_contents@{add\_box\_contents}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_box\_contents()}{add\_box\_contents()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+add\+\_\+box\+\_\+contents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id,  }\item[{int}]{part\+\_\+id,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Add a new box\+\_\+contents to a box via a box\+\_\+id and a part\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to add to. \\
+\hline
+{\em part\+\_\+id} & The id of the part to add to it. \\
+\hline
+{\em count} & The number of parts to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_aaa299745badfb8342b94e3af31e7cc90}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_aaa299745badfb8342b94e3af31e7cc90}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!add\_group@{add\_group}}
+\index{add\_group@{add\_group}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_group()}{add\_group()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+add\+\_\+group (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+
+
+Add a new group with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the new group. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a4d3ee4a7f4defd89586415bab58fdd7e}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a4d3ee4a7f4defd89586415bab58fdd7e}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!delete\_box@{delete\_box}}
+\index{delete\_box@{delete\_box}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{delete\_box()}{delete\_box()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+delete\+\_\+box (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Delete a box with a set box id. 
+
+The cascading mode will also remove all parts associated with the box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to delete. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_afce0caac74453b0cf788dcf925702206}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_afce0caac74453b0cf788dcf925702206}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!delete\_group@{delete\_group}}
+\index{delete\_group@{delete\_group}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{delete\_group()}{delete\_group()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+delete\+\_\+group (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{group\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Delete a group via the group id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+id} & The id of the group to delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac4cdb7205ba97c3c14492a338235ba0b}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac4cdb7205ba97c3c14492a338235ba0b}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!edit\_box\_contents\_count@{edit\_box\_contents\_count}}
+\index{edit\_box\_contents\_count@{edit\_box\_contents\_count}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{edit\_box\_contents\_count()}{edit\_box\_contents\_count()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+edit\+\_\+box\+\_\+contents\+\_\+count (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+contents\+\_\+id,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Edit the count of an item in a box contents via the box contents id and the count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+contents\+\_\+id} & The id of the box contents. \\
+\hline
+{\em count} & The new count. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac3506234f3cab0d9421e3b6d1884c9ed}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ac3506234f3cab0d9421e3b6d1884c9ed}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!edit\_box\_description@{edit\_box\_description}}
+\index{edit\_box\_description@{edit\_box\_description}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{edit\_box\_description()}{edit\_box\_description()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+edit\+\_\+box\+\_\+description (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id,  }\item[{str}]{description }\end{DoxyParamCaption})}
+
+
+
+Edit the description of a box with a box id and new description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to edit. \\
+\hline
+{\em description} & The new description of the box. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a23b118117009b68467813c35c05485d1}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a23b118117009b68467813c35c05485d1}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!edit\_box\_name@{edit\_box\_name}}
+\index{edit\_box\_name@{edit\_box\_name}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{edit\_box\_name()}{edit\_box\_name()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+edit\+\_\+box\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id,  }\item[{str}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Edit the name of a box with a set box id and a new name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to edit. \\
+\hline
+{\em new\+\_\+name} & The new name of the box. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a8133368249349339225a3114310c3e0e}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a8133368249349339225a3114310c3e0e}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!edit\_group\_name@{edit\_group\_name}}
+\index{edit\_group\_name@{edit\_group\_name}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{edit\_group\_name()}{edit\_group\_name()}}
+{\footnotesize\ttfamily  None Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+edit\+\_\+group\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{group\+\_\+id,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+
+
+Edit a group name via a group id and a new name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+id} & The id of the group to edit. \\
+\hline
+{\em name} & The new name of the group. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5c2edea2a83da9f60d14893a0f289970}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a5c2edea2a83da9f60d14893a0f289970}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!get\_box@{get\_box}}
+\index{get\_box@{get\_box}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_box()}{get\_box()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Box}{Box}} Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+get\+\_\+box (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Get a box by its box\+\_\+id. 
+
+Group\+\_\+id not needed due to box\+\_\+ids being unique.
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to look up.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of the Box dataclass. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a75c2bb2c5a5bd859e379c5f1d7a2a0dc}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a75c2bb2c5a5bd859e379c5f1d7a2a0dc}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!get\_box\_contents@{get\_box\_contents}}
+\index{get\_box\_contents@{get\_box\_contents}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_box\_contents()}{get\_box\_contents()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1BoxContentItem}{Box\+Content\+Item}}\mbox{]} Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+get\+\_\+box\+\_\+contents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{box\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Get the contents of a box by the box\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+\_\+id} & The id of the box to look up.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of instances of the Box\+Content\+Item dataclass. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a281f1bf04382832cf34d17f19102c238}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a281f1bf04382832cf34d17f19102c238}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!get\_boxes@{get\_boxes}}
+\index{get\_boxes@{get\_boxes}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_boxes()}{get\_boxes()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Box}{Box}}\mbox{]} Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+get\+\_\+boxes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{group\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Get a list of all boxes in a group via group\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+id} & The group\+\_\+id of the boxes to look up\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of instances of the Box dataclass 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ab81a5d076ae4f871d5895314467c3c1e}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_ab81a5d076ae4f871d5895314467c3c1e}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!get\_group@{get\_group}}
+\index{get\_group@{get\_group}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_group()}{get\_group()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}} Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+get\+\_\+group (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{group\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Get a group via its group\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+id} & The id of the group to look up.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of the Group dataclass 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af003a1287461a10600b079c35713c765}\label{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af003a1287461a10600b079c35713c765}} 
+\index{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!get\_groups@{get\_groups}}
+\index{get\_groups@{get\_groups}!Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{Inventaria.inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_groups()}{get\_groups()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classInventaria_1_1inventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}}\mbox{]} Inventaria.\+inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+get\+\_\+groups (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Get all groups as Group instances. 
+
+\begin{DoxyReturn}{Returns}
+A list of instances of the Group dataclass 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventory\+\_\+types/groups\+\_\+and\+\_\+boxes/\mbox{\hyperlink{inventory__types_2groups__and__boxes_2database_8py}{database.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,255 @@
+\hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config}{}\doxysection{numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Config Class Reference}
+\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config}\index{numpy.distutils.ccompiler\_opt.\_Config@{numpy.distutils.ccompiler\_opt.\_Config}}
+
+
+Inheritance diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Config\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Config\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a98fd9049fb62ed8afa8f010a6fb91345}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a98fd9049fb62ed8afa8f010a6fb91345}} 
+bool {\bfseries conf\+\_\+nocache} = False
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a24514b6b3f832e6149b00d6945442446}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a24514b6b3f832e6149b00d6945442446}} 
+bool {\bfseries conf\+\_\+noopt} = False
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_aa470e6069d1d9c574db056618517f95b}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_aa470e6069d1d9c574db056618517f95b}} 
+{\bfseries conf\+\_\+cache\+\_\+factors} = None
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a6b6fb7f436d9313e96e8ed859c8d65b4}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a6b6fb7f436d9313e96e8ed859c8d65b4}} 
+{\bfseries conf\+\_\+tmp\+\_\+path} = None
+\item 
+{\bfseries conf\+\_\+check\+\_\+path}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a7aed2b564d2b259dadcc8a862849bd76}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a7aed2b564d2b259dadcc8a862849bd76}} 
+dictionary {\bfseries conf\+\_\+target\+\_\+groups} = \{\}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_ad38e1204f186587101ec325034bdb41f}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_ad38e1204f186587101ec325034bdb41f}} 
+string {\bfseries conf\+\_\+c\+\_\+prefix} = \textquotesingle{}NPY\+\_\+\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a22fc1110591377a3390c289ee4b1bba4}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a22fc1110591377a3390c289ee4b1bba4}} 
+string {\bfseries conf\+\_\+c\+\_\+prefix\+\_\+} = \textquotesingle{}NPY\+\_\+\+\_\+\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a87fbdb0b4f11781c7cfa8586eb663108}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a87fbdb0b4f11781c7cfa8586eb663108}} 
+{\bfseries conf\+\_\+cc\+\_\+flags}
+\item 
+{\bfseries conf\+\_\+min\+\_\+features}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An abstract class holds all configurable attributes of `CCompilerOpt`,
+these class attributes can be used to change the default behavior
+of `CCompilerOpt` in order to fit other requirements.
+
+Attributes
+----------
+conf_nocache : bool
+    Set True to disable memory and file cache.
+    Default is False.
+
+conf_noopt : bool
+    Set True to forces the optimization to be disabled,
+    in this case `CCompilerOpt` tends to generate all
+    expected headers in order to 'not' break the build.
+    Default is False.
+
+conf_cache_factors : list
+    Add extra factors to the primary caching factors. The caching factors
+    are utilized to determine if there are changes had happened that
+    requires to discard the cache and re-updating it. The primary factors
+    are the arguments of `CCompilerOpt` and `CCompiler`'s properties(type, flags, etc).
+    Default is list of two items, containing the time of last modification
+    of `ccompiler_opt` and value of attribute "conf_noopt"
+
+conf_tmp_path : str,
+    The path of temporary directory. Default is auto-created
+    temporary directory via ``tempfile.mkdtemp()``.
+
+conf_check_path : str
+    The path of testing files. Each added CPU feature must have a
+    **C** source file contains at least one intrinsic or instruction that
+    related to this feature, so it can be tested against the compiler.
+    Default is ``./distutils/checks``.
+
+conf_target_groups : dict
+    Extra tokens that can be reached from dispatch-able sources through
+    the special mark ``@targets``. Default is an empty dictionary.
+
+    **Notes**:
+        - case-insensitive for tokens and group names
+        - sign '#' must stick in the begin of group name and only within ``@targets``
+
+    **Example**:
+        .. code-block:: console
+
+            $ "@targets #avx_group other_tokens" > group_inside.c
+
+        >>> CCompilerOpt.conf_target_groups["avx_group"] = \\
+        "$werror $maxopt avx2 avx512f avx512_skx"
+        >>> cco = CCompilerOpt(cc_instance)
+        >>> cco.try_dispatch(["group_inside.c"])
+
+conf_c_prefix : str
+    The prefix of public C definitions. Default is ``"NPY_"``.
+
+conf_c_prefix_ : str
+    The prefix of internal C definitions. Default is ``"NPY__"``.
+
+conf_cc_flags : dict
+    Nested dictionaries defining several compiler flags
+    that linked to some major functions, the main key
+    represent the compiler name and sub-keys represent
+    flags names. Default is already covers all supported
+    **C** compilers.
+
+    Sub-keys explained as follows:
+
+    "native": str or None
+        used by argument option `native`, to detect the current
+        machine support via the compiler.
+    "werror": str or None
+        utilized to treat warning as errors during testing CPU features
+        against the compiler and also for target's policy `$werror`
+        via dispatch-able sources.
+    "maxopt": str or None
+        utilized for target's policy '$maxopt' and the value should
+        contains the maximum acceptable optimization by the compiler.
+        e.g. in gcc `'-O3'`
+
+    **Notes**:
+        * case-sensitive for compiler names and flags
+        * use space to separate multiple flags
+        * any flag will tested against the compiler and it will skipped
+          if it's not applicable.
+
+conf_min_features : dict
+    A dictionary defines the used CPU features for
+    argument option `'min'`, the key represent the CPU architecture
+    name e.g. `'x86'`. Default values provide the best effort
+    on wide range of users platforms.
+
+    **Note**: case-sensitive for architecture names.
+
+conf_features : dict
+    Nested dictionaries used for identifying the CPU features.
+    the primary key is represented as a feature name or group name
+    that gathers several features. Default values covers all
+    supported features but without the major options like "flags",
+    these undefined options handle it by method `conf_features_partial()`.
+    Default value is covers almost all CPU features for *X86*, *IBM/Power64*
+    and *ARM 7/8*.
+
+    Sub-keys explained as follows:
+
+    "implies" : str or list, optional,
+        List of CPU feature names to be implied by it,
+        the feature name must be defined within `conf_features`.
+        Default is None.
+
+    "flags": str or list, optional
+        List of compiler flags. Default is None.
+
+    "detect": str or list, optional
+        List of CPU feature names that required to be detected
+        in runtime. By default, its the feature name or features
+        in "group" if its specified.
+
+    "implies_detect": bool, optional
+        If True, all "detect" of implied features will be combined.
+        Default is True. see `feature_detect()`.
+
+    "group": str or list, optional
+        Same as "implies" but doesn't require the feature name to be
+        defined within `conf_features`.
+
+    "interest": int, required
+        a key for sorting CPU features
+
+    "headers": str or list, optional
+        intrinsics C header file
+
+    "disable": str, optional
+        force disable feature, the string value should contains the
+        reason of disabling.
+
+    "autovec": bool or None, optional
+        True or False to declare that CPU feature can be auto-vectorized
+        by the compiler.
+        By default(None), treated as True if the feature contains at
+        least one applicable flag. see `feature_can_autovec()`
+
+    "extra_checks": str or list, optional
+        Extra test case names for the CPU feature that need to be tested
+        against the compiler.
+
+        Each test case must have a C file named ``extra_xxxx.c``, where
+        ``xxxx`` is the case name in lower case, under 'conf_check_path'.
+        It should contain at least one intrinsic or function related to the test case.
+
+        If the compiler able to successfully compile the C file then `CCompilerOpt`
+        will add a C ``#define`` for it into the main dispatch header, e.g.
+        ``#define {conf_c_prefix}_XXXX`` where ``XXXX`` is the case name in upper case.
+
+    **NOTES**:
+        * space can be used as separator with options that supports "str or list"
+        * case-sensitive for all values and feature name must be in upper-case.
+        * if flags aren't applicable, its will skipped rather than disable the
+          CPU feature
+        * the CPU feature will disabled if the compiler fail to compile
+          the test file
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_ad027d68dd3fd12a9d8e50ffe74201df3}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_ad027d68dd3fd12a9d8e50ffe74201df3}} 
+\index{numpy.distutils.ccompiler\_opt.\_Config@{numpy.distutils.ccompiler\_opt.\_Config}!conf\_check\_path@{conf\_check\_path}}
+\index{conf\_check\_path@{conf\_check\_path}!numpy.distutils.ccompiler\_opt.\_Config@{numpy.distutils.ccompiler\_opt.\_Config}}
+\doxysubsubsection{\texorpdfstring{conf\_check\_path}{conf\_check\_path}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Config.\+conf\+\_\+check\+\_\+path\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  os.path.join(}
+\DoxyCodeLine{        os.path.dirname(os.path.realpath(\_\_file\_\_)), \textcolor{stringliteral}{"{}checks"{}}}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a26c61ed3ef5c411ef1663c28616cc6b9}\label{classnumpy_1_1distutils_1_1ccompiler__opt_1_1__Config_a26c61ed3ef5c411ef1663c28616cc6b9}} 
+\index{numpy.distutils.ccompiler\_opt.\_Config@{numpy.distutils.ccompiler\_opt.\_Config}!conf\_min\_features@{conf\_min\_features}}
+\index{conf\_min\_features@{conf\_min\_features}!numpy.distutils.ccompiler\_opt.\_Config@{numpy.distutils.ccompiler\_opt.\_Config}}
+\doxysubsubsection{\texorpdfstring{conf\_min\_features}{conf\_min\_features}}
+{\footnotesize\ttfamily numpy.\+distutils.\+ccompiler\+\_\+opt.\+\_\+\+Config.\+conf\+\_\+min\+\_\+features\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  dict(}
+\DoxyCodeLine{        x86 = \textcolor{stringliteral}{"{}SSE SSE2"{}},}
+\DoxyCodeLine{        x64 = \textcolor{stringliteral}{"{}SSE SSE2 SSE3"{}},}
+\DoxyCodeLine{        ppc64 = \textcolor{stringliteral}{''}, \textcolor{comment}{\# play it safe}}
+\DoxyCodeLine{        ppc64le = \textcolor{stringliteral}{"{}VSX VSX2"{}},}
+\DoxyCodeLine{        s390x = \textcolor{stringliteral}{''},}
+\DoxyCodeLine{        armhf = \textcolor{stringliteral}{''}, \textcolor{comment}{\# play it safe}}
+\DoxyCodeLine{        aarch64 = \textcolor{stringliteral}{"{}NEON NEON\_FP16 NEON\_VFPV4 ASIMD"{}}}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/ccompiler\+\_\+opt.\+py\end{DoxyCompactItemize}

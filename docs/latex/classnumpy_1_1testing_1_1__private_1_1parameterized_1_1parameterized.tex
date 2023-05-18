@@ -1,0 +1,88 @@
+\hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized}{}\doxysection{numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized Class Reference}
+\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized}\index{numpy.testing.\_private.parameterized.parameterized@{numpy.testing.\_private.parameterized.parameterized}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a6cdd9fb0bb2817f59b25dea9f841d8f4}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a6cdd9fb0bb2817f59b25dea9f841d8f4}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, input, doc\+\_\+func=None)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ad58fb1474f5a2d5d6ec0682f2e1beac1}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ad58fb1474f5a2d5d6ec0682f2e1beac1}} 
+def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (self, test\+\_\+func)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afbd31db21c4afb66f3f30485cacb4ac8}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afbd31db21c4afb66f3f30485cacb4ac8}} 
+def {\bfseries param\+\_\+as\+\_\+nose\+\_\+tuple} (self, test\+\_\+self, func, num, p)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a83ea62e3485af4f4b91426c5cdaa85d9}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a83ea62e3485af4f4b91426c5cdaa85d9}} 
+def {\bfseries assert\+\_\+not\+\_\+in\+\_\+testcase\+\_\+subclass} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afab367d8a333ac80862e229b8f2551f3}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_afab367d8a333ac80862e229b8f2551f3}} 
+def {\bfseries input\+\_\+as\+\_\+callable} (cls, input)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5383d6a1672201b4ebefbaed0915f3c2}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5383d6a1672201b4ebefbaed0915f3c2}} 
+def {\bfseries check\+\_\+input\+\_\+values} (cls, input\+\_\+values)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5051b27db956b11282fa488036158f27}{expand}} (cls, input, name\+\_\+func=None, doc\+\_\+func=None, $\ast$$\ast$legacy)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a05d68a0910ac5bc5b1136ddad9c896a5}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a05d68a0910ac5bc5b1136ddad9c896a5}} 
+def {\bfseries param\+\_\+as\+\_\+standalone\+\_\+func} (cls, p, func, name)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ab4333694f712e362a86e73564daef4eb}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_ab4333694f712e362a86e73564daef4eb}} 
+def {\bfseries to\+\_\+safe\+\_\+name} (cls, s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a0c27d341ee3a2178eacd020326c02269}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a0c27d341ee3a2178eacd020326c02269}} 
+{\bfseries get\+\_\+input}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a1107701ccce67924c8f473db0aa437e2}} 
+{\bfseries doc\+\_\+func}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} Parameterize a test case::
+
+        class TestInt:
+            @parameterized([
+                ("A", 10),
+                ("F", 15),
+                param("10", 42, base=42)
+            ])
+            def test_int(self, input, expected, base=16):
+                actual = int(input, base=base)
+                assert_equal(actual, expected)
+
+        @parameterized([
+            (2, 3, 5)
+            (3, 5, 8),
+        ])
+        def test_add(a, b, expected):
+            assert_equal(a + b, expected)\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5051b27db956b11282fa488036158f27}\label{classnumpy_1_1testing_1_1__private_1_1parameterized_1_1parameterized_a5051b27db956b11282fa488036158f27}} 
+\index{numpy.testing.\_private.parameterized.parameterized@{numpy.testing.\_private.parameterized.parameterized}!expand@{expand}}
+\index{expand@{expand}!numpy.testing.\_private.parameterized.parameterized@{numpy.testing.\_private.parameterized.parameterized}}
+\doxysubsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+parameterized.\+parameterized.\+expand (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{input,  }\item[{}]{name\+\_\+func = {\ttfamily None},  }\item[{}]{doc\+\_\+func = {\ttfamily None},  }\item[{$\ast$$\ast$}]{legacy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} A "brute force" method of parameterizing test cases. Creates new
+    test cases and injects them into the namespace that the wrapped
+    function is being defined in. Useful for parameterizing tests in
+    subclasses of 'UnitTest', where Nose test generators don't work.
+
+    >>> @parameterized.expand([("foo", 1, 2)])
+    ... def test_add1(name, input, expected):
+    ...     actual = add1(input)
+    ...     assert_equal(actual, expected)
+    ...
+    >>> locals()
+    ... 'test_add1_foo_0': <function ...> ...
+    >>>\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/testing/\+\_\+private/parameterized.\+py\end{DoxyCompactItemize}

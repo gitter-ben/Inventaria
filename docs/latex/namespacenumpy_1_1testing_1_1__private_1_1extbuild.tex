@@ -1,0 +1,88 @@
+\hypertarget{namespacenumpy_1_1testing_1_1__private_1_1extbuild}{}\doxysection{numpy.\+testing.\+\_\+private.\+extbuild Namespace Reference}
+\label{namespacenumpy_1_1testing_1_1__private_1_1extbuild}\index{numpy.testing.\_private.extbuild@{numpy.testing.\_private.extbuild}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1testing_1_1__private_1_1extbuild_a001e226feef64a48ed9f66472145d5a0}{build\+\_\+and\+\_\+import\+\_\+extension}} (modname, functions, $\ast$prologue=\char`\"{}\char`\"{}, build\+\_\+dir=None, include\+\_\+dirs=\mbox{[}$\,$\mbox{]}, more\+\_\+init=\char`\"{}\char`\"{})
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1testing_1_1__private_1_1extbuild_ad5f6261e17eb1b56cc455aa33ef6b4d1}{compile\+\_\+extension\+\_\+module}} (name, builddir, include\+\_\+dirs, source\+\_\+string, libraries=\mbox{[}$\,$\mbox{]}, library\+\_\+dirs=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1extbuild_a9b952dd09327bf7e78c06c1ea4e2fdcf}\label{namespacenumpy_1_1testing_1_1__private_1_1extbuild_a9b952dd09327bf7e78c06c1ea4e2fdcf}} 
+def {\bfseries build} (cfile, outputfilename, compile\+\_\+extra, link\+\_\+extra, include\+\_\+dirs, libraries, library\+\_\+dirs)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1extbuild_acd8d2072fe70b716ed4a6e127720de10}\label{namespacenumpy_1_1testing_1_1__private_1_1extbuild_acd8d2072fe70b716ed4a6e127720de10}} 
+def {\bfseries get\+\_\+so\+\_\+suffix} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Build a c-extension module on-the-fly in tests.
+See build_and_import_extensions for usage hints\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1extbuild_a001e226feef64a48ed9f66472145d5a0}\label{namespacenumpy_1_1testing_1_1__private_1_1extbuild_a001e226feef64a48ed9f66472145d5a0}} 
+\index{numpy.testing.\_private.extbuild@{numpy.testing.\_private.extbuild}!build\_and\_import\_extension@{build\_and\_import\_extension}}
+\index{build\_and\_import\_extension@{build\_and\_import\_extension}!numpy.testing.\_private.extbuild@{numpy.testing.\_private.extbuild}}
+\doxysubsubsection{\texorpdfstring{build\_and\_import\_extension()}{build\_and\_import\_extension()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+extbuild.\+build\+\_\+and\+\_\+import\+\_\+extension (\begin{DoxyParamCaption}\item[{}]{modname,  }\item[{}]{functions,  }\item[{$\ast$}]{prologue = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{build\+\_\+dir = {\ttfamily None},  }\item[{}]{include\+\_\+dirs = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{more\+\_\+init = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build and imports a c-extension module `modname` from a list of function
+fragments `functions`.
+
+
+Parameters
+----------
+functions : list of fragments
+    Each fragment is a sequence of func_name, calling convention, snippet.
+prologue : string
+    Code to precede the rest, usually extra ``#include`` or ``#define``
+    macros.
+build_dir : pathlib.Path
+    Where to build the module, usually a temporary directory
+include_dirs : list
+    Extra directories to find include files when compiling
+more_init : string
+    Code to appear in the module PyMODINIT_FUNC
+
+Returns
+-------
+out: module
+    The module will have been loaded and is ready for use
+
+Examples
+--------
+>>> functions = [("test_bytes", "METH_O", \"\"\"
+    if ( !PyBytesCheck(args)) {
+        Py_RETURN_FALSE;
+    }
+    Py_RETURN_TRUE;
+\"\"\")]
+>>> mod = build_and_import_extension("testme", functions)
+>>> assert not mod.test_bytes(u'abc')
+>>> assert mod.test_bytes(b'abc')
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1testing_1_1__private_1_1extbuild_ad5f6261e17eb1b56cc455aa33ef6b4d1}\label{namespacenumpy_1_1testing_1_1__private_1_1extbuild_ad5f6261e17eb1b56cc455aa33ef6b4d1}} 
+\index{numpy.testing.\_private.extbuild@{numpy.testing.\_private.extbuild}!compile\_extension\_module@{compile\_extension\_module}}
+\index{compile\_extension\_module@{compile\_extension\_module}!numpy.testing.\_private.extbuild@{numpy.testing.\_private.extbuild}}
+\doxysubsubsection{\texorpdfstring{compile\_extension\_module()}{compile\_extension\_module()}}
+{\footnotesize\ttfamily def numpy.\+testing.\+\_\+private.\+extbuild.\+compile\+\_\+extension\+\_\+module (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{builddir,  }\item[{}]{include\+\_\+dirs,  }\item[{}]{source\+\_\+string,  }\item[{}]{libraries = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{library\+\_\+dirs = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build an extension module and return the filename of the resulting
+native code file.
+
+Parameters
+----------
+name : string
+    name of the module, possibly including dots if it is a module inside a
+    package.
+builddir : pathlib.Path
+    Where to build the module, usually a temporary directory
+include_dirs : list
+    Extra directories to find include files when compiling
+libraries : list
+    Libraries to link into the extension module
+library_dirs: list
+    Where to find the libraries, ``-L`` passed to the linker
+\end{DoxyVerb}
+ 

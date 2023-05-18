@@ -1,0 +1,61 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart}{}\doxysection{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Line\+Start Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart}\index{pkg\_resources.\_vendor.pyparsing.LineStart@{pkg\_resources.\_vendor.pyparsing.LineStart}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Line\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+Line\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_a0ccd31e14b4e89bc2d1ddb250c58b268}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_a0ccd31e14b4e89bc2d1ddb250c58b268}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_a9b6bf2a434c9abe1522dd1c6884cfff4}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_a9b6bf2a434c9abe1522dd1c6884cfff4}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_acffeb01aa42138e4ddf5d24102836be5}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1LineStart_acffeb01aa42138e4ddf5d24102836be5}} 
+{\bfseries errmsg}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Matches if current position is at the beginning of a line within the parse string
+
+Example::
+
+    test = '''\
+    AAA this line
+    AAA and this line
+      AAA but not this one
+    B AAA and definitely not this one
+    '''
+
+    for t in (LineStart() + 'AAA' + restOfLine).searchString(test):
+        print(t)
+
+Prints::
+    ['AAA', ' this line']
+    ['AAA', ' and this line']    \end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/pyparsing.\+py\end{DoxyCompactItemize}

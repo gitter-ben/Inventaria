@@ -1,0 +1,165 @@
+\hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax}{}\doxysection{pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax Class Reference}
+\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax}\index{pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a610657306ddf232dde5bb68cf493ce13}{get\+\_\+theme}} (cls, Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}}\mbox{]} name)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aea46e4214bbeb1acf187ebffdae102d3}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aea46e4214bbeb1acf187ebffdae102d3}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str code, Union\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1lexer_1_1Lexer}{Lexer}}, str\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a808a4e22fa8c34f00978e1cc9b018bcd}{lexer}}, $\ast$Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}}\mbox{]} theme=DEFAULT\+\_\+\+THEME, bool dedent=False, bool line\+\_\+numbers=False, int start\+\_\+line=1, Optional\mbox{[}Tuple\mbox{[}int, int\mbox{]}\mbox{]} line\+\_\+range=None, Optional\mbox{[}Set\mbox{[}int\mbox{]}\mbox{]} highlight\+\_\+lines=None, Optional\mbox{[}int\mbox{]} code\+\_\+width=None, int tab\+\_\+size=4, bool word\+\_\+wrap=False, Optional\mbox{[}str\mbox{]} background\+\_\+color=None, bool indent\+\_\+guides=False)
+\item 
+\char`\"{}Syntax\char`\"{} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a4166f102175e4d47dad36b159f8577aa}{from\+\_\+path}} (cls, str path, str encoding=\char`\"{}utf-\/8\char`\"{}, Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}}\mbox{]} theme=DEFAULT\+\_\+\+THEME, bool dedent=False, bool line\+\_\+numbers=False, Optional\mbox{[}Tuple\mbox{[}int, int\mbox{]}\mbox{]} line\+\_\+range=None, int start\+\_\+line=1, Optional\mbox{[}Set\mbox{[}int\mbox{]}\mbox{]} highlight\+\_\+lines=None, Optional\mbox{[}int\mbox{]} code\+\_\+width=None, int tab\+\_\+size=4, bool word\+\_\+wrap=False, Optional\mbox{[}str\mbox{]} background\+\_\+color=None, bool indent\+\_\+guides=False)
+\item 
+Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1lexer_1_1Lexer}{Lexer}}\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a808a4e22fa8c34f00978e1cc9b018bcd}{lexer}} (self)
+\item 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1text_1_1Text}{Text}} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ad9a7c87e3b334caff74b9898b48cbbe1}{highlight}} (self, str code, Optional\mbox{[}Tuple\mbox{[}int, int\mbox{]}\mbox{]} line\+\_\+range=None)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a0766dabe695b51e3072f93e552c0cc6a}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a0766dabe695b51e3072f93e552c0cc6a}} 
+\char`\"{}Measurement\char`\"{} {\bfseries \+\_\+\+\_\+rich\+\_\+measure\+\_\+\+\_\+} (self, \char`\"{}Console\char`\"{} console, \char`\"{}Console\+Options\char`\"{} options)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a7a3533316eeb2c8f52d8d1b48d8c6a15}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a7a3533316eeb2c8f52d8d1b48d8c6a15}} 
+Render\+Result {\bfseries \+\_\+\+\_\+rich\+\_\+console\+\_\+\+\_\+} (self, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1console_1_1Console}{Console}} console, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1console_1_1ConsoleOptions}{Console\+Options}} options)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aafddf0cf333f0731c3441a6a0ee081cb}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aafddf0cf333f0731c3441a6a0ee081cb}} 
+{\bfseries code}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a165e3dce6c4537a78bb94ecc75850439}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a165e3dce6c4537a78bb94ecc75850439}} 
+{\bfseries dedent}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a26494689f89e3f2bbd0b442cce327350}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a26494689f89e3f2bbd0b442cce327350}} 
+{\bfseries line\+\_\+numbers}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a480e704dd9143be494048cbae879610a}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a480e704dd9143be494048cbae879610a}} 
+{\bfseries start\+\_\+line}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aa9a72517c5370ee1bcd34214472aeda2}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_aa9a72517c5370ee1bcd34214472aeda2}} 
+{\bfseries line\+\_\+range}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a8dfa1220853a50836c8a430f1f5d2d4a}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a8dfa1220853a50836c8a430f1f5d2d4a}} 
+{\bfseries highlight\+\_\+lines}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ab0e058a76275c014b8c296dab6cd32b5}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ab0e058a76275c014b8c296dab6cd32b5}} 
+{\bfseries code\+\_\+width}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ab118c5794b170902899f4342567ea3d4}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ab118c5794b170902899f4342567ea3d4}} 
+{\bfseries tab\+\_\+size}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a4913e87775ebac0dae2d4dda903adc48}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a4913e87775ebac0dae2d4dda903adc48}} 
+{\bfseries word\+\_\+wrap}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a214cb85fa0fb48930e070f5d04ef67c4}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a214cb85fa0fb48930e070f5d04ef67c4}} 
+{\bfseries background\+\_\+color}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a21e8f3a57506da6ab8a6d76f00d6bc12}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a21e8f3a57506da6ab8a6d76f00d6bc12}} 
+{\bfseries background\+\_\+style}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a2073a19b15a51b77244295339295e87f}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a2073a19b15a51b77244295339295e87f}} 
+{\bfseries indent\+\_\+guides}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Construct a Syntax object to render syntax highlighted code.
+
+Args:
+    code (str): Code to highlight.
+    lexer (Lexer | str): Lexer to use (see https://pygments.org/docs/lexers/)
+    theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to "monokai".
+    dedent (bool, optional): Enable stripping of initial whitespace. Defaults to False.
+    line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.
+    start_line (int, optional): Starting number for line numbers. Defaults to 1.
+    line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.
+    highlight_lines (Set[int]): A set of line numbers to highlight.
+    code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.
+    tab_size (int, optional): Size of tabs. Defaults to 4.
+    word_wrap (bool, optional): Enable word wrapping.
+    background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.
+    indent_guides (bool, optional): Show indent guides. Defaults to False.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a4166f102175e4d47dad36b159f8577aa}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a4166f102175e4d47dad36b159f8577aa}} 
+\index{pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}!from\_path@{from\_path}}
+\index{from\_path@{from\_path}!pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}}
+\doxysubsubsection{\texorpdfstring{from\_path()}{from\_path()}}
+{\footnotesize\ttfamily  \char`\"{}Syntax\char`\"{} pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax.\+from\+\_\+path (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{str}]{path,  }\item[{str }]{encoding = {\ttfamily \char`\"{}utf-\/8\char`\"{}},  }\item[{Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}}\mbox{]} }]{theme = {\ttfamily DEFAULT\+\_\+THEME},  }\item[{bool }]{dedent = {\ttfamily False},  }\item[{bool }]{line\+\_\+numbers = {\ttfamily False},  }\item[{Optional\mbox{[}Tuple\mbox{[}int, int\mbox{]}\mbox{]} }]{line\+\_\+range = {\ttfamily None},  }\item[{int }]{start\+\_\+line = {\ttfamily 1},  }\item[{Optional\mbox{[}Set\mbox{[}int\mbox{]}\mbox{]} }]{highlight\+\_\+lines = {\ttfamily None},  }\item[{Optional\mbox{[}int\mbox{]} }]{code\+\_\+width = {\ttfamily None},  }\item[{int }]{tab\+\_\+size = {\ttfamily 4},  }\item[{bool }]{word\+\_\+wrap = {\ttfamily False},  }\item[{Optional\mbox{[}str\mbox{]} }]{background\+\_\+color = {\ttfamily None},  }\item[{bool }]{indent\+\_\+guides = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Construct a Syntax object from a file.
+
+Args:
+    path (str): Path to file to highlight.
+    encoding (str): Encoding of file.
+    theme (str, optional): Color theme, aka Pygments style (see https://pygments.org/docs/styles/#getting-a-list-of-available-styles). Defaults to "emacs".
+    dedent (bool, optional): Enable stripping of initial whitespace. Defaults to True.
+    line_numbers (bool, optional): Enable rendering of line numbers. Defaults to False.
+    start_line (int, optional): Starting number for line numbers. Defaults to 1.
+    line_range (Tuple[int, int], optional): If given should be a tuple of the start and end line to render.
+    highlight_lines (Set[int]): A set of line numbers to highlight.
+    code_width: Width of code to render (not including line numbers), or ``None`` to use all available width.
+    tab_size (int, optional): Size of tabs. Defaults to 4.
+    word_wrap (bool, optional): Enable word wrapping of code.
+    background_color (str, optional): Optional background color, or None to use theme color. Defaults to None.
+    indent_guides (bool, optional): Show indent guides. Defaults to False.
+
+Returns:
+    [Syntax]: A Syntax object that may be printed to the console
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a610657306ddf232dde5bb68cf493ce13}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a610657306ddf232dde5bb68cf493ce13}} 
+\index{pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}!get\_theme@{get\_theme}}
+\index{get\_theme@{get\_theme}!pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}}
+\doxysubsubsection{\texorpdfstring{get\_theme()}{get\_theme()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}} pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax.\+get\+\_\+theme (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1syntax_1_1SyntaxTheme}{Syntax\+Theme}}\mbox{]}}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a syntax theme instance.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ad9a7c87e3b334caff74b9898b48cbbe1}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_ad9a7c87e3b334caff74b9898b48cbbe1}} 
+\index{pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}!highlight@{highlight}}
+\index{highlight@{highlight}!pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1text_1_1Text}{Text}} pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax.\+highlight (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{code,  }\item[{Optional\mbox{[}Tuple\mbox{[}int, int\mbox{]}\mbox{]} }]{line\+\_\+range = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Highlight code and return a Text instance.
+
+Args:
+    code (str): Code to highlight.
+    line_range(Tuple[int, int], optional): Optional line range to highlight.
+
+Returns:
+    Text: A text instance containing highlighted syntax.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a808a4e22fa8c34f00978e1cc9b018bcd}\label{classpip_1_1__vendor_1_1rich_1_1syntax_1_1Syntax_a808a4e22fa8c34f00978e1cc9b018bcd}} 
+\index{pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}!lexer@{lexer}}
+\index{lexer@{lexer}!pip.\_vendor.rich.syntax.Syntax@{pip.\_vendor.rich.syntax.Syntax}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}}
+{\footnotesize\ttfamily  Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1lexer_1_1Lexer}{Lexer}}\mbox{]} pip.\+\_\+vendor.\+rich.\+syntax.\+Syntax.\+lexer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The lexer for this syntax, or None if no lexer was found.
+
+Tries to find the lexer by name if a string was passed to the constructor.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/rich/syntax.\+py\end{DoxyCompactItemize}

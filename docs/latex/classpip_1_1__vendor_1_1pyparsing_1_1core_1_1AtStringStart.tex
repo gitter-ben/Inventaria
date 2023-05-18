@@ -1,0 +1,53 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+At\+String\+Start Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart}\index{pip.\_vendor.pyparsing.core.AtStringStart@{pip.\_vendor.pyparsing.core.AtStringStart}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+At\+String\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+At\+String\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_a4635dc72f3f233c2355efaabc4c058a5}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_a4635dc72f3f233c2355efaabc4c058a5}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Union\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}, str\mbox{]} expr)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_ad36321854bc1b6cb9ecb2811fa67cb11}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_ad36321854bc1b6cb9ecb2811fa67cb11}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_a9e7414a240a9a54f3be46ff9fb10cf6f}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1AtStringStart_a9e7414a240a9a54f3be46ff9fb10cf6f}} 
+{\bfseries call\+Preparse}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Matches if expression matches at the beginning of the parse
+string::
+
+    AtStringStart(Word(nums)).parse_string("123")
+    # prints ["123"]
+
+    AtStringStart(Word(nums)).parse_string("    123")
+    # raises ParseException
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

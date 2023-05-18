@@ -1,0 +1,8 @@
+<map id="numpy.linalg.tests.test_linalg.LstsqCases" name="numpy.linalg.tests.test_linalg.LstsqCases">
+<area shape="rect" id="node1" title=" " alt="" coords="508,39,679,80"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestLstsq.html" title=" " alt="" coords="752,5,923,47"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestLstsqMatrix.html" title=" " alt="" coords="727,71,948,112"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgSquareTestCase.html" title=" " alt="" coords="237,5,447,47"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgTestCase.html" title=" " alt="" coords="5,39,176,80"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1LinalgNonsquareTestCase.html" title=" " alt="" coords="224,71,460,112"/>
+</map>

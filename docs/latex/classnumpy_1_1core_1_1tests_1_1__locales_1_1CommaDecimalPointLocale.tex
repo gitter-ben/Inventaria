@@ -1,0 +1,52 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale}{}\doxysection{numpy.\+core.\+tests.\+\_\+locales.\+Comma\+Decimal\+Point\+Locale Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale}\index{numpy.core.tests.\_locales.CommaDecimalPointLocale@{numpy.core.tests.\_locales.CommaDecimalPointLocale}}
+
+
+Inheritance diagram for numpy.\+core.\+tests.\+\_\+locales.\+Comma\+Decimal\+Point\+Locale\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_ace651d9abd8aa0a437456cd1472817ac}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_ace651d9abd8aa0a437456cd1472817ac}} 
+def {\bfseries setup\+\_\+method} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a1dacf5b62d91af701b56716032c1ce4c}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a1dacf5b62d91af701b56716032c1ce4c}} 
+def {\bfseries teardown\+\_\+method} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a2db23aa216e0697e611703d2ee6c5888}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a2db23aa216e0697e611703d2ee6c5888}} 
+def {\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_aa6cb5e7aedcebb9e4981f881e6fbf349}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_aa6cb5e7aedcebb9e4981f881e6fbf349}} 
+def {\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, type, value, traceback)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a7b02cc4f78985a3a552a1751d846f05d}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a7b02cc4f78985a3a552a1751d846f05d}} 
+{\bfseries cur\+\_\+locale}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a8c7ef176950dc8e26b6d4fbd33eb8021}\label{classnumpy_1_1core_1_1tests_1_1__locales_1_1CommaDecimalPointLocale_a8c7ef176950dc8e26b6d4fbd33eb8021}} 
+{\bfseries tst\+\_\+locale}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Sets LC_NUMERIC to a locale with comma as decimal point.
+
+Classes derived from this class have setup and teardown methods that run
+tests with locale.LC_NUMERIC set to a locale where commas (',') are used as
+the decimal point instead of periods ('.'). On exit the locale is restored
+to the initial locale. It also serves as context manager with the same
+effect. If no such locale is available, the test is skipped.
+
+.. versionadded:: 1.15.0\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/tests/\+\_\+locales.\+py\end{DoxyCompactItemize}

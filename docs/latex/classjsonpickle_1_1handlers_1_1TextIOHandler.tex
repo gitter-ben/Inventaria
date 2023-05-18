@@ -1,0 +1,68 @@
+\hypertarget{classjsonpickle_1_1handlers_1_1TextIOHandler}{}\doxysection{jsonpickle.\+handlers.\+Text\+IOHandler Class Reference}
+\label{classjsonpickle_1_1handlers_1_1TextIOHandler}\index{jsonpickle.handlers.TextIOHandler@{jsonpickle.handlers.TextIOHandler}}
+
+
+Inheritance diagram for jsonpickle.\+handlers.\+Text\+IOHandler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classjsonpickle_1_1handlers_1_1TextIOHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+handlers.\+Text\+IOHandler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classjsonpickle_1_1handlers_1_1TextIOHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1TextIOHandler_a62281125dcb815eaed457fc7c4ed3bc6}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1TextIOHandler_a3e97b0fb8ca69d4f027baf45ba641e98}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Serialize file descriptors as None because we cannot roundtrip\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1TextIOHandler_a62281125dcb815eaed457fc7c4ed3bc6}\label{classjsonpickle_1_1handlers_1_1TextIOHandler_a62281125dcb815eaed457fc7c4ed3bc6}} 
+\index{jsonpickle.handlers.TextIOHandler@{jsonpickle.handlers.TextIOHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.handlers.TextIOHandler@{jsonpickle.handlers.TextIOHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Text\+IOHandler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1TextIOHandler_a3e97b0fb8ca69d4f027baf45ba641e98}\label{classjsonpickle_1_1handlers_1_1TextIOHandler_a3e97b0fb8ca69d4f027baf45ba641e98}} 
+\index{jsonpickle.handlers.TextIOHandler@{jsonpickle.handlers.TextIOHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.handlers.TextIOHandler@{jsonpickle.handlers.TextIOHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Text\+IOHandler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore should never get called because flatten() returns None\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/handlers.\+py\end{DoxyCompactItemize}

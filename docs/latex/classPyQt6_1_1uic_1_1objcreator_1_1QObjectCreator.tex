@@ -1,0 +1,67 @@
+\hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator}{}\doxysection{Py\+Qt6.\+uic.\+objcreator.\+QObject\+Creator Class Reference}
+\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator}\index{PyQt6.uic.objcreator.QObjectCreator@{PyQt6.uic.objcreator.QObjectCreator}}
+
+
+Inheritance diagram for Py\+Qt6.\+uic.\+objcreator.\+QObject\+Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Py\+Qt6.\+uic.\+objcreator.\+QObject\+Creator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a04a5c1f275832e5667be68e5eb4a2210}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a04a5c1f275832e5667be68e5eb4a2210}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, creator\+Policy)
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a82517c29b0e62cb23560e178a2d5c52b}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a82517c29b0e62cb23560e178a2d5c52b}} 
+def {\bfseries create\+Qt\+Object} (self, ctor\+\_\+name, object\+\_\+name, ctor\+\_\+args=None, ctor\+\_\+kwargs=None, is\+\_\+attribute=True, no\+\_\+instantiation=False)
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_aa2e7a02869dbd1f00236fbdae008305e}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_aa2e7a02869dbd1f00236fbdae008305e}} 
+def {\bfseries invoke} (self, rname, method, args=())
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_afb726626b8cb8e5f2a0d0f75a9e27e17}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_afb726626b8cb8e5f2a0d0f75a9e27e17}} 
+def {\bfseries find\+QObject\+Type} (self, classname)
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_af433dcfb772b5b98b898eefc2a670c26}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_af433dcfb772b5b98b898eefc2a670c26}} 
+def {\bfseries get\+Slot} (self, obj, slotname)
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a97ebe5c23b3a412513cff91eb194baf4}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a97ebe5c23b3a412513cff91eb194baf4}} 
+def {\bfseries as\+String} (self, s)
+\item 
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a2249ff80fed6a5c395dec523b1e2ed87}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_a2249ff80fed6a5c395dec523b1e2ed87}} 
+def {\bfseries add\+Custom\+Widget} (self, widget\+Class, base\+Class, module)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_ae423ce1df27d36b892f9bf72ae7f4b95}{load\+\_\+plugin}} (filename, plugin\+\_\+globals, plugin\+\_\+locals)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_ae423ce1df27d36b892f9bf72ae7f4b95}\label{classPyQt6_1_1uic_1_1objcreator_1_1QObjectCreator_ae423ce1df27d36b892f9bf72ae7f4b95}} 
+\index{PyQt6.uic.objcreator.QObjectCreator@{PyQt6.uic.objcreator.QObjectCreator}!load\_plugin@{load\_plugin}}
+\index{load\_plugin@{load\_plugin}!PyQt6.uic.objcreator.QObjectCreator@{PyQt6.uic.objcreator.QObjectCreator}}
+\doxysubsubsection{\texorpdfstring{load\_plugin()}{load\_plugin()}}
+{\footnotesize\ttfamily def Py\+Qt6.\+uic.\+objcreator.\+QObject\+Creator.\+load\+\_\+plugin (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{plugin\+\_\+globals,  }\item[{}]{plugin\+\_\+locals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb} Load the plugin from the given file.  Return True if the plugin was
+loaded, or False if it wanted to be ignored.  Raise an exception if
+there was an error.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/\+Py\+Qt6/uic/objcreator.\+py\end{DoxyCompactItemize}

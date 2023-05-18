@@ -1,0 +1,74 @@
+\hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler}{}\doxysection{jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler Class Reference}
+\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler}\index{jsonpickle.ext.numpy.NumpyGenericHandler@{jsonpickle.ext.numpy.NumpyGenericHandler}}
+
+
+Inheritance diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a272aeb1b2013db75d65a7ec1b884f6ce}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a46e6bca9f8eec0e9c5ac06f16b3b01ce}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a272aeb1b2013db75d65a7ec1b884f6ce}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a272aeb1b2013db75d65a7ec1b884f6ce}} 
+\index{jsonpickle.ext.numpy.NumpyGenericHandler@{jsonpickle.ext.numpy.NumpyGenericHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.ext.numpy.NumpyGenericHandler@{jsonpickle.ext.numpy.NumpyGenericHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1UnpickleableNumpyGenericHandler_a54fe6e1c540497a33d2404a812902891}{jsonpickle.\+ext.\+numpy.\+Unpickleable\+Numpy\+Generic\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a46e6bca9f8eec0e9c5ac06f16b3b01ce}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a46e6bca9f8eec0e9c5ac06f16b3b01ce}} 
+\index{jsonpickle.ext.numpy.NumpyGenericHandler@{jsonpickle.ext.numpy.NumpyGenericHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.ext.numpy.NumpyGenericHandler@{jsonpickle.ext.numpy.NumpyGenericHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1UnpickleableNumpyGenericHandler_ae31b864018d16231f5ad241f06b7b8f4}{jsonpickle.\+ext.\+numpy.\+Unpickleable\+Numpy\+Generic\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/ext/numpy.\+py\end{DoxyCompactItemize}

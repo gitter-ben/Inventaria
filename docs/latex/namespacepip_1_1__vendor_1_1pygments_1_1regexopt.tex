@@ -1,0 +1,57 @@
+\hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+regexopt Namespace Reference}
+\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt}\index{pip.\_vendor.pygments.regexopt@{pip.\_vendor.pygments.regexopt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_ac94ba932ad102f050a1dd87b6380f9b4}\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_ac94ba932ad102f050a1dd87b6380f9b4}} 
+def {\bfseries make\+\_\+charset} (letters)
+\item 
+def \mbox{\hyperlink{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_ab425567de28ced1a1b468c7dbcf87bb5}{regex\+\_\+opt\+\_\+inner}} (strings, open\+\_\+paren)
+\item 
+def \mbox{\hyperlink{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_adb1769d0905e3fc345f3f52f56863116}{regex\+\_\+opt}} (strings, prefix=\textquotesingle{}\textquotesingle{}, suffix=\textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_aa7212e1679c465406a1bd05a45409618}\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_aa7212e1679c465406a1bd05a45409618}} 
+{\bfseries CS\+\_\+\+ESCAPE} = re.\+compile(r\textquotesingle{}\mbox{[}\textbackslash{}\mbox{[}\textbackslash{}$^\wedge$\textbackslash{}\textbackslash{}\textbackslash{}-\/\textbackslash{}\mbox{]}\mbox{]}\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_a25310df44e3b5f248a0d5d9f3a052908}\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_a25310df44e3b5f248a0d5d9f3a052908}} 
+{\bfseries FIRST\+\_\+\+ELEMENT} = itemgetter(0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    pygments.regexopt
+    ~~~~~~~~~~~~~~~~~
+
+    An algorithm that generates optimized regexes for matching long lists of
+    literal strings.
+
+    :copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_adb1769d0905e3fc345f3f52f56863116}\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_adb1769d0905e3fc345f3f52f56863116}} 
+\index{pip.\_vendor.pygments.regexopt@{pip.\_vendor.pygments.regexopt}!regex\_opt@{regex\_opt}}
+\index{regex\_opt@{regex\_opt}!pip.\_vendor.pygments.regexopt@{pip.\_vendor.pygments.regexopt}}
+\doxysubsubsection{\texorpdfstring{regex\_opt()}{regex\_opt()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pygments.\+regexopt.\+regex\+\_\+opt (\begin{DoxyParamCaption}\item[{}]{strings,  }\item[{}]{prefix = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{suffix = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a compiled regex that matches any string in the given list.
+
+The strings to match must be literal strings, not regexes.  They will be
+regex-escaped.
+
+*prefix* and *suffix* are pre- and appended to the final regex.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_ab425567de28ced1a1b468c7dbcf87bb5}\label{namespacepip_1_1__vendor_1_1pygments_1_1regexopt_ab425567de28ced1a1b468c7dbcf87bb5}} 
+\index{pip.\_vendor.pygments.regexopt@{pip.\_vendor.pygments.regexopt}!regex\_opt\_inner@{regex\_opt\_inner}}
+\index{regex\_opt\_inner@{regex\_opt\_inner}!pip.\_vendor.pygments.regexopt@{pip.\_vendor.pygments.regexopt}}
+\doxysubsubsection{\texorpdfstring{regex\_opt\_inner()}{regex\_opt\_inner()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pygments.\+regexopt.\+regex\+\_\+opt\+\_\+inner (\begin{DoxyParamCaption}\item[{}]{strings,  }\item[{}]{open\+\_\+paren }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a regex that matches any string in the sorted list of strings.\end{DoxyVerb}
+ 

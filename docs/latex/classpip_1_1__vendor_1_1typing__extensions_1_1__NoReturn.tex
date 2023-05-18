@@ -1,0 +1,48 @@
+\hypertarget{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn}{}\doxysection{pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+No\+Return Class Reference}
+\label{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn}\index{pip.\_vendor.typing\_extensions.\_NoReturn@{pip.\_vendor.typing\_extensions.\_NoReturn}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+No\+Return\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+No\+Return\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn_a1304cfb5d9cce1271951dfc489ee93ab}\label{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn_a1304cfb5d9cce1271951dfc489ee93ab}} 
+def {\bfseries \+\_\+\+\_\+instancecheck\+\_\+\+\_\+} (self, obj)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn_a38693f44e1094aabc772580ba06ec584}\label{classpip_1_1__vendor_1_1typing__extensions_1_1__NoReturn_a38693f44e1094aabc772580ba06ec584}} 
+def {\bfseries \+\_\+\+\_\+subclasscheck\+\_\+\+\_\+} (self, cls)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Special type indicating functions that never return.
+Example::
+
+  from typing import NoReturn
+
+  def stop() -> NoReturn:
+      raise Exception('no way')
+
+This type is invalid in other positions, e.g., ``List[NoReturn]``
+will fail in static type checkers.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/typing\+\_\+extensions.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Keyword Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword}\index{pip.\_vendor.pyparsing.core.CaselessKeyword@{pip.\_vendor.pyparsing.core.CaselessKeyword}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Keyword\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Caseless\+Keyword\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword_adae0e062d5b9ebb99522f1117bc76c7a}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CaselessKeyword_adae0e062d5b9ebb99522f1117bc76c7a}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str match\+\_\+string=\char`\"{}\char`\"{}, Optional\+Type\mbox{[}str\mbox{]} ident\+\_\+chars=None, $\ast$str match\+String=\char`\"{}\char`\"{}, Optional\+Type\mbox{[}str\mbox{]} ident\+Chars=None)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Caseless version of :class:`Keyword`.
+
+Example::
+
+    OneOrMore(CaselessKeyword("CMD")).parse_string("cmd CMD Cmd10")
+    # -> ['CMD', 'CMD']
+
+(Contrast with example for :class:`CaselessLiteral`.)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial}{}\doxysection{numpy.\+polynomial.\+polynomial.\+Polynomial Class Reference}
+\label{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial}\index{numpy.polynomial.polynomial.Polynomial@{numpy.polynomial.polynomial.Polynomial}}
+
+
+Inheritance diagram for numpy.\+polynomial.\+polynomial.\+Polynomial\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+polynomial.\+polynomial.\+Polynomial\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_ade1673f8a7b34480d6d6f98bcc61d034}\label{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_ade1673f8a7b34480d6d6f98bcc61d034}} 
+{\bfseries domain} = np.\+array(polydomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_adb4c184e3034e6a051fafd00ba149989}\label{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_adb4c184e3034e6a051fafd00ba149989}} 
+{\bfseries window} = np.\+array(polydomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_a3814f820c9d1ed2a60ed82ca50f9323c}\label{classnumpy_1_1polynomial_1_1polynomial_1_1Polynomial_a3814f820c9d1ed2a60ed82ca50f9323c}} 
+{\bfseries basis\+\_\+name} = None
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A power series class.
+
+The Polynomial class provides the standard Python numerical methods
+'+', '-', '*', '//', '%', 'divmod', '**', and '()' as well as the
+attributes and methods listed in the `ABCPolyBase` documentation.
+
+Parameters
+----------
+coef : array_like
+    Polynomial coefficients in order of increasing degree, i.e.,
+    ``(1, 2, 3)`` give ``1 + 2*x + 3*x**2``.
+domain : (2,) array_like, optional
+    Domain to use. The interval ``[domain[0], domain[1]]`` is mapped
+    to the interval ``[window[0], window[1]]`` by shifting and scaling.
+    The default value is [-1, 1].
+window : (2,) array_like, optional
+    Window, see `domain` for its use. The default value is [-1, 1].
+
+    .. versionadded:: 1.6.0\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/polynomial.\+py\end{DoxyCompactItemize}

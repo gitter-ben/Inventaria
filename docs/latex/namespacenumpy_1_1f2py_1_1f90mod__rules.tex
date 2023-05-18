@@ -1,0 +1,108 @@
+\hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules}{}\doxysection{numpy.\+f2py.\+f90mod\+\_\+rules Namespace Reference}
+\label{namespacenumpy_1_1f2py_1_1f90mod__rules}\index{numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a1a93b0463a50afbb3175f61cffae954f}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a1a93b0463a50afbb3175f61cffae954f}} 
+def {\bfseries findf90modules} (m)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a6c134e1b60c9f460d7c7f9e53751e95e}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a6c134e1b60c9f460d7c7f9e53751e95e}} 
+def {\bfseries buildhooks} (pymod)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a61c82246686bbfa50beeeccaa9812cb2}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a61c82246686bbfa50beeeccaa9812cb2}} 
+string {\bfseries f2py\+\_\+version} = \textquotesingle{}See \`{}f2py -\/v\`{}\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a2332160981af86969cb75bb814998777}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a2332160981af86969cb75bb814998777}} 
+dictionary {\bfseries options} = \{\}
+\item 
+string {\bfseries fgetdims1}
+\item 
+string {\bfseries fgetdims2}
+\item 
+string {\bfseries fgetdims2\+\_\+sa}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Build F90 module support for f2py2e.
+
+Copyright 2000 Pearu Peterson all rights reserved,
+Pearu Peterson <pearu@ioc.ee>
+Permission to use, modify, and distribute this software is given under the
+terms of the NumPy License.
+
+NO WARRANTY IS EXPRESSED OR IMPLIED.  USE AT YOUR OWN RISK.
+$Date: 2005/02/03 19:30:23 $
+Pearu Peterson\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a5175ac3f6c4049af47fc9f451520ad82}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a5175ac3f6c4049af47fc9f451520ad82}} 
+\index{numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}!fgetdims1@{fgetdims1}}
+\index{fgetdims1@{fgetdims1}!numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}}
+\doxysubsubsection{\texorpdfstring{fgetdims1}{fgetdims1}}
+{\footnotesize\ttfamily string numpy.\+f2py.\+f90mod\+\_\+rules.\+fgetdims1}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"{}"{}"{}\(\backslash\)}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{      external f2pysetdata}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{      logical ns}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{      integer r,i}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{      integer(\%d) s(*)}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{      ns = .FALSE.}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{      if (allocated(d)) then}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{         do i=1,r}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{            if ((size(d,i).ne.s(i)).and.(s(i).ge.0)) then}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{               ns = .TRUE.}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{            end if}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{         end do}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{         if (ns) then}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{            deallocate(d)}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{         end if}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{      end if}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{      if ((.not.allocated(d)).and.(s(1).ge.1)) then"{}"{}"{}} \% np.intp().itemsize}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a8d74c72d7ccaa3c69ec3c50a4d85176f}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a8d74c72d7ccaa3c69ec3c50a4d85176f}} 
+\index{numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}!fgetdims2@{fgetdims2}}
+\index{fgetdims2@{fgetdims2}!numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}}
+\doxysubsubsection{\texorpdfstring{fgetdims2}{fgetdims2}}
+{\footnotesize\ttfamily string numpy.\+f2py.\+f90mod\+\_\+rules.\+fgetdims2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"{}"{}"{}\(\backslash\)}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{      end if}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{      if (allocated(d)) then}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{         do i=1,r}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{            s(i) = size(d,i)}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{         end do}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{      end if}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{      flag = 1}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{      call f2pysetdata(d,allocated(d))"{}"{}"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacenumpy_1_1f2py_1_1f90mod__rules_a29fce955aa9492a60ff4f7539ead5d0b}\label{namespacenumpy_1_1f2py_1_1f90mod__rules_a29fce955aa9492a60ff4f7539ead5d0b}} 
+\index{numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}!fgetdims2\_sa@{fgetdims2\_sa}}
+\index{fgetdims2\_sa@{fgetdims2\_sa}!numpy.f2py.f90mod\_rules@{numpy.f2py.f90mod\_rules}}
+\doxysubsubsection{\texorpdfstring{fgetdims2\_sa}{fgetdims2\_sa}}
+{\footnotesize\ttfamily string numpy.\+f2py.\+f90mod\+\_\+rules.\+fgetdims2\+\_\+sa}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"{}"{}"{}\(\backslash\)}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{      end if}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{      if (allocated(d)) then}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{         do i=1,r}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{            s(i) = size(d,i)}}
+\DoxyCodeLine{6 \textcolor{stringliteral}{         end do}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{         !s(r) must be equal to len(d(1))}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{      end if}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{      flag = 2}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{      call f2pysetdata(d,allocated(d))"{}"{}"{}}}
+
+\end{DoxyCode}

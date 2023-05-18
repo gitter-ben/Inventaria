@@ -1,0 +1,46 @@
+\hypertarget{namespacenumpy_1_1doc_1_1constants}{}\doxysection{numpy.\+doc.\+constants Namespace Reference}
+\label{namespacenumpy_1_1doc_1_1constants}\index{numpy.doc.constants@{numpy.doc.constants}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_a9286a78125c5af7e49b0679ce7ae26eb}\label{namespacenumpy_1_1doc_1_1constants_a9286a78125c5af7e49b0679ce7ae26eb}} 
+def {\bfseries add\+\_\+newdoc} (module, name, doc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_aee44791edae19ce49f43ee89b53bfce7}\label{namespacenumpy_1_1doc_1_1constants_aee44791edae19ce49f43ee89b53bfce7}} 
+list {\bfseries constants} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_aed71f6309d4a3c35653b576678767cb1}\label{namespacenumpy_1_1doc_1_1constants_aed71f6309d4a3c35653b576678767cb1}} 
+list {\bfseries constants\+\_\+str} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_a0b651673e37e0a12babcdfba8f08f0e3}\label{namespacenumpy_1_1doc_1_1constants_a0b651673e37e0a12babcdfba8f08f0e3}} 
+{\bfseries s} = textwrap.\+dedent(doc).replace(\char`\"{}\textbackslash{}n\char`\"{}, \char`\"{}\textbackslash{}n \char`\"{})
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_a01402b553d972faf7b004eb684ad9c93}\label{namespacenumpy_1_1doc_1_1constants_a01402b553d972faf7b004eb684ad9c93}} 
+{\bfseries lines} = s.\+split(\char`\"{}\textbackslash{}n\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_ac96d7a31eacc122c04efa0d6276c87f4}\label{namespacenumpy_1_1doc_1_1constants_ac96d7a31eacc122c04efa0d6276c87f4}} 
+list {\bfseries new\+\_\+lines} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_af02120b319c9258f047808929b55d862}\label{namespacenumpy_1_1doc_1_1constants_af02120b319c9258f047808929b55d862}} 
+{\bfseries m} = re.\+match(r\textquotesingle{}$^\wedge$(\textbackslash{}s+)\mbox{[}-\/=\mbox{]}+\textbackslash{}s$\ast$\$\textquotesingle{}, line)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1doc_1_1constants_a3971dea96ec7481d3cdb1159ab2713a3}\label{namespacenumpy_1_1doc_1_1constants_a3971dea96ec7481d3cdb1159ab2713a3}} 
+{\bfseries prev} = textwrap.\+dedent(new\+\_\+lines.\+pop())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}=========
+Constants
+=========
+
+.. currentmodule:: numpy
+
+NumPy includes several constants:
+
+%(constant_list)s
+\end{DoxyVerb}
+ 

@@ -1,0 +1,60 @@
+\hypertarget{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre}{}\doxysection{numpy.\+polynomial.\+laguerre.\+Laguerre Class Reference}
+\label{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre}\index{numpy.polynomial.laguerre.Laguerre@{numpy.polynomial.laguerre.Laguerre}}
+
+
+Inheritance diagram for numpy.\+polynomial.\+laguerre.\+Laguerre\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+polynomial.\+laguerre.\+Laguerre\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_aa16a7bad03d29409b06936a6373e6fb9}\label{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_aa16a7bad03d29409b06936a6373e6fb9}} 
+{\bfseries domain} = np.\+array(lagdomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_ac353b07b061f7cb632ee5cf88e6dceba}\label{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_ac353b07b061f7cb632ee5cf88e6dceba}} 
+{\bfseries window} = np.\+array(lagdomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_a46baed46e83e701d900c4f832a4d2230}\label{classnumpy_1_1polynomial_1_1laguerre_1_1Laguerre_a46baed46e83e701d900c4f832a4d2230}} 
+string {\bfseries basis\+\_\+name} = \textquotesingle{}L\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A Laguerre series class.
+
+The Laguerre class provides the standard Python numerical methods
+'+', '-', '*', '//', '%', 'divmod', '**', and '()' as well as the
+attributes and methods listed in the `ABCPolyBase` documentation.
+
+Parameters
+----------
+coef : array_like
+    Laguerre coefficients in order of increasing degree, i.e,
+    ``(1, 2, 3)`` gives ``1*L_0(x) + 2*L_1(X) + 3*L_2(x)``.
+domain : (2,) array_like, optional
+    Domain to use. The interval ``[domain[0], domain[1]]`` is mapped
+    to the interval ``[window[0], window[1]]`` by shifting and scaling.
+    The default value is [0, 1].
+window : (2,) array_like, optional
+    Window, see `domain` for its use. The default value is [0, 1].
+
+    .. versionadded:: 1.6.0\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/laguerre.\+py\end{DoxyCompactItemize}

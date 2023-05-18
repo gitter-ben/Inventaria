@@ -1,0 +1,65 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+diagram.\+Converter\+State Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState}\index{pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_ae9eb2b670628250a80982c256233d197}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_ae9eb2b670628250a80982c256233d197}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Optional\mbox{[}dict\mbox{]} diagram\+\_\+kwargs=None)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a99e58526529e218d83538f7b988ab185}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a99e58526529e218d83538f7b988ab185}} 
+def {\bfseries \+\_\+\+\_\+setitem\+\_\+\+\_\+} (self, int key, \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ElementState}{Element\+State}} value)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a4e4172c293378e58494f559a68204071}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a4e4172c293378e58494f559a68204071}} 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ElementState}{Element\+State}} {\bfseries \+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, int key)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a283bd7acbcf9ea7fe8542d18bb2ea60e}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a283bd7acbcf9ea7fe8542d18bb2ea60e}} 
+def {\bfseries \+\_\+\+\_\+delitem\+\_\+\+\_\+} (self, int key)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a9d8d43aa71a9bede0ec55e11f7bbd4c1}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a9d8d43aa71a9bede0ec55e11f7bbd4c1}} 
+def {\bfseries \+\_\+\+\_\+contains\+\_\+\+\_\+} (self, int key)
+\item 
+int \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a73d3240c27b38b4dcd9225f87295982c}{generate\+\_\+unnamed}} (self)
+\item 
+int \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a6b50b6d16bd485df2ba310e2a01c7141}{generate\+\_\+index}} (self)
+\item 
+def \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_af9a2cebb019dbe5c718f7615453b99f5}{extract\+\_\+into\+\_\+diagram}} (self, int el\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Stores some state that persists between recursions into the element tree
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_af9a2cebb019dbe5c718f7615453b99f5}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_af9a2cebb019dbe5c718f7615453b99f5}} 
+\index{pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}!extract\_into\_diagram@{extract\_into\_diagram}}
+\index{extract\_into\_diagram@{extract\_into\_diagram}!pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}}
+\doxysubsubsection{\texorpdfstring{extract\_into\_diagram()}{extract\_into\_diagram()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pyparsing.\+diagram.\+Converter\+State.\+extract\+\_\+into\+\_\+diagram (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{el\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Used when we encounter the same token twice in the same tree. When this
+happens, we replace all instances of that token with a terminal, and
+create a new subdiagram for the token
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a6b50b6d16bd485df2ba310e2a01c7141}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a6b50b6d16bd485df2ba310e2a01c7141}} 
+\index{pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}!generate\_index@{generate\_index}}
+\index{generate\_index@{generate\_index}!pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}}
+\doxysubsubsection{\texorpdfstring{generate\_index()}{generate\_index()}}
+{\footnotesize\ttfamily  int pip.\+\_\+vendor.\+pyparsing.\+diagram.\+Converter\+State.\+generate\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a number used to index a diagram
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a73d3240c27b38b4dcd9225f87295982c}\label{classpip_1_1__vendor_1_1pyparsing_1_1diagram_1_1ConverterState_a73d3240c27b38b4dcd9225f87295982c}} 
+\index{pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}!generate\_unnamed@{generate\_unnamed}}
+\index{generate\_unnamed@{generate\_unnamed}!pip.\_vendor.pyparsing.diagram.ConverterState@{pip.\_vendor.pyparsing.diagram.ConverterState}}
+\doxysubsubsection{\texorpdfstring{generate\_unnamed()}{generate\_unnamed()}}
+{\footnotesize\ttfamily  int pip.\+\_\+vendor.\+pyparsing.\+diagram.\+Converter\+State.\+generate\+\_\+unnamed (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a number used in the name of an otherwise unnamed diagram
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/diagram/\+\_\+\+\_\+init\+\_\+\+\_\+.\+py\end{DoxyCompactItemize}

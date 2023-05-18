@@ -1,0 +1,63 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Group Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group}\index{pip.\_vendor.pyparsing.core.Group@{pip.\_vendor.pyparsing.core.Group}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_ac68476e35be6cf4135896e9c41e60044}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_ac68476e35be6cf4135896e9c41e60044}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} expr, bool aslist=False)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_aee8e8a396e71787a0f03ac744af642a1}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_aee8e8a396e71787a0f03ac744af642a1}} 
+def {\bfseries post\+Parse} (self, instring, loc, tokenlist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_a1bac880a08858a39152805d64b144ce9}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1Group_a1bac880a08858a39152805d64b144ce9}} 
+{\bfseries save\+As\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Converter to return the matched tokens as a list - useful for
+returning tokens of :class:`ZeroOrMore` and :class:`OneOrMore` expressions.
+
+The optional ``aslist`` argument when set to True will return the
+parsed tokens as a Python list instead of a pyparsing ParseResults.
+
+Example::
+
+    ident = Word(alphas)
+    num = Word(nums)
+    term = ident | num
+    func = ident + Opt(delimited_list(term))
+    print(func.parse_string("fn a, b, 100"))
+    # -> ['fn', 'a', 'b', '100']
+
+    func = ident + Group(Opt(delimited_list(term)))
+    print(func.parse_string("fn a, b, 100"))
+    # -> ['fn', ['a', 'b', '100']]
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

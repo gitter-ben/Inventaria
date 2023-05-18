@@ -1,0 +1,55 @@
+\hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation}{}\doxysection{numpy.\+polynomial.\+tests.\+test\+\_\+polynomial.\+Test\+Evaluation Class Reference}
+\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation}\index{numpy.polynomial.tests.test\_polynomial.TestEvaluation@{numpy.polynomial.tests.test\_polynomial.TestEvaluation}}
+
+
+Collaboration diagram for numpy.\+polynomial.\+tests.\+test\+\_\+polynomial.\+Test\+Evaluation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_ac979093b285fefa3f1b790265d440a60}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_ac979093b285fefa3f1b790265d440a60}} 
+def {\bfseries test\+\_\+polyval} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a45fb4341b7b1a6f3218c4d34b688b4db}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a45fb4341b7b1a6f3218c4d34b688b4db}} 
+def {\bfseries test\+\_\+polyvalfromroots} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_af7a631d7b840848d0b25e7103ab2c44d}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_af7a631d7b840848d0b25e7103ab2c44d}} 
+def {\bfseries test\+\_\+polyval2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_ac5e8dcab42a409316b11d5c4c5695248}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_ac5e8dcab42a409316b11d5c4c5695248}} 
+def {\bfseries test\+\_\+polyval3d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a1e228e07c2341f4f620c46963c32945c}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a1e228e07c2341f4f620c46963c32945c}} 
+def {\bfseries test\+\_\+polygrid2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_aeb71db89065cf746948c5500a274d2a0}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_aeb71db89065cf746948c5500a274d2a0}} 
+def {\bfseries test\+\_\+polygrid3d} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a95a8f0551eb3d8ba513fc7717b68d71a}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a95a8f0551eb3d8ba513fc7717b68d71a}} 
+{\bfseries c1d} = np.\+array(\mbox{[}1., 2., 3.\mbox{]})
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a7ffe5421ece9cea9beaf8e9c0dba58b3}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a7ffe5421ece9cea9beaf8e9c0dba58b3}} 
+{\bfseries c2d} = np.\+einsum(\textquotesingle{}i,j-\/$>$ij\textquotesingle{}, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a2a4ad6f0366dcc3f840f08239e7709b8}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a2a4ad6f0366dcc3f840f08239e7709b8}} 
+{\bfseries c3d} = np.\+einsum(\textquotesingle{}i,j,k-\/$>$ijk\textquotesingle{}, c1d, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_abf220a1bcde2f3fdd92736ebde94ff1c}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_abf220a1bcde2f3fdd92736ebde94ff1c}} 
+int {\bfseries x} = np.\+random.\+random((3, 5))$\ast$2 -\/ 1
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a8169409047fd07dce7588fe2c25d59bf}\label{classnumpy_1_1polynomial_1_1tests_1_1test__polynomial_1_1TestEvaluation_a8169409047fd07dce7588fe2c25d59bf}} 
+{\bfseries y} = poly.\+polyval(x, \mbox{[}1., 2., 3.\mbox{]})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/tests/test\+\_\+polynomial.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,145 @@
+\hypertarget{namespacesetup}{}\doxysection{setup Namespace Reference}
+\label{namespacesetup}\index{setup@{setup}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacesetup_adba96c1f0a1aacc8b1f488771afe594f}\label{namespacesetup_adba96c1f0a1aacc8b1f488771afe594f}} 
+list {\bfseries macros} = \mbox{[}(\char`\"{}NPY\+\_\+\+NO\+\_\+\+DEPRECATED\+\_\+\+API\char`\"{}, 0)\mbox{]}
+\item 
+{\bfseries checks}
+\item 
+\mbox{\Hypertarget{namespacesetup_aa60ae1313c23896bd1dc0c5f813c5ba8}\label{namespacesetup_aa60ae1313c23896bd1dc0c5f813c5ba8}} 
+list {\bfseries extensions} = \mbox{[}checks\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacesetup_a1bf56ea61d1e9865f316116dca2fbfea}\label{namespacesetup_a1bf56ea61d1e9865f316116dca2fbfea}} 
+{\bfseries ext\+\_\+modules}
+\item 
+{\bfseries limited\+\_\+api}
+\item 
+\mbox{\Hypertarget{namespacesetup_a7951a015fdeba223e18f4bc68c9a6e5e}\label{namespacesetup_a7951a015fdeba223e18f4bc68c9a6e5e}} 
+{\bfseries path} = dirname(\+\_\+\+\_\+file\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{namespacesetup_abb4577a57e80caeb45d3c457c50b53bb}\label{namespacesetup_abb4577a57e80caeb45d3c457c50b53bb}} 
+{\bfseries src\+\_\+dir} = join(dirname(path), \textquotesingle{}..\textquotesingle{}, \textquotesingle{}src\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacesetup_aaa430c589e991846e08ecb9b132e546d}\label{namespacesetup_aaa430c589e991846e08ecb9b132e546d}} 
+list {\bfseries defs} = \mbox{[}(\textquotesingle{}NPY\+\_\+\+NO\+\_\+\+DEPRECATED\+\_\+\+API\textquotesingle{}, 0)\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacesetup_ade94c7b653e62bdd1fdba12047cca775}\label{namespacesetup_ade94c7b653e62bdd1fdba12047cca775}} 
+{\bfseries inc\+\_\+path} = np.\+get\+\_\+include()
+\item 
+list {\bfseries lib\+\_\+path}
+\item 
+{\bfseries extending}
+\item 
+{\bfseries distributions}
+\item 
+\mbox{\Hypertarget{namespacesetup_ab3a7a0638d76a01367c5bc3cc699447f}\label{namespacesetup_ab3a7a0638d76a01367c5bc3cc699447f}} 
+{\bfseries name}
+\item 
+\mbox{\Hypertarget{namespacesetup_a2aa722b36a933088812b50ea79b97a5c}\label{namespacesetup_a2aa722b36a933088812b50ea79b97a5c}} 
+{\bfseries version}
+\item 
+\mbox{\Hypertarget{namespacesetup_a13510753661cb74083a0c664db11dde9}\label{namespacesetup_a13510753661cb74083a0c664db11dde9}} 
+{\bfseries zip\+\_\+safe}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Provide python-space access to the functions exposed in numpy/__init__.pxd
+for testing.
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb}Build an example package using the limited Python C API.
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb}Build the Cython demonstrations of low-level access to NumPy random
+
+Usage: python setup.py build_ext -i
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetup_acc4a649fba9fedfaf1f9c200e197e96b}\label{namespacesetup_acc4a649fba9fedfaf1f9c200e197e96b}} 
+\index{setup@{setup}!checks@{checks}}
+\index{checks@{checks}!setup@{setup}}
+\doxysubsubsection{\texorpdfstring{checks}{checks}}
+{\footnotesize\ttfamily setup.\+checks}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  Extension(}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}checks"{}},}
+\DoxyCodeLine{3     sources=[os.path.join(\textcolor{stringliteral}{'.'}, \textcolor{stringliteral}{"{}checks.pyx"{}})],}
+\DoxyCodeLine{4     include\_dirs=[np.get\_include()],}
+\DoxyCodeLine{5     define\_macros=macros,}
+\DoxyCodeLine{6 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesetup_a6c5e2e54ed09e9c891f2e1d3fb227eda}\label{namespacesetup_a6c5e2e54ed09e9c891f2e1d3fb227eda}} 
+\index{setup@{setup}!distributions@{distributions}}
+\index{distributions@{distributions}!setup@{setup}}
+\doxysubsubsection{\texorpdfstring{distributions}{distributions}}
+{\footnotesize\ttfamily setup.\+distributions}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  Extension(\textcolor{stringliteral}{"{}extending\_distributions"{}},}
+\DoxyCodeLine{2                           sources=[join(\textcolor{stringliteral}{'.'}, \textcolor{stringliteral}{'extending\_distributions.pyx'})],}
+\DoxyCodeLine{3                           include\_dirs=[inc\_path],}
+\DoxyCodeLine{4                           library\_dirs=lib\_path,}
+\DoxyCodeLine{5                           libraries=[\textcolor{stringliteral}{'npyrandom'}, \textcolor{stringliteral}{'npymath'}],}
+\DoxyCodeLine{6                           define\_macros=defs,}
+\DoxyCodeLine{7                           )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesetup_afca45858e24c87f02058342bacc38797}\label{namespacesetup_afca45858e24c87f02058342bacc38797}} 
+\index{setup@{setup}!extending@{extending}}
+\index{extending@{extending}!setup@{setup}}
+\doxysubsubsection{\texorpdfstring{extending}{extending}}
+{\footnotesize\ttfamily setup.\+extending}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  Extension(\textcolor{stringliteral}{"{}extending"{}},}
+\DoxyCodeLine{2                       sources=[join(\textcolor{stringliteral}{'.'}, \textcolor{stringliteral}{'extending.pyx'})],}
+\DoxyCodeLine{3                       include\_dirs=[}
+\DoxyCodeLine{4                             np.get\_include(),}
+\DoxyCodeLine{5                             join(path, \textcolor{stringliteral}{'..'}, \textcolor{stringliteral}{'..'})}
+\DoxyCodeLine{6                         ],}
+\DoxyCodeLine{7                       define\_macros=defs,}
+\DoxyCodeLine{8                       )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesetup_a3748e429c43a6f3cd9a766a9cf179be5}\label{namespacesetup_a3748e429c43a6f3cd9a766a9cf179be5}} 
+\index{setup@{setup}!lib\_path@{lib\_path}}
+\index{lib\_path@{lib\_path}!setup@{setup}}
+\doxysubsubsection{\texorpdfstring{lib\_path}{lib\_path}}
+{\footnotesize\ttfamily list setup.\+lib\+\_\+path}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     abspath(join(np.get\_include(), \textcolor{stringliteral}{'..'}, \textcolor{stringliteral}{'..'}, \textcolor{stringliteral}{'random'}, \textcolor{stringliteral}{'lib'})),}
+\DoxyCodeLine{3     abspath(join(np.get\_include(), \textcolor{stringliteral}{'..'}, \textcolor{stringliteral}{'lib'}))}
+\DoxyCodeLine{4 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesetup_a3afacb0d373dc6eb74bf83e0529b1249}\label{namespacesetup_a3afacb0d373dc6eb74bf83e0529b1249}} 
+\index{setup@{setup}!limited\_api@{limited\_api}}
+\index{limited\_api@{limited\_api}!setup@{setup}}
+\doxysubsubsection{\texorpdfstring{limited\_api}{limited\_api}}
+{\footnotesize\ttfamily setup.\+limited\+\_\+api}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  Extension(}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}limited\_api"{}},}
+\DoxyCodeLine{3     sources=[os.path.join(\textcolor{stringliteral}{'.'}, \textcolor{stringliteral}{"{}limited\_api.c"{}})],}
+\DoxyCodeLine{4     include\_dirs=[np.get\_include()],}
+\DoxyCodeLine{5     define\_macros=macros,}
+\DoxyCodeLine{6 )}
+
+\end{DoxyCode}

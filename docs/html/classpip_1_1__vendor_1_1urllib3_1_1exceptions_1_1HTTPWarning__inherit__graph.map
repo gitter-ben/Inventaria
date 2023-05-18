@@ -1,0 +1,12 @@
+<map id="pip._vendor.urllib3.exceptions.HTTPWarning" name="pip._vendor.urllib3.exceptions.HTTPWarning">
+<area shape="rect" id="node1" title=" " alt="" coords="128,104,349,145"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEnginePlatformWarning.html" title=" " alt="" coords="397,5,664,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1DependencyWarning.html" title=" " alt="" coords="420,71,641,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1SNIMissingWarning.html" title=" " alt="" coords="420,136,641,177"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1SecurityWarning.html" title=" " alt="" coords="420,201,641,243"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,111,80,138"/>
+<area shape="rect" id="node7" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1InsecurePlatformWarning.html" title=" " alt="" coords="712,103,933,144"/>
+<area shape="rect" id="node8" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1InsecureRequestWarning.html" title=" " alt="" coords="712,168,933,209"/>
+<area shape="rect" id="node9" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1SubjectAltNameWarning.html" title=" " alt="" coords="712,233,933,275"/>
+<area shape="rect" id="node10" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1SystemTimeWarning.html" title=" " alt="" coords="712,299,933,340"/>
+</map>

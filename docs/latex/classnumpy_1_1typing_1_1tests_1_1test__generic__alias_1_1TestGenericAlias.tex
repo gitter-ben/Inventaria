@@ -1,0 +1,72 @@
+\hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias}{}\doxysection{numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias Class Reference}
+\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias}\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a63b290a64a424c1f940c5a715c5b271b}{test\+\_\+pass}} (self, str name, Func\+Type func)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a05a36db28445603e66e23bda886ae0c9}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a05a36db28445603e66e23bda886ae0c9}} 
+None {\bfseries test\+\_\+copy} (self, str name, Func\+Type func)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a22ffb44b490dc10f745aaa37e53ee858}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a22ffb44b490dc10f745aaa37e53ee858}} 
+None {\bfseries test\+\_\+dir} (self)
+\item 
+None \mbox{\hyperlink{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ab1e71a2d74ab53cef12bdec39e863774}{test\+\_\+py311\+\_\+features}} (self, str name, Func\+Type func, tuple\mbox{[}str, int\mbox{]} dev\+\_\+version)
+\item 
+None \mbox{\hyperlink{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ad16965d2612b1c96ccf9a671c4576eb5}{test\+\_\+weakref}} (self)
+\item 
+None \mbox{\hyperlink{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a9786aafee22b04d78a57aeaeafad84b8}{test\+\_\+getattr}} (self, str name)
+\item 
+None \mbox{\hyperlink{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a41c078f480864d1aa3e08fa695680972}{test\+\_\+raise}} (self, str name, type\mbox{[}Base\+Exception\mbox{]} exc\+\_\+type, Func\+Type func)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Tests for `numpy._typing._generic_alias._GenericAlias`.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a9786aafee22b04d78a57aeaeafad84b8}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a9786aafee22b04d78a57aeaeafad84b8}} 
+\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}!test\_getattr@{test\_getattr}}
+\index{test\_getattr@{test\_getattr}!numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsubsection{\texorpdfstring{test\_getattr()}{test\_getattr()}}
+{\footnotesize\ttfamily  None numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias.\+test\+\_\+getattr (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test that `getattr` wraps around the underlying type,
+aka ``__origin__``.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a63b290a64a424c1f940c5a715c5b271b}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a63b290a64a424c1f940c5a715c5b271b}} 
+\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}!test\_pass@{test\_pass}}
+\index{test\_pass@{test\_pass}!numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsubsection{\texorpdfstring{test\_pass()}{test\_pass()}}
+{\footnotesize\ttfamily  None numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias.\+test\+\_\+pass (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{Func\+Type}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compare `types.GenericAlias` with its numpy-based backport.
+
+Checker whether ``func`` runs as intended and that both `GenericAlias`
+and `_GenericAlias` return the same result.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ab1e71a2d74ab53cef12bdec39e863774}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ab1e71a2d74ab53cef12bdec39e863774}} 
+\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}!test\_py311\_features@{test\_py311\_features}}
+\index{test\_py311\_features@{test\_py311\_features}!numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsubsection{\texorpdfstring{test\_py311\_features()}{test\_py311\_features()}}
+{\footnotesize\ttfamily  None numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias.\+test\+\_\+py311\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{Func\+Type}]{func,  }\item[{tuple\mbox{[}str, int\mbox{]}}]{dev\+\_\+version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test Python 3.11 features.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a41c078f480864d1aa3e08fa695680972}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_a41c078f480864d1aa3e08fa695680972}} 
+\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}!test\_raise@{test\_raise}}
+\index{test\_raise@{test\_raise}!numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsubsection{\texorpdfstring{test\_raise()}{test\_raise()}}
+{\footnotesize\ttfamily  None numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias.\+test\+\_\+raise (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{type\mbox{[}Base\+Exception\mbox{]}}]{exc\+\_\+type,  }\item[{Func\+Type}]{func }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test operations that are supposed to raise.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ad16965d2612b1c96ccf9a671c4576eb5}\label{classnumpy_1_1typing_1_1tests_1_1test__generic__alias_1_1TestGenericAlias_ad16965d2612b1c96ccf9a671c4576eb5}} 
+\index{numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}!test\_weakref@{test\_weakref}}
+\index{test\_weakref@{test\_weakref}!numpy.typing.tests.test\_generic\_alias.TestGenericAlias@{numpy.typing.tests.test\_generic\_alias.TestGenericAlias}}
+\doxysubsubsection{\texorpdfstring{test\_weakref()}{test\_weakref()}}
+{\footnotesize\ttfamily  None numpy.\+typing.\+tests.\+test\+\_\+generic\+\_\+alias.\+Test\+Generic\+Alias.\+test\+\_\+weakref (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test ``__weakref__``.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/typing/tests/test\+\_\+generic\+\_\+alias.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,27 @@
+<map id="jsonpickle.handlers.BaseHandler" name="jsonpickle.handlers.BaseHandler">
+<area shape="rect" id="node1" title=" " alt="" coords="116,463,300,504"/>
+<area shape="rect" id="node3" href="$classjsonpickle_1_1ext_1_1gmpy_1_1GmpyMPZHandler.html" title=" " alt="" coords="369,5,564,47"/>
+<area shape="rect" id="node4" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyBaseHandler.html" title=" " alt="" coords="361,71,572,112"/>
+<area shape="rect" id="node11" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasDfHandler.html" title=" " alt="" coords="359,136,574,177"/>
+<area shape="rect" id="node12" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler.html" title=" " alt="" coords="359,201,574,243"/>
+<area shape="rect" id="node15" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasIntervalHandler.html" title=" " alt="" coords="359,267,574,308"/>
+<area shape="rect" id="node16" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasPeriodHandler.html" title=" " alt="" coords="359,332,574,373"/>
+<area shape="rect" id="node17" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasSeriesHandler.html" title=" " alt="" coords="359,397,574,439"/>
+<area shape="rect" id="node18" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasTimestampHandler.html" title=" " alt="" coords="359,463,574,504"/>
+<area shape="rect" id="node19" href="$classjsonpickle_1_1handlers_1_1ArrayHandler.html" title=" " alt="" coords="373,528,560,569"/>
+<area shape="rect" id="node20" href="$classjsonpickle_1_1handlers_1_1DatetimeHandler.html" title=" " alt="" coords="360,593,573,635"/>
+<area shape="rect" id="node21" href="$classjsonpickle_1_1handlers_1_1LockHandler.html" title=" " alt="" coords="375,659,558,700"/>
+<area shape="rect" id="node22" href="$classjsonpickle_1_1handlers_1_1QueueHandler.html" title=" " alt="" coords="369,724,564,765"/>
+<area shape="rect" id="node23" href="$classjsonpickle_1_1handlers_1_1RegexHandler.html" title=" " alt="" coords="370,789,563,831"/>
+<area shape="rect" id="node24" href="$classjsonpickle_1_1handlers_1_1TextIOHandler.html" title=" " alt="" coords="377,855,556,896"/>
+<area shape="rect" id="node25" href="$classjsonpickle_1_1handlers_1_1UUIDHandler.html" title=" " alt="" coords="348,921,585,947"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,470,68,497"/>
+<area shape="rect" id="node5" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyDTypeHandler.html" title=" " alt="" coords="635,5,846,47"/>
+<area shape="rect" id="node6" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler.html" title=" " alt="" coords="635,71,846,112"/>
+<area shape="rect" id="node8" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler.html" title=" " alt="" coords="635,136,846,177"/>
+<area shape="rect" id="node7" href="$classjsonpickle_1_1ext_1_1numpy_1_1UnpickleableNumpyGenericHandler.html" title=" " alt="" coords="896,71,1145,112"/>
+<area shape="rect" id="node9" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary.html" title=" " alt="" coords="915,136,1126,177"/>
+<area shape="rect" id="node10" href="$classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView.html" title=" " alt="" coords="1193,136,1404,177"/>
+<area shape="rect" id="node13" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasMultiIndexHandler.html" title=" " alt="" coords="633,201,848,243"/>
+<area shape="rect" id="node14" href="$classjsonpickle_1_1ext_1_1pandas_1_1PandasPeriodIndexHandler.html" title=" " alt="" coords="633,267,848,308"/>
+</map>

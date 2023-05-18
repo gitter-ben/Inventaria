@@ -1,0 +1,35 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray}{}\doxysection{numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+Test\+As\+Array Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray}\index{numpy.core.tests.test\_array\_coercion.TestAsArray@{numpy.core.tests.test\_array\_coercion.TestAsArray}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray_a5db97fc57206c3127e8f7e04fabeb2eb}{test\+\_\+dtype\+\_\+identity}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Test expected behaviors of ``asarray``.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray_a5db97fc57206c3127e8f7e04fabeb2eb}\label{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray_a5db97fc57206c3127e8f7e04fabeb2eb}} 
+\index{numpy.core.tests.test\_array\_coercion.TestAsArray@{numpy.core.tests.test\_array\_coercion.TestAsArray}!test\_dtype\_identity@{test\_dtype\_identity}}
+\index{test\_dtype\_identity@{test\_dtype\_identity}!numpy.core.tests.test\_array\_coercion.TestAsArray@{numpy.core.tests.test\_array\_coercion.TestAsArray}}
+\doxysubsubsection{\texorpdfstring{test\_dtype\_identity()}{test\_dtype\_identity()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+Test\+As\+Array.\+test\+\_\+dtype\+\_\+identity (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Confirm the intended behavior for *dtype* kwarg.
+
+The result of ``asarray()`` should have the dtype provided through the
+keyword argument, when used. This forces unique array handles to be
+produced for unique np.dtype objects, but (for equivalent dtypes), the
+underlying data (the base object) is shared with the original array
+object.
+
+Ref https://github.com/numpy/numpy/issues/1468
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/tests/test\+\_\+array\+\_\+coercion.\+py\end{DoxyCompactItemize}

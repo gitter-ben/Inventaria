@@ -1,0 +1,8 @@
+<map id="pip._internal.exceptions.MetadataGenerationFailed" name="pip._internal.exceptions.MetadataGenerationFailed">
+<area shape="rect" id="node1" title=" " alt="" coords="849,41,1044,83"/>
+<area shape="rect" id="node2" href="$classpip_1_1__internal_1_1exceptions_1_1InstallationSubprocessError.html" title=" " alt="" coords="601,12,801,53"/>
+<area shape="rect" id="node3" href="$classpip_1_1__internal_1_1exceptions_1_1DiagnosticPipError.html" title=" " alt="" coords="371,5,553,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__internal_1_1exceptions_1_1PipError.html" title=" " alt="" coords="140,39,323,80"/>
+<area shape="rect" id="node6" href="$classpip_1_1__internal_1_1exceptions_1_1InstallationError.html" title=" " alt="" coords="371,71,553,112"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,46,92,73"/>
+</map>

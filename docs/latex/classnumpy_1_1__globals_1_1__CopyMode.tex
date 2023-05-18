@@ -1,0 +1,60 @@
+\hypertarget{classnumpy_1_1__globals_1_1__CopyMode}{}\doxysection{numpy.\+\_\+globals.\+\_\+\+Copy\+Mode Class Reference}
+\label{classnumpy_1_1__globals_1_1__CopyMode}\index{numpy.\_globals.\_CopyMode@{numpy.\_globals.\_CopyMode}}
+
+
+Inheritance diagram for numpy.\+\_\+globals.\+\_\+\+Copy\+Mode\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classnumpy_1_1__globals_1_1__CopyMode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+\_\+globals.\+\_\+\+Copy\+Mode\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{classnumpy_1_1__globals_1_1__CopyMode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__CopyMode_a792fef3a1183bd52cdc55b88e4c15204}\label{classnumpy_1_1__globals_1_1__CopyMode_a792fef3a1183bd52cdc55b88e4c15204}} 
+def {\bfseries \+\_\+\+\_\+bool\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__CopyMode_a3d95a8a287a8f49842b8f92b95e8eb84}\label{classnumpy_1_1__globals_1_1__CopyMode_a3d95a8a287a8f49842b8f92b95e8eb84}} 
+bool {\bfseries ALWAYS} = True
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__CopyMode_a001b0e1d6b5f889df35d7ec074932200}\label{classnumpy_1_1__globals_1_1__CopyMode_a001b0e1d6b5f889df35d7ec074932200}} 
+bool {\bfseries IF\+\_\+\+NEEDED} = False
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__CopyMode_a16c94727b1ec7300904529bbeb43a952}\label{classnumpy_1_1__globals_1_1__CopyMode_a16c94727b1ec7300904529bbeb43a952}} 
+int {\bfseries NEVER} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An enumeration for the copy modes supported
+by numpy.copy() and numpy.array(). The following three modes are supported,
+
+- ALWAYS: This means that a deep copy of the input
+          array will always be taken.
+- IF_NEEDED: This means that a deep copy of the input
+             array will be taken only if necessary.
+- NEVER: This means that the deep copy will never be taken.
+         If a copy cannot be avoided then a `ValueError` will be
+         raised.
+
+Note that the buffer-protocol could in theory do copies.  NumPy currently
+assumes an object exporting the buffer protocol will never do this.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/\+\_\+globals.\+py\end{DoxyCompactItemize}

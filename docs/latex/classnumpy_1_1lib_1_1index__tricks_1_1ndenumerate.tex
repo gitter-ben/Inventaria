@@ -1,0 +1,66 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate}{}\doxysection{numpy.\+lib.\+index\+\_\+tricks.\+ndenumerate Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate}\index{numpy.lib.index\_tricks.ndenumerate@{numpy.lib.index\_tricks.ndenumerate}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_af49257d1c1aa4e76d8bbb146e8d4ff87}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_af49257d1c1aa4e76d8bbb146e8d4ff87}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, arr)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_a3ea340ebbe7bea8e9a1606d6793efc8a}{\+\_\+\+\_\+next\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_a46423cbbb37e246d0c385aa7bbf5fd84}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_a46423cbbb37e246d0c385aa7bbf5fd84}} 
+def {\bfseries \+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_aa6097b451afd6a607c07b4259d43ecd1}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_aa6097b451afd6a607c07b4259d43ecd1}} 
+{\bfseries iter}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Multidimensional index iterator.
+
+Return an iterator yielding pairs of array coordinates and values.
+
+Parameters
+----------
+arr : ndarray
+  Input array.
+
+See Also
+--------
+ndindex, flatiter
+
+Examples
+--------
+>>> a = np.array([[1, 2], [3, 4]])
+>>> for index, x in np.ndenumerate(a):
+...     print(index, x)
+(0, 0) 1
+(0, 1) 2
+(1, 0) 3
+(1, 1) 4\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_a3ea340ebbe7bea8e9a1606d6793efc8a}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndenumerate_a3ea340ebbe7bea8e9a1606d6793efc8a}} 
+\index{numpy.lib.index\_tricks.ndenumerate@{numpy.lib.index\_tricks.ndenumerate}!\_\_next\_\_@{\_\_next\_\_}}
+\index{\_\_next\_\_@{\_\_next\_\_}!numpy.lib.index\_tricks.ndenumerate@{numpy.lib.index\_tricks.ndenumerate}}
+\doxysubsubsection{\texorpdfstring{\_\_next\_\_()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndenumerate.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Standard iterator method, returns the index tuple and array value.
+
+Returns
+-------
+coords : tuple of ints
+    The indices of the current iteration.
+val : scalar
+    The array element of the current iteration.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/lib/index\+\_\+tricks.\+py\end{DoxyCompactItemize}

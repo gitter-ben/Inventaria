@@ -1,0 +1,93 @@
+\hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex}{}\doxysection{numpy.\+lib.\+index\+\_\+tricks.\+ndindex Class Reference}
+\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex}\index{numpy.lib.index\_tricks.ndindex@{numpy.lib.index\_tricks.ndindex}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a28ee0e3d19fd6beded96d1da376fc115}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a28ee0e3d19fd6beded96d1da376fc115}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$shape)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a24e533575421a8f5a35fc3d530444e54}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a24e533575421a8f5a35fc3d530444e54}} 
+def {\bfseries \+\_\+\+\_\+iter\+\_\+\+\_\+} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}{ndincr}} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}{\+\_\+\+\_\+next\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An N-dimensional iterator object to index arrays.
+
+Given the shape of an array, an `ndindex` instance iterates over
+the N-dimensional index of the array. At each iteration a tuple
+of indices is returned, the last dimension is iterated over first.
+
+Parameters
+----------
+shape : ints, or a single tuple of ints
+    The size of each dimension of the array can be passed as
+    individual parameters or as the elements of a tuple.
+
+See Also
+--------
+ndenumerate, flatiter
+
+Examples
+--------
+Dimensions as individual arguments
+
+>>> for index in np.ndindex(3, 2, 1):
+...     print(index)
+(0, 0, 0)
+(0, 1, 0)
+(1, 0, 0)
+(1, 1, 0)
+(2, 0, 0)
+(2, 1, 0)
+
+Same dimensions - but in a tuple ``(3, 2, 1)``
+
+>>> for index in np.ndindex((3, 2, 1)):
+...     print(index)
+(0, 0, 0)
+(0, 1, 0)
+(1, 0, 0)
+(1, 1, 0)
+(2, 0, 0)
+(2, 1, 0)\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a15882d2fe51484db60724b4a3df4759f}} 
+\index{numpy.lib.index\_tricks.ndindex@{numpy.lib.index\_tricks.ndindex}!\_\_next\_\_@{\_\_next\_\_}}
+\index{\_\_next\_\_@{\_\_next\_\_}!numpy.lib.index\_tricks.ndindex@{numpy.lib.index\_tricks.ndindex}}
+\doxysubsubsection{\texorpdfstring{\_\_next\_\_()}{\_\_next\_\_()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+\_\+\+\_\+next\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Standard iterator method, updates the index and returns the index
+tuple.
+
+Returns
+-------
+val : tuple of ints
+    Returns a tuple containing the indices of the current
+    iteration.\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}\label{classnumpy_1_1lib_1_1index__tricks_1_1ndindex_a90e5b99598cf0164b5c0409049c51861}} 
+\index{numpy.lib.index\_tricks.ndindex@{numpy.lib.index\_tricks.ndindex}!ndincr@{ndincr}}
+\index{ndincr@{ndincr}!numpy.lib.index\_tricks.ndindex@{numpy.lib.index\_tricks.ndindex}}
+\doxysubsubsection{\texorpdfstring{ndincr()}{ndincr()}}
+{\footnotesize\ttfamily def numpy.\+lib.\+index\+\_\+tricks.\+ndindex.\+ndincr (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Increment the multi-dimensional index by one.
+
+This method is for backward compatibility only: do not use.
+
+.. deprecated:: 1.20.0
+    This method has been advised against since numpy 1.8.0, but only
+    started emitting DeprecationWarning as of this version.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/lib/index\+\_\+tricks.\+py\end{DoxyCompactItemize}

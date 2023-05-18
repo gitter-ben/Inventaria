@@ -1,0 +1,8 @@
+<map id="pip._vendor.pkg_resources.ResolutionError" name="pip._vendor.pkg_resources.ResolutionError">
+<area shape="rect" id="node1" title=" " alt="" coords="140,71,339,112"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1pkg__resources_1_1DistributionNotFound.html" title=" " alt="" coords="387,5,585,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1pkg__resources_1_1UnknownExtra.html" title=" " alt="" coords="387,71,585,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1pkg__resources_1_1VersionConflict.html" title=" " alt="" coords="387,136,585,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,78,92,105"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1pkg__resources_1_1ContextualVersionConflict.html" title=" " alt="" coords="633,136,832,177"/>
+</map>

@@ -1,0 +1,80 @@
+\hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And}{}\doxysection{pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+And Class Reference}
+\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And}\index{pkg\_resources.\_vendor.pyparsing.And@{pkg\_resources.\_vendor.pyparsing.And}}
+
+
+Inheritance diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+And\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pkg\+\_\+resources.\+\_\+vendor.\+pyparsing.\+And\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_1_1__ErrorStop}{\+\_\+\+Error\+Stop}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a1b82c1bcfc776105763c4702e8986bea}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a1b82c1bcfc776105763c4702e8986bea}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, exprs, savelist=True)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_ac32523c030626202dde8714f0fe3a092}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_ac32523c030626202dde8714f0fe3a092}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_aab46d1c623b48f6b5556975df8b97aba}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_aab46d1c623b48f6b5556975df8b97aba}} 
+def {\bfseries \+\_\+\+\_\+iadd\+\_\+\+\_\+} (self, other)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_afb57cdf369ab2c8b6410420ab31990ad}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_afb57cdf369ab2c8b6410420ab31990ad}} 
+def {\bfseries check\+Recursion} (self, parse\+Element\+List)
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a5bf261fd6d3b258fffd8bc8fdaba40eb}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a5bf261fd6d3b258fffd8bc8fdaba40eb}} 
+def {\bfseries \+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_aba58fe973f21ac96599ac331a0b3aad1}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_aba58fe973f21ac96599ac331a0b3aad1}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a0f47b9ca84f6db58d94518eb7915025c}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a0f47b9ca84f6db58d94518eb7915025c}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a8c7a814824b65bf36e6b56e11dc19545}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a8c7a814824b65bf36e6b56e11dc19545}} 
+{\bfseries call\+Preparse}
+\item 
+\mbox{\Hypertarget{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a47534db1df0f80837e6a0692e273baf8}\label{classpkg__resources_1_1__vendor_1_1pyparsing_1_1And_a47534db1df0f80837e6a0692e273baf8}} 
+{\bfseries str\+Repr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Requires all given C{ParseExpression}s to be found in the given order.
+Expressions may be separated by whitespace.
+May be constructed using the C{'+'} operator.
+May also be constructed using the C{'-'} operator, which will suppress backtracking.
+
+Example::
+    integer = Word(nums)
+    name_expr = OneOrMore(Word(alphas))
+
+    expr = And([integer("id"),name_expr("name"),integer("age")])
+    # more easily written as:
+    expr = integer("id") + name_expr("name") + integer("age")
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pkg\+\_\+resources/\+\_\+vendor/pyparsing.\+py\end{DoxyCompactItemize}

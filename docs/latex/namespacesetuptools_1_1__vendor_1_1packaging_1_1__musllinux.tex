@@ -1,0 +1,50 @@
+\hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux}{}\doxysection{setuptools.\+\_\+vendor.\+packaging.\+\_\+musllinux Namespace Reference}
+\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux}\index{setuptools.\_vendor.packaging.\_musllinux@{setuptools.\_vendor.packaging.\_musllinux}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsetuptools_1_1__vendor_1_1packaging_1_1__musllinux_1_1__MuslVersion}{\+\_\+\+Musl\+Version}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Iterator\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_aae9c3aea5182cc160d02bf2e715282e5}{platform\+\_\+tags}} (str arch)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a3e083bb0b19b34f256172824763c79df}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a3e083bb0b19b34f256172824763c79df}} 
+{\bfseries plat} = sysconfig.\+get\+\_\+platform()
+\item 
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a005d6c48a4f17b63f24bbf368504ae64}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a005d6c48a4f17b63f24bbf368504ae64}} 
+{\bfseries end}
+\item 
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a9a386fe60d2074f65b688d092d246c3c}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_a9a386fe60d2074f65b688d092d246c3c}} 
+{\bfseries t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}PEP 656 support.
+
+This module implements logic to detect if the currently running Python is
+linked against musl, and what musl version is used.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_aae9c3aea5182cc160d02bf2e715282e5}\label{namespacesetuptools_1_1__vendor_1_1packaging_1_1__musllinux_aae9c3aea5182cc160d02bf2e715282e5}} 
+\index{setuptools.\_vendor.packaging.\_musllinux@{setuptools.\_vendor.packaging.\_musllinux}!platform\_tags@{platform\_tags}}
+\index{platform\_tags@{platform\_tags}!setuptools.\_vendor.packaging.\_musllinux@{setuptools.\_vendor.packaging.\_musllinux}}
+\doxysubsubsection{\texorpdfstring{platform\_tags()}{platform\_tags()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}str\mbox{]} setuptools.\+\_\+vendor.\+packaging.\+\_\+musllinux.\+platform\+\_\+tags (\begin{DoxyParamCaption}\item[{str}]{arch }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate musllinux tags compatible to the current platform.
+
+:param arch: Should be the part of platform tag after the ``linux_``
+    prefix, e.g. ``x86_64``. The ``linux_`` prefix is assumed as a
+    prerequisite for the current platform to be musllinux-compatible.
+
+:returns: An iterator of compatible musllinux tags.
+\end{DoxyVerb}
+ 

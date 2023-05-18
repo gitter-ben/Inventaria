@@ -1,0 +1,115 @@
+\hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler}{}\doxysection{jsonpickle.\+handlers.\+Base\+Handler Class Reference}
+\label{classjsonpickle_1_1handlers_1_1BaseHandler}\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+
+
+Inheritance diagram for jsonpickle.\+handlers.\+Base\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classjsonpickle_1_1handlers_1_1BaseHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+handlers.\+Base\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classjsonpickle_1_1handlers_1_1BaseHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a2500bfa35d61fb51a008b4fc0874a61a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, context)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{restore}} (self, obj)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a83505a251cd4aab49a00ae2140a035f4}{handles}} (self, cls)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aee5fbaf8a97a0aac1fa8a66642c8c217}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_a10054253cf3345b7ad01477ba90230a4}\label{classjsonpickle_1_1handlers_1_1BaseHandler_a10054253cf3345b7ad01477ba90230a4}} 
+{\bfseries context}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_a2500bfa35d61fb51a008b4fc0874a61a}\label{classjsonpickle_1_1handlers_1_1BaseHandler_a2500bfa35d61fb51a008b4fc0874a61a}} 
+\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Base\+Handler.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize a new handler to handle a registered type.
+
+:Parameters:
+  - `context`: reference to pickler/unpickler\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_aee5fbaf8a97a0aac1fa8a66642c8c217}\label{classjsonpickle_1_1handlers_1_1BaseHandler_aee5fbaf8a97a0aac1fa8a66642c8c217}} 
+\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Base\+Handler.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This permits registering either Handler instances or classes
+
+:Parameters:
+  - `context`: reference to pickler/unpickler
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}\label{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}} 
+\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Base\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1TextIOHandler_a62281125dcb815eaed457fc7c4ed3bc6}{jsonpickle.\+handlers.\+Text\+IOHandler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1LockHandler_a2365959e3638ba3b17943206177f4634}{jsonpickle.\+handlers.\+Lock\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1UUIDHandler_a2a3dd873b3b8d476b6eb6a99c7edc2e0}{jsonpickle.\+handlers.\+UUIDHandler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1QueueHandler_a27f0d05109fd2e5890a78a76e7f976b4}{jsonpickle.\+handlers.\+Queue\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1RegexHandler_a6043ea33c901d3caacdcbba231b27005}{jsonpickle.\+handlers.\+Regex\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1DatetimeHandler_af77bb26d3ab17d557487f963df812264}{jsonpickle.\+handlers.\+Datetime\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1ArrayHandler_ae1b2b384c08d6ffe1b673cde91fe33f8}{jsonpickle.\+handlers.\+Array\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIntervalHandler_aac60c5839cc494265ffb5edcb24f0bf5}{jsonpickle.\+ext.\+pandas.\+Pandas\+Interval\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasPeriodHandler_abaf001c06ff62f96fdeabbc7498feece}{jsonpickle.\+ext.\+pandas.\+Pandas\+Period\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasTimestampHandler_aaf72a998a2775101a25242490ae765b3}{jsonpickle.\+ext.\+pandas.\+Pandas\+Timestamp\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a56c01b5353773bbcbbe96964b30a94b9}{jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasSeriesHandler_a4ca124e97212a18c884877fb4e0293f5}{jsonpickle.\+ext.\+pandas.\+Pandas\+Series\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasDfHandler_aff0bff5b71943992fa4d75c2f010a3c4}{jsonpickle.\+ext.\+pandas.\+Pandas\+Df\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ac065565c0ea67a0d168e70ebdffc8292}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1UnpickleableNumpyGenericHandler_a54fe6e1c540497a33d2404a812902891}{jsonpickle.\+ext.\+numpy.\+Unpickleable\+Numpy\+Generic\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a272aeb1b2013db75d65a7ec1b884f6ce}{jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyDTypeHandler_a152838771f489159ff3f673467ddb82f}{jsonpickle.\+ext.\+numpy.\+Numpy\+DType\+Handler}}, and \mbox{\hyperlink{classjsonpickle_1_1ext_1_1gmpy_1_1GmpyMPZHandler_ab588e2cf33f7f2ab274b34e6474d1614}{jsonpickle.\+ext.\+gmpy.\+Gmpy\+MPZHandler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_a83505a251cd4aab49a00ae2140a035f4}\label{classjsonpickle_1_1handlers_1_1BaseHandler_a83505a251cd4aab49a00ae2140a035f4}} 
+\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}!handles@{handles}}
+\index{handles@{handles}!jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+\doxysubsubsection{\texorpdfstring{handles()}{handles()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Base\+Handler.\+handles (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register this handler for the given class. Suitable as a decorator,
+e.g.::
+
+    @MyCustomHandler.handles
+    class MyCustomClass:
+        def __reduce__(self):
+            ...
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}\label{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}} 
+\index{jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.handlers.BaseHandler@{jsonpickle.handlers.BaseHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Base\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1TextIOHandler_a3e97b0fb8ca69d4f027baf45ba641e98}{jsonpickle.\+handlers.\+Text\+IOHandler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1LockHandler_a7e46236339164fcba5ebf8acc735e701}{jsonpickle.\+handlers.\+Lock\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1UUIDHandler_a8f6ef42e23dec03b0e306bccc0d89c25}{jsonpickle.\+handlers.\+UUIDHandler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1QueueHandler_a38fe76c32569f61eb22d5897ad92aa26}{jsonpickle.\+handlers.\+Queue\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1RegexHandler_a4da56b826bbcf626115b22520dc5e8d8}{jsonpickle.\+handlers.\+Regex\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1DatetimeHandler_aecb6178188ac2ca21da469c2eeac626f}{jsonpickle.\+handlers.\+Datetime\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1ArrayHandler_af13c656ccb371e090b1258c4c0b8410c}{jsonpickle.\+handlers.\+Array\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIntervalHandler_a4308cd4cccd3341d8b55414f1ed5065c}{jsonpickle.\+ext.\+pandas.\+Pandas\+Interval\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasPeriodHandler_a3c5d2e34d2a56aba359b87a1377b0d57}{jsonpickle.\+ext.\+pandas.\+Pandas\+Period\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasTimestampHandler_aaf5125014e65e3b68722192cf743a808}{jsonpickle.\+ext.\+pandas.\+Pandas\+Timestamp\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasIndexHandler_a6d7644642363d264a28a0d8384674168}{jsonpickle.\+ext.\+pandas.\+Pandas\+Index\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasSeriesHandler_a2ebd3cb7c94508ab3443dc8aa1482ade}{jsonpickle.\+ext.\+pandas.\+Pandas\+Series\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1pandas_1_1PandasDfHandler_a53f09cbbb8bfb3979d8b8163bab35377}{jsonpickle.\+ext.\+pandas.\+Pandas\+Df\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a0342d97e57cb90463b775afb81a530de}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1UnpickleableNumpyGenericHandler_ae31b864018d16231f5ad241f06b7b8f4}{jsonpickle.\+ext.\+numpy.\+Unpickleable\+Numpy\+Generic\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyGenericHandler_a46e6bca9f8eec0e9c5ac06f16b3b01ce}{jsonpickle.\+ext.\+numpy.\+Numpy\+Generic\+Handler}}, \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyDTypeHandler_a66790d5baaac254f4c1b5da5145ef0fa}{jsonpickle.\+ext.\+numpy.\+Numpy\+DType\+Handler}}, and \mbox{\hyperlink{classjsonpickle_1_1ext_1_1gmpy_1_1GmpyMPZHandler_aca4d78a5d1441bd2c8634662da24b333}{jsonpickle.\+ext.\+gmpy.\+Gmpy\+MPZHandler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/handlers.\+py\end{DoxyCompactItemize}

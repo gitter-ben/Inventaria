@@ -1,0 +1,67 @@
+\hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion}{}\doxysection{numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion Namespace Reference}
+\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion}\index{numpy.core.tests.test\_array\_coercion@{numpy.core.tests.test\_array\_coercion}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestStringDiscovery}{Test\+String\+Discovery}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestScalarDiscovery}{Test\+Scalar\+Discovery}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestTimeScalars}{Test\+Time\+Scalars}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestNested}{Test\+Nested}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestBadSequences}{Test\+Bad\+Sequences}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestArrayLikes}{Test\+Array\+Likes}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestAsArray}{Test\+As\+Array}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__array__coercion_1_1TestSpecialAttributeLookupFailure}{Test\+Special\+Attribute\+Lookup\+Failure}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}{arraylikes}} ()
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a05348eea13c6dd9f83e3781464ecb484}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a05348eea13c6dd9f83e3781464ecb484}} 
+def {\bfseries scalar\+\_\+instances} (times=True, extended\+\_\+precision=True, user\+\_\+dtype=True)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}{is\+\_\+parametric\+\_\+dtype}} (dtype)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_af7280b4e939b2b2de78d9579223fab50}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_af7280b4e939b2b2de78d9579223fab50}} 
+{\bfseries a}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Tests for array coercion, mainly through testing `np.array` results directly.
+Note that other such tests exist e.g. in `test_api.py` and many corner-cases
+are tested (sometimes indirectly) elsewhere.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a9e29bbf3f7a61359fd7f0e6d209c2e40}} 
+\index{numpy.core.tests.test\_array\_coercion@{numpy.core.tests.test\_array\_coercion}!arraylikes@{arraylikes}}
+\index{arraylikes@{arraylikes}!numpy.core.tests.test\_array\_coercion@{numpy.core.tests.test\_array\_coercion}}
+\doxysubsubsection{\texorpdfstring{arraylikes()}{arraylikes()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+arraylikes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generator for functions converting an array into various array-likes.
+If full is True (default) includes array-likes not capable of handling
+all dtypes
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}\label{namespacenumpy_1_1core_1_1tests_1_1test__array__coercion_a5558fd4669aff55a30433bbfb240fdea}} 
+\index{numpy.core.tests.test\_array\_coercion@{numpy.core.tests.test\_array\_coercion}!is\_parametric\_dtype@{is\_parametric\_dtype}}
+\index{is\_parametric\_dtype@{is\_parametric\_dtype}!numpy.core.tests.test\_array\_coercion@{numpy.core.tests.test\_array\_coercion}}
+\doxysubsubsection{\texorpdfstring{is\_parametric\_dtype()}{is\_parametric\_dtype()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+array\+\_\+coercion.\+is\+\_\+parametric\+\_\+dtype (\begin{DoxyParamCaption}\item[{}]{dtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns True if the dtype is a parametric legacy dtype (itemsize
+is 0, or a datetime without units)
+\end{DoxyVerb}
+ 

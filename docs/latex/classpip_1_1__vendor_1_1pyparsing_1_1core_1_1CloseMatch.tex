@@ -1,0 +1,92 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Close\+Match Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch}\index{pip.\_vendor.pyparsing.core.CloseMatch@{pip.\_vendor.pyparsing.core.CloseMatch}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Close\+Match\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Close\+Match\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ac8f272cd953a4a679051f35bffd78674}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ac8f272cd953a4a679051f35bffd78674}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str match\+\_\+string, int max\+\_\+mismatches=None, $\ast$int max\+Mismatches=1, caseless=False)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ad1251992b57671f6e08940ba4763e4ab}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ad1251992b57671f6e08940ba4763e4ab}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a7099f42a193bd5ecfb9d5209ddcd9791}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a7099f42a193bd5ecfb9d5209ddcd9791}} 
+{\bfseries match\+\_\+string}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a61ffb520e4d6dd54b106f5082cdbbece}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a61ffb520e4d6dd54b106f5082cdbbece}} 
+{\bfseries max\+Mismatches}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a04bfe73d1bfbfeb179dabeb0be2b475f}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a04bfe73d1bfbfeb179dabeb0be2b475f}} 
+{\bfseries errmsg}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a44345cd900a499cc89042831f78485a2}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a44345cd900a499cc89042831f78485a2}} 
+{\bfseries caseless}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ad1b50fd5a057eeab3a17473bfe15a391}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_ad1b50fd5a057eeab3a17473bfe15a391}} 
+{\bfseries may\+Index\+Error}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a20059cb844e37eced1c79ac30e33316b}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1CloseMatch_a20059cb844e37eced1c79ac30e33316b}} 
+{\bfseries may\+Return\+Empty}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A variation on :class:`Literal` which matches "close" matches,
+that is, strings with at most 'n' mismatching characters.
+:class:`CloseMatch` takes parameters:
+
+- ``match_string`` - string to be matched
+- ``caseless`` - a boolean indicating whether to ignore casing when comparing characters
+- ``max_mismatches`` - (``default=1``) maximum number of
+  mismatches allowed to count as a match
+
+The results from a successful parse will contain the matched text
+from the input string and the following named results:
+
+- ``mismatches`` - a list of the positions within the
+  match_string where mismatches were found
+- ``original`` - the original match_string used to compare
+  against the input string
+
+If ``mismatches`` is an empty list, then the match was an exact
+match.
+
+Example::
+
+    patt = CloseMatch("ATCATCGAATGGA")
+    patt.parse_string("ATCATCGAAXGGA") # -> (['ATCATCGAAXGGA'], {'mismatches': [[9]], 'original': ['ATCATCGAATGGA']})
+    patt.parse_string("ATCAXCGAAXGGA") # -> Exception: Expected 'ATCATCGAATGGA' (with up to 1 mismatches) (at char 0), (line:1, col:1)
+
+    # exact match
+    patt.parse_string("ATCATCGAATGGA") # -> (['ATCATCGAATGGA'], {'mismatches': [[]], 'original': ['ATCATCGAATGGA']})
+
+    # close match allowing up to 2 mismatches
+    patt = CloseMatch("ATCATCGAATGGA", max_mismatches=2)
+    patt.parse_string("ATCAXCGAAXGGA") # -> (['ATCAXCGAAXGGA'], {'mismatches': [[4, 9]], 'original': ['ATCATCGAATGGA']})
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

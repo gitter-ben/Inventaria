@@ -1,0 +1,73 @@
+\hypertarget{classjsonpickle_1_1handlers_1_1QueueHandler}{}\doxysection{jsonpickle.\+handlers.\+Queue\+Handler Class Reference}
+\label{classjsonpickle_1_1handlers_1_1QueueHandler}\index{jsonpickle.handlers.QueueHandler@{jsonpickle.handlers.QueueHandler}}
+
+
+Inheritance diagram for jsonpickle.\+handlers.\+Queue\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classjsonpickle_1_1handlers_1_1QueueHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+handlers.\+Queue\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classjsonpickle_1_1handlers_1_1QueueHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1QueueHandler_a27f0d05109fd2e5890a78a76e7f976b4}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1QueueHandler_a38fe76c32569f61eb22d5897ad92aa26}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Opaquely serializes Queue objects
+
+Queues contains mutex and condition variables which cannot be serialized.
+Construct a new Queue instance when restoring.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1QueueHandler_a27f0d05109fd2e5890a78a76e7f976b4}\label{classjsonpickle_1_1handlers_1_1QueueHandler_a27f0d05109fd2e5890a78a76e7f976b4}} 
+\index{jsonpickle.handlers.QueueHandler@{jsonpickle.handlers.QueueHandler}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.handlers.QueueHandler@{jsonpickle.handlers.QueueHandler}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Queue\+Handler.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flatten `obj` into a json-friendly form and write result to `data`.
+
+:param object obj: The object to be serialized.
+:param dict data: A partially filled dictionary which will contain the
+    json-friendly representation of `obj` once this method has
+    finished.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_aa3800c608f31db8cc8f07049302cbde2}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1handlers_1_1QueueHandler_a38fe76c32569f61eb22d5897ad92aa26}\label{classjsonpickle_1_1handlers_1_1QueueHandler_a38fe76c32569f61eb22d5897ad92aa26}} 
+\index{jsonpickle.handlers.QueueHandler@{jsonpickle.handlers.QueueHandler}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.handlers.QueueHandler@{jsonpickle.handlers.QueueHandler}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+handlers.\+Queue\+Handler.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Restore an object of the registered type from the json-friendly
+representation `obj` and return it.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1handlers_1_1BaseHandler_a880b067acc744ba76871a6232a0cce1d}{jsonpickle.\+handlers.\+Base\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/handlers.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone}{}\doxysection{numpy.\+core.\+tests.\+test\+\_\+deprecations.\+Test\+Datetime64\+Timezone Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone}\index{numpy.core.tests.test\_deprecations.TestDatetime64Timezone@{numpy.core.tests.test\_deprecations.TestDatetime64Timezone}}
+
+
+Inheritance diagram for numpy.\+core.\+tests.\+test\+\_\+deprecations.\+Test\+Datetime64\+Timezone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+core.\+tests.\+test\+\_\+deprecations.\+Test\+Datetime64\+Timezone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone_a4362dcd710bdca7e7018e879fe6134d0}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone_a4362dcd710bdca7e7018e879fe6134d0}} 
+def {\bfseries test\+\_\+string} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone_a10e963b326498925c43a2a06dc46cc69}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1TestDatetime64Timezone_a10e963b326498925c43a2a06dc46cc69}} 
+def {\bfseries test\+\_\+datetime} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Parsing of datetime64 with timezones deprecated in 1.11.0, because
+datetime64 is now timezone naive rather than UTC only.
+
+It will be quite a while before we can remove this, because, at the very
+least, a lot of existing code uses the 'Z' modifier to avoid conversion
+from local time to UTC, even if otherwise it handles time in a timezone
+naive fashion.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/tests/test\+\_\+deprecations.\+py\end{DoxyCompactItemize}

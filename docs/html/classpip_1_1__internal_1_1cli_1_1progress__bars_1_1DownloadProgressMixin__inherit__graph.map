@@ -1,0 +1,10 @@
+<map id="pip._internal.cli.progress_bars.DownloadProgressMixin" name="pip._internal.cli.progress_bars.DownloadProgressMixin">
+<area shape="rect" id="node1" title=" " alt="" coords="5,169,224,211"/>
+<area shape="rect" id="node2" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1BaseDownloadProgressBar.html" title=" " alt="" coords="272,136,508,177"/>
+<area shape="rect" id="node8" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DownloadProgressSpinner.html" title=" " alt="" coords="275,201,505,243"/>
+<area shape="rect" id="node3" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DefaultDownloadProgressBar.html" title=" " alt="" coords="565,5,817,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DownloadBar.html" title=" " alt="" coords="600,71,783,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DownloadBlueEmojiProgressBar.html" title=" " alt="" coords="556,136,827,177"/>
+<area shape="rect" id="node6" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DownloadFillingCirclesBar.html" title=" " alt="" coords="576,201,807,243"/>
+<area shape="rect" id="node7" href="$classpip_1_1__internal_1_1cli_1_1progress__bars_1_1DownloadSilentBar.html" title=" " alt="" coords="599,267,784,308"/>
+</map>

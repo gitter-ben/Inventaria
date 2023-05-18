@@ -1,2 +1,5 @@
-src/resources.py
+resources/resources.py
 inventaria_env
+docs
+.idea
+README.md

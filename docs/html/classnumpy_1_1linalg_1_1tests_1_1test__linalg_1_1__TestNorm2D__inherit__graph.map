@@ -1,0 +1,12 @@
+<map id="numpy.linalg.tests.test_linalg._TestNorm2D" name="numpy.linalg.tests.test_linalg._TestNorm2D">
+<area shape="rect" id="node1" title=" " alt="" coords="224,201,395,243"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1__TestNorm.html" title=" " alt="" coords="481,104,652,145"/>
+<area shape="rect" id="node7" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1__TestNorm2DMatrix.html" title=" " alt="" coords="443,233,691,275"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1__TestNormBase.html" title=" " alt="" coords="5,201,176,243"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormDouble.html" title=" " alt="" coords="785,5,962,47"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormInt64.html" title=" " alt="" coords="788,71,959,112"/>
+<area shape="rect" id="node6" href="$classnumpy_1_1linalg_1_1tests_1_1test__linalg_1_1TestNormSingle.html" title=" " alt="" coords="788,136,959,177"/>
+<area shape="rect" id="node8" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestNormDoubleMatrix.html" title=" " alt="" coords="739,201,1008,243"/>
+<area shape="rect" id="node9" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestNormInt64Matrix.html" title=" " alt="" coords="745,267,1001,308"/>
+<area shape="rect" id="node10" href="$classnumpy_1_1matrixlib_1_1tests_1_1test__matrix__linalg_1_1TestNormSingleMatrix.html" title=" " alt="" coords="742,332,1005,373"/>
+</map>

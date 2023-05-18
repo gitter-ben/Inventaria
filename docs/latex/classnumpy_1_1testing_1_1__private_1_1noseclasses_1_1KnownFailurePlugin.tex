@@ -1,0 +1,75 @@
+\hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin}{}\doxysection{numpy.\+testing.\+\_\+private.\+noseclasses.\+Known\+Failure\+Plugin Class Reference}
+\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin}\index{numpy.testing.\_private.noseclasses.KnownFailurePlugin@{numpy.testing.\_private.noseclasses.KnownFailurePlugin}}
+
+
+Inheritance diagram for numpy.\+testing.\+\_\+private.\+noseclasses.\+Known\+Failure\+Plugin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+testing.\+\_\+private.\+noseclasses.\+Known\+Failure\+Plugin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a3a17d6b9ad0bf6548e1c46df720be880}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a3a17d6b9ad0bf6548e1c46df720be880}} 
+def {\bfseries options} (self, parser, env=os.\+environ)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a6c012f5a3fb73c697bbec5d1f6b1af69}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a6c012f5a3fb73c697bbec5d1f6b1af69}} 
+def {\bfseries configure} (self, options, conf)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_ade49e94413a37f9aae2880af061486e1}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_ade49e94413a37f9aae2880af061486e1}} 
+{\bfseries conf}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a6e0d42939826076449f361a937fa296f}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a6e0d42939826076449f361a937fa296f}} 
+{\bfseries enabled}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a1f92a69e790228c3b05e98ac80e18ca3}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a1f92a69e790228c3b05e98ac80e18ca3}} 
+bool {\bfseries enabled} = True
+\item 
+{\bfseries knownfail}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Plugin that installs a KNOWNFAIL error class for the
+KnownFailureClass exception.  When KnownFailure is raised,
+the exception will be logged in the knownfail attribute of the
+result, 'K' or 'KNOWNFAIL' (verbose) will be output, and the
+exception will not be counted as an error or failure.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a33783da6f36e581beb0f3f40a8e1a716}\label{classnumpy_1_1testing_1_1__private_1_1noseclasses_1_1KnownFailurePlugin_a33783da6f36e581beb0f3f40a8e1a716}} 
+\index{numpy.testing.\_private.noseclasses.KnownFailurePlugin@{numpy.testing.\_private.noseclasses.KnownFailurePlugin}!knownfail@{knownfail}}
+\index{knownfail@{knownfail}!numpy.testing.\_private.noseclasses.KnownFailurePlugin@{numpy.testing.\_private.noseclasses.KnownFailurePlugin}}
+\doxysubsubsection{\texorpdfstring{knownfail}{knownfail}}
+{\footnotesize\ttfamily numpy.\+testing.\+\_\+private.\+noseclasses.\+Known\+Failure\+Plugin.\+knownfail\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  ErrorClass(KnownFailureException,}
+\DoxyCodeLine{                           label=\textcolor{stringliteral}{'KNOWNFAIL'},}
+\DoxyCodeLine{                           isfailure=\textcolor{keyword}{False})}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/testing/\+\_\+private/noseclasses.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{namespacenumpy_1_1typing_1_1mypy__plugin}{}\doxysection{numpy.\+typing.\+mypy\+\_\+plugin Namespace Reference}
+\label{namespacenumpy_1_1typing_1_1mypy__plugin}\index{numpy.typing.mypy\_plugin@{numpy.typing.mypy\_plugin}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1typing_1_1mypy__plugin_1_1__NumpyPlugin}{\+\_\+\+Numpy\+Plugin}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+type\mbox{[}\mbox{\hyperlink{classnumpy_1_1typing_1_1mypy__plugin_1_1__NumpyPlugin}{\+\_\+\+Numpy\+Plugin}}\mbox{]} \mbox{\hyperlink{namespacenumpy_1_1typing_1_1mypy__plugin_aae04b7b8eb575505a9dff725e7650d33}{plugin}} (str version)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1typing_1_1mypy__plugin_a4d3fa3b4c27e8d32a9e6dac3c8d2ae37}\label{namespacenumpy_1_1typing_1_1mypy__plugin_a4d3fa3b4c27e8d32a9e6dac3c8d2ae37}} 
+{\bfseries Module\+Not\+Found\+Error}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1typing_1_1mypy__plugin_adbef94b88548869152a8beb17b3b658e}\label{namespacenumpy_1_1typing_1_1mypy__plugin_adbef94b88548869152a8beb17b3b658e}} 
+{\bfseries MYPY\+\_\+\+EX} = ex
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A mypy_ plugin for managing a number of platform-specific annotations.
+Its functionality can be split into three distinct parts:
+
+* Assigning the (platform-dependent) precisions of certain `~numpy.number`
+  subclasses, including the likes of `~numpy.int_`, `~numpy.intp` and
+  `~numpy.longlong`. See the documentation on
+  :ref:`scalar types <arrays.scalars.built-in>` for a comprehensive overview
+  of the affected classes. Without the plugin the precision of all relevant
+  classes will be inferred as `~typing.Any`.
+* Removing all extended-precision `~numpy.number` subclasses that are
+  unavailable for the platform in question. Most notably this includes the
+  likes of `~numpy.float128` and `~numpy.complex256`. Without the plugin *all*
+  extended-precision types will, as far as mypy is concerned, be available
+  to all platforms.
+* Assigning the (platform-dependent) precision of `~numpy.ctypeslib.c_intp`.
+  Without the plugin the type will default to `ctypes.c_int64`.
+
+  .. versionadded:: 1.22
+
+Examples
+--------
+To enable the plugin, one must add it to their mypy `configuration file`_:
+
+.. code-block:: ini
+
+    [mypy]
+    plugins = numpy.typing.mypy_plugin
+
+.. _mypy: http://mypy-lang.org/
+.. _configuration file: https://mypy.readthedocs.io/en/stable/config_file.html\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1typing_1_1mypy__plugin_aae04b7b8eb575505a9dff725e7650d33}\label{namespacenumpy_1_1typing_1_1mypy__plugin_aae04b7b8eb575505a9dff725e7650d33}} 
+\index{numpy.typing.mypy\_plugin@{numpy.typing.mypy\_plugin}!plugin@{plugin}}
+\index{plugin@{plugin}!numpy.typing.mypy\_plugin@{numpy.typing.mypy\_plugin}}
+\doxysubsubsection{\texorpdfstring{plugin()}{plugin()}}
+{\footnotesize\ttfamily  type\mbox{[}\mbox{\hyperlink{classnumpy_1_1typing_1_1mypy__plugin_1_1__NumpyPlugin}{\+\_\+\+Numpy\+Plugin}}\mbox{]} numpy.\+typing.\+mypy\+\_\+plugin.\+plugin (\begin{DoxyParamCaption}\item[{str}]{version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An entry-point for mypy.\end{DoxyVerb}
+ 

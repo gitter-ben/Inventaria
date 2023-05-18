@@ -1,0 +1,77 @@
+\hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install}{}\doxysection{numpy.\+distutils.\+command.\+install.\+install Class Reference}
+\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install}\index{numpy.distutils.command.install.install@{numpy.distutils.command.install.install}}
+
+
+Inheritance diagram for numpy.\+distutils.\+command.\+install.\+install\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classnumpy_1_1distutils_1_1command_1_1install_1_1install__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+distutils.\+command.\+install.\+install\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classnumpy_1_1distutils_1_1command_1_1install_1_1install__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install_ae507e6179c5fcda9e9ad70914c6d57e5}\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install_ae507e6179c5fcda9e9ad70914c6d57e5}} 
+def {\bfseries finalize\+\_\+options} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1command_1_1install_1_1install_afe96c1af8f0c6c83cceb3639f047e3e0}{setuptools\+\_\+run}} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install_a2de9dd77714884f3297cd9cbc975e38d}\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install_a2de9dd77714884f3297cd9cbc975e38d}} 
+def {\bfseries run} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install_abbcb2b1b9b2a6516dc855e558fb0bf39}\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install_abbcb2b1b9b2a6516dc855e558fb0bf39}} 
+{\bfseries install\+\_\+lib}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries sub\+\_\+commands}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install_afe96c1af8f0c6c83cceb3639f047e3e0}\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install_afe96c1af8f0c6c83cceb3639f047e3e0}} 
+\index{numpy.distutils.command.install.install@{numpy.distutils.command.install.install}!setuptools\_run@{setuptools\_run}}
+\index{setuptools\_run@{setuptools\_run}!numpy.distutils.command.install.install@{numpy.distutils.command.install.install}}
+\doxysubsubsection{\texorpdfstring{setuptools\_run()}{setuptools\_run()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+command.\+install.\+install.\+setuptools\+\_\+run (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} The setuptools version of the .run() method.
+
+We must pull in the entire code so we can override the level used in the
+_getframe() call since we wrap this call by one more level.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1command_1_1install_1_1install_a4163a16f09c9d7095457776042a7b6b0}\label{classnumpy_1_1distutils_1_1command_1_1install_1_1install_a4163a16f09c9d7095457776042a7b6b0}} 
+\index{numpy.distutils.command.install.install@{numpy.distutils.command.install.install}!sub\_commands@{sub\_commands}}
+\index{sub\_commands@{sub\_commands}!numpy.distutils.command.install.install@{numpy.distutils.command.install.install}}
+\doxysubsubsection{\texorpdfstring{sub\_commands}{sub\_commands}}
+{\footnotesize\ttfamily numpy.\+distutils.\+command.\+install.\+install.\+sub\+\_\+commands\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  old\_install.sub\_commands + [}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'install\_clib'}, \textcolor{keyword}{lambda} x: \textcolor{keyword}{True})}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/command/install.\+py\end{DoxyCompactItemize}

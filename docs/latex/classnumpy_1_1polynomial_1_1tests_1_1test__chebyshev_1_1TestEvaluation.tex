@@ -1,0 +1,52 @@
+\hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation}{}\doxysection{numpy.\+polynomial.\+tests.\+test\+\_\+chebyshev.\+Test\+Evaluation Class Reference}
+\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation}\index{numpy.polynomial.tests.test\_chebyshev.TestEvaluation@{numpy.polynomial.tests.test\_chebyshev.TestEvaluation}}
+
+
+Collaboration diagram for numpy.\+polynomial.\+tests.\+test\+\_\+chebyshev.\+Test\+Evaluation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a949efa899a753d4950d10a98cb5e4678}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a949efa899a753d4950d10a98cb5e4678}} 
+def {\bfseries test\+\_\+chebval} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a7a1ed901e330390c513e1a18b1ff285b}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a7a1ed901e330390c513e1a18b1ff285b}} 
+def {\bfseries test\+\_\+chebval2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a52d015fa4d1e4c7cd7540082d35f09b2}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a52d015fa4d1e4c7cd7540082d35f09b2}} 
+def {\bfseries test\+\_\+chebval3d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a025ac4ea1f08a33fa674931efd5ed5ee}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a025ac4ea1f08a33fa674931efd5ed5ee}} 
+def {\bfseries test\+\_\+chebgrid2d} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a8386ab18d19ee9ad4efd9fe9a4f7b8ff}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a8386ab18d19ee9ad4efd9fe9a4f7b8ff}} 
+def {\bfseries test\+\_\+chebgrid3d} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a86babc47cf8453c574838705164e03ed}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a86babc47cf8453c574838705164e03ed}} 
+{\bfseries c1d} = np.\+array(\mbox{[}2.\+5, 2., 1.\+5\mbox{]})
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a94a27f3d8693caf480dc5c4f01d8f243}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a94a27f3d8693caf480dc5c4f01d8f243}} 
+{\bfseries c2d} = np.\+einsum(\textquotesingle{}i,j-\/$>$ij\textquotesingle{}, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_ad56e50b2124004118b4e5f69fd2e0303}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_ad56e50b2124004118b4e5f69fd2e0303}} 
+{\bfseries c3d} = np.\+einsum(\textquotesingle{}i,j,k-\/$>$ijk\textquotesingle{}, c1d, c1d, c1d)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a16a5641fbe45b0869d69d16ed250486f}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_a16a5641fbe45b0869d69d16ed250486f}} 
+int {\bfseries x} = np.\+random.\+random((3, 5))$\ast$2 -\/ 1
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_ae1809901c8315d5f6b6d8ddd88caddcd}\label{classnumpy_1_1polynomial_1_1tests_1_1test__chebyshev_1_1TestEvaluation_ae1809901c8315d5f6b6d8ddd88caddcd}} 
+{\bfseries y} = polyval(x, \mbox{[}1., 2., 3.\mbox{]})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/tests/test\+\_\+chebyshev.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{namespacenumpy_1_1core_1_1__type__aliases}{}\doxysection{numpy.\+core.\+\_\+type\+\_\+aliases Namespace Reference}
+\label{namespacenumpy_1_1core_1_1__type__aliases}\index{numpy.core.\_type\_aliases@{numpy.core.\_type\_aliases}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1__type__aliases_a3964ddaf325eb43b4f7515eab8ec4f13}{bitname}} (obj)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_aba1bac0979e17f7876f27178e7ff2be8}\label{namespacenumpy_1_1core_1_1__type__aliases_aba1bac0979e17f7876f27178e7ff2be8}} 
+dictionary {\bfseries sctype\+Dict} = \{\}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_a566b3e2b67e6f4247976ef772b7307f8}\label{namespacenumpy_1_1core_1_1__type__aliases_a566b3e2b67e6f4247976ef772b7307f8}} 
+dictionary {\bfseries all\+Types} = \{\}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_ae054468eb5c1add1715dd28baac9b63f}\label{namespacenumpy_1_1core_1_1__type__aliases_ae054468eb5c1add1715dd28baac9b63f}} 
+{\bfseries k} = english\+\_\+lower(k)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_a1e1197df7cdc3f413f6329581abb44f9}\label{namespacenumpy_1_1core_1_1__type__aliases_a1e1197df7cdc3f413f6329581abb44f9}} 
+dictionary {\bfseries void} = all\+Types\mbox{[}\textquotesingle{}void\textquotesingle{}\mbox{]}
+\item 
+dictionary {\bfseries sctypes}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Due to compatibility, numpy has a very large number of different naming
+conventions for the scalar types (those subclassing from `numpy.generic`).
+This file produces a convoluted set of dictionaries mapping names to types,
+and sometimes other mappings too.
+
+.. data:: allTypes
+    A dictionary of names to types that will be exposed as attributes through
+    ``np.core.numerictypes.*``
+
+.. data:: sctypeDict
+    Similar to `allTypes`, but maps a broader set of aliases to their types.
+
+.. data:: sctypes
+    A dictionary keyed by a "type group" string, providing a list of types
+    under that group.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_a3964ddaf325eb43b4f7515eab8ec4f13}\label{namespacenumpy_1_1core_1_1__type__aliases_a3964ddaf325eb43b4f7515eab8ec4f13}} 
+\index{numpy.core.\_type\_aliases@{numpy.core.\_type\_aliases}!bitname@{bitname}}
+\index{bitname@{bitname}!numpy.core.\_type\_aliases@{numpy.core.\_type\_aliases}}
+\doxysubsubsection{\texorpdfstring{bitname()}{bitname()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+type\+\_\+aliases.\+bitname (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a bit-width name for a given type object\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__type__aliases_ac307b8f4e4a157878500f491c92a45da}\label{namespacenumpy_1_1core_1_1__type__aliases_ac307b8f4e4a157878500f491c92a45da}} 
+\index{numpy.core.\_type\_aliases@{numpy.core.\_type\_aliases}!sctypes@{sctypes}}
+\index{sctypes@{sctypes}!numpy.core.\_type\_aliases@{numpy.core.\_type\_aliases}}
+\doxysubsubsection{\texorpdfstring{sctypes}{sctypes}}
+{\footnotesize\ttfamily dictionary numpy.\+core.\+\_\+type\+\_\+aliases.\+sctypes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'int'}: [],}
+\DoxyCodeLine{2            \textcolor{stringliteral}{'uint'}:[],}
+\DoxyCodeLine{3            \textcolor{stringliteral}{'float'}:[],}
+\DoxyCodeLine{4            \textcolor{stringliteral}{'complex'}:[],}
+\DoxyCodeLine{5            \textcolor{stringliteral}{'others'}:[bool, object, bytes, unicode, void]\}}
+
+\end{DoxyCode}

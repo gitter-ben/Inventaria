@@ -1,0 +1,25 @@
+<map id="pip._vendor.requests.exceptions.RequestException" name="pip._vendor.requests.exceptions.RequestException">
+<area shape="rect" id="node1" title=" " alt="" coords="120,463,356,504"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ChunkedEncodingError.html" title=" " alt="" coords="404,5,640,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ConnectionError.html" title=" " alt="" coords="404,136,640,177"/>
+<area shape="rect" id="node8" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ContentDecodingError.html" title=" " alt="" coords="404,201,640,243"/>
+<area shape="rect" id="node9" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1HTTPError.html" title=" " alt="" coords="404,267,640,308"/>
+<area shape="rect" id="node10" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1InvalidHeader.html" title=" " alt="" coords="404,332,640,373"/>
+<area shape="rect" id="node11" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1InvalidJSONError.html" title=" " alt="" coords="404,397,640,439"/>
+<area shape="rect" id="node13" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1InvalidSchema.html" title=" " alt="" coords="404,463,640,504"/>
+<area shape="rect" id="node14" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1InvalidURL.html" title=" " alt="" coords="404,528,640,569"/>
+<area shape="rect" id="node16" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1MissingSchema.html" title=" " alt="" coords="404,593,640,635"/>
+<area shape="rect" id="node17" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1RetryError.html" title=" " alt="" coords="404,659,640,700"/>
+<area shape="rect" id="node18" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1StreamConsumedError.html" title=" " alt="" coords="404,724,640,765"/>
+<area shape="rect" id="node19" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1Timeout.html" title=" " alt="" coords="404,71,640,112"/>
+<area shape="rect" id="node21" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1TooManyRedirects.html" title=" " alt="" coords="404,789,640,831"/>
+<area shape="rect" id="node22" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1URLRequired.html" title=" " alt="" coords="404,855,640,896"/>
+<area shape="rect" id="node23" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1UnrewindableBodyError.html" title=" " alt="" coords="404,920,640,961"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,470,72,497"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ConnectTimeout.html" title=" " alt="" coords="688,71,924,112"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ProxyError.html" title=" " alt="" coords="688,136,924,177"/>
+<area shape="rect" id="node7" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1SSLError.html" title=" " alt="" coords="688,201,924,243"/>
+<area shape="rect" id="node12" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1JSONDecodeError.html" title=" " alt="" coords="688,397,924,439"/>
+<area shape="rect" id="node15" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1InvalidProxyURL.html" title=" " alt="" coords="688,528,924,569"/>
+<area shape="rect" id="node20" href="$classpip_1_1__vendor_1_1requests_1_1exceptions_1_1ReadTimeout.html" title=" " alt="" coords="688,5,924,47"/>
+</map>

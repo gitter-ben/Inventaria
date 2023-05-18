@@ -1,0 +1,67 @@
+\hypertarget{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand}{}\doxysection{pip.\+\_\+internal.\+commands.\+uninstall.\+Uninstall\+Command Class Reference}
+\label{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand}\index{pip.\_internal.commands.uninstall.UninstallCommand@{pip.\_internal.commands.uninstall.UninstallCommand}}
+
+
+Inheritance diagram for pip.\+\_\+internal.\+commands.\+uninstall.\+Uninstall\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+internal.\+commands.\+uninstall.\+Uninstall\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_ae747ee4cf67dc6cc9d5af330b750f124}\label{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_ae747ee4cf67dc6cc9d5af330b750f124}} 
+None {\bfseries add\+\_\+options} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_a3667b0dca3ab8ca11f39a21ef1ff1ee9}\label{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_a3667b0dca3ab8ca11f39a21ef1ff1ee9}} 
+int {\bfseries run} (self, Values options, List\mbox{[}str\mbox{]} args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries usage}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Uninstall packages.
+
+pip is able to uninstall most installed packages. Known exceptions are:
+
+- Pure distutils packages installed with ``python setup.py install``, which
+  leave behind no metadata to determine what files were installed.
+- Script wrappers installed by ``python setup.py develop``.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_ad31ff4ade457f8c0459d6562f2b121e6}\label{classpip_1_1__internal_1_1commands_1_1uninstall_1_1UninstallCommand_ad31ff4ade457f8c0459d6562f2b121e6}} 
+\index{pip.\_internal.commands.uninstall.UninstallCommand@{pip.\_internal.commands.uninstall.UninstallCommand}!usage@{usage}}
+\index{usage@{usage}!pip.\_internal.commands.uninstall.UninstallCommand@{pip.\_internal.commands.uninstall.UninstallCommand}}
+\doxysubsubsection{\texorpdfstring{usage}{usage}}
+{\footnotesize\ttfamily string pip.\+\_\+internal.\+commands.\+uninstall.\+Uninstall\+Command.\+usage\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{      \%prog [options] <package> ...}}
+\DoxyCodeLine{\textcolor{stringliteral}{      \%prog [options] -\/r <requirements file> ..."{}"{}"{}}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+internal/commands/uninstall.\+py\end{DoxyCompactItemize}

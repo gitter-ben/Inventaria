@@ -1,0 +1,79 @@
+\hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info}{}\doxysection{numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info Class Reference}
+\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info}\index{numpy.distutils.system\_info.blas\_info@{numpy.distutils.system\_info.blas\_info}}
+
+
+Inheritance diagram for numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnumpy_1_1distutils_1_1system__info_1_1blas__info__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classnumpy_1_1distutils_1_1system__info_1_1blas__info__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_accafdaaed8300b2e39300f8296218f69}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_accafdaaed8300b2e39300f8296218f69}} 
+def {\bfseries calc\+\_\+info} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}{get\+\_\+cblas\+\_\+libs}} (self, info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a78240301cf6b6df7aafdc74c55e33d75}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a78240301cf6b6df7aafdc74c55e33d75}} 
+string {\bfseries section} = \textquotesingle{}blas\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_ac703ae308c55bd5e9b8910aeae635814}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_ac703ae308c55bd5e9b8910aeae635814}} 
+string {\bfseries dir\+\_\+env\+\_\+var} = \textquotesingle{}BLAS\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_aaaedd90dec4dfa5ca0518abd47b6d5fa}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_aaaedd90dec4dfa5ca0518abd47b6d5fa}} 
+{\bfseries notfounderror} = \mbox{\hyperlink{classnumpy_1_1distutils_1_1system__info_1_1BlasNotFoundError}{Blas\+Not\+Found\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}\label{classnumpy_1_1distutils_1_1system__info_1_1blas__info_a536a7fd300d4c5f24f45fdfe9a9877b0}} 
+\index{numpy.distutils.system\_info.blas\_info@{numpy.distutils.system\_info.blas\_info}!get\_cblas\_libs@{get\_cblas\_libs}}
+\index{get\_cblas\_libs@{get\_cblas\_libs}!numpy.distutils.system\_info.blas\_info@{numpy.distutils.system\_info.blas\_info}}
+\doxysubsubsection{\texorpdfstring{get\_cblas\_libs()}{get\_cblas\_libs()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+system\+\_\+info.\+blas\+\_\+info.\+get\+\_\+cblas\+\_\+libs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{info }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Check whether we can link with CBLAS interface
+
+This method will search through several combinations of libraries
+to check whether CBLAS is present:
+
+1. Libraries in ``info['libraries']``, as is
+2. As 1. but also explicitly adding ``'cblas'`` as a library
+3. As 1. but also explicitly adding ``'blas'`` as a library
+4. Check only library ``'cblas'``
+5. Check only library ``'blas'``
+
+Parameters
+----------
+info : dict
+   system information dictionary for compilation and linking
+
+Returns
+-------
+libraries : list of str or None
+    a list of libraries that enables the use of CBLAS interface.
+    Returns None if not found or a compilation error occurs.
+
+    Since 1.17 returns a list.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/distutils/system\+\_\+info.\+py\end{DoxyCompactItemize}

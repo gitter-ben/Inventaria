@@ -1,0 +1,35 @@
+\hypertarget{classnumpy_1_1__globals_1_1__NoValueType}{}\doxysection{numpy.\+\_\+globals.\+\_\+\+No\+Value\+Type Class Reference}
+\label{classnumpy_1_1__globals_1_1__NoValueType}\index{numpy.\_globals.\_NoValueType@{numpy.\_globals.\_NoValueType}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__NoValueType_a1b702cac06a24028fe954db4773cfab0}\label{classnumpy_1_1__globals_1_1__NoValueType_a1b702cac06a24028fe954db4773cfab0}} 
+def {\bfseries \+\_\+\+\_\+new\+\_\+\+\_\+} (cls)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1__globals_1_1__NoValueType_ad270193543610521dd6a48881f494918}\label{classnumpy_1_1__globals_1_1__NoValueType_ad270193543610521dd6a48881f494918}} 
+def {\bfseries \+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Special keyword value.
+
+The instance of this class may be used as the default value assigned to a
+keyword if no other obvious default (e.g., `None`) is suitable,
+
+Common reasons for using this keyword are:
+
+- A new keyword is added to a function, and that function forwards its
+  inputs to another function or method which can be defined outside of
+  NumPy. For example, ``np.std(x)`` calls ``x.std``, so when a ``keepdims``
+  keyword was added that could only be forwarded if the user explicitly
+  specified ``keepdims``; downstream array libraries may not have added
+  the same keyword, so adding ``x.std(..., keepdims=keepdims)``
+  unconditionally could have broken previously working code.
+- A keyword is being deprecated, and a deprecation warning must only be
+  emitted when the keyword is used.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/\+\_\+globals.\+py\end{DoxyCompactItemize}

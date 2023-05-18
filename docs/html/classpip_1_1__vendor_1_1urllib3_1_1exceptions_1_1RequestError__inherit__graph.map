@@ -1,0 +1,9 @@
+<map id="pip._vendor.urllib3.exceptions.RequestError" name="pip._vendor.urllib3.exceptions.RequestError">
+<area shape="rect" id="node1" title=" " alt="" coords="679,71,900,112"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1HostChangedError.html" title=" " alt="" coords="948,5,1169,47"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1MaxRetryError.html" title=" " alt="" coords="948,71,1169,112"/>
+<area shape="rect" id="node7" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1ReadTimeoutError.html" title=" " alt="" coords="948,136,1169,177"/>
+<area shape="rect" id="node2" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1PoolError.html" title=" " alt="" coords="409,71,631,112"/>
+<area shape="rect" id="node3" href="$classpip_1_1__vendor_1_1urllib3_1_1exceptions_1_1HTTPError.html" title=" " alt="" coords="140,71,361,112"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,78,92,105"/>
+</map>

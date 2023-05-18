@@ -1,0 +1,89 @@
+\hypertarget{namespaceextending}{}\doxysection{extending Namespace Reference}
+\label{namespaceextending}\index{extending@{extending}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceextending_a9428868b82dc14cfc42f679c7cd44bd5}\label{namespaceextending_a9428868b82dc14cfc42f679c7cd44bd5}} 
+def {\bfseries normals} (n, state)
+\item 
+\mbox{\Hypertarget{namespaceextending_a4406ac784cc5c2435dec4e7f1e9a5147}\label{namespaceextending_a4406ac784cc5c2435dec4e7f1e9a5147}} 
+def {\bfseries numbacall} ()
+\item 
+\mbox{\Hypertarget{namespaceextending_aeb6f21fd12d96f370964f44537a9f908}\label{namespaceextending_aeb6f21fd12d96f370964f44537a9f908}} 
+def {\bfseries numpycall} ()
+\item 
+\mbox{\Hypertarget{namespaceextending_ad8fa47df7e72bc24c54020bb8f8bafee}\label{namespaceextending_ad8fa47df7e72bc24c54020bb8f8bafee}} 
+def {\bfseries bounded\+\_\+uint} (lb, ub, state)
+\item 
+\mbox{\Hypertarget{namespaceextending_a94f605864f41957f25eaccc9b95a7fb5}\label{namespaceextending_a94f605864f41957f25eaccc9b95a7fb5}} 
+def {\bfseries bounded\+\_\+uints} (lb, ub, n, state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceextending_a1260e9bfdc58cf13ca4704655303cbdb}\label{namespaceextending_a1260e9bfdc58cf13ca4704655303cbdb}} 
+{\bfseries ffi} = cffi.\+FFI()
+\item 
+\mbox{\Hypertarget{namespaceextending_a2dba9dae3c59d687c64b2150f744bae8}\label{namespaceextending_a2dba9dae3c59d687c64b2150f744bae8}} 
+{\bfseries inc\+\_\+dir} = os.\+path.\+join(np.\+get\+\_\+include(), \textquotesingle{}numpy\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespaceextending_a739074a39dbaeee15319d4a1fffed0fb}\label{namespaceextending_a739074a39dbaeee15319d4a1fffed0fb}} 
+{\bfseries lib} = ffi.\+dlopen(np.\+random.\+\_\+generator.\+\_\+\+\_\+file\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{namespaceextending_a3a93d06c028a21ed5e3775c9d97b0437}\label{namespaceextending_a3a93d06c028a21ed5e3775c9d97b0437}} 
+{\bfseries bit\+\_\+gen} = np.\+random.\+PCG64()
+\item 
+\mbox{\Hypertarget{namespaceextending_af6793f8dd9d1232c132981cc1ac7a4e6}\label{namespaceextending_af6793f8dd9d1232c132981cc1ac7a4e6}} 
+{\bfseries rng} = np.\+random.\+Generator(bit\+\_\+gen)
+\item 
+\mbox{\Hypertarget{namespaceextending_a6228eb907acb00d4e6178f7b10aa3435}\label{namespaceextending_a6228eb907acb00d4e6178f7b10aa3435}} 
+{\bfseries state} = bit\+\_\+gen.\+state
+\item 
+\mbox{\Hypertarget{namespaceextending_a8c23516950145d0b7258110b88945278}\label{namespaceextending_a8c23516950145d0b7258110b88945278}} 
+{\bfseries interface} = rng.\+bit\+\_\+generator.\+cffi
+\item 
+\mbox{\Hypertarget{namespaceextending_a424fa7bd1b7eb8da0e796fdac17975c2}\label{namespaceextending_a424fa7bd1b7eb8da0e796fdac17975c2}} 
+int {\bfseries n} = 100
+\item 
+\mbox{\Hypertarget{namespaceextending_aa5a6cdee379078157b1c777c60a9235c}\label{namespaceextending_aa5a6cdee379078157b1c777c60a9235c}} 
+{\bfseries vals\+\_\+cffi} = ffi.\+new(\textquotesingle{}double\mbox{[}\%d\mbox{]}\textquotesingle{} \% n)
+\item 
+\mbox{\Hypertarget{namespaceextending_a67a4823006ed5c87ec37e99590e521b2}\label{namespaceextending_a67a4823006ed5c87ec37e99590e521b2}} 
+{\bfseries vals} = rng.\+standard\+\_\+normal(n)
+\item 
+\mbox{\Hypertarget{namespaceextending_a84443d08eb187429ae515173a0132283}\label{namespaceextending_a84443d08eb187429ae515173a0132283}} 
+{\bfseries next\+\_\+d} = bit\+\_\+gen.\+cffi.\+next\+\_\+double
+\item 
+\mbox{\Hypertarget{namespaceextending_a79235899bb282ae6cc6b6f2869b98830}\label{namespaceextending_a79235899bb282ae6cc6b6f2869b98830}} 
+{\bfseries state\+\_\+addr} = bit\+\_\+gen.\+cffi.\+state\+\_\+address
+\item 
+\mbox{\Hypertarget{namespaceextending_aae65bc609fd94964e24a47ed7a1cf427}\label{namespaceextending_aae65bc609fd94964e24a47ed7a1cf427}} 
+{\bfseries normalsj} = nb.\+jit(normals, nopython=True)
+\item 
+\mbox{\Hypertarget{namespaceextending_a23b7fd556719b72083b19f889811859a}\label{namespaceextending_a23b7fd556719b72083b19f889811859a}} 
+{\bfseries rg} = np.\+random.\+Generator(PCG64())
+\item 
+\mbox{\Hypertarget{namespaceextending_a0d7617daab983995ef4857adb6d284ec}\label{namespaceextending_a0d7617daab983995ef4857adb6d284ec}} 
+def {\bfseries r1} = numbacall()
+\item 
+\mbox{\Hypertarget{namespaceextending_a0f81e8d8f64371e69d53b9f5f23c1565}\label{namespaceextending_a0f81e8d8f64371e69d53b9f5f23c1565}} 
+def {\bfseries r2} = numpycall()
+\item 
+\mbox{\Hypertarget{namespaceextending_afedbc937e92d45d9761b1155d735cbef}\label{namespaceextending_afedbc937e92d45d9761b1155d735cbef}} 
+{\bfseries t1} = timeit(numbacall, number=1000)
+\item 
+\mbox{\Hypertarget{namespaceextending_ad742a73782498dea3dc0129460544ea1}\label{namespaceextending_ad742a73782498dea3dc0129460544ea1}} 
+{\bfseries t2} = timeit(numpycall, number=1000)
+\item 
+\mbox{\Hypertarget{namespaceextending_ae4eeff5c3ac19e037f0c44c2dc767701}\label{namespaceextending_ae4eeff5c3ac19e037f0c44c2dc767701}} 
+{\bfseries next\+\_\+u32} = bit\+\_\+gen.\+ctypes.\+next\+\_\+uint32
+\item 
+\mbox{\Hypertarget{namespaceextending_a1d6b667e2d9ab824d12cb794b1960b1d}\label{namespaceextending_a1d6b667e2d9ab824d12cb794b1960b1d}} 
+{\bfseries ctypes\+\_\+state} = bit\+\_\+gen.\+ctypes.\+state
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Use cffi to access any of the underlying C functions from distributions.h
+\end{DoxyVerb}
+ 

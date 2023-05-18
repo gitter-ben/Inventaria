@@ -1,0 +1,44 @@
+\hypertarget{classpip_1_1__vendor_1_1typing__extensions_1_1__Required}{}\doxysection{pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Required Class Reference}
+\label{classpip_1_1__vendor_1_1typing__extensions_1_1__Required}\index{pip.\_vendor.typing\_extensions.\_Required@{pip.\_vendor.typing\_extensions.\_Required}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Required\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__Required__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Required\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__Required__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A special typing construct to mark a key of a total=False TypedDict
+as required. For example:
+
+    class Movie(TypedDict, total=False):
+        title: Required[str]
+        year: int
+
+    m = Movie(
+        title='The Matrix',  # typechecker error if key is omitted
+        year=1999,
+    )
+
+There is no runtime checking that a required key is actually provided
+when instantiating a related TypedDict.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/typing\+\_\+extensions.\+py\end{DoxyCompactItemize}

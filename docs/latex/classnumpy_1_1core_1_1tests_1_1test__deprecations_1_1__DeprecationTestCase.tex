@@ -1,0 +1,98 @@
+\hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase}{}\doxysection{numpy.\+core.\+tests.\+test\+\_\+deprecations.\+\_\+\+Deprecation\+Test\+Case Class Reference}
+\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase}\index{numpy.core.tests.test\_deprecations.\_DeprecationTestCase@{numpy.core.tests.test\_deprecations.\_DeprecationTestCase}}
+
+
+Inheritance diagram for numpy.\+core.\+tests.\+test\+\_\+deprecations.\+\_\+\+Deprecation\+Test\+Case\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a7d494e96427becaee715b4233e94c44e}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a7d494e96427becaee715b4233e94c44e}} 
+def {\bfseries setup\+\_\+method} (self)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a0de708501b194424340958a531141a45}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a0de708501b194424340958a531141a45}} 
+def {\bfseries teardown\+\_\+method} (self)
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a0d6477d2c79624c6a9ec63d3e5503571}{assert\+\_\+deprecated}} (self, function, num=1, ignore\+\_\+others=False, function\+\_\+fails=False, exceptions=np.\+\_\+\+No\+Value, args=(), kwargs=\{\})
+\item 
+def \mbox{\hyperlink{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_af8dcb2b22687abd6271dc97c5b7c258a}{assert\+\_\+not\+\_\+deprecated}} (self, function, args=(), kwargs=\{\})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a5d8f3dbe51cfac5cc9f1c733d2b836f8}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a5d8f3dbe51cfac5cc9f1c733d2b836f8}} 
+{\bfseries warn\+\_\+ctx}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a960158952dd880cb14a2ede10f1fe474}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a960158952dd880cb14a2ede10f1fe474}} 
+{\bfseries log}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_ab4f607f7e5893d1521ca0e6f79f3e898}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_ab4f607f7e5893d1521ca0e6f79f3e898}} 
+{\bfseries message}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_aaf0ae6e0a7f5c5bb6609954fa7bb59bb}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_aaf0ae6e0a7f5c5bb6609954fa7bb59bb}} 
+{\bfseries warning\+\_\+cls}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a0d6477d2c79624c6a9ec63d3e5503571}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_a0d6477d2c79624c6a9ec63d3e5503571}} 
+\index{numpy.core.tests.test\_deprecations.\_DeprecationTestCase@{numpy.core.tests.test\_deprecations.\_DeprecationTestCase}!assert\_deprecated@{assert\_deprecated}}
+\index{assert\_deprecated@{assert\_deprecated}!numpy.core.tests.test\_deprecations.\_DeprecationTestCase@{numpy.core.tests.test\_deprecations.\_DeprecationTestCase}}
+\doxysubsubsection{\texorpdfstring{assert\_deprecated()}{assert\_deprecated()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+deprecations.\+\_\+\+Deprecation\+Test\+Case.\+assert\+\_\+deprecated (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{function,  }\item[{}]{num = {\ttfamily 1},  }\item[{}]{ignore\+\_\+others = {\ttfamily False},  }\item[{}]{function\+\_\+fails = {\ttfamily False},  }\item[{}]{exceptions = {\ttfamily np.\+\_\+NoValue},  }\item[{}]{args = {\ttfamily ()},  }\item[{}]{kwargs = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test if DeprecationWarnings are given and raised.
+
+This first checks if the function when called gives `num`
+DeprecationWarnings, after that it tries to raise these
+DeprecationWarnings and compares them with `exceptions`.
+The exceptions can be different for cases where this code path
+is simply not anticipated and the exception is replaced.
+
+Parameters
+----------
+function : callable
+    The function to test
+num : int
+    Number of DeprecationWarnings to expect. This should normally be 1.
+ignore_others : bool
+    Whether warnings of the wrong type should be ignored (note that
+    the message is not checked)
+function_fails : bool
+    If the function would normally fail, setting this will check for
+    warnings inside a try/except block.
+exceptions : Exception or tuple of Exceptions
+    Exception to expect when turning the warnings into an error.
+    The default checks for DeprecationWarnings. If exceptions is
+    empty the function is expected to run successfully.
+args : tuple
+    Arguments for `function`
+kwargs : dict
+    Keyword arguments for `function`
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_af8dcb2b22687abd6271dc97c5b7c258a}\label{classnumpy_1_1core_1_1tests_1_1test__deprecations_1_1__DeprecationTestCase_af8dcb2b22687abd6271dc97c5b7c258a}} 
+\index{numpy.core.tests.test\_deprecations.\_DeprecationTestCase@{numpy.core.tests.test\_deprecations.\_DeprecationTestCase}!assert\_not\_deprecated@{assert\_not\_deprecated}}
+\index{assert\_not\_deprecated@{assert\_not\_deprecated}!numpy.core.tests.test\_deprecations.\_DeprecationTestCase@{numpy.core.tests.test\_deprecations.\_DeprecationTestCase}}
+\doxysubsubsection{\texorpdfstring{assert\_not\_deprecated()}{assert\_not\_deprecated()}}
+{\footnotesize\ttfamily def numpy.\+core.\+tests.\+test\+\_\+deprecations.\+\_\+\+Deprecation\+Test\+Case.\+assert\+\_\+not\+\_\+deprecated (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{function,  }\item[{}]{args = {\ttfamily ()},  }\item[{}]{kwargs = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test that warnings are not raised.
+
+This is just a shorthand for:
+
+self.assert_deprecated(function, num=0, ignore_others=True,
+                exceptions=tuple(), args=args, kwargs=kwargs)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/core/tests/test\+\_\+deprecations.\+py\end{DoxyCompactItemize}

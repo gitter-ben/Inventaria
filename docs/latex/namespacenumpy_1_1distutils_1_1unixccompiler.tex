@@ -1,0 +1,59 @@
+\hypertarget{namespacenumpy_1_1distutils_1_1unixccompiler}{}\doxysection{numpy.\+distutils.\+unixccompiler Namespace Reference}
+\label{namespacenumpy_1_1distutils_1_1unixccompiler}\index{numpy.distutils.unixccompiler@{numpy.distutils.unixccompiler}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1distutils_1_1unixccompiler_a64eba9b5c70e4b0a2c5087188c817de1}{Unix\+CCompiler\+\_\+\+\_\+compile}} (self, obj, src, ext, cc\+\_\+args, extra\+\_\+postargs, pp\+\_\+opts)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1distutils_1_1unixccompiler_ad9c1e957f5cc71b1a32be90196b55e43}{Unix\+CCompiler\+\_\+create\+\_\+static\+\_\+lib}} (self, objects, output\+\_\+libname, output\+\_\+dir=None, debug=0, target\+\_\+lang=None)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1unixccompiler_a4d031ccc0d3be51da74f486e78eeafed}\label{namespacenumpy_1_1distutils_1_1unixccompiler_a4d031ccc0d3be51da74f486e78eeafed}} 
+{\bfseries compiler\+\_\+so}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1unixccompiler_a815b2bca69cc58a19ead0fc700e132f6}\label{namespacenumpy_1_1distutils_1_1unixccompiler_a815b2bca69cc58a19ead0fc700e132f6}} 
+{\bfseries linker\+\_\+so}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}unixccompiler - can handle very long argument lists for ar.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1unixccompiler_a64eba9b5c70e4b0a2c5087188c817de1}\label{namespacenumpy_1_1distutils_1_1unixccompiler_a64eba9b5c70e4b0a2c5087188c817de1}} 
+\index{numpy.distutils.unixccompiler@{numpy.distutils.unixccompiler}!UnixCCompiler\_\_compile@{UnixCCompiler\_\_compile}}
+\index{UnixCCompiler\_\_compile@{UnixCCompiler\_\_compile}!numpy.distutils.unixccompiler@{numpy.distutils.unixccompiler}}
+\doxysubsubsection{\texorpdfstring{UnixCCompiler\_\_compile()}{UnixCCompiler\_\_compile()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+unixccompiler.\+Unix\+CCompiler\+\_\+\+\_\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{src,  }\item[{}]{ext,  }\item[{}]{cc\+\_\+args,  }\item[{}]{extra\+\_\+postargs,  }\item[{}]{pp\+\_\+opts }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile a single source files with a Unix-style compiler.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1distutils_1_1unixccompiler_ad9c1e957f5cc71b1a32be90196b55e43}\label{namespacenumpy_1_1distutils_1_1unixccompiler_ad9c1e957f5cc71b1a32be90196b55e43}} 
+\index{numpy.distutils.unixccompiler@{numpy.distutils.unixccompiler}!UnixCCompiler\_create\_static\_lib@{UnixCCompiler\_create\_static\_lib}}
+\index{UnixCCompiler\_create\_static\_lib@{UnixCCompiler\_create\_static\_lib}!numpy.distutils.unixccompiler@{numpy.distutils.unixccompiler}}
+\doxysubsubsection{\texorpdfstring{UnixCCompiler\_create\_static\_lib()}{UnixCCompiler\_create\_static\_lib()}}
+{\footnotesize\ttfamily def numpy.\+distutils.\+unixccompiler.\+Unix\+CCompiler\+\_\+create\+\_\+static\+\_\+lib (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{objects,  }\item[{}]{output\+\_\+libname,  }\item[{}]{output\+\_\+dir = {\ttfamily None},  }\item[{}]{debug = {\ttfamily 0},  }\item[{}]{target\+\_\+lang = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build a static library in a separate sub-process.
+
+Parameters
+----------
+objects : list or tuple of str
+    List of paths to object files used to build the static library.
+output_libname : str
+    The library name as an absolute or relative (if `output_dir` is used)
+    path.
+output_dir : str, optional
+    The path to the output directory. Default is None, in which case
+    the ``output_dir`` attribute of the UnixCCompiler instance.
+debug : bool, optional
+    This parameter is not used.
+target_lang : str, optional
+    This parameter is not used.
+
+Returns
+-------
+None\end{DoxyVerb}
+ 

@@ -1,0 +1,110 @@
+\hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary}{}\doxysection{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary Class Reference}
+\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary}\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}}
+
+
+Inheritance diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a3246385294b8ca37843932a2771518ca}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, size\+\_\+threshold=16, compression=zlib)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a58f7d60a8d88f6942e10b2dcf570491f}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a58f7d60a8d88f6942e10b2dcf570491f}} 
+def {\bfseries flatten\+\_\+byteorder} (self, obj, data)
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a6d6d9ec85b0ed8ed762a66b6599d61ab}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a6d6d9ec85b0ed8ed762a66b6599d61ab}} 
+def {\bfseries restore\+\_\+byteorder} (self, data, arr)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}{flatten}} (self, obj, data)
+\item 
+def \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}{restore}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a52729c12d2fd36bd986ed54c1d3c453a}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a52729c12d2fd36bd986ed54c1d3c453a}} 
+{\bfseries size\+\_\+threshold}
+\item 
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a58429bb28354df8dc19086571b67e2fa}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a58429bb28354df8dc19086571b67e2fa}} 
+{\bfseries compression}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}stores arrays with size greater than 'size_threshold' as
+(optionally) compressed base64
+
+Notes
+-----
+This would be easier to implement using np.save/np.load, but
+that would be less language-agnostic
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a3246385294b8ca37843932a2771518ca}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a3246385294b8ca37843932a2771518ca}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{size\+\_\+threshold = {\ttfamily 16},  }\item[{}]{compression = {\ttfamily zlib} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param size_threshold: nonnegative int or None
+    valid values for 'size_threshold' are all nonnegative
+    integers and None
+    if size_threshold is None, values are always stored as nested lists
+:param compression: a compression module or None
+    valid values for 'compression' are {zlib, bz2, None}
+    if compression is None, no compression is applied
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_aa5a97ddb704d234a8588ea7cf73da79a}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}!flatten@{flatten}}
+\index{flatten@{flatten}!jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary.\+flatten (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}encode numpy to json\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_ac065565c0ea67a0d168e70ebdffc8292}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_ae1985c33a607a45723188e75fb6ee83f}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}.
+
+\mbox{\Hypertarget{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}\label{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerBinary_a2b9db9be80943321a086c674b9f3a3bd}} 
+\index{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}!restore@{restore}}
+\index{restore@{restore}!jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary@{jsonpickle.ext.numpy.NumpyNDArrayHandlerBinary}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily def jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+Binary.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}decode numpy from json\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandler_a0342d97e57cb90463b775afb81a530de}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classjsonpickle_1_1ext_1_1numpy_1_1NumpyNDArrayHandlerView_a5aa933d565fcc77328bcf653ceab5837}{jsonpickle.\+ext.\+numpy.\+Numpy\+NDArray\+Handler\+View}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/jsonpickle/ext/numpy.\+py\end{DoxyCompactItemize}

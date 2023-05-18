@@ -1,0 +1,65 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Followed\+By Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy}\index{pip.\_vendor.pyparsing.core.FollowedBy@{pip.\_vendor.pyparsing.core.FollowedBy}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Followed\+By\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Followed\+By\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_adbdee475ed710ecf20138e5c0bce60d5}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_adbdee475ed710ecf20138e5c0bce60d5}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Union\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}, str\mbox{]} expr)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_aaefec40140c18790ab175044ae44bc06}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_aaefec40140c18790ab175044ae44bc06}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_ad9360359605bbfcd5a8a182b5ff53b12}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1FollowedBy_ad9360359605bbfcd5a8a182b5ff53b12}} 
+{\bfseries may\+Return\+Empty}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Lookahead matching of the given parse expression.
+``FollowedBy`` does *not* advance the parsing position within
+the input string, it only verifies that the specified parse
+expression matches at the current position.  ``FollowedBy``
+always returns a null token list. If any results names are defined
+in the lookahead expression, those *will* be returned for access by
+name.
+
+Example::
+
+    # use FollowedBy to match a label only if it is followed by a ':'
+    data_word = Word(alphas)
+    label = data_word + FollowedBy(':')
+    attr_expr = Group(label + Suppress(':') + OneOrMore(data_word, stop_on=label).set_parse_action(' '.join))
+
+    OneOrMore(attr_expr).parse_string("shape: SQUARE color: BLACK posn: upper left").pprint()
+
+prints::
+
+    [['shape', 'SQUARE'], ['color', 'BLACK'], ['posn', 'upper left']]
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\hypertarget{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseException}{}\doxysection{setuptools.\+\_\+vendor.\+pyparsing.\+Parse\+Exception Class Reference}
+\label{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseException}\index{setuptools.\_vendor.pyparsing.ParseException@{setuptools.\_vendor.pyparsing.ParseException}}
+
+
+Inheritance diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Parse\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for setuptools.\+\_\+vendor.\+pyparsing.\+Parse\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classsetuptools_1_1__vendor_1_1pyparsing_1_1ParseException__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Exception thrown when parse expressions don't match class;
+supported attributes by name are:
+ - lineno - returns the line number of the exception text
+ - col - returns the column number of the exception text
+ - line - returns the line containing the exception text
+    
+Example::
+    try:
+        Word(nums).setName("integer").parseString("ABC")
+    except ParseException as pe:
+        print(pe)
+        print("column: {}".format(pe.col))
+        
+prints::
+   Expected integer (at char 0), (line:1, col:1)
+    column: 1
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/setuptools/\+\_\+vendor/pyparsing.\+py\end{DoxyCompactItemize}

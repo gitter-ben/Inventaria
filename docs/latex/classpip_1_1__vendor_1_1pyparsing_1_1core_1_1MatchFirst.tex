@@ -1,0 +1,72 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Match\+First Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst}\index{pip.\_vendor.pyparsing.core.MatchFirst@{pip.\_vendor.pyparsing.core.MatchFirst}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Match\+First\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Match\+First\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_ac46b2e2fea5f611a830eca9c2736e573}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_ac46b2e2fea5f611a830eca9c2736e573}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Iterable\+Type\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}}\mbox{]} exprs, bool savelist=False)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_abf1fe67ee259fd48394355a34da0cd31}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_abf1fe67ee259fd48394355a34da0cd31}} 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1ParserElement}{Parser\+Element}} {\bfseries streamline} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a4a9495952c2dda24631bb9f6c804aac4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a4a9495952c2dda24631bb9f6c804aac4}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_adb3aae1f650270448e682cc49fde3ba4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_adb3aae1f650270448e682cc49fde3ba4}} 
+def {\bfseries \+\_\+\+\_\+ior\+\_\+\+\_\+} (self, other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a2b7f3cddb53382fa762bf3a50829d018}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a2b7f3cddb53382fa762bf3a50829d018}} 
+{\bfseries may\+Return\+Empty}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_aa36e4609ea6eac3ee5d0c1549fef5e64}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_aa36e4609ea6eac3ee5d0c1549fef5e64}} 
+{\bfseries skip\+Whitespace}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a72e97b6c9a9cc4cd8ffedbcc754f1acd}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1MatchFirst_a72e97b6c9a9cc4cd8ffedbcc754f1acd}} 
+{\bfseries save\+As\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Requires that at least one :class:`ParseExpression` is found. If
+more than one expression matches, the first one listed is the one that will
+match. May be constructed using the ``'|'`` operator.
+
+Example::
+
+    # construct MatchFirst using '|' operator
+
+    # watch the order of expressions to match
+    number = Word(nums) | Combine(Word(nums) + '.' + Word(nums))
+    print(number.search_string("123 3.1416 789")) #  Fail! -> [['123'], ['3'], ['1416'], ['789']]
+
+    # put more selective expression first
+    number = Combine(Word(nums) + '.' + Word(nums)) | Word(nums)
+    print(number.search_string("123 3.1416 789")) #  Better -> [['123'], ['3.1416'], ['789']]
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,320 @@
+\hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress}{}\doxysection{pip.\+\_\+vendor.\+rich.\+progress.\+Progress Class Reference}
+\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress}\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+rich.\+progress.\+Progress\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+rich.\+progress.\+Progress\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a62e4af6b7003f65c97475ca71ab8abb1}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a62e4af6b7003f65c97475ca71ab8abb1}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$Union\mbox{[}str, \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1ProgressColumn}{Progress\+Column}}\mbox{]} columns, Optional\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1console_1_1Console}{Console}}\mbox{]} console=None, bool auto\+\_\+refresh=True, float refresh\+\_\+per\+\_\+second=10, float speed\+\_\+estimate\+\_\+period=30.\+0, bool transient=False, bool redirect\+\_\+stdout=True, bool redirect\+\_\+stderr=True, Optional\mbox{[}Get\+Time\+Callable\mbox{]} get\+\_\+time=None, bool disable=False, bool expand=False)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a305fb20d20396c0dd67ac80a28aa9a1d}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a305fb20d20396c0dd67ac80a28aa9a1d}} 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1console_1_1Console}{Console}} {\bfseries console} (self)
+\item 
+List\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Task}{Task}}\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad070ab018d3e76ebc7ea312d26d26757}{tasks}} (self)
+\item 
+List\mbox{[}Task\+ID\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a73148cb5c622b525ba4711b18c6b5558}{task\+\_\+ids}} (self)
+\item 
+bool \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a02ebcda8782d8af7248ba2c8d8be25f1}{finished}} (self)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad90c9b221cd715a310f6421a8fbe9f91}{start}} (self)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aefe7da637097c7b458471bb31f072047}{stop}} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a4979cbd1c8ed672eeb7a49066392a186}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a4979cbd1c8ed672eeb7a49066392a186}} 
+\char`\"{}Progress\char`\"{} {\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a5f5ac8f61763352a757bf03480233094}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a5f5ac8f61763352a757bf03480233094}} 
+None {\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, Optional\mbox{[}Type\mbox{[}Base\+Exception\mbox{]}\mbox{]} exc\+\_\+type, Optional\mbox{[}Base\+Exception\mbox{]} exc\+\_\+val, Optional\mbox{[}Traceback\+Type\mbox{]} exc\+\_\+tb)
+\item 
+Iterable\mbox{[}Progress\+Type\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aee9ea5592b98f74ebb5acb76bc499601}{track}} (self, Union\mbox{[}Iterable\mbox{[}Progress\+Type\mbox{]}, Sequence\mbox{[}Progress\+Type\mbox{]}\mbox{]} sequence, Optional\mbox{[}float\mbox{]} total=None, Optional\mbox{[}Task\+ID\mbox{]} task\+\_\+id=None, str description=\char`\"{}Working...\char`\"{}, float update\+\_\+period=0.\+1)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a0bf7ba8551f76ffe938fe51e53ee2bd0}{start\+\_\+task}} (self, Task\+ID task\+\_\+id)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a83f4796829c6ce892cada945962f181b}{stop\+\_\+task}} (self, Task\+ID task\+\_\+id)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a7c1035ee3c5276519a42b8122d574c25}{update}} (self, Task\+ID task\+\_\+id, $\ast$Optional\mbox{[}float\mbox{]} total=None, Optional\mbox{[}float\mbox{]} completed=None, Optional\mbox{[}float\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aecdf29e576cf1eae98c965538bf78606}{advance}}=None, Optional\mbox{[}str\mbox{]} description=None, Optional\mbox{[}bool\mbox{]} visible=None, bool \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a88dcdf9d00bbfe350b6c4b23b5670579}{refresh}}=False, $\ast$$\ast$Any fields)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a95ef34d14e0f284de106ddf881e04d47}{reset}} (self, Task\+ID task\+\_\+id, $\ast$bool \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad90c9b221cd715a310f6421a8fbe9f91}{start}}=True, Optional\mbox{[}float\mbox{]} total=None, int completed=0, Optional\mbox{[}bool\mbox{]} visible=None, Optional\mbox{[}str\mbox{]} description=None, $\ast$$\ast$Any fields)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aecdf29e576cf1eae98c965538bf78606}{advance}} (self, Task\+ID task\+\_\+id, float advance=1)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a88dcdf9d00bbfe350b6c4b23b5670579}{refresh}} (self)
+\item 
+Renderable\+Type \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ab746045f5e787bfde4a7a7e815b17a14}{get\+\_\+renderable}} (self)
+\item 
+Iterable\mbox{[}Renderable\+Type\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ae329cb9b10713e0971717cebcf2d234f}{get\+\_\+renderables}} (self)
+\item 
+\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1table_1_1Table}{Table}} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a42f4570b586d6cc467773cc7303b830d}{make\+\_\+tasks\+\_\+table}} (self, Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Task}{Task}}\mbox{]} \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad070ab018d3e76ebc7ea312d26d26757}{tasks}})
+\item 
+Renderable\+Type \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_adfc2c3c96fc19f9857390a0ea107bd97}{\+\_\+\+\_\+rich\+\_\+\+\_\+}} (self)
+\item 
+Task\+ID \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aabc66483e727f986d062641022ed09c1}{add\+\_\+task}} (self, str description, bool \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad90c9b221cd715a310f6421a8fbe9f91}{start}}=True, float total=100.\+0, int completed=0, bool visible=True, $\ast$$\ast$Any fields)
+\item 
+None \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a8cec731e78c8d3a6463de33c799c3b10}{remove\+\_\+task}} (self, Task\+ID task\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a90f60bbfc401f32cab22b75030e6a0d4}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a90f60bbfc401f32cab22b75030e6a0d4}} 
+{\bfseries columns}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a0223314d207faa189a8a001937897cbe}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a0223314d207faa189a8a001937897cbe}} 
+{\bfseries speed\+\_\+estimate\+\_\+period}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aad2caeb65537cf9702efb077e3100b23}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aad2caeb65537cf9702efb077e3100b23}} 
+{\bfseries disable}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a9cfe5a14055204a610f6a9ea061fae79}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a9cfe5a14055204a610f6a9ea061fae79}} 
+{\bfseries expand}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aa986edcca61816500243f8d7059f08f7}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aa986edcca61816500243f8d7059f08f7}} 
+{\bfseries live}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ac4f62c545091a1054b3cc7ecb116e284}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ac4f62c545091a1054b3cc7ecb116e284}} 
+{\bfseries get\+\_\+time}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a73b86d51e57089741d4676e29ab2e5ff}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a73b86d51e57089741d4676e29ab2e5ff}} 
+{\bfseries print}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_add2f972924c1ddfdba7fb9724d7b9233}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_add2f972924c1ddfdba7fb9724d7b9233}} 
+{\bfseries log}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Renders an auto-updating progress bar(s).
+
+Args:
+    console (Console, optional): Optional Console instance. Default will an internal Console instance writing to stdout.
+    auto_refresh (bool, optional): Enable auto refresh. If disabled, you will need to call `refresh()`.
+    refresh_per_second (Optional[float], optional): Number of times per second to refresh the progress information or None to use default (10). Defaults to None.
+    speed_estimate_period: (float, optional): Period (in seconds) used to calculate the speed estimate. Defaults to 30.
+    transient: (bool, optional): Clear the progress on exit. Defaults to False.
+    redirect_stdout: (bool, optional): Enable redirection of stdout, so ``print`` may be used. Defaults to True.
+    redirect_stderr: (bool, optional): Enable redirection of stderr. Defaults to True.
+    get_time: (Callable, optional): A callable that gets the current time, or None to use Console.get_time. Defaults to None.
+    disable (bool, optional): Disable progress display. Defaults to False
+    expand (bool, optional): Expand tasks table to fit width. Defaults to False.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_adfc2c3c96fc19f9857390a0ea107bd97}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_adfc2c3c96fc19f9857390a0ea107bd97}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!\_\_rich\_\_@{\_\_rich\_\_}}
+\index{\_\_rich\_\_@{\_\_rich\_\_}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{\_\_rich\_\_()}{\_\_rich\_\_()}}
+{\footnotesize\ttfamily  Renderable\+Type pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+\_\+\+\_\+rich\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Makes the Progress class itself renderable.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aabc66483e727f986d062641022ed09c1}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aabc66483e727f986d062641022ed09c1}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!add\_task@{add\_task}}
+\index{add\_task@{add\_task}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{add\_task()}{add\_task()}}
+{\footnotesize\ttfamily  Task\+ID pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+add\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{description,  }\item[{bool }]{start = {\ttfamily True},  }\item[{float }]{total = {\ttfamily 100.0},  }\item[{int }]{completed = {\ttfamily 0},  }\item[{bool }]{visible = {\ttfamily True},  }\item[{$\ast$$\ast$Any}]{fields }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a new 'task' to the Progress display.
+
+Args:
+    description (str): A description of the task.
+    start (bool, optional): Start the task immediately (to calculate elapsed time). If set to False,
+        you will need to call `start` manually. Defaults to True.
+    total (float, optional): Number of total steps in the progress if know. Defaults to 100.
+    completed (int, optional): Number of steps completed so far.. Defaults to 0.
+    visible (bool, optional): Enable display of the task. Defaults to True.
+    **fields (str): Additional data fields required for rendering.
+
+Returns:
+    TaskID: An ID you can use when calling `update`.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aecdf29e576cf1eae98c965538bf78606}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aecdf29e576cf1eae98c965538bf78606}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!advance@{advance}}
+\index{advance@{advance}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{advance()}{advance()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+advance (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id,  }\item[{float }]{advance = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Advance task by a number of steps.
+
+Args:
+    task_id (TaskID): ID of task.
+    advance (float): Number of steps to advance. Default is 1.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a02ebcda8782d8af7248ba2c8d8be25f1}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a02ebcda8782d8af7248ba2c8d8be25f1}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!finished@{finished}}
+\index{finished@{finished}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily  bool pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+finished (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if all tasks have been completed.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ab746045f5e787bfde4a7a7e815b17a14}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ab746045f5e787bfde4a7a7e815b17a14}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!get\_renderable@{get\_renderable}}
+\index{get\_renderable@{get\_renderable}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{get\_renderable()}{get\_renderable()}}
+{\footnotesize\ttfamily  Renderable\+Type pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+get\+\_\+renderable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a renderable for the progress display.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ae329cb9b10713e0971717cebcf2d234f}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ae329cb9b10713e0971717cebcf2d234f}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!get\_renderables@{get\_renderables}}
+\index{get\_renderables@{get\_renderables}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{get\_renderables()}{get\_renderables()}}
+{\footnotesize\ttfamily  Iterable\mbox{[}Renderable\+Type\mbox{]} pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+get\+\_\+renderables (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a number of renderables for the progress display.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a42f4570b586d6cc467773cc7303b830d}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a42f4570b586d6cc467773cc7303b830d}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!make\_tasks\_table@{make\_tasks\_table}}
+\index{make\_tasks\_table@{make\_tasks\_table}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{make\_tasks\_table()}{make\_tasks\_table()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1table_1_1Table}{Table}} pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+make\+\_\+tasks\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Task}{Task}}\mbox{]}}]{tasks }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a table to render the Progress display.
+
+Args:
+    tasks (Iterable[Task]): An iterable of Task instances, one per row of the table.
+
+Returns:
+    Table: A table instance.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a88dcdf9d00bbfe350b6c4b23b5670579}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a88dcdf9d00bbfe350b6c4b23b5670579}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!refresh@{refresh}}
+\index{refresh@{refresh}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Refresh (render) the progress information.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a8cec731e78c8d3a6463de33c799c3b10}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a8cec731e78c8d3a6463de33c799c3b10}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!remove\_task@{remove\_task}}
+\index{remove\_task@{remove\_task}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{remove\_task()}{remove\_task()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+remove\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Delete a task if it exists.
+
+Args:
+    task_id (TaskID): A task ID.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a95ef34d14e0f284de106ddf881e04d47}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a95ef34d14e0f284de106ddf881e04d47}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!reset@{reset}}
+\index{reset@{reset}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+reset (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id,  }\item[{$\ast$bool }]{start = {\ttfamily True},  }\item[{Optional\mbox{[}float\mbox{]} }]{total = {\ttfamily None},  }\item[{int }]{completed = {\ttfamily 0},  }\item[{Optional\mbox{[}bool\mbox{]} }]{visible = {\ttfamily None},  }\item[{Optional\mbox{[}str\mbox{]} }]{description = {\ttfamily None},  }\item[{$\ast$$\ast$Any}]{fields }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reset a task so completed is 0 and the clock is reset.
+
+Args:
+    task_id (TaskID): ID of task.
+    start (bool, optional): Start the task after reset. Defaults to True.
+    total (float, optional): New total steps in task, or None to use current total. Defaults to None.
+    completed (int, optional): Number of steps completed. Defaults to 0.
+    **fields (str): Additional data fields required for rendering.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad90c9b221cd715a310f6421a8fbe9f91}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad90c9b221cd715a310f6421a8fbe9f91}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!start@{start}}
+\index{start@{start}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+start (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start the progress display.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a0bf7ba8551f76ffe938fe51e53ee2bd0}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a0bf7ba8551f76ffe938fe51e53ee2bd0}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!start\_task@{start\_task}}
+\index{start\_task@{start\_task}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{start\_task()}{start\_task()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+start\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start a task.
+
+Starts a task (used when calculating elapsed time). You may need to call this manually,
+if you called ``add_task`` with ``start=False``.
+
+Args:
+    task_id (TaskID): ID of task.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aefe7da637097c7b458471bb31f072047}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aefe7da637097c7b458471bb31f072047}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!stop@{stop}}
+\index{stop@{stop}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+stop (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop the progress display.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a83f4796829c6ce892cada945962f181b}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a83f4796829c6ce892cada945962f181b}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!stop\_task@{stop\_task}}
+\index{stop\_task@{stop\_task}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{stop\_task()}{stop\_task()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+stop\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop a task.
+
+This will freeze the elapsed time on the task.
+
+Args:
+    task_id (TaskID): ID of task.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a73148cb5c622b525ba4711b18c6b5558}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a73148cb5c622b525ba4711b18c6b5558}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!task\_ids@{task\_ids}}
+\index{task\_ids@{task\_ids}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{task\_ids()}{task\_ids()}}
+{\footnotesize\ttfamily  List\mbox{[}Task\+ID\mbox{]} pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+task\+\_\+ids (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A list of task IDs.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad070ab018d3e76ebc7ea312d26d26757}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_ad070ab018d3e76ebc7ea312d26d26757}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!tasks@{tasks}}
+\index{tasks@{tasks}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{tasks()}{tasks()}}
+{\footnotesize\ttfamily  List\mbox{[}\mbox{\hyperlink{classpip_1_1__vendor_1_1rich_1_1progress_1_1Task}{Task}}\mbox{]} pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+tasks (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a list of Task instances.\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aee9ea5592b98f74ebb5acb76bc499601}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_aee9ea5592b98f74ebb5acb76bc499601}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!track@{track}}
+\index{track@{track}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{track()}{track()}}
+{\footnotesize\ttfamily  Iterable\mbox{[}Progress\+Type\mbox{]} pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+track (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}Iterable\mbox{[}Progress\+Type\mbox{]}, Sequence\mbox{[}Progress\+Type\mbox{]}\mbox{]}}]{sequence,  }\item[{Optional\mbox{[}float\mbox{]} }]{total = {\ttfamily None},  }\item[{Optional\mbox{[}Task\+ID\mbox{]} }]{task\+\_\+id = {\ttfamily None},  }\item[{str }]{description = {\ttfamily \char`\"{}Working...\char`\"{}},  }\item[{float }]{update\+\_\+period = {\ttfamily 0.1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Track progress by iterating over a sequence.
+
+Args:
+    sequence (Sequence[ProgressType]): A sequence of values you want to iterate over and track progress.
+    total: (float, optional): Total number of steps. Default is len(sequence).
+    task_id: (TaskID): Task to track. Default is new task.
+    description: (str, optional): Description of task, if new task is created.
+    update_period (float, optional): Minimum time (in seconds) between calls to update(). Defaults to 0.1.
+
+Returns:
+    Iterable[ProgressType]: An iterable of values taken from the provided sequence.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a7c1035ee3c5276519a42b8122d574c25}\label{classpip_1_1__vendor_1_1rich_1_1progress_1_1Progress_a7c1035ee3c5276519a42b8122d574c25}} 
+\index{pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}!update@{update}}
+\index{update@{update}!pip.\_vendor.rich.progress.Progress@{pip.\_vendor.rich.progress.Progress}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily  None pip.\+\_\+vendor.\+rich.\+progress.\+Progress.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Task\+ID}]{task\+\_\+id,  }\item[{$\ast$Optional\mbox{[}float\mbox{]} }]{total = {\ttfamily None},  }\item[{Optional\mbox{[}float\mbox{]} }]{completed = {\ttfamily None},  }\item[{Optional\mbox{[}float\mbox{]} }]{advance = {\ttfamily None},  }\item[{Optional\mbox{[}str\mbox{]} }]{description = {\ttfamily None},  }\item[{Optional\mbox{[}bool\mbox{]} }]{visible = {\ttfamily None},  }\item[{bool }]{refresh = {\ttfamily False},  }\item[{$\ast$$\ast$Any}]{fields }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update information associated with a task.
+
+Args:
+    task_id (TaskID): Task id (returned by add_task).
+    total (float, optional): Updates task.total if not None.
+    completed (float, optional): Updates task.completed if not None.
+    advance (float, optional): Add a value to task.completed if not None.
+    description (str, optional): Change task description if not None.
+    visible (bool, optional): Set visible flag if not None.
+    refresh (bool): Force a refresh of progress information. Default is False.
+    **fields (Any): Additional data fields required for rendering.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/rich/progress.\+py\end{DoxyCompactItemize}

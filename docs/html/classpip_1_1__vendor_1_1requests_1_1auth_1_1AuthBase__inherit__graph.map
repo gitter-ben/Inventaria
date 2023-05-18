@@ -1,0 +1,8 @@
+<map id="pip._vendor.requests.auth.AuthBase" name="pip._vendor.requests.auth.AuthBase">
+<area shape="rect" id="node1" title=" " alt="" coords="116,71,311,112"/>
+<area shape="rect" id="node3" href="$classpip_1_1__internal_1_1network_1_1auth_1_1MultiDomainBasicAuth.html" title=" " alt="" coords="359,5,556,47"/>
+<area shape="rect" id="node4" href="$classpip_1_1__vendor_1_1requests_1_1auth_1_1HTTPBasicAuth.html" title=" " alt="" coords="360,71,555,112"/>
+<area shape="rect" id="node6" href="$classpip_1_1__vendor_1_1requests_1_1auth_1_1HTTPDigestAuth.html" title=" " alt="" coords="360,136,555,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,78,68,105"/>
+<area shape="rect" id="node5" href="$classpip_1_1__vendor_1_1requests_1_1auth_1_1HTTPProxyAuth.html" title=" " alt="" coords="604,71,799,112"/>
+</map>

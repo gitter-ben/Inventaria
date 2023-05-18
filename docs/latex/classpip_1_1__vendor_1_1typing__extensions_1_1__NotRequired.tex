@@ -1,0 +1,41 @@
+\hypertarget{classpip_1_1__vendor_1_1typing__extensions_1_1__NotRequired}{}\doxysection{pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Not\+Required Class Reference}
+\label{classpip_1_1__vendor_1_1typing__extensions_1_1__NotRequired}\index{pip.\_vendor.typing\_extensions.\_NotRequired@{pip.\_vendor.typing\_extensions.\_NotRequired}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Not\+Required\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__NotRequired__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+typing\+\_\+extensions.\+\_\+\+Not\+Required\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classpip_1_1__vendor_1_1typing__extensions_1_1__NotRequired__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A special typing construct to mark a key of a TypedDict as
+potentially missing. For example:
+
+    class Movie(TypedDict):
+        title: str
+        year: NotRequired[int]
+
+    m = Movie(
+        title='The Matrix',  # typechecker error if key is omitted
+        year=1999,
+    )
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/typing\+\_\+extensions.\+py\end{DoxyCompactItemize}

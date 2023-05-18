@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classnumpy_1_1core_1_1tests_1_1test__cpu__features_1_1AbstractTest.html" title=" " alt="" coords="5,133,203,174"/>
+<area shape="rect" id="node2" href="$classnumpy_1_1core_1_1tests_1_1test__cpu__features_1_1Test__ARM__Features.html" title=" " alt="" coords="260,5,440,61"/>
+<area shape="rect" id="node3" href="$classnumpy_1_1core_1_1tests_1_1test__cpu__features_1_1Test__POWER__Features.html" title=" " alt="" coords="251,85,449,141"/>
+<area shape="rect" id="node4" href="$classnumpy_1_1core_1_1tests_1_1test__cpu__features_1_1Test__X86__Features.html" title=" " alt="" coords="263,165,437,221"/>
+<area shape="rect" id="node5" href="$classnumpy_1_1core_1_1tests_1_1test__cpu__features_1_1Test__ZARCH__Features.html" title=" " alt="" coords="252,245,448,301"/>
+</map>

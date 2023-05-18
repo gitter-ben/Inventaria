@@ -1,0 +1,60 @@
+\hypertarget{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE}{}\doxysection{numpy.\+polynomial.\+hermite\+\_\+e.\+HermiteE Class Reference}
+\label{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE}\index{numpy.polynomial.hermite\_e.HermiteE@{numpy.polynomial.hermite\_e.HermiteE}}
+
+
+Inheritance diagram for numpy.\+polynomial.\+hermite\+\_\+e.\+HermiteE\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+polynomial.\+hermite\+\_\+e.\+HermiteE\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a37d965f1fe0cb0731be09c3a753f5a17}\label{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a37d965f1fe0cb0731be09c3a753f5a17}} 
+{\bfseries domain} = np.\+array(hermedomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a716e0c00970ec92d6795fcc587a163f1}\label{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a716e0c00970ec92d6795fcc587a163f1}} 
+{\bfseries window} = np.\+array(hermedomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a9f88413ee9d147068d0d9d9735670344}\label{classnumpy_1_1polynomial_1_1hermite__e_1_1HermiteE_a9f88413ee9d147068d0d9d9735670344}} 
+string {\bfseries basis\+\_\+name} = \textquotesingle{}He\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An HermiteE series class.
+
+The HermiteE class provides the standard Python numerical methods
+'+', '-', '*', '//', '%', 'divmod', '**', and '()' as well as the
+attributes and methods listed in the `ABCPolyBase` documentation.
+
+Parameters
+----------
+coef : array_like
+    HermiteE coefficients in order of increasing degree, i.e,
+    ``(1, 2, 3)`` gives ``1*He_0(x) + 2*He_1(X) + 3*He_2(x)``.
+domain : (2,) array_like, optional
+    Domain to use. The interval ``[domain[0], domain[1]]`` is mapped
+    to the interval ``[window[0], window[1]]`` by shifting and scaling.
+    The default value is [-1, 1].
+window : (2,) array_like, optional
+    Window, see `domain` for its use. The default value is [-1, 1].
+
+    .. versionadded:: 1.6.0\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/hermite\+\_\+e.\+py\end{DoxyCompactItemize}

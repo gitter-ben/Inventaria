@@ -1,0 +1,60 @@
+\hypertarget{classnumpy_1_1polynomial_1_1legendre_1_1Legendre}{}\doxysection{numpy.\+polynomial.\+legendre.\+Legendre Class Reference}
+\label{classnumpy_1_1polynomial_1_1legendre_1_1Legendre}\index{numpy.polynomial.legendre.Legendre@{numpy.polynomial.legendre.Legendre}}
+
+
+Inheritance diagram for numpy.\+polynomial.\+legendre.\+Legendre\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classnumpy_1_1polynomial_1_1legendre_1_1Legendre__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for numpy.\+polynomial.\+legendre.\+Legendre\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classnumpy_1_1polynomial_1_1legendre_1_1Legendre__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_af7e4210a1143495bb8cc01d1dd0d9a03}\label{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_af7e4210a1143495bb8cc01d1dd0d9a03}} 
+{\bfseries domain} = np.\+array(legdomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_a21b31e44f4d8ff664482afd2f81c25e5}\label{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_a21b31e44f4d8ff664482afd2f81c25e5}} 
+{\bfseries window} = np.\+array(legdomain)
+\item 
+\mbox{\Hypertarget{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_a5a4b4880dfe56a016b94c6aa59748838}\label{classnumpy_1_1polynomial_1_1legendre_1_1Legendre_a5a4b4880dfe56a016b94c6aa59748838}} 
+string {\bfseries basis\+\_\+name} = \textquotesingle{}P\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A Legendre series class.
+
+The Legendre class provides the standard Python numerical methods
+'+', '-', '*', '//', '%', 'divmod', '**', and '()' as well as the
+attributes and methods listed in the `ABCPolyBase` documentation.
+
+Parameters
+----------
+coef : array_like
+    Legendre coefficients in order of increasing degree, i.e.,
+    ``(1, 2, 3)`` gives ``1*P_0(x) + 2*P_1(x) + 3*P_2(x)``.
+domain : (2,) array_like, optional
+    Domain to use. The interval ``[domain[0], domain[1]]`` is mapped
+    to the interval ``[window[0], window[1]]`` by shifting and scaling.
+    The default value is [-1, 1].
+window : (2,) array_like, optional
+    Window, see `domain` for its use. The default value is [-1, 1].
+
+    .. versionadded:: 1.6.0\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/numpy/polynomial/legendre.\+py\end{DoxyCompactItemize}

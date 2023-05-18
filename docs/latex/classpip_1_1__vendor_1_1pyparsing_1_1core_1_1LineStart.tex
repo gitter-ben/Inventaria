@@ -1,0 +1,72 @@
+\hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart}{}\doxysection{pip.\+\_\+vendor.\+pyparsing.\+core.\+Line\+Start Class Reference}
+\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart}\index{pip.\_vendor.pyparsing.core.LineStart@{pip.\_vendor.pyparsing.core.LineStart}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Line\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pyparsing.\+core.\+Line\+Start\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a3a11bf8cf3afaa69b679eab9ade8f656}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a3a11bf8cf3afaa69b679eab9ade8f656}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a629e0e7064f8983363fc5bea915c2142}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a629e0e7064f8983363fc5bea915c2142}} 
+def {\bfseries pre\+Parse} (self, instring, loc)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a43e4bf26b0203c9b74243b92d82e2df4}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a43e4bf26b0203c9b74243b92d82e2df4}} 
+def {\bfseries parse\+Impl} (self, instring, loc, do\+Actions=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_ab8b8a25f6c22b6497a3e9c74f925f3ca}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_ab8b8a25f6c22b6497a3e9c74f925f3ca}} 
+{\bfseries orig\+\_\+white\+Chars}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_afacee901011235e7ff242ffe96779c99}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_afacee901011235e7ff242ffe96779c99}} 
+{\bfseries skipper}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a8a4b00aaea669ae114fd7316d8beeeaa}\label{classpip_1_1__vendor_1_1pyparsing_1_1core_1_1LineStart_a8a4b00aaea669ae114fd7316d8beeeaa}} 
+{\bfseries errmsg}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Matches if current position is at the beginning of a line within
+the parse string
+
+Example::
+
+    test = '''\
+    AAA this line
+    AAA and this line
+      AAA but not this one
+    B AAA and definitely not this one
+    '''
+
+    for t in (LineStart() + 'AAA' + restOfLine).search_string(test):
+        print(t)
+
+prints::
+
+    ['AAA', ' this line']
+    ['AAA', ' and this line']\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pyparsing/core.\+py\end{DoxyCompactItemize}

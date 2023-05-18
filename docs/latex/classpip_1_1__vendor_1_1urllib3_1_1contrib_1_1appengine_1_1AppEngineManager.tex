@@ -1,0 +1,72 @@
+\hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager}{}\doxysection{pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager Class Reference}
+\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager}\index{pip.\_vendor.urllib3.contrib.appengine.AppEngineManager@{pip.\_vendor.urllib3.contrib.appengine.AppEngineManager}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+urllib3.\+contrib.\+appengine.\+App\+Engine\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a326752207b6e6a55e0227e4e3bbe410a}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a326752207b6e6a55e0227e4e3bbe410a}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, headers=None, retries=None, validate\+\_\+certificate=True, urlfetch\+\_\+retries=True)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2fc3da25ad5cb657e66403d4b199998e}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2fc3da25ad5cb657e66403d4b199998e}} 
+def {\bfseries \+\_\+\+\_\+enter\+\_\+\+\_\+} (self)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad32aa393de5408a17ab2a07e552a3e5f}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_ad32aa393de5408a17ab2a07e552a3e5f}} 
+def {\bfseries \+\_\+\+\_\+exit\+\_\+\+\_\+} (self, exc\+\_\+type, exc\+\_\+val, exc\+\_\+tb)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a255d845a998c8a6716a84096d77652ad}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a255d845a998c8a6716a84096d77652ad}} 
+def {\bfseries urlopen} (self, method, url, body=None, headers=None, retries=None, redirect=True, timeout=Timeout.\+DEFAULT\+\_\+\+TIMEOUT, $\ast$$\ast$response\+\_\+kw)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a2879d8f7ad8c21d427ed63f232f08fe7}} 
+{\bfseries validate\+\_\+certificate}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a83b60dd1620e648d4c13ab6664efd325}} 
+{\bfseries urlfetch\+\_\+retries}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}\label{classpip_1_1__vendor_1_1urllib3_1_1contrib_1_1appengine_1_1AppEngineManager_a24843a36de1346f7d21cd4782d2e83c5}} 
+{\bfseries retries}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Connection manager for Google App Engine sandbox applications.
+
+This manager uses the URLFetch service directly instead of using the
+emulated httplib, and is subject to URLFetch limitations as described in
+the App Engine documentation `here
+<https://cloud.google.com/appengine/docs/python/urlfetch>`_.
+
+Notably it will raise an :class:`AppEnginePlatformError` if:
+    * URLFetch is not available.
+    * If you attempt to use this on App Engine Flexible, as full socket
+      support is available.
+    * If a request size is more than 10 megabytes.
+    * If a response size is more than 32 megabytes.
+    * If you use an unsupported request method such as OPTIONS.
+
+Beyond those cases, it will raise normal urllib3 errors.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/urllib3/contrib/appengine.\+py\end{DoxyCompactItemize}

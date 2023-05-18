@@ -1,0 +1,80 @@
+\hypertarget{namespacenumpy_1_1core_1_1__internal}{}\doxysection{numpy.\+core.\+\_\+internal Namespace Reference}
+\label{namespacenumpy_1_1core_1_1__internal}\index{numpy.core.\_internal@{numpy.core.\_internal}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1__internal_1_1dummy__ctype}{dummy\+\_\+ctype}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1__internal_1_1__missing__ctypes}{\+\_\+missing\+\_\+ctypes}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1__internal_1_1__ctypes}{\+\_\+ctypes}}
+\item 
+class \mbox{\hyperlink{classnumpy_1_1core_1_1__internal_1_1__Stream}{\+\_\+\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1__internal_a4bd6a5c741a4fc2253712a44d997d834}{array\+\_\+ufunc\+\_\+errmsg\+\_\+formatter}} (dummy, \mbox{\hyperlink{structufunc}{ufunc}}, method, $\ast$inputs, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespacenumpy_1_1core_1_1__internal_ae7b9bd39f6eb8523507e6748b9d8d700}{array\+\_\+function\+\_\+errmsg\+\_\+formatter}} (public\+\_\+api, types)
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a0d50b35548ee6d0335098edfca9c0ccb}\label{namespacenumpy_1_1core_1_1__internal_a0d50b35548ee6d0335098edfca9c0ccb}} 
+def {\bfseries npy\+\_\+ctypes\+\_\+check} (cls)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_ac9d10c0697f18ef749d0748b91ae111a}\label{namespacenumpy_1_1core_1_1__internal_ac9d10c0697f18ef749d0748b91ae111a}} 
+{\bfseries ctypes} = None
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a0b244566ca6307d047413c3d1d71cff2}\label{namespacenumpy_1_1core_1_1__internal_a0b244566ca6307d047413c3d1d71cff2}} 
+string {\bfseries IS\+\_\+\+PYPY} = \textquotesingle{}pypy\textquotesingle{}
+\item 
+{\bfseries format\+\_\+re}
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a6b7327d75c1e3bc1325536d99817b076}\label{namespacenumpy_1_1core_1_1__internal_a6b7327d75c1e3bc1325536d99817b076}} 
+{\bfseries sep\+\_\+re} = re.\+compile(r\textquotesingle{}\textbackslash{}s$\ast$,\textbackslash{}s$\ast$\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a4fb00b72d2a9d2333c5318fa8a817cee}\label{namespacenumpy_1_1core_1_1__internal_a4fb00b72d2a9d2333c5318fa8a817cee}} 
+{\bfseries space\+\_\+re} = re.\+compile(r\textquotesingle{}\textbackslash{}s+\$\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A place for internal code
+
+Some things are more easily handled Python.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_ae7b9bd39f6eb8523507e6748b9d8d700}\label{namespacenumpy_1_1core_1_1__internal_ae7b9bd39f6eb8523507e6748b9d8d700}} 
+\index{numpy.core.\_internal@{numpy.core.\_internal}!array\_function\_errmsg\_formatter@{array\_function\_errmsg\_formatter}}
+\index{array\_function\_errmsg\_formatter@{array\_function\_errmsg\_formatter}!numpy.core.\_internal@{numpy.core.\_internal}}
+\doxysubsubsection{\texorpdfstring{array\_function\_errmsg\_formatter()}{array\_function\_errmsg\_formatter()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+internal.\+array\+\_\+function\+\_\+errmsg\+\_\+formatter (\begin{DoxyParamCaption}\item[{}]{public\+\_\+api,  }\item[{}]{types }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Format the error message for when __array_ufunc__ gives up. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a4bd6a5c741a4fc2253712a44d997d834}\label{namespacenumpy_1_1core_1_1__internal_a4bd6a5c741a4fc2253712a44d997d834}} 
+\index{numpy.core.\_internal@{numpy.core.\_internal}!array\_ufunc\_errmsg\_formatter@{array\_ufunc\_errmsg\_formatter}}
+\index{array\_ufunc\_errmsg\_formatter@{array\_ufunc\_errmsg\_formatter}!numpy.core.\_internal@{numpy.core.\_internal}}
+\doxysubsubsection{\texorpdfstring{array\_ufunc\_errmsg\_formatter()}{array\_ufunc\_errmsg\_formatter()}}
+{\footnotesize\ttfamily def numpy.\+core.\+\_\+internal.\+array\+\_\+ufunc\+\_\+errmsg\+\_\+formatter (\begin{DoxyParamCaption}\item[{}]{dummy,  }\item[{}]{ufunc,  }\item[{}]{method,  }\item[{$\ast$}]{inputs,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Format the error message for when __array_ufunc__ gives up. \end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacenumpy_1_1core_1_1__internal_a6550985ab6b9848b878d9e2ea0bc8627}\label{namespacenumpy_1_1core_1_1__internal_a6550985ab6b9848b878d9e2ea0bc8627}} 
+\index{numpy.core.\_internal@{numpy.core.\_internal}!format\_re@{format\_re}}
+\index{format\_re@{format\_re}!numpy.core.\_internal@{numpy.core.\_internal}}
+\doxysubsubsection{\texorpdfstring{format\_re}{format\_re}}
+{\footnotesize\ttfamily numpy.\+core.\+\_\+internal.\+format\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  re.compile(\textcolor{stringliteral}{r'(?P<order1>[<>|=]?)'}}
+\DoxyCodeLine{2                        \textcolor{stringliteral}{r'(?P<repeats> *[(]?[ ,0-\/9]*[)]? *)'}}
+\DoxyCodeLine{3                        \textcolor{stringliteral}{r'(?P<order2>[<>|=]?)'}}
+\DoxyCodeLine{4                        \textcolor{stringliteral}{r'(?P<dtype>[A-\/Za-\/z0-\/9.?]*(?:\(\backslash\)[[a-\/zA-\/Z0-\/9,.]+\(\backslash\)])?)'})}
+
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter}{}\doxysection{pip.\+\_\+vendor.\+pygments.\+formatters.\+terminal.\+Terminal\+Formatter Class Reference}
+\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter}\index{pip.\_vendor.pygments.formatters.terminal.TerminalFormatter@{pip.\_vendor.pygments.formatters.terminal.TerminalFormatter}}
+
+
+Inheritance diagram for pip.\+\_\+vendor.\+pygments.\+formatters.\+terminal.\+Terminal\+Formatter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pip.\+\_\+vendor.\+pygments.\+formatters.\+terminal.\+Terminal\+Formatter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a5b0898622fdc28e4216c22d6dcf6aa98}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a5b0898622fdc28e4216c22d6dcf6aa98}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, $\ast$$\ast$options)
+\item 
+def \mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_afe5d0d87e0e342ddc098bf7e186a85a2}{format}} (self, tokensource, outfile)
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a5616c34e8c1b2337a68930edb1df0f80}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a5616c34e8c1b2337a68930edb1df0f80}} 
+def {\bfseries format\+\_\+unencoded} (self, tokensource, outfile)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_ae4fe054a104e7ce83120c2c9f05d15ab}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_ae4fe054a104e7ce83120c2c9f05d15ab}} 
+{\bfseries darkbg}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a516987eceff1c51b4c6ee179b5b4dd3c}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a516987eceff1c51b4c6ee179b5b4dd3c}} 
+{\bfseries colorscheme}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a974c802e4da8e548a5bcd580494c4829}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a974c802e4da8e548a5bcd580494c4829}} 
+{\bfseries linenos}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a11b5a53b18bc46bce3cb8198290972a1}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a11b5a53b18bc46bce3cb8198290972a1}} 
+string {\bfseries name} = \textquotesingle{}Terminal\textquotesingle{}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a179d41b3427adf13f77de91e76ee20f4}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a179d41b3427adf13f77de91e76ee20f4}} 
+list {\bfseries aliases} = \mbox{[}\textquotesingle{}terminal\textquotesingle{}, \textquotesingle{}console\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a3f8dcecc9e8ef2a86e90f616f1941441}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_a3f8dcecc9e8ef2a86e90f616f1941441}} 
+list {\bfseries filenames} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Format tokens with ANSI color sequences, for output in a text console.
+Color sequences are terminated at newlines, so that paging the output
+works correctly.
+
+The `get_style_defs()` method doesn't do anything special since there is
+no support for common styles.
+
+Options accepted:
+
+`bg`
+    Set to ``"light"`` or ``"dark"`` depending on the terminal's background
+    (default: ``"light"``).
+
+`colorscheme`
+    A dictionary mapping token types to (lightbg, darkbg) color names or
+    ``None`` (default: ``None`` = use builtin colorscheme).
+
+`linenos`
+    Set to ``True`` to have line numbers on the terminal output as well
+    (default: ``False`` = no line numbers).
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_afe5d0d87e0e342ddc098bf7e186a85a2}\label{classpip_1_1__vendor_1_1pygments_1_1formatters_1_1terminal_1_1TerminalFormatter_afe5d0d87e0e342ddc098bf7e186a85a2}} 
+\index{pip.\_vendor.pygments.formatters.terminal.TerminalFormatter@{pip.\_vendor.pygments.formatters.terminal.TerminalFormatter}!format@{format}}
+\index{format@{format}!pip.\_vendor.pygments.formatters.terminal.TerminalFormatter@{pip.\_vendor.pygments.formatters.terminal.TerminalFormatter}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily def pip.\+\_\+vendor.\+pygments.\+formatters.\+terminal.\+Terminal\+Formatter.\+format (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tokensource,  }\item[{}]{outfile }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format ``tokensource``, an iterable of ``(tokentype, tokenstring)``
+tuples and write it into ``outfile``.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classpip_1_1__vendor_1_1pygments_1_1formatter_1_1Formatter_a002b47716ea44b414c7f70582120edea}{pip.\+\_\+vendor.\+pygments.\+formatter.\+Formatter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inventaria\+\_\+env/lib/python3.\+10/site-\/packages/pip/\+\_\+vendor/pygments/formatters/terminal.\+py\end{DoxyCompactItemize}

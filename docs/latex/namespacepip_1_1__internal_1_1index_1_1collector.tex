@@ -1,0 +1,70 @@
+\hypertarget{namespacepip_1_1__internal_1_1index_1_1collector}{}\doxysection{pip.\+\_\+internal.\+index.\+collector Namespace Reference}
+\label{namespacepip_1_1__internal_1_1index_1_1collector}\index{pip.\_internal.index.collector@{pip.\_internal.index.collector}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1__NotHTML}{\+\_\+\+Not\+HTML}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1__NotHTTP}{\+\_\+\+Not\+HTTP}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1CacheablePageContent}{Cacheable\+Page\+Content}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1ParseLinks}{Parse\+Links}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1HTMLPage}{HTMLPage}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1HTMLLinkParser}{HTMLLink\+Parser}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1CollectedSources}{Collected\+Sources}}
+\item 
+class \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1LinkCollector}{Link\+Collector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1ParseLinks}{Parse\+Links}} \mbox{\hyperlink{namespacepip_1_1__internal_1_1index_1_1collector_a31c5c86d36b58bf2faaf2a4b259fd0f1}{with\+\_\+cached\+\_\+html\+\_\+pages}} (\mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1ParseLinks}{Parse\+Links}} fn)
+\item 
+Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1models_1_1link_1_1Link}{Link}}\mbox{]} \mbox{\hyperlink{namespacepip_1_1__internal_1_1index_1_1collector_abd072a393164d0c302d319e463703194}{parse\+\_\+links}} (\char`\"{}HTMLPage\char`\"{} page, bool use\+\_\+deprecated\+\_\+html5lib)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_aadc56122b11aa2636e8eaec7ecd48ac3}\label{namespacepip_1_1__internal_1_1index_1_1collector_aadc56122b11aa2636e8eaec7ecd48ac3}} 
+{\bfseries Protocol} = object
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_aa06c5ddfbbe781a2898e18ced297b032}\label{namespacepip_1_1__internal_1_1index_1_1collector_aa06c5ddfbbe781a2898e18ced297b032}} 
+{\bfseries logger} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_aebd799a8209e5584270b728dfcbd8d48}\label{namespacepip_1_1__internal_1_1index_1_1collector_aebd799a8209e5584270b728dfcbd8d48}} 
+{\bfseries HTMLElement} = xml.\+etree.\+Element\+Tree.\+Element
+\item 
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_a248367a642c596833022d146d90c48b3}\label{namespacepip_1_1__internal_1_1index_1_1collector_a248367a642c596833022d146d90c48b3}} 
+{\bfseries Response\+Headers} = Mutable\+Mapping\mbox{[}str, str\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The main purpose of this module is to expose LinkCollector.collect_sources().
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_abd072a393164d0c302d319e463703194}\label{namespacepip_1_1__internal_1_1index_1_1collector_abd072a393164d0c302d319e463703194}} 
+\index{pip.\_internal.index.collector@{pip.\_internal.index.collector}!parse\_links@{parse\_links}}
+\index{parse\_links@{parse\_links}!pip.\_internal.index.collector@{pip.\_internal.index.collector}}
+\doxysubsubsection{\texorpdfstring{parse\_links()}{parse\_links()}}
+{\footnotesize\ttfamily  Iterable\mbox{[}\mbox{\hyperlink{classpip_1_1__internal_1_1models_1_1link_1_1Link}{Link}}\mbox{]} pip.\+\_\+internal.\+index.\+collector.\+parse\+\_\+links (\begin{DoxyParamCaption}\item[{\char`\"{}HTMLPage\char`\"{}}]{page,  }\item[{bool}]{use\+\_\+deprecated\+\_\+html5lib }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse an HTML document, and yield its anchor elements as Link objects.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepip_1_1__internal_1_1index_1_1collector_a31c5c86d36b58bf2faaf2a4b259fd0f1}\label{namespacepip_1_1__internal_1_1index_1_1collector_a31c5c86d36b58bf2faaf2a4b259fd0f1}} 
+\index{pip.\_internal.index.collector@{pip.\_internal.index.collector}!with\_cached\_html\_pages@{with\_cached\_html\_pages}}
+\index{with\_cached\_html\_pages@{with\_cached\_html\_pages}!pip.\_internal.index.collector@{pip.\_internal.index.collector}}
+\doxysubsubsection{\texorpdfstring{with\_cached\_html\_pages()}{with\_cached\_html\_pages()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1ParseLinks}{Parse\+Links}} pip.\+\_\+internal.\+index.\+collector.\+with\+\_\+cached\+\_\+html\+\_\+pages (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpip_1_1__internal_1_1index_1_1collector_1_1ParseLinks}{Parse\+Links}}}]{fn }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a function that parses an Iterable[Link] from an HTMLPage, cache the
+function's result (keyed by CacheablePageContent), unless the HTMLPage
+`page` has `page.cache_link_parsing == False`.
+\end{DoxyVerb}
+ 
