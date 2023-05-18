@@ -1,7 +1,6 @@
 """!
 @file main.py
 @brief The main file with the entry point for the program.
-
 """
 
 import sys

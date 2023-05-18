@@ -1,5 +1,10 @@
 \hypertarget{classcore_1_1database_1_1MainDatabase}{}\doxysection{core.\+database.\+Main\+Database Class Reference}
 \label{classcore_1_1database_1_1MainDatabase}\index{core.database.MainDatabase@{core.database.MainDatabase}}
+
+
+The main database class for Inventaria.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +25,20 @@ def {\bfseries close} (self)
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+The main database class for Inventaria. 
+
+Database directory layout\+:
+\begin{DoxyItemize}
+\item config.\+json\+: Includes the config for the database, contains list of sub-\/databases and filenames.
+\item databases\+: Includes all sub-\/databases
+\begin{DoxyItemize}
+\item $<$id$>$\+\_\+$<$inventory\+\_\+type$>$.\+sqlite\+: Name format for sub-\/databases
+\item ...
+\end{DoxyItemize}
+\item parts.\+sqlite\+: The database for all shared parts. 
+\end{DoxyItemize}
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-core/database.\+py\end{DoxyCompactItemize}
+core/\mbox{\hyperlink{core_2database_8py}{database.\+py}}\end{DoxyCompactItemize}

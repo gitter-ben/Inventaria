@@ -1,4 +1,4 @@
 <map id="core.utils.MainDBLoadError" name="core.utils.MainDBLoadError">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node1" title="Raised when the MainDatabase encounters an error while loading." alt="" coords="5,80,204,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="61,5,148,32"/>
 </map>

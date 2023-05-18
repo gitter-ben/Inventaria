@@ -1,0 +1,40 @@
+\hypertarget{utils_8py}{}\doxysection{core/utils.py File Reference}
+\label{utils_8py}\index{core/utils.py@{core/utils.py}}
+
+
+Includes useful things used in lots of files.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcore_1_1utils_1_1DBConnectError}{core.\+utils.\+DBConnect\+Error}}
+\begin{DoxyCompactList}\small\item\em Raised when not able to connect to an sqlite database. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcore_1_1utils_1_1MainDBLoadError}{core.\+utils.\+Main\+DBLoad\+Error}}
+\begin{DoxyCompactList}\small\item\em Raised when the Main\+Database encounters an error while loading. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcore_1_1utils_1_1Singleton}{core.\+utils.\+Singleton}}
+\begin{DoxyCompactList}\small\item\em Metaclass for Singleton-\/classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{utils_8py_a68cd6a819bd03a268795bfbc8fc5dc29}{core.\+utils.\+changes\+\_\+db}} (func)
+\begin{DoxyCompactList}\small\item\em A decorator to describe a function that changes the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Includes useful things used in lots of files. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8py_a68cd6a819bd03a268795bfbc8fc5dc29}\label{utils_8py_a68cd6a819bd03a268795bfbc8fc5dc29}} 
+\index{utils.py@{utils.py}!changes\_db@{changes\_db}}
+\index{changes\_db@{changes\_db}!utils.py@{utils.py}}
+\doxysubsubsection{\texorpdfstring{changes\_db()}{changes\_db()}}
+{\footnotesize\ttfamily def core.\+utils.\+changes\+\_\+db (\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})}
+
+
+
+A decorator to describe a function that changes the database. 
+
+Calls the self.\+unsaved() method to send the save\+State\+Changed to the editor that it is now not saved anymore. 

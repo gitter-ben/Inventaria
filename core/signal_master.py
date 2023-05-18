@@ -1,3 +1,7 @@
+"""!
+@file signal_master.py
+@brief Includes the MainSignalMaster class for the application.
+"""
 from PyQt5.Qt import QObject, pyqtSignal
 
 

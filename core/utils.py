@@ -1,3 +1,8 @@
+"""!
+@file utils.py
+@brief Includes useful things used in lots of files.
+"""
+
 from functools import wraps
 from threading import Lock
 
@@ -18,7 +23,9 @@ def changes_db(func):
 
 
 class DBConnectError(Exception):
-    """Raised when not able to connect to database"""
+    """!
+    @brief Raised when not able to connect to an sqlite database.
+    """
     def __init__(self, error_msg: str):
         self._msg = error_msg
 
@@ -27,12 +34,14 @@ class DBConnectError(Exception):
 
 
 class MainDBLoadError(Exception):
-    """Raised when the MainDatabase encounters an error while loading."""
+    """!
+    @brief Raised when the MainDatabase encounters an error while loading.
+    """
 
 
 class Singleton(type(QObject), type):
     """!
-    @brief A Singleton Metaclass
+    @brief Metaclass for Singleton-classes
 
     Add metaclass=Singleton to class definition to turn into a singleton class.
     Working principle:

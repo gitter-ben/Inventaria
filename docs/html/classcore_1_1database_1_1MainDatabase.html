@@ -74,6 +74,9 @@ $(function() {
 <div class="title">core.database.MainDatabase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The main database class for Inventaria.  
+ <a href="classcore_1_1database_1_1MainDatabase.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -93,8 +96,19 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>saved</b></td></tr>
 <tr class="separator:acd12367ca0917672e89c337798f0673b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>core/database.py</li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The main database class for Inventaria. </p>
+<p>Database directory layout:</p><ul>
+<li>config.json: Includes the config for the database, contains list of sub-databases and filenames.</li>
+<li>databases: Includes all sub-databases<ul>
+<li>&lt;id&gt;_&lt;inventory_type&gt;.sqlite: Name format for sub-databases</li>
+<li>...</li>
+</ul>
+</li>
+<li>parts.sqlite: The database for all shared parts. </li>
+</ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>core/<a class="el" href="core_2database_8py.html">database.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['groups_5fand_5fboxes_2epy_81',['groups_and_boxes.py',['../groups__and__boxes_8py.html',1,'']]],
-  ['groups_5fand_5fboxes_5fsignal_5fmaster_2epy_82',['groups_and_boxes_signal_master.py',['../groups__and__boxes__signal__master_8py.html',1,'']]]
+  ['editor_2epy_88',['editor.py',['../editor_8py.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 <map id="core.ui_main.MainWindow" name="core.ui_main.MainWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,200,107"/>
+<area shape="rect" id="node1" title="Class to define the GUI and logic of the Inventaria main window." alt="" coords="5,80,200,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="45,5,161,32"/>
 </map>

@@ -2,7 +2,7 @@
 @file editor.py
 @brief Contains all the custom widgets needed for the groups_and_boxes inventory type
 
-@section custom_widgets_classes CLASSES
+@section editor_classes CLASSES
 - GroupsAndBoxesEditor (QWidget)
   - BoxesList (QListWidget)
     - BoxesListItem (QWidget)
@@ -372,7 +372,7 @@ class GroupsAndBoxesEditor(QWidget):
 
         class BoxesListItem(QWidget):
             """!
-            @brief Custom List Widget Item.
+            @brief Custom List Widget Item for box listing.
 
             An item widget for a QListWidget that allows for saving box id and custom widgets
             """

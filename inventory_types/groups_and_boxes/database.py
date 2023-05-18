@@ -11,6 +11,9 @@ from inventory_types.groups_and_boxes.groups_and_boxes_signal_master import Grou
 
 
 class GroupsAndBoxesDatabase:
+    """!
+    @brief Database class for the groups and boxes inventory type.
+    """
     def __init__(self, db_file: str, sig_master: GroupsAndBoxesSignalMaster):
         """!
         Initialize a new GroupsAndBoxesDatabase.

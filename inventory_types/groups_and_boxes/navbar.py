@@ -1,3 +1,12 @@
+"""!
+@file navbar.py
+@brief The file for the GroupsAndBoxesNavBars class for the groups and boxes inventory type.
+
+@section custom_widgets_classes CLASSES
+- GroupsAndBoxesNavBars (QSplitter)
+  - NavBar (QListWidget)
+    - NavBarItem (QWidget)
+"""
 from typing import List
 
 from PyQt5.Qt import (
@@ -18,7 +27,7 @@ from .common import Group, Box, GroupAndBoxIDs
 from resources import resources
 
 
-class NavBars(QSplitter):
+class GroupsAndBoxesNavBars(QSplitter):
     """!
     @brief NavBar widget for groups and boxes inventory type.
 
@@ -169,6 +178,9 @@ class NavBars(QSplitter):
                     break
 
         class NavBarItem(QListWidgetItem):
+            """!
+            @brief Custom QListWidgetItem for the nav bar in the groups and boxes inventory type.
+            """
             def __init__(self, item_id, name, *args, **kwargs):
                 super().__init__(name, *args, **kwargs)
                 self.id = item_id

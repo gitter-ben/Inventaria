@@ -25,6 +25,15 @@ class GroupsAndBoxesEditorMode(Enum):
 
 @dataclass
 class BoxContentItem:
+    """!
+    @brief Dataclass for a box content item.
+
+    Fields:
+    - id: int
+    - box_id: int
+    - name: str
+    - count: positive int
+    """
     id: int
     box_id: int
     name: str
@@ -33,6 +42,15 @@ class BoxContentItem:
 
 @dataclass
 class Box:
+    """!
+    @brief Dataclass for a box.
+
+    Fields:
+    - id: int
+    - group_id: int
+    - name: str
+    - description: str
+    """
     id: int
     group_id: int
     name: str
@@ -41,6 +59,14 @@ class Box:
 
 @dataclass
 class Group:
+    """!
+    @brief Dataclass for a group.
+
+    Fields:
+    - id: int
+    - name: str
+    - description: str
+    """
     id: int
     name: str
     description: str

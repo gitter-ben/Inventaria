@@ -1,11 +1,7 @@
 """!
 @file groups_and_boxes.py
-@brief Defines the inspector for the groups and boxes inventory type
-
-@section todo_groups_and_boxes TODO
-- Implement PyQt QTests with automatic GUI testing
+@brief Defines the inspector for the groups and boxes inventory type.
 """
-
 from PyQt5.Qt import QPalette, QColor, pyqtSlot
 from PyQt5.QtWidgets import (
     QSplitter,
@@ -13,13 +9,11 @@ from PyQt5.QtWidgets import (
     QInputDialog
 )
 from core.signal_master import MainSignalMaster
-from .constants import (
-    INITIAL_WIDTH
-)
+from .constants import INITIAL_WIDTH
 from .database import GroupsAndBoxesDatabase
 from .editor import GroupsAndBoxesEditor
 from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
-from .navbar import NavBars
+from .navbar import GroupsAndBoxesNavBars
 
 
 class GroupsAndBoxesGUI(QSplitter):
@@ -82,7 +76,7 @@ class GroupsAndBoxesGUI(QSplitter):
         # =====================================================
 
         # ================== Setup nav bars ====================
-        self._navBars = NavBars(self._signal_master)
+        self._navBars = GroupsAndBoxesNavBars(self._signal_master)
         self._navBars.group_level_nav.populate(self._db.get_groups())
         self.addWidget(self._navBars)
 

@@ -1,3 +1,8 @@
+"""!
+@file ui_main.py
+@brief The main file for the application GUI and logic.
+"""
+
 from textwrap import dedent
 
 from PyQt5.Qt import (
@@ -31,6 +36,9 @@ from resources import resources
 
 
 class MainWindow(QMainWindow):
+    """!
+    @brief Class to define the GUI and logic of the Inventaria main window.
+    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.nothing(resources.qt_version)
