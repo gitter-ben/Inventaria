@@ -5,18 +5,19 @@
 import sqlite3
 from typing import List
 
-from core.utils import DBConnectError, changes_db
+from core.utils import DBConnectError  # , changes_db
+from core.database_abstract import DBBaseClass
 from inventory_types.groups_and_boxes.common import Group, Box, BoxContentItem
 from inventory_types.groups_and_boxes.groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
 
 
-class GroupsAndBoxesDatabase:
+class GroupsAndBoxesDatabase(DBBaseClass):
     """!
     @brief Database class for the groups and boxes inventory type.
     """
     def __init__(self, db_file: str, sig_master: GroupsAndBoxesSignalMaster):
         """!
-        Initialize a new GroupsAndBoxesDatabase.
+        @brief Initialize a new GroupsAndBoxesDatabase.
 
         @return A new GroupsAndBoxesDatabase instance
         """
@@ -29,7 +30,7 @@ class GroupsAndBoxesDatabase:
 
     def load_from_file(self, db_file) -> None:
         """!
-        Load a new database from a .sqlite file.
+        @brief Load a new database from a .sqlite file.
         """
         self.conn = self._create_connection(db_file)
         self.cur = self.conn.cursor()
@@ -40,19 +41,19 @@ class GroupsAndBoxesDatabase:
 
     def close(self) -> None:
         """!
-        Gracefully close the connection ta a database.
+        @brief Gracefully close the connection ta a database.
         """
         self.conn.close()
 
     def make_savepoint(self) -> None:
         """!
-        Create a savepoint by starting a sqlite transaction.
+        @brief Create a savepoint by starting a sqlite transaction.
         """
         self.cur.execute("BEGIN TRANSACTION;")
 
     def rollback_to_savepoint(self) -> None:
         """!
-        Rollback to last savepoint by executing "ROLLBACK TRANSACTION;" in sqlite
+        @brief Rollback to last savepoint by executing "ROLLBACK TRANSACTION;" in sqlite
         """
         self.cur.execute("ROLLBACK TRANSACTION;")
         self.saved = True
@@ -61,6 +62,7 @@ class GroupsAndBoxesDatabase:
 
     def save(self) -> None:
         """!
+        @brief Save the database to the file.
         Save the current database by committing the current transaction
         and starting a new one by calling self.make_savepoint()
         """
@@ -148,7 +150,7 @@ class GroupsAndBoxesDatabase:
 
         return contents
 
-    @changes_db
+    @DBBaseClass.changes_db
     def add_group(self, name: str) -> None:
         """!
         Add a new group with a name.
@@ -160,7 +162,7 @@ class GroupsAndBoxesDatabase:
             (name,)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def delete_group(self, group_id: int) -> None:
         """!
         Delete a group via the group id.
@@ -172,7 +174,7 @@ class GroupsAndBoxesDatabase:
             (group_id, )
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def edit_group_name(self, group_id: int, name: str) -> None:
         """!
         Edit a group name via a group id and a new name.
@@ -185,7 +187,7 @@ class GroupsAndBoxesDatabase:
             (name, group_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def edit_group_description(self, group_id: int, description: str) -> None:
         """!
         Edit a group description via a group id and a new description
@@ -195,7 +197,7 @@ class GroupsAndBoxesDatabase:
             (description, group_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def add_box(self, name: str, group_id: int) -> None:
         """!
         Add a new box with a set name and a group id.
@@ -208,7 +210,7 @@ class GroupsAndBoxesDatabase:
             (name, group_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def delete_box(self, box_id: int) -> None:
         """!
         Delete a box with a set box id. The cascading mode will also remove all parts associated with the box.
@@ -220,7 +222,7 @@ class GroupsAndBoxesDatabase:
             (box_id, )
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def edit_box_name(self, box_id: int, new_name: str) -> None:
         """!
         Edit the name of a box with a set box id and a new name.
@@ -233,7 +235,7 @@ class GroupsAndBoxesDatabase:
             (new_name, box_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def edit_box_description(self, box_id: int, description: str) -> None:
         """!
         Edit the description of a box with a box id and new description.
@@ -246,7 +248,7 @@ class GroupsAndBoxesDatabase:
             (description, box_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def add_box_contents(self, box_id: int, part_id: int, count: int) -> None:
         """!
         Add a new box_contents to a box via a box_id and a part_id.
@@ -260,7 +262,7 @@ class GroupsAndBoxesDatabase:
             (box_id, count, part_id)
         )
 
-    @changes_db
+    @DBBaseClass.changes_db
     def edit_box_contents_count(self, box_contents_id: int, count: int) -> None:
         """!
         Edit the count of an item in a box contents via the box contents id and the count.
@@ -325,8 +327,7 @@ class GroupsAndBoxesDatabase:
         """
         try:
             conn = sqlite3.connect(db_file, isolation_level=None)
-        except sqlite3.Error as e:
-            print(f"Could not connect to database:\n{e}")
+        except sqlite3.Error:
             raise DBConnectError
 
         return conn

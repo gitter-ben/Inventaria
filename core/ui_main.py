@@ -4,6 +4,7 @@
 """
 
 from textwrap import dedent
+from typing import Optional
 
 from PyQt5.Qt import (
     QAction,
@@ -43,10 +44,12 @@ class MainWindow(QMainWindow):
         super().__init__(*args, **kwargs)
         self.nothing(resources.qt_version)
 
-        self._global_signal_master = MainSignalMaster()
+        self._main_signal_master = MainSignalMaster()
+        self._main_signal_master.new_inventory_tab.connect(self._new_inventory_tab)
+        self._main_signal_master.main_save_state_changed.connect(self._save_state_changed_slot)
 
         self._db_loaded = False
-        self._db = None
+        self._db: Optional[MainDatabase] = None
 
         self.__setup_gui()
 
@@ -58,6 +61,10 @@ class MainWindow(QMainWindow):
         import the images and icons wouldn't work.
         """
         return x
+
+    @pyqtSlot(QWidget, str)
+    def _new_inventory_tab(self, tab: QWidget, name: str) -> None:
+        self._inventory_gui_tabs.addTab(tab, name)
 
     def __setup_gui(self) -> None:
         """!
@@ -150,19 +157,29 @@ class MainWindow(QMainWindow):
         load_button.pressed.connect(self._load_db_slot)
         top_bar_layout.addWidget(load_button, 0, 0, 1, 1)
         ic = QIcon(":/icons/save_icon.png")
-        save_button = QPushButton("Save")
-        save_button.setFixedWidth(82)
-        save_button.setIcon(ic)
-        save_button.pressed.connect(self._save_slot)
-        save_button.setEnabled(False)
-        top_bar_layout.addWidget(save_button, 0, 1, 1, 1)
+        self._save_button = QPushButton("Save")
+        self._save_button.setFixedWidth(82)
+        self._save_button.setIcon(ic)
+        self._save_button.clicked.connect(self._save_slot)
+        self._save_button.setEnabled(False)
+        top_bar_layout.addWidget(self._save_button, 0, 1, 1, 1)
         ic = QIcon(":/icons/rollback_icon.png")
-        roll_back_button = QPushButton("Rollback")
-        roll_back_button.setFixedWidth(82)
-        roll_back_button.setIcon(ic)
-        roll_back_button.pressed.connect(self._roll_back_slot)
-        roll_back_button.setEnabled(False)
-        top_bar_layout.addWidget(roll_back_button, 0, 2, 1, 1)
+        self._roll_back_button = QPushButton("Rollback")
+        self._roll_back_button.setFixedWidth(82)
+        self._roll_back_button.setIcon(ic)
+        self._roll_back_button.clicked.connect(self._roll_back_slot)
+        self._roll_back_button.setEnabled(False)
+        top_bar_layout.addWidget(self._roll_back_button, 0, 2, 1, 1)
+
+        # Only for testing
+        un_save_button = QPushButton("Un-save (testing)")
+
+        def un_save_intern():
+            self._db.un_save()
+
+        un_save_button.clicked.connect(un_save_intern)
+        top_bar_layout.addWidget(un_save_button, 0, 3, 1, 1)
+        # ==========
 
         top_bar_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         top_bar_layout.setContentsMargins(8, 0, 8, 0)
@@ -228,23 +245,64 @@ class MainWindow(QMainWindow):
                 self._db.close()
                 event.accept()
 
+    @pyqtSlot(bool)
+    def _save_state_changed_slot(self, saved: bool) -> None:
+        self._saved_indicator.setText("Saved" if saved else "Not saved")
+        self._roll_back_button.setEnabled(not saved)
+        self._save_button.setEnabled(not saved)
+
     @pyqtSlot()
     def _load_db_slot(self) -> None:
+        if self._db_loaded:
+            if not self._db.saved:
+                reply = QMessageBox.question(
+                    self,
+                    "Unload without saving",
+                    "Are you sure you want to unload the current database without saving?",
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.No
+                )
+
+                if reply == QMessageBox.No:
+                    return
+
+            self._inventory_gui_tabs.clear()
+
         directory_name = str(QFileDialog.getExistingDirectory(self, "Select directory"))
+        if len(directory_name) == 0 or directory_name is None:
+            return
+
         try:
-            self._db = MainDatabase(directory_name, self._global_signal_master)
+            new_db = MainDatabase(directory_name, self._main_signal_master)
         except MainDBLoadError as e:
             self._show_message("Error", f"There was an error loading the database:\n{e}")
             return
-        print("DB loaded.")
+
+        self._db_loaded = True
+        self._db = new_db
+
+        # self._main_signal_master.save_state_changed.emit(True)  # Artificially trigger save state changed
 
     @pyqtSlot()
     def _save_slot(self) -> None:
+        print("Pressed save button")
         if not self._db_loaded:
             self._show_message("Error", "No database to save.")
             return
 
-        print("Saved.")
+        if not self._db.saved:
+            reply = QMessageBox.question(
+                self,
+                "Save database",
+                "Are you sure you want to accept all changes made since the last save?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+
+            if reply == QMessageBox.Yes:
+                self._db.save()
+            else:
+                return
 
     @pyqtSlot()
     def _unload_db_slot(self) -> None:
@@ -252,7 +310,24 @@ class MainWindow(QMainWindow):
             self._show_message("Error", "No database to unload.")
             return
 
-        print("DB unloaded.")
+        if not self._db.saved:
+            reply = QMessageBox.question(
+                self,
+                "Unload database",
+                "Are you sure you want to unload the database without saving?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+
+            if reply == QMessageBox.No:
+                return
+
+        self._inventory_gui_tabs.clear()
+
+        self._db.close()
+        self._db = None
+        self._db_loaded = False
+        self._saved_indicator.setText("No database")
 
     @pyqtSlot()
     def _roll_back_slot(self) -> None:
@@ -260,7 +335,21 @@ class MainWindow(QMainWindow):
             self._show_message("Error", "No database to roll back.")
             return
 
-        print("DB rolled back.")
+        if not self._db.saved:
+            reply = QMessageBox.question(
+                self,
+                "Roll back database",
+                "Are you sure you want to roll back to the last save?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+
+            if reply == QMessageBox.No:
+                return
+        else:
+            self._show_message("Error", "No savepoint to roll back to.")
+
+        self._db.roll_back()
 
     @pyqtSlot()
     def _show_preferences_slot(self) -> None:

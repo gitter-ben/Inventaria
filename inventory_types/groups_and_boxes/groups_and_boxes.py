@@ -21,7 +21,7 @@ class GroupsAndBoxesGUI(QSplitter):
             self,
             database: GroupsAndBoxesDatabase,
             sig_master: GroupsAndBoxesSignalMaster,
-            global_sig_master: MainSignalMaster,
+            main_sig_master: MainSignalMaster,
             *args,
             **kwargs):
         """!
@@ -43,7 +43,7 @@ class GroupsAndBoxesGUI(QSplitter):
         super(GroupsAndBoxesGUI, self).__init__(*args, **kwargs)  # Initialize QWidget superclass
 
         self._signal_master = sig_master
-        self._global_signal_master = global_sig_master
+        self._main_signal_master = main_sig_master
         self._db = database
 
         self.__setup_gui()  # Set up the GUI
@@ -230,7 +230,7 @@ class GroupsAndBoxesGUI(QSplitter):
 
     @pyqtSlot(bool)
     def _save_state_changed_slot(self, save_state: bool) -> None:
-        self._global_signal_master.global_save_state_changed.emit(False)
+        self._main_signal_master.main_save_state_changed.emit(False)
         print(f"Database changed save state to {save_state}.")
 
     @pyqtSlot()

@@ -1,0 +1,15 @@
+{
+  "name": "Testing database",
+  "databases": [
+    {
+      "name": "Fotolabor",
+      "type": "groups and boxes",
+      "file": "0001_groups_and_boxes.sqlite"
+    },
+    {
+      "name": "Zweites Fotolabor",
+      "type": "groups and boxes",
+      "file": "0002_groups_and_boxes.sqlite"
+    }
+  ]
+}
