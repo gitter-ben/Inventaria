@@ -1,6 +1,6 @@
 """!
-@file groups_and_boxes.py
-@brief Defines the inspector for the groups and boxes inventory type.
+@file gui.py
+@brief Defines the GUI for the groups and boxes inventory type.
 """
 from PyQt5.Qt import QPalette, QColor, pyqtSlot
 from PyQt5.QtWidgets import (
@@ -12,7 +12,7 @@ from core.signal_master import MainSignalMaster
 from .constants import INITIAL_WIDTH
 from .database import GroupsAndBoxesDatabase
 from .editor import GroupsAndBoxesEditor
-from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .signal_master import GroupsAndBoxesSignalMaster
 from .navbar import GroupsAndBoxesNavBars
 
 
@@ -110,7 +110,7 @@ class GroupsAndBoxesGUI(QSplitter):
 
         # ================ Set up database ====================
         # Database signals
-        self._signal_master.save_state_changed.connect(self._save_state_changed_slot)
+        # self._signal_master.save_state_changed.connect(self._save_state_changed_slot)
         # =====================================================
 
         # ================= Finish layout =====================
@@ -124,6 +124,9 @@ class GroupsAndBoxesGUI(QSplitter):
             self._db.get_group(group_id),
             self._db.get_boxes(group_id)
         )
+        self._navBars.group_level_nav.clear_items()
+        self._navBars.group_level_nav.populate(self._db.get_groups())
+        self._navBars.group_level_nav.set_selected_item_by_id(group_id)
         print(f"Group (ID: {group_id}) changed name to '{new_name}'.")
 
     @pyqtSlot(int, str)
@@ -133,6 +136,10 @@ class GroupsAndBoxesGUI(QSplitter):
             self._db.get_box(box_id),
             self._db.get_box_contents(box_id)
         )
+        current_group_id = self._navBars.current_ids().group_id
+        self._navBars.box_level_nav.clear_items()
+        self._navBars.box_level_nav.populate(self._db.get_boxes(current_group_id))
+        self._navBars.box_level_nav.set_selected_item_by_id(box_id)
         print(f"Box (ID: {box_id}) changed name to '{new_name}'.")
 
     @pyqtSlot(int, str)
@@ -228,10 +235,10 @@ class GroupsAndBoxesGUI(QSplitter):
         )
         print(f"Box content (ID: {box_content_id}) set to {count}.")
 
-    @pyqtSlot(bool)
-    def _save_state_changed_slot(self, save_state: bool) -> None:
-        self._main_signal_master.main_save_state_changed.emit(False)
-        print(f"Database changed save state to {save_state}.")
+    # @pyqtSlot(bool)
+    # def _save_state_changed_slot(self, save_state: bool) -> None:
+    #     self._main_signal_master.main_save_state_changed.emit(False)
+    #     print(f"Database changed save state to {save_state}.")
 
     @pyqtSlot()
     def _navbar_group_selection_changed(self) -> None:

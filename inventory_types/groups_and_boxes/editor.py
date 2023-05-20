@@ -1,6 +1,6 @@
 """!
 @file editor.py
-@brief Contains all the custom widgets needed for the groups_and_boxes inventory type
+@brief Defines the editor for the groups and boxes inventory type.
 
 @section editor_classes CLASSES
 - GroupsAndBoxesEditor (QWidget)
@@ -31,7 +31,7 @@ from PyQt5.QtWidgets import (
 from core.constants import *
 from resources import resources
 from .common import *
-from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .signal_master import GroupsAndBoxesSignalMaster
 
 
 class GroupsAndBoxesEditor(QWidget):

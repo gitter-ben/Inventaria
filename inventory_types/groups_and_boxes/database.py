@@ -7,15 +7,16 @@ from typing import List
 
 from core.utils import DBConnectError  # , changes_db
 from core.database_abstract import DBBaseClass
-from inventory_types.groups_and_boxes.common import Group, Box, BoxContentItem
-from inventory_types.groups_and_boxes.groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from inventory_types.parts import PartsDatabase
+from .common import Group, Box, BoxContentItem
+from .signal_master import GroupsAndBoxesSignalMaster
 
 
 class GroupsAndBoxesDatabase(DBBaseClass):
     """!
     @brief Database class for the groups and boxes inventory type.
     """
-    def __init__(self, db_file: str, sig_master: GroupsAndBoxesSignalMaster):
+    def __init__(self, db_file: str, sig_master: GroupsAndBoxesSignalMaster, parts_db: PartsDatabase):
         """!
         @brief Initialize a new GroupsAndBoxesDatabase.
 
@@ -26,6 +27,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
         self.saved = None
 
         self._signal_master = sig_master
+        self._parts_db = parts_db
         self.load_from_file(db_file)
 
     def load_from_file(self, db_file) -> None:

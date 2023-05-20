@@ -1,6 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,100,107,127"/>
-<area shape="rect" id="node2" href="$classinventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEditor_1_1BoxContentsList.html" title="Custom list widget with support for BoxContentsListItem." alt="" coords="158,5,411,61"/>
-<area shape="rect" id="node3" href="$classinventory__types_1_1groups__and__boxes_1_1editor_1_1GroupsAndBoxesEditor_1_1BoxesList.html" title="QListWidget with option for delete&#45;, add&#45;, etc buttons." alt="" coords="158,85,411,141"/>
-<area shape="rect" id="node4" href="$classinventory__types_1_1groups__and__boxes_1_1navbar_1_1GroupsAndBoxesNavBars_1_1NavBar.html" title="A class to represent a navbar." alt="" coords="155,165,415,221"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,60,84,87"/>
+<area shape="rect" id="node2" href="$classinventory__types_1_1groups__and__boxes_1_1groups__and__boxes_1_1GroupsAndBoxesGUI.html" title=" " alt="" coords="159,5,365,61"/>
+<area shape="rect" id="node3" href="$classinventory__types_1_1groups__and__boxes_1_1navbar_1_1GroupsAndBoxesNavBars.html" title="NavBar widget for groups and boxes inventory type." alt="" coords="132,85,392,141"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" title=" " alt="" coords="17,5,68,32"/>
 <area shape="rect" id="node2" href="$classcore_1_1utils_1_1Singleton.html" title="Metaclass for Singleton&#45;classes." alt="" coords="165,5,312,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,60,80,87"/>
-<area shape="rect" id="node4" href="$classcore_1_1signal__master_1_1MainSignalMaster.html" title="Signal master for the main window and database." alt="" coords="128,57,349,98"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,56,80,83"/>
+<area shape="rect" id="node4" href="$classcore_1_1database_1_1MainDatabase.html" title="The main database class for Inventaria." alt="" coords="133,56,345,83"/>
+<area shape="rect" id="node5" href="$classcore_1_1signal__master_1_1MainSignalMaster.html" title="Signal master for the main window and database." alt="" coords="128,107,349,149"/>
 </map>

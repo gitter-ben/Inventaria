@@ -5,6 +5,26 @@
 Database class for the groups and boxes inventory type.  
 
 
+
+
+Inheritance diagram for inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,9 +42,8 @@ None \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_
 \mbox{\Hypertarget{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af96d264a60cdb4cd852a27a1785922fe}\label{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af96d264a60cdb4cd852a27a1785922fe}} 
 None \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_af96d264a60cdb4cd852a27a1785922fe}{rollback\+\_\+to\+\_\+savepoint}} (self)
 \begin{DoxyCompactList}\small\item\em Rollback to last savepoint by executing \char`\"{}\+ROLLBACK TRANSACTION;\char`\"{} in sqlite. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a1efb2ba58ce36793e3a6b92217e55396}\label{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a1efb2ba58ce36793e3a6b92217e55396}} 
 None \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a1efb2ba58ce36793e3a6b92217e55396}{save}} (self)
-\begin{DoxyCompactList}\small\item\em Save the current database by committing the current transaction and starting a new one by calling self.\+make\+\_\+savepoint() \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Save the database to the file. \end{DoxyCompactList}\item 
 List\mbox{[}\mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}}\mbox{]} \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a77735b80288c7a5cf5e572223deec029}{get\+\_\+groups}} (self)
 \begin{DoxyCompactList}\small\item\em Get all groups as Group instances. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1common_1_1Group}{Group}} \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_aca0ce1ffcad331de3718955cb29df25b}{get\+\_\+group}} (self, int group\+\_\+id)
@@ -68,6 +87,7 @@ None \mbox{\hyperlink{classinventory__types_1_1groups__and__boxes_1_1database_1_
 \mbox{\Hypertarget{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a04f07070dbdbc2785437f917666c4c64}\label{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a04f07070dbdbc2785437f917666c4c64}} 
 {\bfseries saved}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -328,6 +348,20 @@ Get all groups as Group instances.
 \begin{DoxyReturn}{Returns}
 A list of instances of the Group dataclass 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a1efb2ba58ce36793e3a6b92217e55396}\label{classinventory__types_1_1groups__and__boxes_1_1database_1_1GroupsAndBoxesDatabase_a1efb2ba58ce36793e3a6b92217e55396}} 
+\index{inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}!save@{save}}
+\index{save@{save}!inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase@{inventory\_types.groups\_and\_boxes.database.GroupsAndBoxesDatabase}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily  None inventory\+\_\+types.\+groups\+\_\+and\+\_\+boxes.\+database.\+Groups\+And\+Boxes\+Database.\+save (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Save the database to the file. 
+
+Save the current database by committing the current transaction and starting a new one by calling self.\+make\+\_\+savepoint() 
+
+Reimplemented from \mbox{\hyperlink{classcore_1_1database__abstract_1_1DBBaseClass_a753b82467c07f70483f1ffba1223092e}{core.\+database\+\_\+abstract.\+DBBase\+Class}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

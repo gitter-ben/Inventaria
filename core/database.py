@@ -15,12 +15,22 @@ from inventory_types.groups_and_boxes import (
     GroupsAndBoxesDatabase,
     GroupsAndBoxesSignalMaster
 )
+from inventory_types.parts import (
+    PartsGUI,
+    PartsDatabase,
+    PartsSignalMaster
+)
 
 db_types = {
     "groups and boxes": (
         GroupsAndBoxesGUI,
         GroupsAndBoxesDatabase,
         GroupsAndBoxesSignalMaster
+    ),
+    "parts": (
+        PartsGUI,
+        PartsDatabase,
+        PartsSignalMaster
     )
 }
 
@@ -77,13 +87,23 @@ class MainDatabase(QObject):
         except FileNotFoundError:
             raise MainDBLoadError("No config.json file found.")
 
+        try:
+            parts_sig_master = PartsSignalMaster()
+            parts_db = PartsDatabase(self._config["parts"])
+
         for db in self._config["databases"]:
-            sig_master = db_types[db["type"]][2]()
-            sub_db = db_types[db["type"]][1](os.path.join(dir_path, db["file"]), sig_master)
-            gui = db_types[db["type"]][0](sub_db, sig_master, self._signal_master)
-            sig_master.save_state_changed.connect(self._sub_db_save_state_changed)
-            self._sub_databases.append((gui, sub_db, sig_master))
-            self._signal_master.new_inventory_tab.emit(gui, db["file"])
+            try:
+                classes = db_types[db["type"]]
+            except KeyError:
+                print("Unknown inventory type found in config.json: Skipping.")
+                continue
+
+            sig_master = classes[2]()  # Signal master
+            sub_db = classes[1](os.path.join(dir_path, db["file"]), sig_master)  # Database
+            gui = classes[0](sub_db, sig_master, self._signal_master)  # GUI
+            sig_master.save_state_changed.connect(self._sub_db_save_state_changed)  # Connect save state changed signal
+            self._sub_databases.append((gui, sub_db, sig_master))  # Store
+            self._signal_master.new_inventory_tab.emit(gui, db["file"])  # Emit new tab signal to main GUI
 
         pprint(self._sub_databases)
 
@@ -102,3 +122,4 @@ class MainDatabase(QObject):
             return
 
         self.saved = False
+        self._signal_master.main_save_state_changed.emit(False)

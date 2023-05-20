@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         super().__init__(*args, **kwargs)
         self.nothing(resources.qt_version)
 
-        self._main_signal_master = MainSignalMaster()
+        self._main_signal_master: MainSignalMaster = MainSignalMaster()
         self._main_signal_master.new_inventory_tab.connect(self._new_inventory_tab)
         self._main_signal_master.main_save_state_changed.connect(self._save_state_changed_slot)
 

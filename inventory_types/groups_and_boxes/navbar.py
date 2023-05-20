@@ -1,6 +1,6 @@
 """!
 @file navbar.py
-@brief The file for the GroupsAndBoxesNavBars class for the groups and boxes inventory type.
+@brief Defines the navbar widgets for the groups and boxes inventory type.
 
 @section custom_widgets_classes CLASSES
 - GroupsAndBoxesNavBars (QSplitter)
@@ -22,7 +22,7 @@ from PyQt5.QtWidgets import (
     QSplitter
 )
 
-from .groups_and_boxes_signal_master import GroupsAndBoxesSignalMaster
+from .signal_master import GroupsAndBoxesSignalMaster
 from .common import Group, Box, GroupAndBoxIDs
 from resources import resources
 

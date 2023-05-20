@@ -44,3 +44,11 @@ class DBBaseClass(metaclass=ABCMeta):
         """!
         @brief Roll back the database to last savepoint.
         """
+        pass
+
+    @abstractmethod
+    def _unsaved(self) -> None:
+        """!
+        @brief Method called by the @changesDB decorator.
+        """
+        pass

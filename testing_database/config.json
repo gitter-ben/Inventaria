@@ -1,5 +1,8 @@
 {
   "name": "Testing database",
+  "parts": {
+    "file": "parts.sqlite"
+  },
   "databases": [
     {
       "name": "Fotolabor",
