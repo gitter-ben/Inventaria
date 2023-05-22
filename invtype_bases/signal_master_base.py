@@ -1,5 +1,6 @@
 from PyQt5.Qt import pyqtSignal
 
 
-class PartsSignalMaster:
+class SignalMasterBase:
+    # Database signal
     save_state_changed = pyqtSignal(bool)

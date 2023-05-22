@@ -15,11 +15,11 @@ from inventory_types.groups_and_boxes import (
     GroupsAndBoxesDatabase,
     GroupsAndBoxesSignalMaster
 )
-from inventory_types.parts import (
-    PartsGUI,
-    PartsDatabase,
-    PartsSignalMaster
-)
+# from parts import (
+#     PartsGUI,
+#     PartsDatabase,
+#     PartsSignalMaster
+# )
 
 db_types = {
     "groups and boxes": (
@@ -27,11 +27,11 @@ db_types = {
         GroupsAndBoxesDatabase,
         GroupsAndBoxesSignalMaster
     ),
-    "parts": (
-        PartsGUI,
-        PartsDatabase,
-        PartsSignalMaster
-    )
+    # "parts": (
+    #     PartsGUI,
+    #     PartsDatabase,
+    #     PartsSignalMaster
+    # )
 }
 
 
@@ -87,9 +87,12 @@ class MainDatabase(QObject):
         except FileNotFoundError:
             raise MainDBLoadError("No config.json file found.")
 
-        try:
-            parts_sig_master = PartsSignalMaster()
-            parts_db = PartsDatabase(self._config["parts"])
+        # try:
+        #     parts_sig_master = PartsSignalMaster()
+        #     parts_db = PartsDatabase(os.path.join(dir_path, self._config["parts"]["file"]), parts_sig_master)
+        #     parts_gui = PartsGUI(parts_db, parts_sig_master)
+        # except KeyError:
+        #     raise MainDBLoadError("Error in config.json: No parts database specified.")
 
         for db in self._config["databases"]:
             try:
