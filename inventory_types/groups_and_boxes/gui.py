@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import (
     QMessageBox,
     QInputDialog
 )
-from core.signal_master import MainSignalMaster
+
 from .constants import INITIAL_WIDTH
 from .database import GroupsAndBoxesDatabase
 from .editor import GroupsAndBoxesEditor
@@ -21,7 +21,6 @@ class GroupsAndBoxesGUI(QSplitter):
             self,
             database: GroupsAndBoxesDatabase,
             sig_master: GroupsAndBoxesSignalMaster,
-            main_sig_master: MainSignalMaster,
             *args,
             **kwargs):
         """!
@@ -43,10 +42,15 @@ class GroupsAndBoxesGUI(QSplitter):
         super(GroupsAndBoxesGUI, self).__init__(*args, **kwargs)  # Initialize QWidget superclass
 
         self._signal_master = sig_master
-        self._main_signal_master = main_sig_master
         self._db = database
 
         self.__setup_gui()  # Set up the GUI
+
+    def refresh(self) -> None:
+        self._editor.set_empty()
+        self._navBars.box_level_nav.clear_items()
+        self._navBars.group_level_nav.clear_items()
+        self._navBars.group_level_nav.populate(self._db.get_groups())
 
     def __setup_gui(self) -> None:
         """!
@@ -106,11 +110,6 @@ class GroupsAndBoxesGUI(QSplitter):
         self._signal_master.add_box_content.connect(self._add_box_contents_slot)
 
         self._signal_master.set_box_content_count.connect(self._set_box_content_count_slot)
-        # =====================================================
-
-        # ================ Set up database ====================
-        # Database signals
-        # self._signal_master.save_state_changed.connect(self._save_state_changed_slot)
         # =====================================================
 
         # ================= Finish layout =====================
@@ -234,11 +233,6 @@ class GroupsAndBoxesGUI(QSplitter):
             self._db.get_box_contents(ids.box_id)
         )
         print(f"Box content (ID: {box_content_id}) set to {count}.")
-
-    # @pyqtSlot(bool)
-    # def _save_state_changed_slot(self, save_state: bool) -> None:
-    #     self._main_signal_master.main_save_state_changed.emit(False)
-    #     print(f"Database changed save state to {save_state}.")
 
     @pyqtSlot()
     def _navbar_group_selection_changed(self) -> None:

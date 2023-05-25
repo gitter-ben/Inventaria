@@ -3,10 +3,12 @@
 @brief Defines the GroupsAndBoxesSignalMaster for signalling in the groups and boxes inventory type.
 """
 
-from PyQt5.QtCore import pyqtSignal, QObject
+from PyQt5.QtCore import pyqtSignal
+
+from invtype_bases.signal_master_base import SignalMasterBase
 
 
-class GroupsAndBoxesSignalMaster(QObject):
+class GroupsAndBoxesSignalMaster(SignalMasterBase):
     """!
     @brief The signal master for the groups and boxes inventory type.
     """
@@ -31,9 +33,6 @@ class GroupsAndBoxesSignalMaster(QObject):
 
     navbar_group_selection_changed = pyqtSignal()
     navbar_box_selection_changed = pyqtSignal()
-
-    # Database signals
-    save_state_changed = pyqtSignal(bool)
 
     def __init__(self, *args, **kw):
         super().__init__(*args, **kw)

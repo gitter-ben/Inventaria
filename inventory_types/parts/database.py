@@ -3,8 +3,9 @@
 @brief Defines the database for the "parts" inventory type.
 """
 import sqlite3
+from typing import List
 
-from invtype_bases import DatabaseBase
+from invtype_bases.database_base import DatabaseBase
 from core.utils import DBConnectError
 from .common import Part
 from .signal_master import PartsSignalMaster
@@ -12,9 +13,12 @@ from .signal_master import PartsSignalMaster
 
 class PartsDatabase(DatabaseBase):
     def __init__(self, db_file: str, sig_master: PartsSignalMaster):
-        super().__init__(sig_master)
+        # super(PartsDatabase, self).__init__(sig_master)
+        # DatabaseBase.__init__(self, sig_master)
         self.conn = None
         self.cur = None
+
+        self._signal_master = sig_master
 
         self.load_from_file(db_file)
 
@@ -39,9 +43,7 @@ class PartsDatabase(DatabaseBase):
         """!
         @brief Create a savepoint by starting an sqlite transaction.
         """
-        self.cur.execute("ROLLBACK TRANSACTION;")
-        self._saved = True
-        self.make_savepoint()
+        self.cur.execute("BEGIN TRANSACTION;")
 
     def rollback_to_savepoint(self) -> None:
         """!
@@ -60,13 +62,13 @@ class PartsDatabase(DatabaseBase):
             self._saved = True
             self.make_savepoint()
 
-    def get_parts(self):
+    def get_parts(self) -> List[Part]:
         parts = [Part(*row) for row in self.cur.execute(
             "SELECT id, name FROM parts"
         )]
         return parts
 
-    def get_part(self, part_id):
+    def get_part(self, part_id) -> Part:
         part = Part(*self.cur.execute(
             "SELECT id, name FROM parts WHERE id=?",
             (part_id, )
@@ -74,15 +76,23 @@ class PartsDatabase(DatabaseBase):
         return part
 
     @DatabaseBase.changes_db
-    def add_part(self, name):
+    def add_part(self, name) -> None:
         self.cur.execute(
             "INSERT INTO parts (name) VALUES (?);",
             (name, )
         )
 
-    def _unsaved(self) -> None:
-        if self._saved:
-            self._saved = False
+    @DatabaseBase.changes_db
+    def delete_part(self, part_id) -> None:
+        print("part deleted")
+        self.cur.execute(
+            "DELETE FROM parts WHERE id=?",
+            (part_id, )
+        )
+
+    # def _unsaved(self) -> None:
+    #     if self._saved:
+    #         self._saved = False
 
     def _initialize_database(self):
         sql_foreign_keys_on = """PRAGMA FOREIGN_KEYS = ON"""

@@ -6,12 +6,12 @@ import sqlite3
 from typing import List
 
 from core.utils import DBConnectError  # , changes_db
-from core.database_abstract import DBBaseClass
+from invtype_bases.database_base import DatabaseBase
 from .common import Group, Box, BoxContentItem
 from .signal_master import GroupsAndBoxesSignalMaster
 
 
-class GroupsAndBoxesDatabase(DBBaseClass):
+class GroupsAndBoxesDatabase(DatabaseBase):
     """!
     @brief Database class for the groups and boxes inventory type.
     """
@@ -23,7 +23,6 @@ class GroupsAndBoxesDatabase(DBBaseClass):
         """
         self.conn = None
         self.cur = None
-        self.saved = None
 
         self._signal_master = sig_master
         # self._parts_db = parts_db
@@ -37,7 +36,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
         self.cur = self.conn.cursor()
         self._initialize_database()
 
-        self.saved = True
+        self._saved = True
         self.make_savepoint()
 
     def close(self) -> None:
@@ -57,9 +56,8 @@ class GroupsAndBoxesDatabase(DBBaseClass):
         @brief Rollback to last savepoint by executing "ROLLBACK TRANSACTION;" in sqlite
         """
         self.cur.execute("ROLLBACK TRANSACTION;")
-        self.saved = True
+        self._saved = True
         self.make_savepoint()
-        self._signal_master.save_state_changed.emit(True)
 
     def save(self) -> None:
         """!
@@ -67,16 +65,10 @@ class GroupsAndBoxesDatabase(DBBaseClass):
         Save the current database by committing the current transaction
         and starting a new one by calling self.make_savepoint()
         """
-        if not self.saved:
+        if not self._saved:
             self.cur.execute("COMMIT TRANSACTION;")
-            self.saved = True
+            self._saved = True
             self.make_savepoint()
-            self._signal_master.save_state_changed.emit(True)
-
-    def _unsaved(self) -> None:
-        if self.saved:
-            self.saved = False
-            self._signal_master.save_state_changed.emit(False)
 
     def get_groups(self) -> List[Group]:
         """!
@@ -151,7 +143,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
 
         return contents
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def add_group(self, name: str) -> None:
         """!
         Add a new group with a name.
@@ -163,7 +155,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (name,)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def delete_group(self, group_id: int) -> None:
         """!
         Delete a group via the group id.
@@ -175,7 +167,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (group_id, )
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def edit_group_name(self, group_id: int, name: str) -> None:
         """!
         Edit a group name via a group id and a new name.
@@ -188,7 +180,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (name, group_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def edit_group_description(self, group_id: int, description: str) -> None:
         """!
         Edit a group description via a group id and a new description
@@ -198,7 +190,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (description, group_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def add_box(self, name: str, group_id: int) -> None:
         """!
         Add a new box with a set name and a group id.
@@ -211,7 +203,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (name, group_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def delete_box(self, box_id: int) -> None:
         """!
         Delete a box with a set box id. The cascading mode will also remove all parts associated with the box.
@@ -223,7 +215,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (box_id, )
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def edit_box_name(self, box_id: int, new_name: str) -> None:
         """!
         Edit the name of a box with a set box id and a new name.
@@ -236,7 +228,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (new_name, box_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def edit_box_description(self, box_id: int, description: str) -> None:
         """!
         Edit the description of a box with a box id and new description.
@@ -249,7 +241,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (description, box_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def add_box_contents(self, box_id: int, part_id: int, count: int) -> None:
         """!
         Add a new box_contents to a box via a box_id and a part_id.
@@ -263,7 +255,7 @@ class GroupsAndBoxesDatabase(DBBaseClass):
             (box_id, count, part_id)
         )
 
-    @DBBaseClass.changes_db
+    @DatabaseBase.changes_db
     def edit_box_contents_count(self, box_contents_id: int, count: int) -> None:
         """!
         Edit the count of an item in a box contents via the box contents id and the count.

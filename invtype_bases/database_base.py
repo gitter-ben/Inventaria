@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 from functools import wraps
-from typing import Type
 
 from .signal_master_base import SignalMasterBase
 
 
 class DatabaseBase(ABC):
     def __int__(self, sig_master: SignalMasterBase) -> None:
-        self._saved_val = True
         self._signal_master = sig_master
+        print(f"Database base sig_id: {self._signal_master}")
+        self._saved_val = True
 
     @staticmethod
     def changes_db(func):
@@ -18,7 +18,8 @@ class DatabaseBase(ABC):
         @wraps(func)
         def wrapper(self, *args, **kwargs):
             self._saved = False  # Calls the property setter
-            return func(*args, **kwargs)
+            print("deco called")
+            return func(self, *args, **kwargs)
         return wrapper
 
     @property
@@ -27,8 +28,8 @@ class DatabaseBase(ABC):
 
     @_saved.setter
     def _saved(self, value: bool) -> None:
-        self._signal_master.save_state_changed.emit(value)
         self._saved_val = value
+        self._signal_master.save_state_changed.emit(value)
 
     @abstractmethod
     def load_from_file(self, db_file) -> None:

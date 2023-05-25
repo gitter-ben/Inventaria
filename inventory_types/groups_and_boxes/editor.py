@@ -291,7 +291,7 @@ class GroupsAndBoxesEditor(QWidget):
         ic = QIcon(":/icons/green_plus.png")
         self._add_box_button = QPushButton("Add box")
         self._add_box_button.setIcon(ic)
-        self._add_box_button.setFixedWidth(110)
+        self._add_box_button.setFixedWidth(180)
         self._add_box_button.clicked.connect(lambda: self._signal_master.add_box.emit(self._group.id))
 
         self._boxes_list = self.BoxesList(self._signal_master)
@@ -317,7 +317,7 @@ class GroupsAndBoxesEditor(QWidget):
 
         self._layout.addWidget(self._box_contents_label, 5, 0, 1, 1)
         self._layout.addWidget(self._add_box_content_button, 5, 1, 1, 1, alignment=Qt.AlignRight)
-        self._layout.addWidget(self._box_contents_list, 8, 0, 1, 2)
+        self._layout.addWidget(self._box_contents_list, 6, 0, 1, 2)
         # ======================================
 
         # ===== Button row at the bottom =======

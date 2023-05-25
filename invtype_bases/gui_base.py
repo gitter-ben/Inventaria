@@ -1,8 +1,7 @@
-from typing import Type
-
 from PyQt5.QtWidgets import QWidget
 
-from . import DatabaseBase, SignalMasterBase
+from .database_base import DatabaseBase
+from .signal_master_base import SignalMasterBase
 
 
 class GUIBase(QWidget):
@@ -14,4 +13,4 @@ class GUIBase(QWidget):
         super().__init__()
 
         self._db = db
-        self._sig_master = sig_master
+        self._signal_master = sig_master

@@ -1,3 +1,3 @@
-from .database import *
-from .gui import *
-from .signal_master import *
+from .database import GroupsAndBoxesDatabase
+from .gui import GroupsAndBoxesGUI
+from .signal_master import GroupsAndBoxesSignalMaster
